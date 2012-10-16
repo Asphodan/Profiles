@@ -1,0 +1,105 @@
+<HBProfile>
+	<Name>Tiller's Rep</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>101</MaxLevel>
+  
+	<MinDurability>0.1</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Kunzen Ravager" Entry="59119" />
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+   
+   <!-- Quest Behavior -->
+   <!-- Andi -->
+	<Quest Id="30474" Name="A Gift for Ella"> 
+		<Objective Type="CollectItem" ItemId="79871" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Kunzen Ritualist" Id="59123" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="195.6467" Y="1516.928" Z="427.4137" />
+                <Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+   <!-- Farmer Yoon -->
+	<Quest Id="30334" Name="Stealing is Bad... Re-Stealing is OK"> 
+		<Objective Type="CollectItem" ItemId="79821" CollectCount="12">
+			<CollectFrom>
+				<Mob Name="Stolen Vegetable" Id="210763" />
+			</CollectFrom>
+			<Hotspots>
+                <Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!--	<Quest Id="30475" Name="A Gift for Fung"> 
+		<Objective Type="CollectItem" ItemId="80233" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Kunzen Ritualist" Id="59123" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="195.6467" Y="1516.928" Z="427.4137" />
+                <Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
+			</Hotspots>
+		</Objective>
+	</Quest> -->
+	<!-- End of Quest Overrides -->
+	<QuestOrder>
+    <!-- Still need to do "Go To" here
+     End of "Go To". -->
+    <!-- Get Quests -->
+    <!-- Andi -->
+			<While Condition="HasQuestAvailable(30474)" > <!--A Gift For Ella -->
+				<CustomBehavior File="InteractWith"  MobId="64464" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-225.19" Y="607.32" Z="167.17" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+<!--			<While Condition="HasQuestAvailable(30475)" >  COMMMENT: A Gift for Fung 
+				<CustomBehavior File="InteractWith"  MobId="64464" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-225.19" Y="607.32" Z="167.17" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While> -->
+    <!-- Farmer Yoon -->
+			<While Condition="HasQuestAvailable(30334)" > <!-- Re-Stealing is Okay. -->
+				<CustomBehavior File="InteractWith"  MobId="58646" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+			<!-- Turn In -->
+			<If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Ella -->
+				<Objective QuestName="A Gift for Ella" QuestId="30474" Type="CollectItem" ItemId="79871" CollectCount="1" />
+			</If>
+			<If Condition="((HasQuest(30474)) &amp;&amp; (IsQuestCompleted(30474)))" >
+		<TurnIn QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" />
+			</If>
+			<If Condition="HasQuest(30334) &amp;&amp; !IsQuestCompleted(30334)"> <!-- Stealing is bad -->
+				<Objective QuestName="Stealing is Bad.. Re-Stealing is OK" QuestId="30334" Type="CollectItem" ItemId="79824" CollectCount="1" />
+			</If>
+			<If Condition="((HasQuest(30334)) &amp;&amp; (IsQuestCompleted(30334)))" >
+		<TurnIn QuestName="Stealing is bad... Re-Stealing is OK" QuestId="30334" TurnInName="Farmer Yoon" TurnInId="85646" />
+			</If>
+ </QuestOrder> 
+  
+</HBProfile>
