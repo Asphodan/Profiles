@@ -1,0 +1,65 @@
+<HBProfile>
+	<Name>Cloud Serpent Dailies</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>101</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>  
+
+	<Vendors>
+    <Vendor Name="San Redscale" Entry="58414" Type="Repair" X="1586.771" Y="-2507.238" Z="152.2956" />
+	</Vendors>
+	
+	<Mailboxes>
+	</Mailboxes>
+	
+	<Blackspots>
+	</Blackspots>
+	
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Quest Id="31704" Name="Pooped">
+		<Objective Type="CollectItem" ItemId="89052" CollectCount="5">
+			<CollectFrom>
+				<Mob Name="Giant Siftworm" Entry="67084" />
+				<Mob Name="Siftworm" Entry="65711" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="1485.648" Y="-2360.739" Z="154.8382" />			
+			</Hotspots>
+		</Objective>
+	</Quest>
+	
+	<QuestOrder>
+	
+		<CustomBehavior File="UserSettings" LootMobs="True" PullDistance="10"  />
+			<!-- Pickup the quests -->
+			<While Condition="HasQuestAvailable(31704)" >
+				<CustomBehavior File="InteractWith" MobId="65669" NumOfTimes="1" CollectionDistance="500" WaitTime="1000" X="1541.55" Y="-2565.50" Z="152.30" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" NumOfTimes="1" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" NumOfTimes="1" WaitTime="1000" />
+			</While>
+			<!-- Objectives -->
+		
+			<If Condition="((HasQuest(31704)) &amp;&amp; (!IsQuestCompleted(31704)))" >
+				<Objective QuestName="Pooped" QuestId="31704" Type="CollectItem" ItemId="89052" CollectCount="5" />
+			</If>
+			<!-- Turnin Quests -->
+			<If Condition="((HasQuest(31704)) &amp;&amp; (IsQuestCompleted(31704)))" >
+		<TurnIn QuestName="Pooped" QuestId="31704" TurnInName="Your Hatchling" TurnInId="65669" />
+			</If>
+            </QuestOrder>
+
+</HBProfile>
