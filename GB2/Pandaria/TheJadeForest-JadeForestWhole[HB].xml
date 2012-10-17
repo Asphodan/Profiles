@@ -1,10 +1,10 @@
 <HBProfile>
-<Name></Name>
+<Name>Whole Jade Forest</Name>
 <MinDurability>0.4</MinDurability>
 <MinFreeBagSlots>1</MinFreeBagSlots>
   
-<MinLevel>1</MinLevel>
-<MaxLevel>86</MaxLevel>
+<MinLevel>90</MinLevel>
+<MaxLevel>100</MaxLevel>
 <Factions>99999</Factions>
   
 <MailGrey>False</MailGrey>
