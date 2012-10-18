@@ -83,7 +83,8 @@
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Still need to do "Go To" here -->
-<RunTo X="-228.8456" Y="608.3925" Z="166.8103" />
+<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+<!-- <RunTo  /> -->
 <!-- End of "Go To". -->
 <!-- Get Quests -->
 <!-- Andi -->
@@ -98,19 +99,25 @@
 <CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 </While> 
-<!-- Do Quests -->
+<!-- 
+Do Quests
+ -->
 <!-- Andi -->
 <If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Ella -->
 <Objective QuestName="A Gift for Ella" QuestId="30474" Type="CollectItem" ItemId="79871" CollectCount="1" />
 </If>
-<If Condition="HasQuest(30476) &amp;&amp; !IsQuestCompleted(30476)"> <!-- A Gift for Old Hillpaw -->
-        <Objective QuestName="A Gift For Old Hillpaw" QuestId="30476" Type="CollectItem" ItemId="80229" CollectCount="1" />
-</If>
+			<If Condition="HasQuest(30476) &amp;&amp; !IsQuestCompleted(30476)"> <!-- A Gift for Old Hillpaw -->
+				<CustomBehavior File="FlyTo" X="316.3763" Y="857.4071" Z="155.1287" />
+				<CustomBehavior File="ForcedDismount" />
+				<Objective QuestName="A Gift For Old Hillpaw" QuestId="30476" Type="CollectItem" ItemId="80229" CollectCount="1" />
+			</If>
 <!-- Farmer Yoon -->
 <If Condition="HasQuest(30334) &amp;&amp; !IsQuestCompleted(30334)"> <!-- Stealing is bad -->
 <Objective QuestName="Stealing is Bad.. Re-Stealing is OK" QuestId="30334" Type="CollectItem" ItemId="79824" CollectCount="1" />
 </If>
-<!-- Turn In Quests -->
+<!-- 
+Turn In Quests
+ -->
 <If Condition="((HasQuest(30474)) &amp;&amp; (IsQuestCompleted(30474)))" >
 <TurnIn QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" />
 </If>
