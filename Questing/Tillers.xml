@@ -31,18 +31,34 @@
 </Blackspots>
    
 <!-- Quest Behavior -->
+<!-- Anthea Ironpaw -->
+	<Quest Id="30329" Name="Cindergut Peppers"> 
+		<Objective Type="CollectItem" ItemId="79864" CollectCount="4">
+		<CollectFrom>
+			<Mob Name="Kunzen Ritualist" Id="59123" />
+			<Mob Name="Kunzen Hunter" Id="59121" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="195.6467" Y="1516.928" Z="427.4137" />
+			<Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
+		</Hotspots>
+		</Objective>
+	</Quest>
+<!-- Old Hillpaw -->
+
 <!-- Andi -->
-<Quest Id="30474" Name="A Gift for Ella"> 
-<Objective Type="CollectItem" ItemId="79871" CollectCount="1">
-<CollectFrom>
-<Mob Name="Kunzen Ritualist" Id="59123" />
-</CollectFrom>
-<Hotspots>
-<Hotspot X="195.6467" Y="1516.928" Z="427.4137" />
-<Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
-</Hotspots>
-</Objective>
-</Quest>
+	<Quest Id="30474" Name="A Gift for Ella"> 
+		<Objective Type="CollectItem" ItemId="79871" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Kunzen Ritualist" Id="59123" />
+			<Mob Name="Kunzen Hunter" Id="59121" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="195.6467" Y="1516.928" Z="427.4137" />
+			<Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
+		</Hotspots>
+		</Objective>
+	</Quest>
 	<Quest Id="30476" Name="A Gift For Old Hillpaw">
 		<Objective Type="CollectItem" ItemId="80229" CollectCount="1">
 			<CollectFrom>
@@ -57,18 +73,6 @@
 			</Hotspots>
 		</Objective>
 	</Quest>
-
-<!-- Farmer Yoon -->
-<Quest Id="30334" Name="Stealing is Bad... Re-Stealing is OK"> 
-<Objective Type="CollectItem" ItemId="79821" CollectCount="12">
-<CollectFrom>
-<Mob Name="Stolen Vegetable" Id="210763" />
-</CollectFrom>
-<Hotspots>
-<Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
-</Hotspots>
-</Objective>
-</Quest>
 <!--	<Quest Id="30475" Name="A Gift for Fung"> 
 <Objective Type="CollectItem" ItemId="80233" CollectCount="1">
 <CollectFrom>
@@ -80,44 +84,126 @@
 </Hotspots>
 </Objective>
 </Quest> -->
+<!-- Farmer Yoon -->
+	<Quest Id="30334" Name="Stealing is Bad... Re-Stealing is OK"> 
+		<Objective Type="CollectItem" ItemId="79821" CollectCount="12">
+			<CollectFrom>
+				<Mob Name="Stolen Vegetable" Id="210763" />
+			</CollectFrom>
+		<Hotspots>
+			<Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
+		</Hotspots>
+		</Objective>
+	</Quest>
+<!-- Fish Fellreed -->
+	<Quest Id="30326" Name="The Kunzen Legend-Chief"> 
+		<Objective Type="CollectItem" ItemId="79866" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Legend-Chief" Id="59132" />
+			</CollectFrom>
+		<Hotspots>
+			<Hotspot X="344.4392" Y="1442.505" Z="423.3759" />
+		</Hotspots>
+		</Objective>
+	</Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Still need to do "Go To" here -->
-<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
-<!-- <RunTo  /> -->
+<CustomBehavior File="FlyTo" DestName="Halfhill" X="-254.546" Y="601.0397" Z="167.5479" />
 <!-- End of "Go To". -->
-<!-- Get Quests -->
+
+<!-- 
+Get Quests
+ -->
+<!-- Anthea Ironpaw -->
+	<While Condition="HasQuestAvailable(58713)" > <!-- Get Quest -->
+		<CustomBehavior File="InteractWith"  MobId="58713" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Old Hillpaw -->
+	<While Condition="HasQuestAvailable(58707)" > <!-- Get Quest -->
+		<CustomBehavior File="InteractWith"  MobId="58707" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Fish Fellreed -->
+	<While Condition="HasQuestAvailable(58705)" > <!-- Get Quest -->
+		<CustomBehavior File="InteractWith"  MobId="58705" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Andi -->
-<While Condition="HasQuestAvailable(64464)" > <!--A Gift For Ella -->
-<CustomBehavior File="InteractWith"  MobId="64464" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-225.19" Y="607.32" Z="167.17" />
-<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-</While>
-<!-- Farmer Yoon -->
-<While Condition="HasQuestAvailable(58646)" > <!-- Re-Stealing is Okay. -->
-<CustomBehavior File="InteractWith"  MobId="58646" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
-<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-</While> 
+	<While Condition="HasQuestAvailable(64464)" > <!-- Get Quest -->
+		<CustomBehavior File="InteractWith"  MobId="64464" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-225.19" Y="607.32" Z="167.17" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Farmer Yoon Goes Last-->
+	<While Condition="HasQuestAvailable(58646)" > <!-- Get First Quest -->
+		<CustomBehavior File="InteractWith"  MobId="58646" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
 <!-- 
 Do Quests
  -->
+ 
+ <!-- Anthea Ironpaw -->
+ 			<If Condition="HasQuest(30329) &amp;&amp; !IsQuestCompleted(30329)"> <!-- Cindergut Peppers -->
+				<CustomBehavior File="FlyTo" X="195.6467" Y="1516.928" Z="427.4137" />
+				<Objective QuestName="Cindergut Peppers" QuestId="30329" Type="CollectItem" ItemId="79864" CollectCount="4" />
+			</If>
+<!-- Old Hillpaw -->
+			<If Condition="HasQuest(30318) &amp;&amp; !IsQuestCompleted(30318)"> <!-- Chasing the Chicken -->
+				<CustomBehavior File="FlyTo" X="-296.8539" Y="1446.722" Z="231.519" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" QuestId="30318" ObjectType="Npc" MobId="58918" NumOfTimes="30" CollectionDistance="50" X="-296.8539" Y="1446.722" Z="231.519" />
+				</If>
+<!-- Fish Fellreed -->
+			<If Condition="HasQuest(30326) &amp;&amp; !IsQuestCompleted(30326)"> <!-- Kunzen Legend-Chief -->
+				<CustomBehavior File="FlyTo" X="344.4392" Y="1442.505" Z="423.3759" />
+				<CustomBehavior File="ForcedDismount" />
+				<Objective QuestName="Kunzen Legend-Chief" QuestId="30326" Type="CollectItem" ItemId="79866" CollectCount="1" />
+			</If>
 <!-- Andi -->
 <If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Ella -->
 <Objective QuestName="A Gift for Ella" QuestId="30474" Type="CollectItem" ItemId="79871" CollectCount="1" />
 </If>
 			<If Condition="HasQuest(30476) &amp;&amp; !IsQuestCompleted(30476)"> <!-- A Gift for Old Hillpaw -->
 				<CustomBehavior File="FlyTo" X="316.3763" Y="857.4071" Z="155.1287" />
+				<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="You will need to manually cancel the chicken aura." />
 				<CustomBehavior File="ForcedDismount" />
 				<Objective QuestName="A Gift For Old Hillpaw" QuestId="30476" Type="CollectItem" ItemId="80229" CollectCount="1" />
 			</If>
 <!-- Farmer Yoon -->
-<If Condition="HasQuest(30334) &amp;&amp; !IsQuestCompleted(30334)"> <!-- Stealing is bad -->
-<Objective QuestName="Stealing is Bad.. Re-Stealing is OK" QuestId="30334" Type="CollectItem" ItemId="79824" CollectCount="1" />
-</If>
+	<If Condition="HasQuest(30334) &amp;&amp; !IsQuestCompleted(30334)"> <!-- Stealing is bad -->
+		<Objective QuestName="Stealing is Bad.. Re-Stealing is OK" QuestId="30334" Type="CollectItem" ItemId="79824" CollectCount="1" />
+	</If>
 <!-- 
 Turn In Quests
  -->
+ <!--  Market Center -->
+ <!-- Anthea Ironpaw -->
+  	<If Condition="((HasQuest(30329)) &amp;&amp; (IsQuestCompleted(30329)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+		<TurnIn QuestName="Cindergut Peppers" QuestId="30329" TurnInName="Anthea Ironpaw" TurnInId="58713" />
+	</If>
+ <!-- Fish Fellreed -->
+ 	<If Condition="((HasQuest(30326)) &amp;&amp; (IsQuestCompleted(30326)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+		<TurnIn QuestName="The Kunzen Legend-Chief" QuestId="30326" TurnInName="Fish Fellreed" TurnInId="58705" />
+	</If>
+ <!-- Andi -->
+	<If Condition="((HasQuest(30476)) &amp;&amp; (IsQuestCompleted(30476)))" >
+		<TurnIn QuestName="A Gift For Old Hillpaw" QuestId="30476" TurnInName="Old Hillpaw" TurnInId="58707" />
+	</If>
+<!-- Old Hillpaw -->
+	<If Condition="((HasQuest(30318)) &amp;&amp; (IsQuestCompleted(30318)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+		<TurnIn QuestName="Chasing The Chicken" QuestId="30318" TurnInName="Old Hillpaw" TurnInId="58707" />
+	</If>
 <If Condition="((HasQuest(30474)) &amp;&amp; (IsQuestCompleted(30474)))" >
 <TurnIn QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" />
 </If>
