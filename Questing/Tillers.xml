@@ -43,6 +43,21 @@
 </Hotspots>
 </Objective>
 </Quest>
+	<Quest Id="30476" Name="A Gift For Old Hillpaw">
+		<Objective Type="CollectItem" ItemId="80229" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Freshwater Oyster" Id="211021" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="347.3112" Y="827.1058" Z="146.4336" />
+				<Hotspot X="311.1568" Y="881.0031" Z="146.282" />
+				<Hotspot X="276.9386" Y="905.9626" Z="146.6994" />
+				<Hotspot X="281.2593" Y="1047.926" Z="145.5947" />
+				<Hotspot X="389.1611" Y="1116.088" Z="146.2448" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
 <!-- Farmer Yoon -->
 <Quest Id="30334" Name="Stealing is Bad... Re-Stealing is OK"> 
 <Objective Type="CollectItem" ItemId="79821" CollectCount="12">
@@ -67,35 +82,37 @@
 </Quest> -->
 <!-- End of Quest Overrides -->
 <QuestOrder>
-<!-- Still need to do "Go To" here
-End of "Go To". -->
+<!-- Still need to do "Go To" here -->
+<RunTo X="-228.8456" Y="608.3925" Z="166.8103" />
+<!-- End of "Go To". -->
 <!-- Get Quests -->
 <!-- Andi -->
-<While Condition="HasQuestAvailable(30474)" > <!--A Gift For Ella -->
+<While Condition="HasQuestAvailable(64464)" > <!--A Gift For Ella -->
 <CustomBehavior File="InteractWith"  MobId="64464" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-225.19" Y="607.32" Z="167.17" />
 <CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 </While>
-<!--			<While Condition="HasQuestAvailable(30475)" >  COMMMENT: A Gift for Fung 
-<CustomBehavior File="InteractWith"  MobId="64464" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-225.19" Y="607.32" Z="167.17" />
-<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-</While> -->
 <!-- Farmer Yoon -->
-<While Condition="HasQuestAvailable(30334)" > <!-- Re-Stealing is Okay. -->
+<While Condition="HasQuestAvailable(58646)" > <!-- Re-Stealing is Okay. -->
 <CustomBehavior File="InteractWith"  MobId="58646" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 <CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-</While>
-<!-- Turn In -->
+</While> 
+<!-- Do Quests -->
+<!-- Andi -->
 <If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Ella -->
 <Objective QuestName="A Gift for Ella" QuestId="30474" Type="CollectItem" ItemId="79871" CollectCount="1" />
 </If>
-<If Condition="((HasQuest(30474)) &amp;&amp; (IsQuestCompleted(30474)))" >
-<TurnIn QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" />
+<If Condition="HasQuest(30476) &amp;&amp; !IsQuestCompleted(30476)"> <!-- A Gift for Old Hillpaw -->
+        <Objective QuestName="A Gift For Old Hillpaw" QuestId="30476" Type="CollectItem" ItemId="80229" CollectCount="1" />
 </If>
+<!-- Farmer Yoon -->
 <If Condition="HasQuest(30334) &amp;&amp; !IsQuestCompleted(30334)"> <!-- Stealing is bad -->
 <Objective QuestName="Stealing is Bad.. Re-Stealing is OK" QuestId="30334" Type="CollectItem" ItemId="79824" CollectCount="1" />
+</If>
+<!-- Turn In Quests -->
+<If Condition="((HasQuest(30474)) &amp;&amp; (IsQuestCompleted(30474)))" >
+<TurnIn QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" />
 </If>
 <If Condition="((HasQuest(30334)) &amp;&amp; (IsQuestCompleted(30334)))" >
 <TurnIn QuestName="Stealing is bad... Re-Stealing is OK" QuestId="30334" TurnInName="Farmer Yoon" TurnInId="85646" />
