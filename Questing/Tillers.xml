@@ -209,17 +209,6 @@ Do Quests
 		<Objective QuestName="Fatty Goatsteak" QuestId="30332" Type="CollectItem" ItemId="79864" CollectCount="4" />
 	</If>
 <!-- Ella -->
-	<If Condition="HasQuest(30327) &amp;&amp; !IsQuestCompleted(30327)"> <!-- Burn the Ropes -->
-		<CustomBehavior File="ForcedMount" QuestId="30327" MountType="Flying" />
-<!-- Don't have the Rope ID Yet -->		<CustomBehavior File="InteractWith" QuestId="30327" ObjectType="Npc" MobId="34830" NumOfTimes="6" CollectionDistance="50" X="248.386" Y="1370.115" Z="341.1874" />
-										<CustomBehavior File="InteractWith" QuestId="30327" ObjectType="Npc" MobId="34830" NumOfTimes="6" CollectionDistance="50" X="189.0041" Y="1411.058" Z="371.0782" />
-										<CustomBehavior File="InteractWith" QuestId="30327" ObjectType="Npc" MobId="34830" NumOfTimes="6" CollectionDistance="50" X="135.1388" Y="1429.428" Z="362.6157" />
-										<CustomBehavior File="InteractWith" QuestId="30327" ObjectType="Npc" MobId="34830" NumOfTimes="6" CollectionDistance="50" X="44.10347" Y="1468.488" Z="355.7729" />
-										<CustomBehavior File="InteractWith" QuestId="30327" ObjectType="Npc" MobId="34830" NumOfTimes="6" CollectionDistance="50" X="-43.17735" Y="1439.456" Z="316.1052" />
-										<CustomBehavior File="InteractWith" QuestId="30327" ObjectType="Npc" MobId="34830" NumOfTimes="6" CollectionDistance="50" X="-78.4821" Y="1440.666" Z="300.5304" />
-										
-		<CustomBehavior File="ForcedDismount" />
-	</If>
 <!-- Andi -->
 	<If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Ella -->
 		<CustomBehavior File="FlyTo" X="344.4392" Y="1442.505" Z="423.3759" />
