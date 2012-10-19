@@ -314,4 +314,7 @@
 <Hotspot X="2116.231" Y="-402.9182" Z="468.0626" />
 <Hotspot X="2151.58" Y="-401.992" Z="455.1" />
 </Hotspots>
+<Blackspots>
+<Blackspot X="1359.836" Y="-511.6905" Z="349.0822" Radius="70.25237" />
+</Blackspots>
 </HBProfile>
