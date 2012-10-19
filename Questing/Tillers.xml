@@ -4,6 +4,7 @@ Ella "You Have To Burn The Ropes" - Do not know Rope ID
 Old Ironpaw "Chasing the Chicken" - Chicken Auras require manual cancel.
 ??? "Water, Water Everywhere" - It's a vehicle, requires manual targetting.
 Mudclaw, "Pest Problems" is too slow.
+Need to do Simian Sabotage
 -->
 <HBProfile>
 <Name>Tiller's Rep</Name>
@@ -63,7 +64,6 @@ Mudclaw, "Pest Problems" is too slow.
 		</Hotspots>
 		</Objective>
 	</Quest>
-<!-- Haohan Mudclaw -->
 
 <!-- Andi -->
 	<Quest Id="30474" Name="A Gift for Ella"> 
@@ -92,17 +92,17 @@ Mudclaw, "Pest Problems" is too slow.
 			</Hotspots>
 		</Objective>
 	</Quest>
-<!--	<Quest Id="30475" Name="A Gift for Fung"> 
-<Objective Type="CollectItem" ItemId="80233" CollectCount="1">
-<CollectFrom>
-<Mob Name="Kunzen Ritualist" Id="59123" />
-</CollectFrom>
-<Hotspots>
-<Hotspot X="195.6467" Y="1516.928" Z="427.4137" />
-<Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
-</Hotspots>
-</Objective>
-</Quest> -->
+	<Quest Id="30332" Name="Gift for Haohan"> 
+		<Objective Type="CollectItem" ItemId="80288" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Cattail Grouper" Id="59639" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="294.7198" Y="889.9475" Z="145.2052" />
+			<Hotspot X="405.8944" Y="1032.875" Z="143.8867" />
+		</Hotspots>
+		</Objective>
+	</Quest>
 <!-- Farmer Yoon -->
 	<Quest Id="30334" Name="Stealing is Bad... Re-Stealing is OK"> 
 		<Objective Type="CollectItem" ItemId="79821" CollectCount="12">
@@ -232,6 +232,11 @@ Do Quests
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="A Gift for Ella" QuestId="30474" Type="CollectItem" ItemId="79871" CollectCount="1" />
 	</If>
+	<If Condition="HasQuest(30477) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Haohan -->
+		<CustomBehavior File="FlyTo" X="294.7198" Y="889.9475" Z="145.2052" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Grouper Tooth" QuestId="30477" Type="CollectItem" ItemId="80228" CollectCount="1" />
+	</If>
 	<If Condition="HasQuest(30476) &amp;&amp; !IsQuestCompleted(30476)"> <!-- A Gift for Old Hillpaw -->
 		<CustomBehavior File="FlyTo" X="316.3763" Y="857.4071" Z="155.1287" />
 		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="You will need to manually cancel the chicken aura." />
@@ -276,6 +281,10 @@ Turn In Quests
 	<If Condition="((HasQuest(30474)) &amp;&amp; (IsQuestCompleted(30474)))" >
 		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
 		<TurnIn QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" />
+	</If>
+	<If Condition="((HasQuest(30477)) &amp;&amp; (IsQuestCompleted(30477)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+		<TurnIn QuestName="A Gift for Haohan" QuestId="30477" TurnInName="Haohan" TurnInId="57402" />
 	</If>
 <!-- Old Hillpaw -->
 	<If Condition="((HasQuest(30318)) &amp;&amp; (IsQuestCompleted(30318)))" >
