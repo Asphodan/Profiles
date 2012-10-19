@@ -2,6 +2,8 @@
 Incomplete:
 Ella "You Have To Burn The Ropes" - Do not know Rope ID
 Old Ironpaw "Chasing the Chicken" - Chicken Auras require manual cancel.
+??? "Water, Water Everywhere" - It's a vehicle, requires manual targetting.
+Mudclaw, "Pest Problems" is too slow.
 -->
 <HBProfile>
 <Name>Tiller's Rep</Name>
@@ -61,7 +63,7 @@ Old Ironpaw "Chasing the Chicken" - Chicken Auras require manual cancel.
 		</Hotspots>
 		</Objective>
 	</Quest>
-<!-- Old Hillpaw -->
+<!-- Haohan Mudclaw -->
 
 <!-- Andi -->
 	<Quest Id="30474" Name="A Gift for Ella"> 
@@ -151,6 +153,12 @@ Get Quests
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+<!-- Haohan Mudclaw -->
+	<While Condition="HasQuestAvailable(57402)" >
+		<CustomBehavior File="InteractWith"  MobId="57402" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Old Hillpaw -->
 	<While Condition="HasQuestAvailable(58707)" >
 		<CustomBehavior File="InteractWith"  MobId="58707" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
@@ -209,6 +217,15 @@ Do Quests
 		<Objective QuestName="Fatty Goatsteak" QuestId="30332" Type="CollectItem" ItemId="79864" CollectCount="4" />
 	</If>
 <!-- Ella -->
+<!-- Haohan Mudclaw -->
+	<If Condition="HasQuest(30319) &amp;&amp; !IsQuestCompleted(30319)"> <!-- Pest Problems -->
+		<CustomBehavior File="FlyTo" X="-94.52983" Y="1121.462" Z="171.5027" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith"  MobId="59532" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-92.06424" Y="1123.313" Z="173.4099" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="InteractWith" QuestId="30319" ObjectType="Npc" MobId="59530" NumOfTimes="25" CollectionDistance="100" X="-92.05967" Y="1125.195" Z="171.5" />
+<!-- 		<Objective QuestName="Pest Problems" QuestId="30319" Type="KillMob" MobId="59530" KillCount="25" /> -->
+	</If>
 <!-- Andi -->
 	<If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Ella -->
 		<CustomBehavior File="FlyTo" X="344.4392" Y="1442.505" Z="423.3759" />
@@ -248,7 +265,11 @@ Turn In Quests
 		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
 		<TurnIn QuestName="The Kunzen Legend-Chief" QuestId="30326" TurnInName="Fish Fellreed" TurnInId="58705" />
 	</If>
- <!-- Andi -->
+<!-- Haohan Mudclaw -->
+	<If Condition="((HasQuest(30319)) &amp;&amp; (IsQuestCompleted(30319)))" >
+		<TurnIn QuestName="Pest Problems" QuestId="30319" TurnInName="Haohan" TurnInId="57402" />
+	</If>
+<!-- Andi -->
 	<If Condition="((HasQuest(30476)) &amp;&amp; (IsQuestCompleted(30476)))" >
 		<TurnIn QuestName="A Gift For Old Hillpaw" QuestId="30476" TurnInName="Old Hillpaw" TurnInId="58707" />
 	</If>
