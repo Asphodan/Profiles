@@ -176,7 +176,7 @@ Virmen Overrides
 			</Hotspots>
 		</Objective>
 	</Quest>
-<!-- ??? -->
+<!-- Tina Mudclaw -->
 	<Quest Id="30323" Name="Don't Even Wear Them."> 
 		<Objective Type="CollectItem" ItemId="80138" CollectCount="1">
 			<CollectFrom>
@@ -212,12 +212,20 @@ Virmen Overrides
 			</Hotspots>
 		</Objective>
 	</Quest>
+<!-- Farmer Yoon -->
+	<Quest Id="30333" Name="Lesser of Two Evils">
+		<Objective Type="KillMob" MobId="59516" KillCount="1">
+			<Hotspots>
+				<Hotspot X="611.0577" Y="775.0985" Z="252.8003" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- 
 Get Quests
  -->
- <CustomBehavior File="FlyTo" DestName="Halfhill" X="-294.0206" Y="584.3316" Z="165.3191" />
+<CustomBehavior File="FlyTo" DestName="Halfhill" X="-294.0206" Y="584.3316" Z="165.3191" />
 <!-- Jogu First -->
 	<While Condition="HasQuestAvailable(58710)" >
 		<CustomBehavior File="InteractWith"  MobId="58710" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
@@ -390,7 +398,11 @@ Do Quests
 		<CustomBehavior File="FlyTo" X="486.868" Y="909.1344" Z="273.5185" />
 		<Objective QuestName="1000 Year Dumpling" QuestId="30328" Type="CollectItem" ItemId="80133" CollectCount="7" />
 	</If>
-	<If Condition="((HasQuest(30323)) &amp;&amp; (!IsQuestCompleted(29765)))" >
+	<If Condition="HasQuest(30333) &amp;&amp; !IsQuestCompleted(30333)"> <!-- Lesser of Two Evils -->
+		<RunTo DestName="Two Evils' Objective" QuestId="30335" X="611.0577" Y="775.0985" Z="252.8003" />
+		<Objective QuestName="Lesser of Two Evils" QuestId="30333" Type="KillMob" MobId="59516" KillCount="1" />
+	</If>
+	<If Condition="((HasQuest(30323)) &amp;&amp; (!IsQuestCompleted(29765)))" > <!-- Don't even Wear Them -->
 		<CustomBehavior File="FlyTo" X="486.868" Y="909.1344" Z="273.5185" />
 		<Objective QuestName="Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80138" CollectCount="1" />
 		<Objective QuestName="Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80137" CollectCount="1" />
@@ -447,6 +459,10 @@ Turn In Quests
 		<TurnIn QuestName="Chasing The Chicken" QuestId="30318" TurnInName="Old Hillpaw" TurnInId="58707" />
 	</If>
 <!-- Farmer Yoon -->
+	<If Condition="((HasQuest(30333)) &amp;&amp; (IsQuestCompleted(30333)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-294.0206" Y="584.3316" Z="165.3191" />
+		<TurnIn QuestName="Lesser of Two Evils" QuestId="30333" TurnInName="Farmer Yoon" TurnInId="58646" />
+	</If>
 	<If Condition="((HasQuest(30334)) &amp;&amp; (IsQuestCompleted(30334)))" >
 		<TurnIn QuestName="Stealing is bad... Re-Stealing is OK" QuestId="30334" TurnInName="Farmer Yoon" TurnInId="85646" />
 	</If>
