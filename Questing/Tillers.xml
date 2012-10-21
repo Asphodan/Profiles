@@ -14,7 +14,7 @@ Stalling the Ravage should come after all Hozen quests.
   
 <MinDurability>0.1</MinDurability>
 <MinFreeBagSlots>2</MinFreeBagSlots>
-  
+
 <MailGrey>False</MailGrey>
 <MailWhite>False</MailWhite>
 <MailGreen>True</MailGreen>
@@ -79,6 +79,16 @@ Stalling the Ravage should come after all Hozen quests.
 		</Hotspots>
 		</Objective>
 	</Quest>
+	    <Quest Name="A Gift For Sho" Id="9788">
+        <Objective Type="CollectItem" ItemId="79870" CollectCount="1">
+            <CollectFrom>
+                <GameObject Name="Ikeyen's Belongings" Id="210873" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="193.8394" Y="1517.659" Z="427.4148" />
+            </Hotspots>
+        </Objective>
+    </Quest>
 	<Quest Id="30476" Name="A Gift For Old Hillpaw">
 		<Objective Type="CollectItem" ItemId="80229" CollectCount="1">
 			<CollectFrom>
@@ -155,7 +165,7 @@ Stalling the Ravage should come after all Hozen quests.
 <!-- 
 Get Quests
  -->
- <CustomBehavior File="FlyTo" DestName="Halfhill" X="-254.546" Y="601.0397" Z="167.5479" />
+ <CustomBehavior File="FlyTo" DestName="Halfhill" X="-241.8487" Y="592.7608" Z="167.5478" />
 <!-- Jogu First -->
 	<While Condition="HasQuestAvailable(58710)" >
 		<CustomBehavior File="InteractWith"  MobId="58710" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
@@ -226,13 +236,31 @@ Get Quests
 Do Quests
  -->
 <!-- Skyrange - Monkey Statue -->
-<!--	<If Condition="HasQuest(30472) &amp;&amp; !IsQuestCompleted(30472)">
+<!-- A Gift For Sho -->
+<!--	<If Condition="HasQuest(30472) &amp;&amp; !IsQuestCompleted(30472)"> 
 		<CustomBehavior File="FlyTo" X="193.8394" Y="1517.659" Z="427.4148" />
 		<CustomBehavior File="ForcedDismount" />
-		<Objective QuestName="A Gift For Sho" QuestId="30472" Type="UseObject" ObjectId="210873" UseCount="1" />
-		<CustomBehavior File="UseObject" QuestId="30472" ObjectId="210873" UseCount="1" X="193.8394" Y="1517.659" Z="427.4148" /> 
+		<Objective Type="CollectItem" ItemId="79870" CollectCount="1">
+			<CollectFrom>
+				<GameObject Id="210873" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="193.8394" Y="1517.659" Z="427.4148" />
+			</Hotspots>
+		</Objective>
 	</If> -->
- <!-- Anthea Ironpaw -->
+<!--		<Objective QuestName="A Gift For Sho" QuestId="30472" Type="UseObject" ObjectId="210873" UseCount="1" /> -->
+<!--		<CustomBehavior File="UseObject" QuestId="30472" ObjectId="210873" UseCount="1" X="193.8394" Y="1517.659" Z="427.4148" /> -->
+	<If Condition="HasQuest(30325) &amp;&amp; !IsQuestCompleted(30325)"> <!-- Where It Counts -->
+		<CustomBehavior File="FlyTo" X="193.8394" Y="1517.659" Z="427.4148" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseGameObject" QuestId="30325" ObjectId="210955" NumOfTimes="8" X="193.8394" Y="1517.659" Z="427.4148" />
+		<CustomBehavior File="UseGameObject" QuestId="30325" ObjectId="210890" NumOfTimes="4" X="193.8394" Y="1517.659" Z="427.4148" />
+			<If Condition="HasQuest(30325) &amp;&amp; !IsQuestCompleted(30325)">
+				<CustomBehavior File="FlyTo" DestName="Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
+			</If>
+	</If>
+		<!-- Anthea Ironpaw -->
  	<If Condition="HasQuest(30329) &amp;&amp; !IsQuestCompleted(30329)"> <!-- Cindergut Peppers -->
 		<CustomBehavior File="FlyTo" X="195.6467" Y="1516.928" Z="427.4137" />
 		<Objective QuestName="Cindergut Peppers" QuestId="30329" Type="CollectItem" ItemId="79864" CollectCount="4" />
@@ -303,8 +331,13 @@ Do Quests
 <!-- 
 Turn In Quests
  -->
- <!--  Market Center -->
- <!-- Anthea Ironpaw -->
+<!-- Jogu -->
+	<If Condition="((HasQuest(30321)) &amp;&amp; (IsQuestCompleted(30321)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
+		<TurnIn QuestName="Weed War II" QuestId="30321" TurnInName="Jogu The Drunk" TurnInId="58710" />
+	</If>
+<!--  Market Center -->
+<!-- Anthea Ironpaw -->
   	<If Condition="((HasQuest(30329)) &amp;&amp; (IsQuestCompleted(30329)))" >
 		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
 		<TurnIn QuestName="Cindergut Peppers" QuestId="30329" TurnInName="Anthea Ironpaw" TurnInId="58713" />
