@@ -396,7 +396,7 @@ Do Quests
 <!-- Virmin Quests -->
 	<If Condition="HasQuest(30328) &amp;&amp; !IsQuestCompleted(30328)"> <!-- 1000 Dumpling -->
 		<CustomBehavior File="FlyTo" X="486.868" Y="909.1344" Z="273.5185" />
-		<Objective QuestName="1000 Year Dumpling" QuestId="30328" Type="CollectItem" ItemId="80133" CollectCount="7" />
+		<CustomBehavior File="InteractWith" QuestId="30328" ObjectType="Gameobject" MobId="210957" NumOfTimes="7" X="599.8107" Y="806.7578" Z="254.6263" />
 	</If>
 	<If Condition="HasQuest(30333) &amp;&amp; !IsQuestCompleted(30333)"> <!-- Lesser of Two Evils -->
 		<RunTo DestName="Two Evils' Objective" QuestId="30335" X="611.0577" Y="775.0985" Z="252.8003" />
