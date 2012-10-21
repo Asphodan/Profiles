@@ -69,14 +69,47 @@ Do Quests
 		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
 		<Objective QuestName="Brain Food" QuestId="31238" Type="CollectItem" ItemId="85665" CollectCount="4" />
 	</If>
+<!-- East -->
+<!-- Ancient Empire goes first. -->
+	<If Condition="HasQuest(31231) &amp;&amp; !IsQuestCompleted(31231)"> <!-- Dreadspinner Extermination -->
+		<CustomBehavior File="FlyTo" X="589.1747" Y="2233.863" Z="307.4598" />
+		<Objective QuestName="Deadspinner Extermination" QuestId="31231" Type="KillMob" MobId="61981" KillCount="8" />
+	</If>
+	<If Condition="HasQuest(31234) &amp;&amp; !IsQuestCompleted(31234)"> <!-- Putting An Eye Out -->
+		<CustomBehavior File="FlyTo" X="-1.856784" Y="2474.058" Z="161.4677" />
+		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" /> 
+		<Objective QuestName="Putting An Eye Out" QuestId="31234" Type="CollectItem" ItemId="85635" CollectCount="1" />
+	</If>
+<!-- South East -->
+	<If Condition="HasQuest(31024) &amp;&amp; !IsQuestCompleted(31024)"> <!-- Kunchong Treats -->
+		<CustomBehavior File="FlyTo" X="-569.7761" Y="2887.638" Z="162.0235" />
+		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
+		<Objective QuestName="Kunchong Treats" QuestId="31024" Type="CollectItem" ItemId="82869" CollectCount="4" />
+	</If>
 <!-- Turn In Quests -->
+<!-- Kaz'tik -->
 	<If Condition="((HasQuest(31238)) &amp;&amp; (IsQuestCompleted(31238)))" >
 		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
-		<TurnIn QuestName="Kunzen Hunter-Chief" QuestId="31238" TurnInName="Farmer Yoon" TurnInId="63758" />
+		<TurnIn QuestName="Brain Food" QuestId="31238" TurnInName="Kaz'tik" TurnInId="63758" />
+	</If>
+	<If Condition="((HasQuest(31024)) &amp;&amp; (IsQuestCompleted(31024)))" >
+		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
+		<TurnIn QuestName="Kunchnog Treats" QuestId="31024" TurnInName="Kaz'tik" TurnInId="63758" />
+	</If>
+<!-- Kil'ruk -->
+	<If Condition="((HasQuest(31231)) &amp;&amp; (IsQuestCompleted(31231)))" >
+		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
+		<TurnIn QuestName="Dreadspinner Extermination" QuestId="31231" TurnInName="Kaz'tik" TurnInId="62538" />
+	</If>
+<!-- Dissector -->
+	<If Condition="((HasQuest(31234)) &amp;&amp; (IsQuestCompleted(31234)))" >
+		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
+		<TurnIn QuestName="An Eye Out" QuestId="31234" TurnInName="Dissector" TurnInId="63072" />
 	</If>
 </QuestOrder>
 
 <!-- Behavior Overrides -->
+<!-- Kaz'tik -->
 	<Quest Id="31238" Name="Brain Food"> 
 		<Objective Type="CollectItem" ItemId="85665" CollectCount="4">
 		<CollectFrom>
@@ -88,6 +121,43 @@ Do Quests
 			<Hotspot X="633.8555" Y="3109.821" Z="239.6317" />
 			<Hotspot X="582.1223" Y="3214.171" Z="267.3114" />
 			<Hotspot X="498.5069" Y="3204.416" Z="263.6812" />
+		</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="31024" Name="Kuchanog Treats"> 
+		<Objective Type="CollectItem" ItemId="82869" CollectCount="4">
+		<CollectFrom>
+			<Mob Name="Chillwater Turtle" Id="62160" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-569.7761" Y="2887.638" Z="162.0235" />
+			<Hotspot X="-472.7501" Y="2760.742" Z="153.2694" />
+			<Hotspot X="-436.4201" Y="2662.086" Z="162.3793" />
+			<Hotspot X="-386.349" Y="2857.041" Z="146.8262" />
+		</Hotspots>
+		</Objective>
+	</Quest>
+<!-- Kil'ruk -->
+	<Quest Id="31231" Name="Dreadspinner Extermination">
+		<Objective Type="KillMob" MobId="61981" KillCount="8">
+			<Hotspots>
+				<Hotspot X="589.1747" Y="2233.863" Z="307.4598" />
+				<Hotspot X="541.386" Y="2174.431" Z="312.2931" />
+				<Hotspot X="653.0735" Y="2187.686" Z="321.0453" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- Dissector -->
+	<Quest Id="31238" Name="An Eye Out"> 
+		<Objective Type="CollectItem" ItemId="85635" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Mire Beast" Id="63731" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="18.58822" Y="2470.097" Z="149.6912" />
+			<Hotspot X="186.9192" Y="2487.133" Z="153.2377" />
+			<Hotspot X="155.1563" Y="2645.859" Z="153.1199" />
+			<Hotspot X="-15.82887" Y="2595.841" Z="152.5127" />
 		</Hotspots>
 		</Objective>
 	</Quest>
