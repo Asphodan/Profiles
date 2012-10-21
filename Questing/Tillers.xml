@@ -159,6 +159,10 @@ Stalling the Ravage should come after all Hozen quests.
 		</Hotspots>
 		</Objective>
 	</Quest>
+
+<!-- 
+Virmen Overrides
+ -->
 <!-- ??? --> 
 	<Quest Id="30328" Name="Thousand Year Dumpling">
 		<Objective Type="CollectItem" ItemId="80133" CollectCount="7">
@@ -172,7 +176,43 @@ Stalling the Ravage should come after all Hozen quests.
 			</Hotspots>
 		</Objective>
 	</Quest>
-	<!-- End of Quest Overrides -->
+<!-- ??? -->
+	<Quest Id="30323" Name="Don't Even Wear Them."> 
+		<Objective Type="CollectItem" ItemId="80138" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Springtail Trapper" Id="59513" />
+				<Mob Name="Springtail Burrower" Id="59514" />
+				<Mob Name="Springtail Littlewhisker" Id="59515" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="500.8348" Y="963.9772" Z="281.244" />
+				<Hotspot X="597.6837" Y="916.4431" Z="247.5718" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="80137" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Springtail Trapper" Id="59513" />
+				<Mob Name="Springtail Burrower" Id="59514" />
+				<Mob Name="Springtail Littlewhisker" Id="59515" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="500.8348" Y="963.9772" Z="281.244" />
+				<Hotspot X="597.6837" Y="916.4431" Z="247.5718" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="80139" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Springtail Trapper" Id="59513" />
+				<Mob Name="Springtail Burrower" Id="59514" />
+				<Mob Name="Springtail Littlewhisker" Id="59515" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="500.8348" Y="963.9772" Z="281.244" />
+				<Hotspot X="597.6837" Y="916.4431" Z="247.5718" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- 
 Get Quests
@@ -211,6 +251,12 @@ Get Quests
 <!-- Jian Ironpaw -->
 	<While Condition="HasQuestAvailable(58716)" >
 		<CustomBehavior File="InteractWith"  MobId="58716" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Tina Mudclaw -->
+	<While Condition="HasQuestAvailable(58761)" >
+		<CustomBehavior File="InteractWith"  MobId="58761" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
@@ -344,7 +390,12 @@ Do Quests
 		<CustomBehavior File="FlyTo" X="486.868" Y="909.1344" Z="273.5185" />
 		<Objective QuestName="1000 Year Dumpling" QuestId="30328" Type="CollectItem" ItemId="80133" CollectCount="7" />
 	</If>
-
+	<If Condition="((HasQuest(30323)) &amp;&amp; (!IsQuestCompleted(29765)))" >
+		<CustomBehavior File="FlyTo" X="486.868" Y="909.1344" Z="273.5185" />
+		<Objective QuestName="Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80138" CollectCount="1" />
+		<Objective QuestName="Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80137" CollectCount="1" />
+		<Objective QuestName="Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80139" CollectCount="1" />
+	</If>
 <!-- 
 Turn In Quests
  -->
@@ -368,6 +419,11 @@ Turn In Quests
  	<If Condition="((HasQuest(30326)) &amp;&amp; (IsQuestCompleted(30326)))" >
 		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
 		<TurnIn QuestName="The Kunzen Legend-Chief" QuestId="30326" TurnInName="Fish Fellreed" TurnInId="58705" />
+	</If>
+<!-- Tina Mudclaw -->
+ 	<If Condition="((HasQuest(30323)) &amp;&amp; (IsQuestCompleted(30323)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+		<TurnIn QuestName="Don't Even Wear Them" QuestId="30323" TurnInName="Kol Ironpaw" TurnInId="58761" />
 	</If>
 <!-- Haohan Mudclaw -->
 	<If Condition="((HasQuest(30319)) &amp;&amp; (IsQuestCompleted(30319)))" >
