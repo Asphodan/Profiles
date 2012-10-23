@@ -245,9 +245,27 @@ Get Quests
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+<!-- Chee Chee -->
+	<While Condition="HasQuestAvailable(58709)" >
+		<CustomBehavior File="InteractWith"  MobId="58709" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Haohan Mudclaw -->
 	<While Condition="HasQuestAvailable(57402)" >
 		<CustomBehavior File="InteractWith"  MobId="57402" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Farmer Fung -->
+	<While Condition="HasQuestAvailable(57298)" >
+		<CustomBehavior File="InteractWith"  MobId="57298" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Mei Mei Ironpaw -->
+	<While Condition="HasQuestAvailable(58714)" >
+		<CustomBehavior File="InteractWith"  MobId="58714" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
@@ -379,6 +397,7 @@ Do Quests
 	</If>
 <!-- Farmer Yoon -->
 	<If Condition="HasQuest(30334) &amp;&amp; !IsQuestCompleted(30334)"> <!-- Stealing is bad -->
+		<CustomBehavior File="FlyTo" X="468.8315" Y="1324.299" Z="388.3697" />
 		<Objective QuestName="Stealing is Bad.. Re-Stealing is OK" QuestId="30334" Type="CollectItem" ItemId="79824" CollectCount="1" />
 	</If>
 	<If Condition="HasQuest(30336) &amp;&amp; !IsQuestCompleted(30336)"> <!-- Kunzen Hunter-Chief -->
@@ -465,10 +484,11 @@ Turn In Quests
 		<TurnIn QuestName="Lesser of Two Evils" QuestId="30333" TurnInName="Farmer Yoon" TurnInId="58646" />
 	</If>
 	<If Condition="((HasQuest(30334)) &amp;&amp; (IsQuestCompleted(30334)))" >
-		<CustomBehavior File="FlyTo" DestName="Stealing Quest Area" X="193.8394" Y="1517.659" Z="427.4148" />
-		<TurnIn QuestName="Stealing is bad... Re-Stealing is OK" QuestId="30334" TurnInName="Farmer Yoon" TurnInId="85646" />
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-294.0206" Y="584.3316" Z="165.3191" />
+		<TurnIn QuestName="Stealing is bad... Re-Stealing is OK" QuestId="30334" TurnInName="Farmer Yoon" TurnInId="58646" />
 	</If>
 	<If Condition="((HasQuest(30336)) &amp;&amp; (IsQuestCompleted(30336)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-294.0206" Y="584.3316" Z="165.3191" />
 		<TurnIn QuestName="Kunzen Hunter-Chief" QuestId="30336" TurnInName="Farmer Yoon" TurnInId="58646" />
 	</If>
 	<If Condition="((HasQuest(30335)) &amp;&amp; (IsQuestCompleted(30335)))" >
