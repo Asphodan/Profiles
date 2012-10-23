@@ -176,6 +176,7 @@ Virmen Overrides
 			</Hotspots>
 		</Objective>
 	</Quest>
+
 <!-- Tina Mudclaw -->
 	<Quest Id="30323" Name="Don't Even Wear Them."> 
 		<Objective Type="CollectItem" ItemId="80138" CollectCount="1">
@@ -389,14 +390,14 @@ Do Quests
 		<UseItem ItemId="79885" QuestName="Simian Sabotage" QuestId="30337" X="417.1463" Y="1417.576" Z="430.1993" />
 	</If>
 <!-- Miscs Quests -->
-	<If Condition="HasQuest(30335) &amp;&amp; !IsQuestCompleted(30335)"> <!-- Simian Sabotage -->
+	<If Condition="HasQuest(30335) &amp;&amp; !IsQuestCompleted(30335)"> <!-- Stalling The Ravage -->
 		<CustomBehavior File="FlyTo" X="134.2794" Y="1542.252" Z="418.6581" />
 		<Objective QuestName="Stalling the Ravage" QuestId="30335" Type="KillMob" MobId="59119" KillCount="12" />
 	</If>
 <!-- Virmin Quests -->
 	<If Condition="HasQuest(30328) &amp;&amp; !IsQuestCompleted(30328)"> <!-- 1000 Dumpling -->
 		<CustomBehavior File="FlyTo" X="486.868" Y="909.1344" Z="273.5185" />
-		<CustomBehavior File="InteractWith" QuestId="30328" ObjectType="Gameobject" MobId="210957" NumOfTimes="7" X="599.8107" Y="806.7578" Z="254.6263" />
+		<CustomBehavior File="CollectItem" QuestId="30328" ObjectType="Gameobject" MobId="210957" NumOfTimes="7" X="599.8107" Y="806.7578" Z="254.6263" />
 	</If>
 	<If Condition="HasQuest(30333) &amp;&amp; !IsQuestCompleted(30333)"> <!-- Lesser of Two Evils -->
 		<RunTo DestName="Two Evils' Objective" QuestId="30335" X="611.0577" Y="775.0985" Z="252.8003" />
@@ -413,7 +414,7 @@ Turn In Quests
  -->
 <!-- Jogu -->
 	<If Condition="((HasQuest(30321)) &amp;&amp; (IsQuestCompleted(30321)))" >
-		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
+		<CustomBehavior File="FlyTo" DestName="30321 Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
 		<TurnIn QuestName="Weed War II" QuestId="30321" TurnInName="Jogu The Drunk" TurnInId="58710" />
 	</If>
 <!--  Market Center -->
@@ -464,6 +465,7 @@ Turn In Quests
 		<TurnIn QuestName="Lesser of Two Evils" QuestId="30333" TurnInName="Farmer Yoon" TurnInId="58646" />
 	</If>
 	<If Condition="((HasQuest(30334)) &amp;&amp; (IsQuestCompleted(30334)))" >
+		<CustomBehavior File="FlyTo" DestName="Stealing Quest Area" X="193.8394" Y="1517.659" Z="427.4148" />
 		<TurnIn QuestName="Stealing is bad... Re-Stealing is OK" QuestId="30334" TurnInName="Farmer Yoon" TurnInId="85646" />
 	</If>
 	<If Condition="((HasQuest(30336)) &amp;&amp; (IsQuestCompleted(30336)))" >
