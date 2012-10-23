@@ -21,10 +21,12 @@
 
 <Vendors>
 <Vendor Name="Supplier Xin" Entry="62737" Type="Repair" X="2419.361" Y="3007.01" Z="417.3719" />
+<Vendor Name="The Metal Paw" Entry="61749" Type="Repair" X="1769.724" Y="372.217" Z="478.2638" />
 </Vendors>
 
 <Mailboxes>
 <Mailbox X="2352.375" Y="2994.757" Z="421.2402" />
+
 </Mailboxes>
 
 <Hotspots>

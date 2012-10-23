@@ -55,7 +55,7 @@
     <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Valley of the Four Winds(86-87)[Cava]" />
   </If>
   <If Condition="(Me.LevelFraction &gt;= 85)" >
-    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]The Jade Forest(85-86)[Cava]" />
+    <CustomBehavior File="LoadProfile" ProfileName="\Cava\Scripts\[A-Quest]The Jade Forest(85-86)[Cava]" />
   </If>
 	<If Condition="Me.Race == WoWRace.Human">
  	  <If Condition="(Me.LevelFraction &gt;= 7.2)" >
