@@ -1,0 +1,45 @@
+<HBProfile>
+  <Name></Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+  
+  <MinLevel>1</MinLevel>
+  <MaxLevel>86</MaxLevel>
+  <Factions>99999</Factions>
+  
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+ 
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+	<Vendors>
+
+	</Vendors>
+	
+	<Mailboxes>
+
+	</Mailboxes>
+
+  <Hotspots>
+    <Hotspot X="1878.867" Y="-948.5833" Z="80" />
+    <Hotspot X="1984.933" Y="-1541.553" Z="80" />
+    <Hotspot X="2397.733" Y="-1459.853" Z="80" />
+    <Hotspot X="2671.787" Y="-1852.443" Z="80" />
+    <Hotspot X="2387.413" Y="-2048.523" Z="80" />
+    <Hotspot X="2147.76" Y="-1804.713" Z="80" />
+    <Hotspot X="1911.547" Y="-2153.013" Z="80" />
+    <Hotspot X="2171.84" Y="-2516.363" Z="80" />
+    <Hotspot X="1710.88" Y="-2526.683" Z="80" />
+    <Hotspot X="1607.68" Y="-2159.463" Z="80" />
+    <Hotspot X="1361.147" Y="-1884.693" Z="80" />
+    <Hotspot X="1194.88" Y="-1402.233" Z="80" />
+    <Hotspot X="1233.867" Y="-944.2833" Z="80" />
+  </Hotspots>
+</HBProfile>
