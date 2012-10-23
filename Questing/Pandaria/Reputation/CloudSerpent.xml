@@ -30,36 +30,43 @@
 	<AvoidMobs>
 	</AvoidMobs>
 
-	<Quest Id="31704" Name="Pooped">
-		<Objective Type="CollectItem" ItemId="89052" CollectCount="5">
-			<CollectFrom>
-				<Mob Name="Giant Siftworm" Entry="67084" />
-				<Mob Name="Siftworm" Entry="65711" />
-			</CollectFrom>
-			<Hotspots>
-				<Hotspot X="1485.648" Y="-2360.739" Z="154.8382" />			
-			</Hotspots>
+<QuestOrder>
+<CustomBehavior File="FlyTo" DestName="Arborteum" X="136.1074" Y="3219.246" Z="214.9966" />
+<!-- Get Quests  -->
+<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
+<!-- Kil'ruk -->
+	<While Condition="HasQuestAvailable(62538)" >
+		<CustomBehavior File="InteractWith"  MobId="62538" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- 
+Do Quests
+ -->
+ <!-- North Central -->
+	<If Condition="HasQuest(31238) &amp;&amp; !IsQuestCompleted(31238)"> <!-- Fatty Goatsteak -->
+		<CustomBehavior File="FlyTo" X="498.5069" Y="3204.416" Z="263.6812" />
+		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
+		<Objective QuestName="Brain Food" QuestId="31238" Type="CollectItem" ItemId="85665" CollectCount="4" />
+	</If>
+
+</QuestOrder>
+
+<!-- Behavior Overrides -->
+<!-- Kaz'tik -->
+	<Quest Id="31238" Name="Brain Food"> 
+		<Objective Type="CollectItem" ItemId="85665" CollectCount="4">
+		<CollectFrom>
+			<Mob Name="Stout Stafhorn" Id="59139" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="435.805" Y="3071.331" Z="270.4317" />
+			<Hotspot X="537.5179" Y="3037.344" Z="264.6354" />
+			<Hotspot X="633.8555" Y="3109.821" Z="239.6317" />
+			<Hotspot X="582.1223" Y="3214.171" Z="267.3114" />
+			<Hotspot X="498.5069" Y="3204.416" Z="263.6812" />
+		</Hotspots>
 		</Objective>
 	</Quest>
-	
-	<QuestOrder>
-	
-		<CustomBehavior File="UserSettings" LootMobs="True" PullDistance="10"  />
-			<!-- Pickup the quests -->
-			<While Condition="HasQuestAvailable(31704)" >
-				<CustomBehavior File="InteractWith" MobId="65669" NumOfTimes="1" CollectionDistance="500" WaitTime="1000" X="1541.55" Y="-2565.50" Z="152.30" />
-				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" NumOfTimes="1" WaitTime="1000" />
-				<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" NumOfTimes="1" WaitTime="1000" />
-			</While>
-			<!-- Objectives -->
-		
-			<If Condition="((HasQuest(31704)) &amp;&amp; (!IsQuestCompleted(31704)))" >
-				<Objective QuestName="Pooped" QuestId="31704" Type="CollectItem" ItemId="89052" CollectCount="5" />
-			</If>
-			<!-- Turnin Quests -->
-			<If Condition="((HasQuest(31704)) &amp;&amp; (IsQuestCompleted(31704)))" >
-		<TurnIn QuestName="Pooped" QuestId="31704" TurnInName="Your Hatchling" TurnInId="65669" />
-			</If>
-            </QuestOrder>
-
 </HBProfile>
