@@ -78,7 +78,7 @@ Stalling the Ravage should come after all Hozen quests.
 		</Hotspots>
 		</Objective>
 	</Quest>
-	<Quest Name="A Gift For Sho" Id="9788">
+	<Quest Id="9788" Name="A Gift For Sho">
         <Objective Type="CollectItem" ItemId="79870" CollectCount="1">
             <CollectFrom>
                 <GameObject Name="Ikeyen's Belongings" Id="210873" />
@@ -176,7 +176,6 @@ Virmen Overrides
 			</Hotspots>
 		</Objective>
 	</Quest>
-
 <!-- Tina Mudclaw -->
 	<Quest Id="30323" Name="Don't Even Wear Them."> 
 		<Objective Type="CollectItem" ItemId="80138" CollectCount="1">
@@ -339,11 +338,9 @@ Do Quests
 	<If Condition="HasQuest(30325) &amp;&amp; !IsQuestCompleted(30325)"> <!-- Where It Counts -->
 		<CustomBehavior File="FlyTo" X="193.8394" Y="1517.659" Z="427.4148" />
 		<CustomBehavior File="ForcedDismount" />
+		<Objective Type="KillMob" QuestName="Where It Counts" QuestId="30325"  MobId="59123" KillCount="1" />
 		<CustomBehavior File="UseGameObject" QuestId="30325" ObjectId="210955" NumOfTimes="8" X="193.8394" Y="1517.659" Z="427.4148" />
 		<CustomBehavior File="UseGameObject" QuestId="30325" ObjectId="210890" NumOfTimes="4" X="193.8394" Y="1517.659" Z="427.4148" />
-			<If Condition="HasQuest(30325) &amp;&amp; !IsQuestCompleted(30325)">
-				<CustomBehavior File="FlyTo" DestName="Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
-			</If>
 	</If>
 		<!-- Anthea Ironpaw -->
  	<If Condition="HasQuest(30329) &amp;&amp; !IsQuestCompleted(30329)"> <!-- Cindergut Peppers -->
@@ -368,7 +365,14 @@ Do Quests
 		<CustomBehavior File="ForcedMount" QuestId="30332" MountType="Flying" />
 		<Objective QuestName="Fatty Goatsteak" QuestId="30332" Type="CollectItem" ItemId="79864" CollectCount="4" />
 	</If>
-<!-- Ella -->
+<!-- Sho -->
+	<If Condition="HasQuest(30325) &amp;&amp; !IsQuestCompleted(30325)"> <!-- Where It Counts -->
+		<CustomBehavior File="FlyTo" X="-94.52983" Y="1121.462" Z="171.5027" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith"  MobId="59532" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-92.06424" Y="1123.313" Z="173.4099" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="InteractWith" QuestId="30319" ObjectType="Npc" MobId="59530" NumOfTimes="25" CollectionDistance="100" X="-92.05967" Y="1125.195" Z="171.5" />
+	</If>
 <!-- Haohan Mudclaw -->
 	<If Condition="HasQuest(30319) &amp;&amp; !IsQuestCompleted(30319)"> <!-- Pest Problems -->
 		<CustomBehavior File="FlyTo" X="-94.52983" Y="1121.462" Z="171.5027" />
@@ -411,7 +415,7 @@ Do Quests
 <!-- Miscs Quests -->
 	<If Condition="HasQuest(30335) &amp;&amp; !IsQuestCompleted(30335)"> <!-- Stalling The Ravage -->
 		<CustomBehavior File="FlyTo" X="134.2794" Y="1542.252" Z="418.6581" />
-		<Objective QuestName="Stalling the Ravage" QuestId="30335" Type="KillMob" MobId="59119" KillCount="12" />
+		<Objective QuestName="Stalling the Ravage" QuestId="30335" Type="KillMob" MobId="59121" KillCount="12" />
 	</If>
 <!-- Virmin Quests -->
 	<If Condition="HasQuest(30328) &amp;&amp; !IsQuestCompleted(30328)"> <!-- 1000 Dumpling -->
