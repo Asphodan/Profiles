@@ -1412,7 +1412,7 @@
   <CustomBehavior File="WaitTimer" WaitTime="39000" />
   <TurnIn QuestName="Overthrone" QuestId="31782" TurnInName="Klaxxi'va Vor" TurnInId="62519" X="193.9323" Y="3189.923" Z="214.4029" />
 </If>
-<CheckPoint Level="86" />
+<CheckPoint Level="90" />
   <RunTo X="896.453" Y="334.351" Z="506.085" />
 	<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Congratulations, you have reached Level 90!\n\n
 	Hope you enjoyed all this profiles.\n
