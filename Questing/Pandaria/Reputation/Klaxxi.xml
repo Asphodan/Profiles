@@ -1,4 +1,5 @@
 <!-- Notes
+A Little Brain Work - UseItem on scorpion?
 Incomplete:
 -->
 <HBProfile>
@@ -64,52 +65,155 @@ Incomplete:
 Do Quests
  -->
  <!-- North Central -->
-	<If Condition="HasQuest(31238) &amp;&amp; !IsQuestCompleted(31238)"> <!-- Fatty Goatsteak -->
+	<If Condition="HasQuest(31238) &amp;&amp; !IsQuestCompleted(31238)"> <!-- Brain Food -->
 		<CustomBehavior File="FlyTo" X="498.5069" Y="3204.416" Z="263.6812" />
 		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
 		<Objective QuestName="Brain Food" QuestId="31238" Type="CollectItem" ItemId="85665" CollectCount="4" />
 	</If>
 <!-- East -->
 <!-- Ancient Empire goes first. -->
+	<If Condition="((HasQuest(31232)) &amp;&amp; (!IsQuestCompleted(31232)))" > <!-- Ancient Empire -->
+		<CustomBehavior File="FlyTo" X="20.35941" Y="2313.101" Z="204.6583"  />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="An Ancient Empire" QuestId="31232" Type="Collect" CollectCount="8" ItemId="213314" ObjectType="GameObject" CollectionDistance="20000" />
+	</If>
 	<If Condition="HasQuest(31231) &amp;&amp; !IsQuestCompleted(31231)"> <!-- Dreadspinner Extermination -->
 		<CustomBehavior File="FlyTo" X="589.1747" Y="2233.863" Z="307.4598" />
 		<Objective QuestName="Deadspinner Extermination" QuestId="31231" Type="KillMob" MobId="61981" KillCount="8" />
 	</If>
+<!--	<If Condition="((HasQuest(31233)) &amp;&amp; (!IsQuestCompleted(31233)))" >  Sap Tapping 
+		<CustomBehavior File="FlyTo" X="20.35941" Y="2313.101" Z="204.6583"  />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Sap Tapping" QuestId="31233" Type="Collect" CollectCount="6" ItemId="63740" ObjectType="GameObject" CollectionDistance="20000" />
+	</If> -->
 	<If Condition="HasQuest(31234) &amp;&amp; !IsQuestCompleted(31234)"> <!-- Putting An Eye Out -->
 		<CustomBehavior File="FlyTo" X="-1.856784" Y="2474.058" Z="161.4677" />
 		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" /> 
 		<Objective QuestName="Putting An Eye Out" QuestId="31234" Type="CollectItem" ItemId="85635" CollectCount="1" />
 	</If>
-<!-- South East -->
-	<If Condition="HasQuest(31024) &amp;&amp; !IsQuestCompleted(31024)"> <!-- Kunchong Treats -->
+	<If Condition="((HasQuest(31235)) &amp;&amp; (!IsQuestCompleted(31235)))" > <!-- Nope Nope Nope -->
+		<CustomBehavior File="FlyTo" X="634.8793" Y="2331.431" Z="299.6941" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="((HasQuest(31235)) &amp;&amp; (!IsQuestCompleted(31235)))" >
+			<CustomBehavior File="UseItemOn" QuestId="31235" MobId="62077" ItemId="82807" Range="10"/>
+		</While>
+	</If>
+<!-- Lake Of Stars -->
+	<If Condition="((HasQuest(31267)) &amp;&amp; (!IsQuestCompleted(31267)))" > <!-- Mistblade Destruction -->
+		<CustomBehavior File="FlyTo"  X="-928.704" Y="2568.085" Z="143.7247"  />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Mistblade Destruction" QuestId="31267" Type="KillMob" MobId="61970" KillCount="1"/>
+	</If>
+	<If Condition="((HasQuest(31269)) &amp;&amp; (!IsQuestCompleted(31269)))" > <!-- Scale-Lord -->
+		<CustomBehavior File="FlyTo"  X="-928.704" Y="2568.085" Z="143.7247"  />
+		<CustomBehavior File="ForcedDismount" />
+		<RunTo  X="-859.3045" Y="2566.746" Z="132.55"   />
+		<RunTo  X="-923.0015" Y="2578.523" Z="101.9503"  />
+		<Objective QuestName="The Scale-Lord" QuestId="31269" Type="KillMob" MobId="63179" KillCount="1"/>
+	</If>
+	<If Condition="((HasQuest(31268)) &amp;&amp; (!IsQuestCompleted(31268)))" > <!-- Brain Work -->
+		<CustomBehavior File="FlyTo"  X="-901.7958" Y="2837.85" Z="113.4554" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="((HasQuest(31268)) &amp;&amp; (!IsQuestCompleted(31268)))" >
+			<CustomBehavior File="UseItemOn" QuestId="31268" MobId="63728" ItemId="85884" Range="10"/>
+		</While>
+	</If>
+	<If Condition="((HasQuest(31271)) &amp;&amp; (!IsQuestCompleted(31271)))" > <!-- Bad Genes -->
+		<CustomBehavior File="FlyTo"  X="-901.7958" Y="2837.85" Z="113.4554" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Bad Genes" QuestId="31271" Type="KillMob" MobId="63257" KillCount="3"/>
+		<Objective QuestName="Bad Genes" QuestId="31271" Type="KillMob" MobId="63176" KillCount="6"/>
+	</If>
+	<If Condition="((HasQuest(31024)) &amp;&amp; (!IsQuestCompleted(31024)))" > <!-- Kunchong Treats -->
+		<CustomBehavior File="FlyTo"  X="-348.6569" Y="3069.909" Z="186.9638" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Kunchong Treats" QuestId="31024" Type="Collect" CollectCount="4" ItemId="82869" />
+	</If>
+<!-- South West -->
+	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)"> <!-- Fear Takes Rot -->
 		<CustomBehavior File="FlyTo" X="-569.7761" Y="2887.638" Z="162.0235" />
 		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
-		<Objective QuestName="Kunchong Treats" QuestId="31024" Type="CollectItem" ItemId="82869" CollectCount="4" />
+		<Objective QuestName="Fear Takes Root" QuestId="31509" Type="UseObject" ObjectId="65242" UseCount="15" />
 	</If>
 <!-- Turn In Quests -->
+<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
+<!-- Kil'ruk -->
+	<If Condition="((HasQuest(31231)) &amp;&amp; (IsQuestCompleted(31231)))" >
+		<TurnIn QuestName="Dreadspinner Extermination" QuestId="31231" TurnInName="Kaz'tik" TurnInId="62538" />
+	</If>
+	<If Condition="((HasQuest(31235)) &amp;&amp; (IsQuestCompleted(31235)))" >
+		<TurnIn QuestName="Nope Nope Nope" QuestId="31235" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+	<If Condition="((HasQuest(31267)) &amp;&amp; (IsQuestCompleted(31267)))" >
+		<TurnIn QuestName="Mistblade Destruction" QuestId="31267" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+<!-- Korven -->
+	<If Condition="((HasQuest(31232)) &amp;&amp; (IsQuestCompleted(31232)))" > <!-- Ancient Empire -->
+		<TurnIn QuestName="Ancient Empire" QuestId="31232" TurnInName="Korven" TurnInId="62180" />
+	</If>
 <!-- Kaz'tik -->
 	<If Condition="((HasQuest(31238)) &amp;&amp; (IsQuestCompleted(31238)))" >
-		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
 		<TurnIn QuestName="Brain Food" QuestId="31238" TurnInName="Kaz'tik" TurnInId="63758" />
 	</If>
 	<If Condition="((HasQuest(31024)) &amp;&amp; (IsQuestCompleted(31024)))" >
-		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
 		<TurnIn QuestName="Kunchnog Treats" QuestId="31024" TurnInName="Kaz'tik" TurnInId="63758" />
 	</If>
-<!-- Kil'ruk -->
-	<If Condition="((HasQuest(31231)) &amp;&amp; (IsQuestCompleted(31231)))" >
-		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
-		<TurnIn QuestName="Dreadspinner Extermination" QuestId="31231" TurnInName="Kaz'tik" TurnInId="62538" />
+	<If Condition="((HasQuest(31268)) &amp;&amp; (IsQuestCompleted(31268)))" >
+		<TurnIn QuestName="Brain Work" QuestId="31268" TurnInName="Kaz'tik" TurnInId="63758" />
 	</If>
 <!-- Dissector -->
 	<If Condition="((HasQuest(31234)) &amp;&amp; (IsQuestCompleted(31234)))" >
-		<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
 		<TurnIn QuestName="An Eye Out" QuestId="31234" TurnInName="Dissector" TurnInId="63072" />
+	</If>
+	<If Condition="((HasQuest(31271)) &amp;&amp; (IsQuestCompleted(31271)))" >
+		<TurnIn QuestName="Bad Genes" QuestId="31271" TurnInName="Dissector" TurnInId="63072" />
 	</If>
 </QuestOrder>
 
 <!-- Behavior Overrides -->
-<!-- Kaz'tik -->
+<!-- South West -->
+	<Quest Id="31509" Name="Fear Takes Root">
+		<Objective Type="UseObject" ObjectId="65242" UseCount="15">
+			<Hotspots>
+				<Hotspot X="-1520.772" Y="4454.977" Z="125.0728" />
+				<Hotspot X="-1608.703" Y="4421.687" Z="77.15208" />
+				<Hotspot X="-1559.89" Y="4904.329" Z="54.58901" />
+				<Hotspot X="-1391.608" Y="4938.1" Z="24.46886" />
+				<Hotspot X="-1281.18" Y="4977.938" Z="27.28386" />
+				<Hotspot X="-1200.593" Y="4946.873" Z="39.04089" />
+				<Hotspot X="-1150.055" Y="4879.214" Z="45.59641" />
+				<Hotspot X="-1188.143" Y="4798.381" Z="34.18766" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- East -->
+	<Quest Id="31232" Name="An Ancient Empire">
+		<Objective Type="CollectItem" ItemId="85634" CollectCount="8">
+			<CollectFrom>
+				<GameObject Name="Gurthani Tablet" Id="213314" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="20.35941" Y="2313.101" Z="204.6583" />
+				<Hotspot X="108.1764" Y="2306.875" Z="222.3703" />
+				<Hotspot X="281.2405" Y="2383.026" Z="188.2862" />
+				<Hotspot X="326.0096" Y="2499.998" Z="218.1007" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="31232" Name="Sap Tapping">
+		<Objective Type="CollectItem" ItemId="85664" CollectCount="6">
+			<CollectFrom>
+				<GameObject Name="Amber Tap" Id="63740" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="369.203" Y="2338.146" Z="232.3257" />
+				<Hotspot X="322.0797" Y="2281.86" Z="236.5832" />
+				<Hotspot X="258.7658" Y="2424.165" Z="182.5619" />
+				<Hotspot X="53.53793" Y="2387.032" Z="189.2999" />
+				<Hotspot X="192.7992" Y="2476.759" Z="157.326" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 	<Quest Id="31238" Name="Brain Food"> 
 		<Objective Type="CollectItem" ItemId="85665" CollectCount="4">
 		<CollectFrom>
@@ -137,7 +241,6 @@ Do Quests
 		</Hotspots>
 		</Objective>
 	</Quest>
-<!-- Kil'ruk -->
 	<Quest Id="31231" Name="Dreadspinner Extermination">
 		<Objective Type="KillMob" MobId="61981" KillCount="8">
 			<Hotspots>
@@ -147,7 +250,6 @@ Do Quests
 			</Hotspots>
 		</Objective>
 	</Quest>
-<!-- Dissector -->
 	<Quest Id="31238" Name="An Eye Out"> 
 		<Objective Type="CollectItem" ItemId="85635" CollectCount="1">
 		<CollectFrom>
@@ -159,6 +261,28 @@ Do Quests
 			<Hotspot X="155.1563" Y="2645.859" Z="153.1199" />
 			<Hotspot X="-15.82887" Y="2595.841" Z="152.5127" />
 		</Hotspots>
+		</Objective>
+	</Quest>
+<!-- SE: Lake of Stars -->
+	<Quest Id="31269" Name="The Scale-Lord">
+	        <Objective Type="KillMob" MobId="63179" KillCount="1">
+			<Hotspots>
+				<Hotspot X="-923.0015" Y="2578.523" Z="101.9503" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="31271" Name="Bad Genes">
+		<Objective Type="KillMob" MobId="63257" KillCount="3">
+			<Hotspots>
+				<Hotspot X="-901.7958" Y="2837.85" Z="113.4554" />
+				<Hotspot X="-1079.617" Y="2796.49" Z="88.0459" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="63176" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-901.7958" Y="2837.85" Z="113.4554" />
+				<Hotspot X="-1079.617" Y="2796.49" Z="88.0459" />
+			</Hotspots>
 		</Objective>
 	</Quest>
 </HBProfile>
