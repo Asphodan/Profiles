@@ -4,8 +4,7 @@ Ella "You Have To Burn The Ropes" - Do not know Rope ID
 Old Ironpaw "Chasing the Chicken" - Chicken Auras require manual cancel.
 ??? "Water, Water Everywhere" - It's a vehicle, requires manual targetting.
 Mudclaw, "Pest Problems" is too slow.
-Need to do Simian Sabotage
-Stalling the Ravage should come after all Hozen quests.
++ Simian Sabotage gets interrupted. Way to re-start it without running profile again?
 -->
 <HBProfile>
 <Name>Tiller's Rep</Name>
@@ -33,7 +32,7 @@ Stalling the Ravage should come after all Hozen quests.
 </Vendors>
   
 <AvoidMobs>
-<Mob Name="Kunzen Ravager" Entry="59119" />
+<Mob Name="Monstrous Plainshawk" Entry="59641" />
 </AvoidMobs>
    
 <Blackspots>
@@ -132,20 +131,13 @@ Stalling the Ravage should come after all Hozen quests.
 		</Objective>
 	</Quest>
 	<Quest Id="30335" Name="Stalling The Ravage">
-		<Objective Type="KillMob" MobId="59121" KillCount="12">
+		<Objective Type="KillMob" MobId="59119" KillCount="12">
 			<Hotspots>
-				<Hotspot X="203.2321" Y="1450.787" Z="422.2441" />
-				<Hotspot X="143.5242" Y="1469.326" Z="411.1043" />
-				<Hotspot X="100.3706" Y="1539.244" Z="405.954" />
-				<Hotspot X="10.0152" Y="1512.942" Z="381.6325" />
-				<Hotspot X="84.89661" Y="1473.281" Z="386.0106" />
-				<Hotspot X="131.5259" Y="1583.35" Z="426.5112" />
-				<Hotspot X="247.1033" Y="1594.138" Z="445.9252" />
-				<Hotspot X="352.5948" Y="1474.03" Z="442.1465" />
-				<Hotspot X="464.6287" Y="1408.702" Z="415.883" />
-				<Hotspot X="512.7686" Y="1330.218" Z="387.5087" />
-				<Hotspot X="410.1774" Y="1383.552" Z="404.7915" />
-			</Hotspots>
+				<Hotspot X="194.1375" Y="1526.146" Z="430.527" />
+				<Hotspot X="310.6909" Y="1472.411" Z="437.6976" />
+				<Hotspot X="343.948" Y="1423.819" Z="419.7724" />
+				<Hotspot X="403.4649" Y="1426.087" Z="430.6611" />
+		  </Hotspots>
 		</Objective>
 	</Quest>
 <!-- Fish Fellreed -->
@@ -262,6 +254,12 @@ Get Quests
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+<!-- Gina -->
+	<While Condition="HasQuestAvailable(58706)" >
+		<CustomBehavior File="InteractWith"  MobId="58706" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-259.54" Y="592.67" Z="167.55" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Mei Mei Ironpaw -->
 	<While Condition="HasQuestAvailable(58714)" >
 		<CustomBehavior File="InteractWith"  MobId="58714" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
@@ -336,7 +334,7 @@ Do Quests
 <!--		<Objective QuestName="A Gift For Sho" QuestId="30472" Type="UseObject" ObjectId="210873" UseCount="1" /> -->
 <!--		<CustomBehavior File="UseObject" QuestId="30472" ObjectId="210873" UseCount="1" X="193.8394" Y="1517.659" Z="427.4148" /> -->
 	<If Condition="HasQuest(30325) &amp;&amp; !IsQuestCompleted(30325)"> <!-- Where It Counts -->
-		<CustomBehavior File="FlyTo" X="193.8394" Y="1517.659" Z="427.4148" />
+		<CustomBehavior File="FlyTo" DestName="Where It Counts" X="193.8394" Y="1517.659" Z="427.4148" />
 		<CustomBehavior File="ForcedDismount" />
 		<Objective Type="KillMob" QuestName="Where It Counts" QuestId="30325"  MobId="59123" KillCount="1" />
 		<CustomBehavior File="UseGameObject" QuestId="30325" ObjectId="210955" NumOfTimes="8" X="193.8394" Y="1517.659" Z="427.4148" />
@@ -344,7 +342,7 @@ Do Quests
 	</If>
 		<!-- Anthea Ironpaw -->
  	<If Condition="HasQuest(30329) &amp;&amp; !IsQuestCompleted(30329)"> <!-- Cindergut Peppers -->
-		<CustomBehavior File="FlyTo" X="195.6467" Y="1516.928" Z="427.4137" />
+		<CustomBehavior File="FlyTo" DestName="Cindergut Peppers" X="195.6467" Y="1516.928" Z="427.4137" />
 		<Objective QuestName="Cindergut Peppers" QuestId="30329" Type="CollectItem" ItemId="79864" CollectCount="4" />
 	</If>
 <!-- Old Hillpaw -->
@@ -355,7 +353,7 @@ Do Quests
 	</If>
 <!-- Fish Fellreed -->
 	<If Condition="HasQuest(30326) &amp;&amp; !IsQuestCompleted(30326)"> <!-- Kunzen Legend-Chief -->
-		<CustomBehavior File="FlyTo" X="344.4392" Y="1442.505" Z="423.3759" />
+		<CustomBehavior File="FlyTo" DestName="Legend-Chief" X="344.4392" Y="1442.505" Z="423.3759" />
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Kunzen Legend-Chief" QuestId="30326" Type="CollectItem" ItemId="79866" CollectCount="1" />
 	</If>
@@ -409,21 +407,34 @@ Do Quests
 		<Objective QuestName="Kunzen Hunter-Chief" QuestId="30336" Type="KillMob" MobId="59128" KillCount="1" />
 	</If>
 	<If Condition="HasQuest(30337) &amp;&amp; !IsQuestCompleted(30337)"> <!-- Simian Sabotage -->
-		<CustomBehavior File="FlyTo" X="417.1463" Y="1417.576" Z="430.1993" />
+		<CustomBehavior File="FlyTo" DestName="Simian Sabotage" X="417.1463" Y="1417.576" Z="430.1993" />
 		<UseItem ItemId="79885" QuestName="Simian Sabotage" QuestId="30337" X="417.1463" Y="1417.576" Z="430.1993" />
+		<UseItem ItemId="79885" QuestName="Simian Sabotage" QuestId="30337" X="300.5746" Y="1396.597" Z="406.4911" />
+		<UseItem ItemId="79885" QuestName="Simian Sabotage" QuestId="30337" X="358.5737" Y="1482.129" Z="442.1199" />
+		<UseItem ItemId="79885" QuestName="Simian Sabotage" QuestId="30337" X="519.6665" Y="1309.705" Z="383.5246" />
+	</If>
+	<If Condition="HasQuest(30335) &amp;&amp; !IsQuestCompleted(30335)"> <!-- Stalling The Ravage -->
+		<Objective QuestName="Stalling The Ravage" QuestId="30335" Type="KillMob" MobId="59119" KillCount="12" />
 	</If>
 <!-- Miscs Quests -->
-	<If Condition="HasQuest(30335) &amp;&amp; !IsQuestCompleted(30335)"> <!-- Stalling The Ravage -->
-		<CustomBehavior File="FlyTo" X="134.2794" Y="1542.252" Z="418.6581" />
-		<Objective QuestName="Stalling the Ravage" QuestId="30335" Type="KillMob" MobId="59121" KillCount="12" />
+	<If Condition="HasQuest(30322) &amp;&amp; !IsQuestCompleted(30322)"> <!-- Money Matters -->
+		<CustomBehavior File="FlyTo" DestName="30321 Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
+		<RunTo DestName="Money Matters Part 1" X="-266.51" Y="497.22" Z="169.60" />
+		<CustomBehavior File="InteractWith"  MobId="59585" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-266.51" Y="497.22" Z="169.60" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<RunTo DestName="Money Matters Part 2" X="-266.51" Y="497.22" Z="169.60" />
+		<CustomBehavior File="InteractWith"  MobId="59582" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-228.7105" Y="512.7927" Z="190.9045" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
 	</If>
 <!-- Virmin Quests -->
 	<If Condition="HasQuest(30328) &amp;&amp; !IsQuestCompleted(30328)"> <!-- 1000 Dumpling -->
-		<CustomBehavior File="FlyTo" X="486.868" Y="909.1344" Z="273.5185" />
+		<CustomBehavior File="FlyTo" DestName="1000 Dumpling" X="486.868" Y="909.1344" Z="273.5185" />
 		<CustomBehavior File="CollectItem" QuestId="30328" ObjectType="Gameobject" MobId="210957" NumOfTimes="7" X="599.8107" Y="806.7578" Z="254.6263" />
 	</If>
 	<If Condition="HasQuest(30333) &amp;&amp; !IsQuestCompleted(30333)"> <!-- Lesser of Two Evils -->
-		<RunTo DestName="Two Evils' Objective" QuestId="30335" X="611.0577" Y="775.0985" Z="252.8003" />
+		<RunTo DestName="Two Evils' Objective" QuestId="30333" X="611.0577" Y="775.0985" Z="252.8003" />
 		<Objective QuestName="Lesser of Two Evils" QuestId="30333" Type="KillMob" MobId="59516" KillCount="1" />
 	</If>
 	<If Condition="((HasQuest(30323)) &amp;&amp; (!IsQuestCompleted(29765)))" > <!-- Don't even Wear Them -->
@@ -455,6 +466,11 @@ Turn In Quests
  	<If Condition="((HasQuest(30326)) &amp;&amp; (IsQuestCompleted(30326)))" >
 		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
 		<TurnIn QuestName="The Kunzen Legend-Chief" QuestId="30326" TurnInName="Fish Fellreed" TurnInId="58705" />
+	</If>
+<!-- Sho -->
+ 	<If Condition="((HasQuest(30325)) &amp;&amp; (IsQuestCompleted(30325)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+		<TurnIn QuestName="Where It Counts" QuestId="30325" TurnInName="Sho" TurnInId="58708" />
 	</If>
 <!-- Tina Mudclaw -->
  	<If Condition="((HasQuest(30323)) &amp;&amp; (IsQuestCompleted(30323)))" >
