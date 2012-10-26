@@ -56,7 +56,7 @@ Mudclaw, "Pest Problems" is too slow.
 	<Quest Id="30332" Name="Fatty Goatsteak"> 
 		<Objective Type="CollectItem" ItemId="79867" CollectCount="4">
 		<CollectFrom>
-			<Mob Name="Stout Stafhorn" Id="59139" />
+			<Mob Id="59139" Name="Stout Stafhorn" />
 		</CollectFrom>
 		<Hotspots>
 			<Hotspot X="-68.37034" Y="1491.396" Z="363.5945" />
@@ -156,7 +156,7 @@ Mudclaw, "Pest Problems" is too slow.
 Virmen Overrides
  -->
 <!-- ??? --> 
-	<Quest Id="30328" Name="Thousand Year Dumpling">
+	<Quest Id="30328" Name="Stolen Vegetables">
 		<Objective Type="CollectItem" ItemId="80133" CollectCount="7">
 			<CollectFrom>
 				<GameObject Name="Preserved Vegetables" Id="210957" />
