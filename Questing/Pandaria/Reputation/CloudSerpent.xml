@@ -31,41 +31,66 @@
 	</AvoidMobs>
 
 <QuestOrder>
-<CustomBehavior File="FlyTo" DestName="Arborteum" X="136.1074" Y="3219.246" Z="214.9966" />
-<!-- Get Quests  -->
-<CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
-<!-- Kil'ruk -->
-	<While Condition="HasQuestAvailable(62538)" >
-		<CustomBehavior File="InteractWith"  MobId="62538" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
+<CustomBehavior File="FlyTo" DestName="The Arboretum" X="1558.29" Y="-2562.832" Z="151.2783" />
+<!-- Get Quests -->
+<!-- Hatchling First -->
+	<While Condition="HasQuestAvailable(65669)" >
+		<CustomBehavior File="InteractWith"  MobId="65669" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Jenova Longeye -->
+	<While Condition="HasQuestAvailable(58413)" >
+		<CustomBehavior File="InteractWith"  MobId="58413" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 
 <!-- 
 Do Quests
- -->
- <!-- North Central -->
-	<If Condition="HasQuest(31238) &amp;&amp; !IsQuestCompleted(31238)"> <!-- Fatty Goatsteak -->
-		<CustomBehavior File="FlyTo" X="498.5069" Y="3204.416" Z="263.6812" />
-		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
-		<Objective QuestName="Brain Food" QuestId="31238" Type="CollectItem" ItemId="85665" CollectCount="4" />
+-->
+<!-- Arboretum -->
+ 	<If Condition="HasQuest(31704) &amp;&amp; !IsQuestCompleted(31704)"> <!-- Tiny Poop -->
+		<Objective QuestName="Pooped" QuestId="31704" Type="CollectItem" ItemId="79864" CollectCount="4" />
 	</If>
-
+	<If Condition="HasQuest(30150) &amp;&amp; !IsQuestCompleted(30150)"> <!-- Sweet As Honey -->
+		<CustomBehavior File="FlyTo" X="1379.752" Y="-2513.6" Z="144.9042" />
+		<Objective QuestName="Sweet as Honey" QuestId="30150" Type="CollectItem" ItemId="79030" CollectCount="30" />
+	</If>
+	
+<!-- 
+Turn In Quests
+ -->
+<CustomBehavior File="FlyTo" DestName="The Arboretum" X="1558.29" Y="-2562.832" Z="151.2783" />
+<!-- Hatchling -->
+	<If Condition="((HasQuest(31704)) &amp;&amp; (IsQuestCompleted(31704)))" >
+		<TurnIn QuestName="Pooped" QuestId="31704" TurnInName="Your Hatchling" TurnInId="65669" />
+	</If>
 </QuestOrder>
-
 <!-- Behavior Overrides -->
-<!-- Kaz'tik -->
-	<Quest Id="31238" Name="Brain Food"> 
-		<Objective Type="CollectItem" ItemId="85665" CollectCount="4">
+	<Quest Id="31704" Name="Pooped"> 
+		<Objective Type="CollectItem" ItemId="89052" CollectCount="5">
 		<CollectFrom>
-			<Mob Name="Stout Stafhorn" Id="59139" />
+			<GameObject Id="214862" Name="Hatchling Poop" />
 		</CollectFrom>
 		<Hotspots>
-			<Hotspot X="435.805" Y="3071.331" Z="270.4317" />
-			<Hotspot X="537.5179" Y="3037.344" Z="264.6354" />
-			<Hotspot X="633.8555" Y="3109.821" Z="239.6317" />
-			<Hotspot X="582.1223" Y="3214.171" Z="267.3114" />
-			<Hotspot X="498.5069" Y="3204.416" Z="263.6812" />
+			<Hotspot X="1379.752" Y="-2513.6" Z="144.9042" />
+			<Hotspot X="1420.906" Y="-2307.411" Z="150.8572" />
+			<Hotspot X="1588.675" Y="-2199.569" Z="159.8959" />
+			<Hotspot X="1464.597" Y="-2382.583" Z="155.5076" />
+		</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="30150" Name="Sweet as Honey"> 
+		<Objective Type="CollectItem" ItemId="79030" CollectCount="30">
+		<CollectFrom>
+			<Mob Id="58363" Name="Honeykeeper" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="1379.752" Y="-2513.6" Z="144.9042" />
+			<Hotspot X="1420.906" Y="-2307.411" Z="150.8572" />
+			<Hotspot X="1588.675" Y="-2199.569" Z="159.8959" />
+			<Hotspot X="1464.597" Y="-2382.583" Z="155.5076" />
 		</Hotspots>
 		</Objective>
 	</Quest>
