@@ -1,0 +1,190 @@
+<HBProfile>
+<Name>Northshire 1-5</Name>
+<MinLevel>1</MinLevel>
+<MaxLevel>100</MaxLevel>
+
+<MinDurability>0.2</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>True</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>True</MailPurple>
+
+<SellGrey>True</SellGrey>
+<SellWhite>True</SellWhite>
+<SellGreen>True</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+
+<TargetElites>False</TargetElites>
+  
+<AvoidMobs>
+</AvoidMobs>
+
+<Blackspots>
+</Blackspots>
+  
+<Mailboxes>
+	<Mailbox X="-8908.27" Y="-129.904" Z="80.91549" />
+</Mailboxes>
+
+<Vendors>
+</Vendors>
+
+<QuestOrder>
+<!-- Level 1 -->
+	<While Condition="HasQuestAvailable(197)" >
+		<CustomBehavior File="InteractWith"  MobId="197" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="HasQuest(28767) &amp;&amp; !IsQuestCompleted(28767)"> 
+		<Objective Type="KillMob" QuestName="Beating Them Back!" QuestId="28767"  MobId="49871" KillCount="6" />
+	</If>
+	<If Condition="((HasQuest(28767)) &amp;&amp; (IsQuestCompleted(28767)))" >
+		<TurnIn QuestName="Beating Them Back!" QuestId="28767" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If>
+<!-- Level 2 -->
+	<While Condition="HasQuestAvailable(197)" >
+		<CustomBehavior File="InteractWith"  MobId="197" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="HasQuest(28759) &amp;&amp; !IsQuestCompleted(28759)"> 
+		<Objective Type="KillMob" QuestName="Lions For Lambs" QuestId="28759"  MobId="49874" KillCount="8" />
+	</If>
+	<If Condition="((HasQuest(28759)) &amp;&amp; (IsQuestCompleted(28759)))" >
+		<TurnIn QuestName="Lions for Lambs" QuestId="28759" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If>
+<!-- Level 3 -->
+<!-- Hunter -->
+	<If Condition="((HasQuest(26910)) &amp;&amp; (IsQuestCompleted(26910)))" >
+		<TurnIn QuestName="Etched Letter" QuestId="26910" TurnInName="Ashley Blank" TurnInId="43278" X="-8924.651" Y="-149.9028" Z="81.36338" />
+	</If>
+	<If Condition="((HasQuest(26917)) &amp;&amp; (!IsQuestCompleted(26917)))" >
+		<RunTo X="-8959.201" Y="-148.761" Z="81.5061" />
+		<While Condition="(HasQuest(26917)) &amp;&amp; (!IsQuestCompleted(26917))">
+			<CustomBehavior File="InteractWith" QuestId="26917" MobId="44548" WaitTime="1000" X="-8969.78" Y="-146.455" Z="81.50681" />
+			<CustomBehavior File="RunMacro" Macro="/cast Steady Shot" NumOfTimes="1" WaitTime="1000" />
+		</While>
+	</If>
+	<If Condition="((HasQuest(26917)) &amp;&amp; (IsQuestCompleted(26917)))" >
+		<TurnIn QuestName="Steady Shot" QuestId="26917" TurnInName="Ashley Blank" TurnInId="43278" X="-8924.651" Y="-149.9028" Z="81.36338" />
+	</If>
+	<If Condition="((HasQuest(28780)) &amp;&amp; (IsQuestCompleted(28780)))" >
+		<TurnIn QuestName="Join the Battle!" QuestId="28780" TurnInName="Sergeant Willem" TurnInId="823" X="-8827.837" Y="-158.6233" Z="79.85925" />
+	</If>
+	<While Condition="HasQuestAvailable(951)" > <!-- Get that other quest -->
+		<CustomBehavior File="InteractWith"  MobId="951" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="HasQuest(28806) &amp;&amp; !IsQuestCompleted(28806)">
+		<CustomBehavior File="InteractWith" QuestId="28806" ObjectType="Npc" MobId="50047" NumOfTimes="4" CollectionDistance="200" X="-8765.53" Y="-126.1441" Z="83.60645" />
+	</If>
+	<If Condition="HasQuest(28791) &amp;&amp; !IsQuestCompleted(28791)"> 
+		<Objective Type="KillMob" QuestName="They Sent Assassins" QuestId="28791"  MobId="50039" KillCount="8" />
+	</If>
+	<If Condition="((HasQuest(28791)) &amp;&amp; (IsQuestCompleted(28791)))" >
+		<TurnIn QuestName="They Sent Assassins" QuestId="28791" TurnInName="Sergeant Willem" TurnInId="823" X="-8827.837" Y="-158.6233" Z="79.85925" />
+	</If>
+	<If Condition="((HasQuest(28806)) &amp;&amp; (IsQuestCompleted(28806)))" >
+		<TurnIn QuestName="Fear No Evil" QuestId="28806" TurnInName="Brother Paxton" TurnInId="951" X="-8827.837" Y="-158.6233" Z="79.85925" />
+	</If>
+<!-- Level 4 -->
+	<If Condition="((HasQuest(28817)) &amp;&amp; (IsQuestCompleted(28817)))" >
+		<TurnIn QuestName="Rear is Clear" QuestId="28817" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If>
+	<While Condition="HasQuestAvailable(9296)" > <!-- Milly's Vineyard -->
+		<CustomBehavior File="InteractWith"  MobId="9296" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="((HasQuest(26391)) &amp;&amp; (!IsQuestCompleted(26391)))" >
+		<While Condition="((HasQuest(26391)) &amp;&amp; (!IsQuestCompleted(26391)))" >
+		<RunTo DestName="Vineyard" QuestId="26391" X="-9060.157" Y="-283.2247" Z="75.07942" />
+			<CustomBehavior File="UseItemOn" QuestId="26391" MobId="42940" ItemId="58362" Range="10"/>
+		</While>
+	</If>
+	<If Condition="HasQuest(26389) &amp;&amp; !IsQuestCompleted(26389)"> 
+		<Objective Type="CollectItem" QuestName="Blackrock Invasion" QuestId="26389"  ItemId="58361" CollectCount="8" />
+	</If>
+	<If Condition="((HasQuest(26389)) &amp;&amp; (IsQuestCompleted(26389)))" >
+		<TurnIn QuestName="Blackrock Invasion" QuestId="26389" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If>
+<!-- Level 5 -->
+	<If Condition="HasQuest(26390) &amp;&amp; !IsQuestCompleted(26390)">
+		<RunTo DestName="End The Invasion" QuestId="26390" X="-8884.624" Y="-392.6001" Z="68.32978" />
+		<Objective QuestId="26390" QuestName="Ending The Invasion" Type="KillMob" MobId="42938" KillCount="1" />
+	</If>
+	<If Condition="((HasQuest(26390)) &amp;&amp; (IsQuestCompleted(26390)))" >
+		<TurnIn QuestName="Ending The Invasion!" QuestId="26390" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If>
+	<If Condition="((HasQuest(26391)) &amp;&amp; (IsQuestCompleted(26391)))" >
+		<TurnIn QuestName="Ending The Invasion!" QuestId="26391" TurnInName="Milly" TurnInId="9296" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If>
+<RunTo DestName="Valley Exit" QuestId="26390" X="-9045.756" Y="-48.85175" Z="88.27053" />
+	<While Condition="HasQuestAvailable(6774)" >
+		<CustomBehavior File="InteractWith"  MobId="6774" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<CustomBehavior File="LoadProfile" ProfileName="005-012" />
+<!--  <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Elwynn Forest(7-10)[Cava]" /> -->
+</QuestOrder>
+<!-- Quest Overrides  -->
+<!-- Northshire -->
+<!-- Level 1 -->
+	<Quest Id="28767" Name="Beating Them Back">
+		<Objective Type="KillMob" MobId="49871" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-8878.102" Y="-93.03157" Z="83.75423" />
+				<Hotspot X="-8809.108" Y="-72.70679" Z="88.85786" />
+				<Hotspot X="-8820.499" Y="-130.5687" Z="81.00842" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- Level 2 -->
+	<Quest Id="28759" Name="Lions for Lambs">
+		<Objective Type="KillMob" MobId="49874" KillCount="8">
+			<Hotspots>
+				<Hotspot X="-8878.102" Y="-93.03157" Z="83.75423" />
+				<Hotspot X="-8809.108" Y="-72.70679" Z="88.85786" />
+				<Hotspot X="-8820.499" Y="-130.5687" Z="81.00842" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- Level 3 -->
+	<Quest Id="28759" Name="They Sent Assassins">
+		<Objective Type="KillMob" MobId="50039" KillCount="8">
+			<Hotspots>
+				<Hotspot X="-8771.916" Y="-225.6783" Z="85.29548" />
+				<Hotspot X="-8751.645" Y="-134.2095" Z="82.86691" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- Level 4 -->
+	<Objective Type="CollectItem" ItemId="58361" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Blackrock Invader" Id="42937" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-9083.021" Y="-274.4849" Z="73.45605" />
+			<Hotspot X="-9021.025" Y="-343.6343" Z="75.24259" />
+			<Hotspot X="-8901.68" Y="-397.9508" Z="69.90591" />
+		</Hotspots>
+	</Objective>
+<!-- Level 5 -->
+	<Quest Id="26390" Name="Ending the Invasion!">
+		<Objective Type="KillMob" MobId="42938" KillCount="1">
+			<Hotspots>
+				<Hotspot X="-8886.037" Y="-436.4687" Z="68.48562" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- End of Quest Overrides -->
+
+
+</HBProfile>
