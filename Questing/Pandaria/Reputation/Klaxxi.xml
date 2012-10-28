@@ -1,5 +1,6 @@
 <!-- Notes
 A Little Brain Work - UseItem on scorpion?
+Fear Takes Root - Not effecient.
 Incomplete:
 -->
 <HBProfile>
@@ -75,7 +76,7 @@ Do Quests
 	<If Condition="((HasQuest(31232)) &amp;&amp; (!IsQuestCompleted(31232)))" > <!-- Ancient Empire -->
 		<CustomBehavior File="FlyTo" X="20.35941" Y="2313.101" Z="204.6583"  />
 		<CustomBehavior File="ForcedDismount" />
-		<Objective QuestName="An Ancient Empire" QuestId="31232" Type="Collect" CollectCount="8" ItemId="213314" ObjectType="GameObject" CollectionDistance="20000" />
+		<Objective Type="Collect" QuestId="31232" QuestName="An Ancient Empire" CollectCount="8" ItemId="213314" ObjectType="GameObject" CollectionDistance="20000" />
 	</If>
 	<If Condition="HasQuest(31231) &amp;&amp; !IsQuestCompleted(31231)"> <!-- Dreadspinner Extermination -->
 		<CustomBehavior File="FlyTo" X="589.1747" Y="2233.863" Z="307.4598" />
@@ -131,7 +132,7 @@ Do Quests
 	</If>
 <!-- South West -->
 	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)"> <!-- Fear Takes Rot -->
-		<CustomBehavior File="FlyTo" X="-569.7761" Y="2887.638" Z="162.0235" />
+		<CustomBehavior File="FlyTo" X="-1520.772" Y="4454.977" Z="125.0728" />
 		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
 		<Objective QuestName="Fear Takes Root" QuestId="31509" Type="UseObject" ObjectId="65242" UseCount="15" />
 	</If>
@@ -147,6 +148,9 @@ Do Quests
 	<If Condition="((HasQuest(31267)) &amp;&amp; (IsQuestCompleted(31267)))" >
 		<TurnIn QuestName="Mistblade Destruction" QuestId="31267" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
 	</If>
+	<If Condition="((HasQuest(31111)) &amp;&amp; (IsQuestCompleted(31111)))" >
+		<TurnIn QuestName="Eradicating" QuestId="31111" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
 <!-- Korven -->
 	<If Condition="((HasQuest(31232)) &amp;&amp; (IsQuestCompleted(31232)))" > <!-- Ancient Empire -->
 		<TurnIn QuestName="Ancient Empire" QuestId="31232" TurnInName="Korven" TurnInId="62180" />
@@ -161,9 +165,12 @@ Do Quests
 	<If Condition="((HasQuest(31268)) &amp;&amp; (IsQuestCompleted(31268)))" >
 		<TurnIn QuestName="Brain Work" QuestId="31268" TurnInName="Kaz'tik" TurnInId="63758" />
 	</If>
-<!-- Dissector -->
+<!-- Rik'tal the Dissector -->
 	<If Condition="((HasQuest(31234)) &amp;&amp; (IsQuestCompleted(31234)))" >
 		<TurnIn QuestName="An Eye Out" QuestId="31234" TurnInName="Dissector" TurnInId="63072" />
+	</If>
+	<If Condition="((HasQuest(31509)) &amp;&amp; (IsQuestCompleted(31509)))" >
+		<TurnIn QuestName="Fear Takes Root" QuestId="31509" TurnInName="Dissector" TurnInId="63072" />
 	</If>
 	<If Condition="((HasQuest(31271)) &amp;&amp; (IsQuestCompleted(31271)))" >
 		<TurnIn QuestName="Bad Genes" QuestId="31271" TurnInName="Dissector" TurnInId="63072" />
