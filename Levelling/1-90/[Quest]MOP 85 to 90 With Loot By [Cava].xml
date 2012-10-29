@@ -17,9 +17,19 @@
    Config a mail recipient or some valuable itens will be destroid!\n
     (Settings and Tools Button)" />
 
+<!-- #######################################################################################################################-->
 <If Condition="Me.IsHorde" >
-	<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Profile in development,
-	Please check again later" />
+ <If Condition="(Me.LevelFraction &gt;= 85)" >
+    <If Condition="HasQuest(30814) &amp;&amp; IsQuestCompleted(30814)" >
+    </If>
+    <If Condition="HasQuest(31286) &amp;&amp; IsQuestCompleted(31286)" >
+    </If>
+    <If Condition="HasQuest(30079) &amp;&amp; IsQuestCompleted(30079)" >
+    </If>
+    <If Condition="HasQuest(29907) &amp;&amp; IsQuestCompleted(29907)" >
+   </If>
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]The Jade Forest(WL)(85-86)[Cava]" />
+  </If>
 </If>
 <!-- #######################################################################################################################-->
 <If Condition="Me.IsAlliance" >

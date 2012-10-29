@@ -891,16 +891,16 @@
 <If Condition="HasQuest(30694) &amp;&amp; !IsQuestCompleted(30694)" >
   <CustomBehavior File="UserSettings" PullDistance="1" />
   <While Condition="!IsQuestCompleted(30694)" >
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1238.094" Y="819.7852" Z="25.39742" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1246.045" Y="740.2792" Z="24.8131" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1261.704" Y="680.5339" Z="14.79193" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1214.35" Y="677.7779" Z="26.74023" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1135.58" Y="713.8949" Z="27.54808" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1152.591" Y="778.603" Z="18.5066" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1120.381" Y="783.6181" Z="15.64386" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1047.419" Y="818.3127" Z="33.06099" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-988.374" Y="814.1378" Z="32.84844" />
-    <CustomBehavior File="InteractWith" QuestId="30694" MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-989.4748" Y="964.9647" Z="17.66881" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1238.094" Y="819.7852" Z="25.39742" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1246.045" Y="740.2792" Z="24.8131" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1261.704" Y="680.5339" Z="14.79193" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1214.35" Y="677.7779" Z="26.74023" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1135.58" Y="713.8949" Z="27.54808" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1152.591" Y="778.603" Z="18.5066" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1120.381" Y="783.6181" Z="15.64386" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-1047.419" Y="818.3127" Z="33.06099" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-988.374" Y="814.1378" Z="32.84844" />
+    <CustomBehavior File="InteractWith" QuestId="30694" Range="15"  MobId="211428" ObjectType="Gameobject" WaitForNpcs="False" X="-989.4748" Y="964.9647" Z="17.66881" />
   </While>
 </If>
 <If Condition="HasQuest(30268) &amp;&amp; !IsQuestCompleted(30268)" >
@@ -1185,7 +1185,10 @@ Now choose:\n
 	<CustomBehavior File="UserSettings" PullDistance="25" LootMobs="True" />
   <If Condition="(Me.Class == WoWClass.Hunter) || (Me.Class == WoWClass.Priest) || (Me.Class == WoWClass.Mage) || (Me.Class == WoWClass.Warlock)">
 	  <CustomBehavior File="UserSettings" PullDistance="35" />
-	</If>
+  </If>
+  <If Condition="Me.HasAura(115716)" >
+    <CustomBehavior File="RunMacro" Macro="/cancelaura Rafting" />
+  </If>
   <CustomBehavior File="MyCTM" X="-2593.361" Y="779.0729" Z="-92.48124" />
   <CustomBehavior File="MyCTM" X="-2596.044" Y="778.3143" Z="-102.6285" />
   <CustomBehavior File="MyCTM" X="-2625.898" Y="774.6011" Z="-101.9051" />
@@ -1204,8 +1207,13 @@ Now choose:\n
   </While>
 </If>
 <If Condition="HasQuest(30671) &amp;&amp; !IsQuestCompleted(30671)" >
-	<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Need human interaction for next fight, No mesh here\n
-    TIP: Kill and loot sharks" />
+  <CustomBehavior File="CollectThings" QuestId="30671" MobId1="60204" MobId2="60432" MobState="Alive" CollectItemCount="5" CollectItemId="80810" HuntingGroundRadius="200" >
+    <Hotspot X="-2611.385" Y="796.9761" Z="-30.81259" />
+    <Hotspot X="-2620.508" Y="799.9588" Z="-102.1036" />
+    <Hotspot X="-2583.678" Y="798.8563" Z="-111.607" />
+    <Hotspot X="-2563.686" Y="739.2986" Z="-92.13745" />
+  </CustomBehavior>
+  <CustomBehavior File="AscendInWater" />
 </If>
 <Objective QuestName="Wisdom Has A Price" QuestId="30671" Type="CollectItem" ItemId="80810" CollectCount="5" />
 <If Condition="HasQuest(30671) &amp;&amp; IsQuestCompleted(30671)" >

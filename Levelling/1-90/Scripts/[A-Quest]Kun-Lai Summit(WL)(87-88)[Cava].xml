@@ -1358,7 +1358,14 @@
 <TurnIn QuestName="Pandaren Prisoners" QuestId="30650" TurnInName="Admiral Taylor" TurnInId="59441" X="2145.762" Y="1456.22" Z="487.8856" />
 <TurnIn QuestName="The Ordo Warbringer" QuestId="30660" TurnInName="Admiral Taylor" TurnInId="59441" X="2145.762" Y="1456.22" Z="487.8856" />
 <TurnIn QuestName="Barrels of Fun" QuestId="30651" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="59450" X="2144.019" Y="1449.528" Z="488.1475" />
+<While Condition="HasQuestAvailable(59451)" >
+  <CustomBehavior File="InteractWith" MobId="59451" X="2143.707" Y="1481.136" Z="487.8864" />
+  <CustomBehavior File="RunMacro" Macro="/script SelectGossipAvailableQuest(1)" />
+  <CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" />
+<!--
 <PickUp QuestName="Cho's Missive" QuestId="31460" GiverName="Mishka" GiverId="59451" X="2143.707" Y="1481.136" Z="487.8864" />
+-->
+</While>
 <While Condition="HasQuestAvailable(63754)" >
   <CustomBehavior File="InteractWith" MobId="63754" X="2109.012" Y="1473.512" Z="487.8859" />
   <CustomBehavior File="RunMacro" Macro="/script SelectGossipAvailableQuest(1)" />
@@ -1535,7 +1542,9 @@ need confirm
  </While>
 </If>
 <TurnIn QuestName="Roadside Assistance" QuestId="30617" TurnInName="Brother Lintpocket" TurnInId="59701" X="3053.801" Y="1203.967" Z="651.8965" />
-<TurnIn QuestName="Cho's Missive" QuestId="31460" TurnInName="Lorewalker Cho" TurnInId="61847" X="3044.467" Y="1251.316" Z="654.6689" />
+<If Condition="HasQuest(31460)" >
+  <TurnIn QuestName="Cho's Missive" QuestId="31460" TurnInName="Lorewalker Cho" TurnInId="61847" X="3044.467" Y="1251.316" Z="654.6689" />
+</If>
 <PickUp QuestName="Path Less Traveled" QuestId="30999" GiverName="Lorewalker Cho" GiverId="61847" X="3044.467" Y="1251.316" Z="654.6689" />
 <TurnIn QuestName="Path Less Traveled" QuestId="30999" TurnInName="Uncle Cloverleaf" TurnInId="59696" X="3064.845" Y="1258.448" Z="656.0638" />
 <PickUp QuestName="Instant Courage" QuestId="30601" GiverName="Uncle Cloverleaf" GiverId="59696" X="3064.845" Y="1258.448" Z="656.0638" />

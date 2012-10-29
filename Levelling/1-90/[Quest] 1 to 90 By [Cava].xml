@@ -18,6 +18,9 @@
     (Settings and Tools Button)" />
 
 <If Condition="Me.IsHorde" >
+	<If Condition="(Me.LevelFraction &gt;= 85)" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]The Jade Forest(85-86)[Cava]" />
+  </If>
 	<If Condition="Me.Race == WoWRace.Orc">
     <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Orc(1-5)[Cava]" />
  	</If>

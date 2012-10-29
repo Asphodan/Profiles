@@ -491,6 +491,15 @@
   </While>
   <TurnIn QuestName="The Lesson of the Iron Bough" QuestId="30033" TurnInName="Master Shang Xi" TurnInId="53566" X="1462.004" Y="3465.594" Z="181.5974" />
 </If>
+<If Condition="(Me.Class == WoWClass.Monk)">
+  <TurnIn QuestName="Much to Learn" QuestId="30039" TurnInName="Master Shang Xi" TurnInId="53566" X="1462.004" Y="3465.594" Z="181.5974" />
+  <PickUp QuestName="The Lesson of the Iron Bough" QuestId="30027" GiverName="Master Shang Xi" GiverId="53566" X="1462.004" Y="3465.594" Z="181.5974" />
+  <While Condition="HasQuest(30027) &amp;&amp; !IsQuestCompleted(30027)" >
+    <CustomBehavior File="InteractWith" MobId="210005" ObjectType="Gameobject" NumOfTimes="1" X="1422.615" Y="3458.468" Z="171.1617" />
+    <CustomBehavior File="EquipItem" ItemId="73209" Slot="MainHandSlot" />
+  </While>
+  <TurnIn QuestName="The Lesson of the Iron Bough" QuestId="30027" TurnInName="Master Shang Xi" TurnInId="53566" X="1462.004" Y="3465.594" Z="181.5974" />
+</If>
 <PickUp QuestName="The Lesson of the Sandy Fist" QuestId="29406" GiverName="Master Shang Xi" GiverId="53566" X="1462.004" Y="3465.594" Z="181.5974" />
 <Objective QuestName="The Lesson of the Sandy Fist" QuestId="29406" Type="KillMob" MobId="53714" KillCount="5" />
 <TurnIn QuestName="The Lesson of the Sandy Fist" QuestId="29406" TurnInName="Master Shang Xi" TurnInId="53566" X="1462.004" Y="3465.594" Z="181.5974" />
