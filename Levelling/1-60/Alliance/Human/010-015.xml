@@ -1,0 +1,48 @@
+<HBProfile>
+<Name>Northshire 1-5</Name>
+<MinLevel>1</MinLevel>
+<MaxLevel>100</MaxLevel>
+
+<MinDurability>0.2</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>True</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>True</MailPurple>
+
+<SellGrey>True</SellGrey>
+<SellWhite>True</SellWhite>
+<SellGreen>True</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+
+<TargetElites>False</TargetElites>
+  
+<AvoidMobs>
+</AvoidMobs>
+
+<Blackspots>
+</Blackspots>
+  
+<Mailboxes>
+</Mailboxes>
+
+<Vendors>
+</Vendors>
+
+<QuestOrder>
+<!-- Level Check! 
+	<If Condition="(Me.Level &gt;= 10)" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\Levelling\1-60\Alliance\Human\010-015" />
+	</If> -->
+	<If Condition="((HasQuest(26378)) &amp;&amp; (IsQuestCompleted(26378)))" >
+		<CustomBehavior File="AbandonQuest" QuestId="76" />
+		<CustomBehavior File="AbandonQuest" QuestId="1097" />
+		<TurnIn QuestId="26378" QuestName="Westfall Breadcrumb" TurnInName="Horatio " TurnInId="42308" X="-9849.855" Y="914.9617" Z="30.26953" />
+	</If>
+<!-- Level 10 -->
+</QuestOrder>
+<!-- Quest Overrides  -->
+</HBProfile>

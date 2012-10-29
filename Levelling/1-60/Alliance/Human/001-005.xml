@@ -131,59 +131,9 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<CustomBehavior File="LoadProfile" ProfileName="005-012" />
-<!--  <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Elwynn Forest(7-10)[Cava]" /> -->
+<CustomBehavior File="LoadProfile" ProfileName="005-010" />
 </QuestOrder>
 <!-- Quest Overrides  -->
-<!-- Northshire -->
-<!-- Level 1 -->
-	<Quest Id="28767" Name="Beating Them Back">
-		<Objective Type="KillMob" MobId="49871" KillCount="6">
-			<Hotspots>
-				<Hotspot X="-8878.102" Y="-93.03157" Z="83.75423" />
-				<Hotspot X="-8809.108" Y="-72.70679" Z="88.85786" />
-				<Hotspot X="-8820.499" Y="-130.5687" Z="81.00842" />
-			</Hotspots>
-		</Objective>
-	</Quest>
-<!-- Level 2 -->
-	<Quest Id="28759" Name="Lions for Lambs">
-		<Objective Type="KillMob" MobId="49874" KillCount="8">
-			<Hotspots>
-				<Hotspot X="-8878.102" Y="-93.03157" Z="83.75423" />
-				<Hotspot X="-8809.108" Y="-72.70679" Z="88.85786" />
-				<Hotspot X="-8820.499" Y="-130.5687" Z="81.00842" />
-			</Hotspots>
-		</Objective>
-	</Quest>
-<!-- Level 3 -->
-	<Quest Id="28759" Name="They Sent Assassins">
-		<Objective Type="KillMob" MobId="50039" KillCount="8">
-			<Hotspots>
-				<Hotspot X="-8771.916" Y="-225.6783" Z="85.29548" />
-				<Hotspot X="-8751.645" Y="-134.2095" Z="82.86691" />
-			</Hotspots>
-		</Objective>
-	</Quest>
-<!-- Level 4 -->
-	<Objective Type="CollectItem" ItemId="58361" CollectCount="1">
-		<CollectFrom>
-			<Mob Name="Blackrock Invader" Id="42937" />
-		</CollectFrom>
-		<Hotspots>
-			<Hotspot X="-9083.021" Y="-274.4849" Z="73.45605" />
-			<Hotspot X="-9021.025" Y="-343.6343" Z="75.24259" />
-			<Hotspot X="-8901.68" Y="-397.9508" Z="69.90591" />
-		</Hotspots>
-	</Objective>
-<!-- Level 5 -->
-	<Quest Id="26390" Name="Ending the Invasion!">
-		<Objective Type="KillMob" MobId="42938" KillCount="1">
-			<Hotspots>
-				<Hotspot X="-8886.037" Y="-436.4687" Z="68.48562" />
-			</Hotspots>
-		</Objective>
-	</Quest>
 <!-- End of Quest Overrides -->
 
 

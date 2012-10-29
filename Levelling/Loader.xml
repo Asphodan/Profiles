@@ -1,0 +1,18 @@
+<HBProfile>
+<Name>Bot Loader</Name>
+<QuestOrder>
+<If Condition="Me.IsAlliance" >
+	<If Condition="Me.Race == WoWRace.Human">
+		<If Condition="(Me.Level &gt;= 10)" >
+			<CustomBehavior File="LoadProfile" ProfileName="..\Levelling\1-60\Alliance\Human\010-015" />
+		</If>
+		<If Condition="(Me.Level &gt;= 5)" >
+			<CustomBehavior File="LoadProfile" ProfileName="..\Levelling\1-60\Alliance\Human\005-010" />
+		</If>
+		<If Condition="(Me.LevelFraction &gt;= 1)" >
+			<CustomBehavior File="LoadProfile" ProfileName="..\Levelling\1-60\Alliance\Human\001-005" />
+		</If>
+	</If>
+</If>
+</QuestOrder>
+</HBProfile>
