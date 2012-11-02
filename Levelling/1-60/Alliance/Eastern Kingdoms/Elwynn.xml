@@ -1,5 +1,5 @@
 <HBProfile>
-<Name>Northshire 1-5</Name>
+<Name>Northshire 5-10</Name>
 <MinLevel>1</MinLevel>
 <MaxLevel>100</MaxLevel>
 
@@ -36,9 +36,9 @@
 <QuestOrder>
 <!-- Level Check! -->
 	<If Condition="(Me.Level &gt;= 10)" >
-		<CustomBehavior File="LoadProfile" ProfileName="..\Levelling\1-60\Alliance\Human\010-015" />
+		<CustomBehavior File="LoadProfile" ProfileName="010-015" />
 	</If>
-<RunTo DestName="Goldshire" X="-9460.672" Y="69.90316" Z="56.38046" />
+<RunTo DestName="Goldshire" X="-9460.672" Y="69.90316" Z="56.38046" /> -->
 <!-- Level 5.5 --> <!-- Get Intial Quests -->
 	<If Condition="((HasQuest(54)) &amp;&amp; (IsQuestCompleted(54)))" >
 		<TurnIn QuestName="Report to Goldshire" QuestId="54" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
@@ -280,7 +280,10 @@
 		<TurnIn QuestId="46" QuestName="Further Concerns" TurnInName="Guard Thomas" TurnInId="261" X="-9610.232" Y="-1032.052" Z="41.12374" />
 	</If>
 	<If Condition="((HasQuest(112)) &amp;&amp; (IsQuestCompleted(112)))" >
-		<TurnIn QuestId="112" QuestName="Further Concerns" TurnInName="Pestle" TurnInId="253" X="-9460.302" Y="31.93891" Z="56.96619" />
+		<TurnIn QuestId="112" QuestName="Kelp" TurnInName="Pestle" TurnInId="253" X="-9460.302" Y="31.93891" Z="56.96619" />
+	</If>
+	<If Condition="(Me.Level &gt;= 10)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Westfall" />
 	</If>
 </QuestOrder>
 <!-- Quest Overrides  -->

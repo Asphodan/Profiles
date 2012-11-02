@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Professionbuddy>
+  <If Condition="SecondaryBot.Name != &quot;Combat Bot&quot;" IgnoreCanRun="True">
+    <ChangeBotAction BotName="Combat Bot" />
+  </If>
+ <While Condition="true" IgnoreCanRun="True">
+  <If Condition="HasNewMail || MailCount &gt; 0" IgnoreCanRun="True">
+    <CustomAction Code="Log(&quot; Getting Mail&quot;);" />
+    <GetMailAction GetMailType="AllItems" ItemID="" CheckNewMail="True" MinFreeBagSlots="16" AutoFindMailBox="True" Location="0, 0, 0" />
+    <WaitAction Condition="false" Timeout="5000" />
+  </If>
+  <If Condition="Jewelcrafting.Level&gt;499" IgnoreCanRun="True">
+    <If Condition="InbagCount(53038) &gt; 5 || InbagCount(52185) &gt; 5 || InbagCount(52183) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Cata ore detected, Stacking.&quot;);" />
+      <StackItemsAction />
+    </If>
+    <If Condition="InbagCount(72092) &gt; 5 || InbagCount(72093) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] MoP ore detected, Stacking.&quot;);" />
+      <StackItemsAction />
+    </If>
+    <If Condition="InbagCount(53038) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Prospecting obsidium.&quot;);" />
+      <DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="53038" />
+    </If>
+    <If Condition="InbagCount(52185) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Prospecting elementium.&quot;);" />
+      <DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52185" />
+    </If>
+    <If Condition="InbagCount(52183) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Prospecting pyrite.&quot;);" />
+      <DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52183" />
+    </If>
+    <If Condition="InbagCount(72092) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Prospecting Ghost Iron Ore.&quot;);" />
+      <DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72092" />
+    </If>
+    <If Condition="InbagCount(72093) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Prospecting Kyparite Ore.&quot;);" />
+      <DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72093" />
+    </If>
+    <If Condition="InbagCount(72103) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Prospecting White Trillium.&quot;);" />
+      <DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72103" />
+    </If>
+    <If Condition="InbagCount(72094) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Prospecting Black Trillium.&quot;);" />
+      <DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72094" />
+    </If>
+  </If>
+  <If Condition="Inscription.Level&gt;474" IgnoreCanRun="True">
+    <If Condition="InbagCount(52983) &gt; 5 || InbagCount(52984) &gt; 5 || InbagCount(52985) &gt; 5 || InbagCount(52986) &gt; 5 || InbagCount(52987) &gt; 5 || InbagCount(52988) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Cata herbs detected, Stacking.&quot;);" />
+      <StackItemsAction />
+    </If>
+    <If Condition="InbagCount(79011) &gt; 5 || InbagCount(79010) &gt; 5 || InbagCount(72235) &gt; 5 || InbagCount(72234) &gt; 5 || InbagCount(72237) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] MoP herbs detected, Stacking.&quot;);" />
+      <StackItemsAction />
+    </If>
+    <If Condition="InbagCount(52983) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Cinderbloom.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52983" />
+    </If>
+    <If Condition="InbagCount(52984) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Stormvine.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52984" />
+    </If>
+    <If Condition="InbagCount(52985) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Starting with milling Azshara's Veil.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52985" />
+    </If>
+    <If Condition="InbagCount(52986) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Heartblossom.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52986" />
+    </If>
+    <If Condition="InbagCount(52987) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Twilight Jasmine.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52987" />
+    </If>
+    <If Condition="InbagCount(52988) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Whiptail.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52988" />
+    </If>
+    <If Condition="InbagCount(79011) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Fool's Cap.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="79011" />
+    </If>
+    <If Condition="InbagCount(79010) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Snow Lily.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="79010" />
+    </If>
+    <If Condition="InbagCount(72235) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Silkweed.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72235" />
+    </If>
+    <If Condition="InbagCount(72234) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Green Tea Leaf.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72234" />
+    </If>
+    <If Condition="InbagCount(72237) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Rain Poppy.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72237" />
+    </If>
+    <If Condition="InbagCount(89639) &gt; 5" IgnoreCanRun="True">
+      <CustomAction Code="Log(&quot;[ProfessionBuddy] Milling Desecreated Herb.&quot;);" />
+      <DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="89639" />
+    </If>
+  </If>
+  <If Condition="Me.FreeNormalBagSlots &gt; 2" IgnoreCanRun="True">
+    <CustomAction Code="Log(&quot; Making Inks&quot;);" />
+    <CastSpellAction RepeatType="Craftable" Repeat="1" Entry="111646" CastOnItem="False" ItemType="Chest" ItemId="0" />
+    <CastSpellAction RepeatType="Craftable" Repeat="1" Entry="111645" CastOnItem="False" ItemType="Chest" ItemId="0" />
+  </If>
+  <MailItemAction Category="TradeGoods" SubCategoryType="WoWItemTradeGoodsClass" SubCategory="Parts" Mail="All" UseCategory="False" ItemID="79254,79255" Amount="0" AutoFindMailBox="True" Location="0, 0, 0" />
+    <CustomAction Code="Log(&quot;[ProfessionBuddy] Profile Restarting.&quot;);" />
+  </While>
+</Professionbuddy>

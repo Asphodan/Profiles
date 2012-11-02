@@ -1,0 +1,62 @@
+<HBProfile>
+<Name>Westfall</Name>
+<MinLevel>10</MinLevel>
+<MaxLevel>100</MaxLevel>
+
+<MinDurability>0.2</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>True</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>True</MailPurple>
+
+<SellGrey>True</SellGrey>
+<SellWhite>True</SellWhite>
+<SellGreen>True</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+
+<TargetElites>False</TargetElites>
+  
+<AvoidMobs>
+</AvoidMobs>
+
+<Blackspots>
+</Blackspots>
+  
+<Mailboxes>
+</Mailboxes>
+
+<Vendors>
+</Vendors>
+
+<QuestOrder>
+<!-- Level Check! 
+	<If Condition="(Me.Level &gt;= 10)" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\Levelling\1-60\Alliance\Human\010-015" />
+	</If> -->
+	<If Condition="((HasQuest(26378)) &amp;&amp; (IsQuestCompleted(26378)))" >
+		<CustomBehavior File="AbandonQuest" QuestId="76" />
+		<CustomBehavior File="AbandonQuest" QuestId="1097" />
+		<TurnIn QuestId="26378" QuestName="Westfall Breadcrumb" TurnInName="Horatio " TurnInId="42308" X="-9849.855" Y="914.9617" Z="30.26953" />
+	</If>
+	<If Condition="((HasQuest(26371)) &amp;&amp; (IsQuestCompleted(26371)))" >
+		<TurnIn QuestId="26371" QuestName="Ghost Man" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+	</If>
+	<While Condition="HasQuestAvailable(392)" >
+		<PickUp QuestName="Grayson's Quests" QuestId="26347" GiverName="Captain Grayson" GiverId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+		<PickUp QuestName="Grayson's Quests" QuestId="26348" GiverName="Captain Grayson" GiverId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+		<PickUp QuestName="Grayson's Quests" QuestId="26349" GiverName="Captain Grayson" GiverId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+	</While>
+<Objective Type="KillMob" QuestName="Cast Isn't Clear" QuestId="26348"  MobId="127" KillCount="7" />
+<Objective Type="KillMob" QuestName="Cast Isn't Clear" QuestId="26348"  MobId="517" KillCount="7" />
+<Objective Type="CollectItem" QuestName="Coastal Menace" QuestId="26349"  ItemId="3636" CollectCount="1" />
+<TurnIn QuestId="26348" QuestName="Ghost Man" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+<TurnIn QuestId="26349" QuestName="Ghost Man" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+<Objective Type="CollectItem" QuestName="Keeper of the Flame" QuestId="26347"  ItemId="58204" CollectCount="5" />
+<TurnIn QuestId="26347" QuestName="Keeper of the flame" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+</QuestOrder>
+<!-- Quest Overrides  -->
+</HBProfile>
