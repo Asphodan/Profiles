@@ -1,5 +1,5 @@
 <HBProfile>
-<Name>Northshire 5-10</Name>
+<Name>Elwynn 5-10</Name>
 <MinLevel>1</MinLevel>
 <MaxLevel>100</MaxLevel>
 
@@ -270,7 +270,7 @@
 	<If Condition="((HasQuest(83)) &amp;&amp; (IsQuestCompleted(5545)))" >
 		<TurnIn QuestName="Fine Linen Goods" QuestId="83" TurnInName="Sara Timberlain" TurnInId="278" X="-9530.045" Y="-1222.585" Z="47.28971" />
 	</If>
-	<If Condition="((HasQuest(71)) &amp;&amp; (IsQuestCompleted(71)))" >
+<!--	<If Condition="((HasQuest(71)) &amp;&amp; (IsQuestCompleted(71)))" >
 		<TurnIn QuestId="71" QuestName="Further Concerns" TurnInName="Guard Thomas" TurnInId="261" X="-9610.232" Y="-1032.052" Z="41.12374" />
 	</If>
 	<If Condition="((HasQuest(52)) &amp;&amp; (IsQuestCompleted(52)))" >
@@ -284,7 +284,7 @@
 	</If>
 	<If Condition="(Me.Level &gt;= 10)" >
 		<CustomBehavior File="LoadProfile" ProfileName="Westfall" />
-	</If>
+	</If> -->
 </QuestOrder>
 <!-- Quest Overrides  -->
 <!-- Goldshire -->

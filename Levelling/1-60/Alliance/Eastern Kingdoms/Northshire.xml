@@ -121,11 +121,11 @@
 		<RunTo DestName="End The Invasion" QuestId="26390" X="-8884.624" Y="-392.6001" Z="68.32978" />
 		<Objective QuestId="26390" QuestName="Ending The Invasion" Type="KillMob" MobId="42938" KillCount="1" />
 	</If>
-	<If Condition="((HasQuest(26390)) &amp;&amp; (IsQuestCompleted(26390)))" >
-		<TurnIn QuestName="Ending The Invasion!" QuestId="26390" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
-	</If>
 	<If Condition="((HasQuest(26391)) &amp;&amp; (IsQuestCompleted(26391)))" >
 		<TurnIn QuestName="Ending The Invasion!" QuestId="26391" TurnInName="Milly" TurnInId="9296" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If>
+	<If Condition="((HasQuest(26390)) &amp;&amp; (IsQuestCompleted(26390)))" >
+		<TurnIn QuestName="Ending The Invasion!" QuestId="26390" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
 	</If>
 <RunTo DestName="Valley Exit" QuestId="26390" X="-9045.756" Y="-48.85175" Z="88.27053" />
 	<While Condition="HasQuestAvailable(6774)" >
@@ -133,7 +133,7 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<CustomBehavior File="LoadProfile" ProfileName="005-010" />
+<CustomBehavior File="LoadProfile" ProfileName="Elwynn" />
 </QuestOrder>
 <!-- Quest Overrides  -->
 <!-- End of Quest Overrides -->
