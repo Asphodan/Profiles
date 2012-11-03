@@ -1,0 +1,1570 @@
+<HBProfile>
+  <Name>[H-Quest]Goblin(1-5)[Cava]</Name>
+  <MinLevel>0</MinLevel>
+  <MaxLevel>91</MaxLevel>
+    
+  <MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+  <AvoidMobs>
+  </AvoidMobs>
+
+
+	<Mailboxes>
+   <Mailbox X="-8416.56" Y="1341.305" Z="102.4971" />
+  </Mailboxes>
+	<Blackspots>
+	</Blackspots>
+
+  <Vendors>
+    <Vendor Name="Sally &quot;Salvager&quot; Sandscrew" Entry="37761" Type="Repair" X="-8382.889" Y="1318.104" Z="104.1712" />
+    <Vendor Name="Brett &quot;Coins&quot; McQuid" Entry="37762" Type="Food" X="-8381.931" Y="1319.274" Z="103.9861" />
+  </Vendors>
+
+<!-- ###################################### Quest Overrides ####################################################################### -->
+<Quest Id="14075" Name="Trouble in the Mines">
+  <Objective Type="KillMob" MobId="34865" KillCount="6">
+	  <Hotspots>
+      <Hotspot X="-8498.089" Y="1081.491" Z="42.01403" />
+      <Hotspot X="-8527.051" Y="1056.792" Z="42.24842" />
+      <Hotspot X="-8375.15" Y="1151.46" Z="35.8177" />
+      <Hotspot X="-8363.873" Y="1121.662" Z="32.23977" />
+		</Hotspots>
+  </Objective>
+</Quest>
+<Quest Id="24488" Name="The Replacements">
+	<Objective Type="CollectItem" ItemId="49752" CollectCount="6">
+		<CollectFrom>
+      <GameObject Name="Replacement Parts" Id="201603" />
+		</CollectFrom>
+		<Hotspots>
+      <Hotspot X="-8287.313" Y="1542.935" Z="48.21589" />
+      <Hotspot X="-8310.818" Y="1508.774" Z="45.82324" />
+      <Hotspot X="-8358.525" Y="1465.508" Z="47.87219" />
+      <Hotspot X="-8406.931" Y="1530.62" Z="50.40871" />
+      <Hotspot X="-8466.581" Y="1588.036" Z="45.24898" />
+      <Hotspot X="-8416.495" Y="1640.062" Z="43.89197" />
+      <Hotspot X="-8377.607" Y="1634.343" Z="49.38121" />
+    </Hotspots>
+	</Objective>
+</Quest>
+<Quest Id="34835" Name="Do it Yourself">
+  <Objective Type="KillMob" MobId="34835" KillCount="1">
+	  <Hotspots>
+				<Hotspot X="-8403.81" Y="1517.438" Z="50.73429" />
+		</Hotspots>
+	</Objective>
+  <Objective Type="KillMob" MobId="34878" KillCount="1">
+	  <Hotspots>
+				<Hotspot X="-8468.401" Y="1566.158" Z="47.40012" />
+		</Hotspots>
+	</Objective>
+  <Objective Type="KillMob" MobId="34877" KillCount="1">
+	  <Hotspots>
+				<Hotspot X="-8431.757" Y="1655.161" Z="45.79393" />
+		</Hotspots>
+	</Objective>
+  <Objective Type="KillMob" MobId="34876" KillCount="1">
+	  <Hotspots>
+				<Hotspot X="-8360.79" Y="1631.094" Z="49.5501" />
+		</Hotspots>
+	</Objective>
+</Quest>
+<Quest Id="14115" Name="Pirate Party Crashers">
+  <Objective Type="KillMob" MobId="35200" KillCount="12">
+	  <Hotspots>
+      <Hotspot X="-8455.792" Y="1309.149" Z="101.9716" />
+      <Hotspot X="-8507.064" Y="1311.227" Z="101.6973" />
+      <Hotspot X="-8510.359" Y="1376.977" Z="101.6968" />
+      <Hotspot X="-8461.46" Y="1372.844" Z="101.6972" />
+		</Hotspots>
+	</Objective>
+</Quest>
+<Quest Id="14121" Name="Robbing Hoods">
+	<Objective Type="CollectItem" ItemId="47530" CollectCount="12">
+		<CollectFrom>
+      <Mob Id="35234" Name="Hired Looter" />
+    </CollectFrom>
+		<Hotspots>
+      <Hotspot X="-8228.374" Y="1485.904" Z="40.06267" />
+      <Hotspot X="-8275.156" Y="1443.334" Z="40.10042" />
+      <Hotspot X="-8322.028" Y="1486.632" Z="45.88342" />
+      <Hotspot X="-8280.129" Y="1528.559" Z="43.77385" />
+      <Hotspot X="-8195.979" Y="1570.157" Z="28.72342" />
+      <Hotspot X="-8215.747" Y="1601.357" Z="33.12568" />
+      <Hotspot X="-8186.137" Y="1642.399" Z="26.00349" />
+      <Hotspot X="-8139.276" Y="1642.424" Z="15.61363" />
+      <Hotspot X="-8133.461" Y="1570.624" Z="13.91051" />
+		</Hotspots>
+	</Objective>
+</Quest>
+<Quest Id="14123" Name="Waltz Right In">
+	<Objective Type="CollectItem" ItemId="48941" CollectCount="1">
+		<CollectFrom>
+      <GameObject Name="The Ultimate Bomb" Id="195518" />
+		</CollectFrom>
+		<Hotspots>
+      <Hotspot X="-8007.477" Y="1859.809" Z="53.19637" />
+    </Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="48939" CollectCount="1">
+		<CollectFrom>
+      <GameObject Name="The Goblin Lisa" Id="195516" />
+		</CollectFrom>
+		<Hotspots>
+      <Hotspot X="-8047.684" Y="1954.97" Z="53.06263" />
+    </Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="48937" CollectCount="1">
+		<CollectFrom>
+      <GameObject Name="Maldy's Falcon" Id="195515" />
+		</CollectFrom>
+		<Hotspots>
+      <Hotspot X="-8147.069" Y="1903.327" Z="69.02103" />
+    </Hotspots>
+	</Objective>
+</Quest>
+<Quest Id="14125" Name="447">
+  <Objective Type="UseObject" ObjectId="201735" UseCount="1">
+		<Hotspots>
+      <Hotspot X="-8421.277" Y="1371.006" Z="104.663" />
+		</Hotspots>
+	</Objective>
+  <Objective Type="UseObject" ObjectId="201733" UseCount="1">
+		<Hotspots>
+      <Hotspot X="-8404.195" Y="1370.87" Z="104.6861" />
+		</Hotspots>
+	</Objective>
+  <Objective Type="UseObject" ObjectId="201734" UseCount="1">
+		<Hotspots>
+      <Hotspot X="-8407.636" Y="1363.726" Z="117.2701" />
+		</Hotspots>
+	</Objective>
+  <Objective Type="UseObject" ObjectId="201736" UseCount="1">
+		<Hotspots>
+      <Hotspot X="-8422.47" Y="1327.067" Z="101.9558" />
+		</Hotspots>
+	</Objective>
+</Quest>
+<!-- ################################### End of Quest Overrides #################################################################### -->
+	<QuestOrder IgnoreCheckPoints="False" >
+	<If Condition="Me.Race != WoWRace.Goblin" >
+			<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="2" Text="You must be an Goblin to run this profile" />
+	</If>
+	<CustomBehavior File="Message" Text="Compiling Goblin Quests (1-5)" LogColor="Green" />
+ 	<CustomBehavior File="UserSettings" LootMobs="False" UseFlightPaths="True" KillBetweenHotspots="True" />
+	<CustomBehavior File="UserSettings" PullDistance="25" />
+  <If Condition="(Me.Class == WoWClass.Hunter) || (Me.Class == WoWClass.Priest) || (Me.Class == WoWClass.Mage) || (Me.Class == WoWClass.Warlock)">
+	  <CustomBehavior File="UserSettings" PullDistance="35" />
+	</If>
+  <!-- Level 1 -->
+<PickUp QuestName="Taking Care of Business" QuestId="14138" GiverName="Sassy Hardwrench" GiverId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+<TurnIn QuestName="Taking Care of Business" QuestId="14138" TurnInName="Foreman Dampwick" TurnInId="34872" X="-8402.308" Y="1314.974" Z="102.3311" />
+<PickUp QuestName="Trouble in the Mines" QuestId="14075" GiverName="Foreman Dampwick" GiverId="34872" X="-8402.308" Y="1314.974" Z="102.3311" />
+<PickUp QuestName="Good Help is Hard to Find" QuestId="14069" GiverName="Foreman Dampwick" GiverId="34872" X="-8402.308" Y="1314.974" Z="102.3311" />
+<While Condition="((HasQuest(14069)) &amp;&amp; (!IsQuestCompleted(14069)))" >
+	<CustomBehavior File="InteractWith" MobId="34830" MobState="Alive" WaitTime="1000" Range="5" NumOfTimes="1" CollectionDistance="1000" X="-8460.83" Y="1167.496" Z="41.03015" />
+</While>
+<Objective QuestName="Trouble in the Mines" QuestId="14075" Type="KillMob" MobId="34865" KillCount="6" />
+<TurnIn QuestName="Trouble in the Mines" QuestId="14075" TurnInName="Foreman Dampwick" TurnInId="34872" X="-8402.308" Y="1314.974" Z="102.3311" />
+<TurnIn QuestName="Good Help is Hard to Find" QuestId="14069" TurnInName="Foreman Dampwick" TurnInId="34872" X="-8402.308" Y="1314.974" Z="102.3311" />
+<PickUp QuestName="Kaja'Cola" QuestId="25473" GiverName="Foreman Dampwick" GiverId="34872" X="-8402.308" Y="1314.974" Z="102.3311" />
+  <!-- Level 2 -->
+<TurnIn QuestName="Kaja'Cola" QuestId="25473" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+<PickUp QuestName="Megs in Marketing" QuestId="28349" GiverName="Sassy Hardwrench" GiverId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+<TurnIn QuestName="Megs in Marketing" QuestId="28349" TurnInName="Megs Dreadshredder" TurnInId="34874" X="-8419.259" Y="1341.816" Z="102.9996" />
+<If Condition="HasQuest(14071) &amp;&amp; !IsQuestCompleted(14071)" >
+	<CustomBehavior File="EjectVeh" />
+  <CustomBehavior File="AbandonQuest" QuestId="14071" />
+  	<CustomBehavior File="WaitTimer" WaitTime="2000" />
+</If>
+<PickUp QuestName="Rolling with my Homies" QuestId="14071" GiverName="Megs Dreadshredder" GiverId="34874" X="-8419.259" Y="1341.816" Z="102.9996" />
+<If Condition="((HasQuest(14071)) &amp;&amp; (!IsQuestCompleted(14071)))" >
+  <RunTo X="-8417.584" Y="1330.27" Z="102.2391" />
+  <While Condition="(!Me.IsOnTransport)" >
+    <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46856)" WaitTime="1000" />
+  </While>
+  <RunTo X="-8495.85" Y="1313.206" Z="102.5098" />
+  <RunTo X="-8504.758" Y="1340.018" Z="102.5113" />
+	<CustomBehavior File="WaitTimer" WaitTime="2000" />
+  <CustomBehavior File="MyCTM" X="-8505.355" Y="1368.045" Z="102.5098" />
+  <RunTo X="-8474.249" Y="1377.38" Z="102.5098" />
+  <RunTo X="-8444.464" Y="1330.756" Z="102.654" /> <!--curva da saida-->
+  <RunTo X="-8370.39" Y="1348.627" Z="101.9896" /><!--inicio 2 estrada-->
+  <CustomBehavior File="MyCTM" X="-8347.171" Y="1340.975" Z="92.46214" /> <!--sinal-->
+  <CustomBehavior File="MyCTM" X="-8296.832" Y="1309.072" Z="79.12528" /><!--lomba-->
+  <CustomBehavior File="MyCTM" X="-8278.07" Y="1302.301" Z="62.58046" />
+  <RunTo X="-8218.291" Y="1293.128" Z="33.76784" />
+  <RunTo X="-8190.461" Y="1304.449" Z="29.03311" /> <!--antes do npc-->
+  <RunTo X="-8177.25" Y="1317.643" Z="28.35234" />
+	<CustomBehavior File="WaitTimer" WaitTime="2000" />
+  <RunTo X="-8124.764" Y="1349.992" Z="18.25259" />  <!--estrada-->
+  <RunTo X="-8108.206" Y="1453.741" Z="10.75649" /> <!--antes do npc-->
+  <RunTo X="-8081.008" Y="1479.319" Z="9.646417" />
+	<CustomBehavior File="WaitTimer" WaitTime="2000" />
+ </If>
+<If Condition="((HasQuest(14071)) &amp;&amp; (IsQuestCompleted(14071)))" >
+	<CustomBehavior File="EjectVeh" />
+</If>
+<TurnIn QuestName="Rolling with my Homies" QuestId="14071" TurnInName="Megs Dreadshredder" TurnInId="34874" X="-8419.259" Y="1341.816" Z="102.9996" />
+<PickUp QuestName="Report for Tryouts" QuestId="24567" GiverName="Megs Dreadshredder" GiverId="34874" X="-8419.259" Y="1341.816" Z="102.9996" />
+<PickUp QuestName="Do it Yourself" QuestId="14070" GiverName="Sassy Hardwrench" GiverId="34668" X="-8422.143" Y="1367.708" Z="104.675" />
+<While Condition="HasQuestAvailable(35054)" >
+  <CustomBehavior File="InteractWith" MobId="35054" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8422.143" Y="1367.708" Z="104.675" />
+	<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+<!--
+<If Condition="Me.Gender == WoWGender.Female">
+		<PickUp QuestName="Off to the Bank" QuestId="26711" GiverName="Chip Endale" GiverId="35054" X="-8422.143" Y="1367.708" Z="104.675" />
+<Else>
+-->
+</While>
+<While Condition="HasQuestAvailable(35053)" >
+  <CustomBehavior File="InteractWith" MobId="35053" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8422.143" Y="1367.708" Z="104.675" />
+	<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+<!--
+  <PickUp QuestName="Off to the Bank" QuestId="26712" GiverName="Candy Cane" GiverId="35053" X="-8425.201" Y="1367.755" Z="104.6778" />
+  </Else>
+</If>
+-->
+</While>
+<If Condition="HasQuest(24567)" >
+  <RunTo X="-8347.588" Y="1381.902" Z="95.92965" />
+  <CustomBehavior File="MyCTM" X="-8291.693" Y="1433.638" Z="40.15383" />
+</If>
+<TurnIn QuestName="Report for Tryouts" QuestId="24567" TurnInName="Coach Crosscheck" TurnInId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+<PickUp QuestName="The Replacements" QuestId="24488" GiverName="Coach Crosscheck" GiverId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+<Objective QuestName="The Replacements" QuestId="24488" Type="CollectItem" ItemId="49752" CollectCount="6"/>
+<TurnIn QuestName="The Replacements" QuestId="24488" TurnInName="Coach Crosscheck" TurnInId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+<PickUp QuestName="Necessary Roughness" QuestId="24502" GiverName="Coach Crosscheck" GiverId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+<If Condition="((HasQuest(24502)) &amp;&amp; (!IsQuestCompleted(24502)))" >
+  <CustomBehavior File="MountVehOnly"  VehicleMountId="48526" X="-8250.91" Y="1484.29" Z="41.4168" />
+  <CustomBehavior File="NoControlVehicle" QuestId="24502" TargetId="37114" NumOfTimes="99" AttackButton="1" MaxRange="100" WaitTime="1500"/>
+  <CustomBehavior File="EjectVeh" />
+</If>
+<While Condition="(HasQuest(24502))" >
+  <CustomBehavior File="WaitTimer" WaitTime="2000" />
+	<CustomBehavior File="CompleteLogQuest" QuestId="24502" /> <!-- Get 24503 -->
+	<CustomBehavior File="WaitTimer" WaitTime="5000" />
+</While>
+<If Condition="!HasQuest(24503) &amp;&amp; !IsQuestCompleted(24503)" >
+  <PickUp QuestName="Fourth and Goal" QuestId="28414" GiverName="Coach Crosscheck" GiverId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+</If>
+<If Condition="HasQuest(24503) &amp;&amp; !IsQuestCompleted(24503)" >
+  <If Condition="(!Me.IsOnTransport)" >
+    <CustomBehavior File="MountVehOnly" VehicleMountId="48526" X="-8250.91" Y="1484.29" Z="41.4168" />
+  </If>
+  <CustomBehavior File="NoControlVehicle" QuestId="24503" TargetId="37106" AttackButton="1" WaitTime="1500" />
+	<CustomBehavior File="EjectVeh" Eject="True"/>
+</If>
+<If Condition="HasQuest(28414) &amp;&amp; !IsQuestCompleted(24503)" >
+  <CustomBehavior File="MountVehOnly" VehicleMountId="48526" X="-8250.91" Y="1484.29" Z="41.4168" />
+  <CustomBehavior File="NoControlVehicle" QuestId="28414" TargetId="37106" AttackButton="1" WaitTime="1500" />
+	<CustomBehavior File="EjectVeh" Eject="True"/>
+</If>
+<If Condition="HasQuest(24503) &amp;&amp; IsQuestCompleted(24503)" >
+  <TurnIn QuestName="Fourth and Goal" QuestId="24503" TurnInName="Coach Crosscheck" TurnInId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+</If>
+<If Condition="HasQuest(28414) &amp;&amp; IsQuestCompleted(28414)" >
+  <TurnIn QuestName="Fourth and Goal" QuestId="28414" TurnInName="Coach Crosscheck" TurnInId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+</If>
+  <!-- Level 3 -->
+<PickUp QuestName="Give Sassy the News" QuestId="24520" GiverName="Coach Crosscheck" GiverId="37106" X="-8250.009" Y="1469.979" Z="42.80803" />
+<While Condition="!IsObjectiveComplete(1, 14070) &amp;&amp; !IsQuestCompleted(14070) &amp;&amp; HasQuest(14070)" >
+  <CustomBehavior File="InteractWith" QuestId="14070" MobId="34835"  X="-8403.81" Y="1517.438" Z="50.73429" />
+<!--
+<Objective QuestName="Do it Yourself" QuestId="14070" Type="KillMob" MobId="34835" KillCount="1" />
+-->
+</While>
+<While Condition="!IsObjectiveComplete(4, 14070) &amp;&amp; !IsQuestCompleted(14070) &amp;&amp; HasQuest(14070)" >
+  <CustomBehavior File="InteractWith" QuestId="14070" MobId="34878"  X="-8468.401" Y="1566.158" Z="47.40012" />
+<!--
+<Objective QuestName="Do it Yourself" QuestId="14070" Type="KillMob" MobId="34878" KillCount="1" />
+-->
+</While>
+<While Condition="!IsObjectiveComplete(3, 14070) &amp;&amp; !IsQuestCompleted(14070) &amp;&amp; HasQuest(14070)" >
+  <CustomBehavior File="InteractWith" QuestId="14070" MobId="34877"  X="-8431.757" Y="1655.161" Z="45.79393" />
+<!--
+<Objective QuestName="Do it Yourself" QuestId="14070" Type="KillMob" MobId="34877" KillCount="1" />
+-->
+</While>
+<While Condition="!IsObjectiveComplete(2, 14070) &amp;&amp; !IsQuestCompleted(14070) &amp;&amp; HasQuest(14070)" >
+  <CustomBehavior File="InteractWith" QuestId="14070" MobId="34876"  X="-8360.79" Y="1631.094" Z="49.5501" />
+<!--
+<Objective QuestName="Do it Yourself" QuestId="14070" Type="KillMob" MobId="34876" KillCount="1" />
+-->
+</While>
+<If Condition="HasQuest(26711)" >
+  <TurnIn QuestName="Off to the Bank" QuestId="26711" TurnInName="FBoK Bank Teller" TurnInId="35120" X="-8378.46" Y="1728.24" Z="39.94978" />
+  <PickUp QuestName="The New You" QuestId="14110" GiverName="FBoK Bank Teller" GiverId="35120" X="-8378.46" Y="1728.24" Z="39.94978" />
+</If>
+<If Condition="!HasItem(47044) &amp;&amp; !IsQuestCompleted(14110) &amp;&amp; HasQuest(14110)" >
+  <CustomBehavior File="InteractWith" QuestId="14110" MobId="35120" GossipOptions="1" WaitTime="1500" Range="10" X="-8378.52" Y="1722.11" Z="39.80603" />
+</If>
+<While Condition="!IsObjectiveComplete(2, 14110) &amp;&amp; !IsQuestCompleted(14110) &amp;&amp; HasQuest(14110)" >
+  <CustomBehavior File="InteractWith" QuestId="14110" MobId="35128" GossipOptions="1" WaitTime="1500" Range="10" X="-8231.323" Y="1620.245" Z="34.7084" />
+</While>
+<While Condition="!IsObjectiveComplete(1, 14110) &amp;&amp; !IsQuestCompleted(14110) &amp;&amp; HasQuest(14110)" >
+  <CustomBehavior File="InteractWith" QuestId="14110" MobId="35126" GossipOptions="1" WaitTime="1500" Range="10" X="-8142.792" Y="1658.632" Z="16.73927" />
+</While>
+<If Condition="HasQuest(14110) &amp;&amp; !IsQuestCompleted(14110)" >
+  <RunTo QuestId="14110" X="-8144.322" Y="1582.824" Z="16.35415" />
+</If>
+<While Condition="!IsObjectiveComplete(3, 14110) &amp;&amp; !IsQuestCompleted(14110) &amp;&amp; HasQuest(14110)" >
+  <CustomBehavior File="InteractWith" QuestId="14110" MobId="35130" GossipOptions="1" WaitTime="1500" Range="10" X="-8143.078" Y="1583.531" Z="16.89931" />
+</While>
+<If Condition="HasQuest(14110) &amp;&amp; IsQuestCompleted(14110)" >
+  <TurnIn QuestName="The New You" QuestId="14110" TurnInName="Chip Endale" TurnInId="35054" X="-8422.143" Y="1367.708" Z="104.675" />
+</If>
+<If Condition="HasQuest(26712)" >
+  <TurnIn QuestName="Off to the Bank" QuestId="26712" TurnInName="FBoK Bank Teller" TurnInId="35120" X="-8378.46" Y="1728.24" Z="39.94978" />
+  <PickUp QuestName="The New You" QuestId="14109" GiverName="FBoK Bank Teller" GiverId="35120" X="-8378.46" Y="1728.24" Z="39.94978" />
+</If>
+<If Condition="!HasItem(47044) &amp;&amp; !IsQuestCompleted(14109) &amp;&amp; HasQuest(14109)" >
+  <CustomBehavior File="InteractWith" QuestId="14109" MobId="35120" GossipOptions="1" WaitTime="1500" Range="10" X="-8378.52" Y="1722.11" Z="39.80603" />
+</If>
+<While Condition="!IsObjectiveComplete(2, 14109) &amp;&amp; !IsQuestCompleted(14109) &amp;&amp; HasQuest(14109)" >
+  <CustomBehavior File="InteractWith" QuestId="14109" MobId="35128" GossipOptions="1" WaitTime="1500" Range="10" X="-8231.323" Y="1620.245" Z="34.7084" />
+</While>
+<While Condition="!IsObjectiveComplete(1, 14109) &amp;&amp; !IsQuestCompleted(14109) &amp;&amp; HasQuest(14109)" >
+  <CustomBehavior File="InteractWith" QuestId="14109" MobId="35126" GossipOptions="1" WaitTime="1500" Range="10" X="-8142.792" Y="1658.632" Z="16.73927" />
+</While>
+<If Condition="HasQuest(14109) &amp;&amp; !IsQuestCompleted(14109)" >
+  <RunTo QuestId="14109" X="-8144.322" Y="1582.824" Z="16.35415" />
+</If>
+<While Condition="!IsObjectiveComplete(3, 14109) &amp;&amp; !IsQuestCompleted(14109) &amp;&amp; HasQuest(14109)" >
+  <CustomBehavior File="InteractWith" QuestId="14109" MobId="35130" GossipOptions="1" WaitTime="1500" Range="10" X="-8143.078" Y="1583.531" Z="16.89931" />
+</While>
+<If Condition="HasQuest(14109) &amp;&amp; IsQuestCompleted(14109)" >
+  <TurnIn QuestName="The New You" QuestId="14109" TurnInName="Candy Cane" TurnInId="35053" X="-8425.201" Y="1367.755" Z="104.6778" />
+</If>
+<TurnIn QuestName="Give Sassy the News" QuestId="24520" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8422.143" Y="1367.708" Z="104.675" />
+<TurnIn QuestName="Do it Yourself" QuestId="14070" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8422.143" Y="1367.708" Z="104.675" />
+<If Condition="Me.Class ==WoWClass.Priest">
+  <PickUp QuestName="Learning the Word" QuestId="14009" GiverName="Sister Goldskimmer" GiverId="34692" X="-8425.401" Y="1347.615" Z="105.1465" />
+  <While Condition="HasQuest(14009) &amp;&amp; !IsQuestCompleted(14009)" >
+    <RunTo X="-8426.8" Y="1307.235" Z="102.2296" />
+    <CustomBehavior File="InteractWith" QuestId="14009" MobId="48304" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+    <CustomBehavior File="RunMacro" Macro="/cast Shadow Word: Pain" NumOfTimes="1" WaitTime="1000" />
+  </While>
+  <TurnIn QuestName="Learning the Word" QuestId="14009" TurnInName="Sister Goldskimmer" TurnInId="34692" X="-8425.401" Y="1347.615" Z="105.1465" />
+</If>
+<If Condition="Me.Class ==WoWClass.Rogue">
+  <PickUp QuestName="Eviscerate" QuestId="14010" GiverName="Slinky Sharpshiv" GiverId="34693" X="-8430.425" Y="1325.04" Z="101.7823" />
+  <While Condition="((HasQuest(14010)) &amp;&amp; (!IsQuestCompleted(14010)))" >
+    <RunTo X="-8426.8" Y="1307.235" Z="102.2296" />
+    <CustomBehavior File="InteractWith" QuestId="14010" MobId="48304" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+    <CustomBehavior File="RunMacro" Macro="/cast Sinister Strike" NumOfTimes="1" WaitTime="1000" />
+    <CustomBehavior File="RunMacro" Macro="/cast Eviscerate" NumOfTimes="1" WaitTime="1000" />
+	</While>
+	<TurnIn QuestName="Eviscerate" QuestId="14010" TurnInName="Slinky Sharpshiv" TurnInId="34693" X="-8430.425" Y="1325.04" Z="101.7823" />
+</If>
+<If Condition="Me.Class ==WoWClass.Warlock">
+  <PickUp QuestName="Immolate" QuestId="14012" GiverName="Evol Fingers" GiverId="34696" X="-8399.56" Y="1346.439" Z="103.0947" />
+  <While Condition="((HasQuest(14012)) &amp;&amp; (!IsQuestCompleted(14012)))" >
+    <RunTo X="-8426.8" Y="1307.235" Z="102.2296" />
+    <CustomBehavior File="InteractWith" QuestId="14012" MobId="48304" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+    <CustomBehavior File="RunMacro" Macro="/cast Corruption" NumOfTimes="1" WaitTime="1000" />
+  </While>
+	<TurnIn QuestName="Immolate" QuestId="14012" TurnInName="Evol Fingers" TurnInId="34696" X="-8399.56" Y="1346.439" Z="103.0947" />
+</If>
+<If Condition="Me.Class ==WoWClass.Mage">
+  <PickUp QuestName="Arcane Missiles" QuestId="14008" GiverName="Fizz Lighter" GiverId="34689" X="-8394.614" Y="1325.67" Z="103.0017" />
+	<While Condition="((HasQuest(14008)) &amp;&amp; (!IsQuestCompleted(14008)))" >
+    <RunTo X="-8426.8" Y="1307.235" Z="102.2296" />
+    <CustomBehavior File="InteractWith" QuestId="14008" MobId="48304" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+    <CustomBehavior File="RunMacro" Macro="/cast Frost Nova" NumOfTimes="1" WaitTime="1000" />
+	</While>
+	<TurnIn QuestName="Arcane Missiles" QuestId="14008" TurnInName="Fizz Lighter" TurnInId="34689" X="-8394.614" Y="1325.67" Z="103.0017" />
+</If>
+<If Condition="Me.Class ==WoWClass.Warrior">
+  <PickUp QuestName="Charge" QuestId="14013" GiverName="Warrior-Matic NX-01" GiverId="34697" X="-8431.764" Y="1313.502" Z="103.0257" />
+	<While Condition="((HasQuest(14013)) &amp;&amp; (!IsQuestCompleted(14013)))" >
+    <RunTo X="-8426.8" Y="1307.235" Z="102.2296" />
+    <CustomBehavior File="InteractWith" QuestId="14013" MobId="48304" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+    <RunTo X="-8408.67" Y="1345.142" Z="102.552" />
+    <RunTo X="-8419.044" Y="1323.321" Z="102.2723" />
+    <CustomBehavior File="RunMacro" Macro="/cast Charge" NumOfTimes="1" WaitTime="1000" X="-8431.764" Y="1313.502" Z="103.0257" />
+  </While>
+  <TurnIn QuestName="Charge" QuestId="14013" TurnInName="Warrior-Matic NX-01" TurnInId="34697" X="-8431.764" Y="1313.502" Z="103.0257" />
+</If>
+<If Condition="Me.Class ==WoWClass.Shaman">
+  <PickUp QuestName="Primal Strike" QuestId="14011" GiverName="Maxx Avalanche" GiverId="34695" X="-8415.516" Y="1321.444" Z="103.8445" />
+	<While Condition="((HasQuest(14011)) &amp;&amp; (!IsQuestCompleted(14011)))" >
+    <RunTo X="-8426.8" Y="1307.235" Z="102.2296" />
+    <CustomBehavior File="InteractWith" QuestId="14011" MobId="48304" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+    <CustomBehavior File="RunMacro" Macro="/cast Primal Strike" NumOfTimes="1" WaitTime="1000" />
+	</While>
+  <TurnIn QuestName="Primal Strike" QuestId="14011" TurnInName="Maxx Avalanche" TurnInId="34695" X="-8415.516" Y="1321.444" Z="103.8445" />
+</If>
+<If Condition="Me.Class ==WoWClass.Hunter">
+  <PickUp QuestName="Steady Shot" QuestId="14007" GiverName="Bamm Megabomb" GiverId="34673" X="-8429.455" Y="1311.641" Z="103.4599" />
+	<While Condition="((HasQuest(14007)) &amp;&amp; (!IsQuestCompleted(14007)))" >
+    <RunTo X="-8426.8" Y="1307.235" Z="102.2296" />
+    <CustomBehavior File="InteractWith" QuestId="14007" MobId="48304" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+    <CustomBehavior File="RunMacro" Macro="/cast Steady Shot" NumOfTimes="1" WaitTime="1000" />
+  </While>
+  <TurnIn QuestName="Steady Shot" QuestId="14007" TurnInName="Bamm Megabomb" TurnInId="34673" X="-8429.455" Y="1311.641" Z="103.4599" />
+</If>
+<While Condition="HasQuestAvailable(35054)" >
+  <CustomBehavior File="InteractWith" MobId="35054" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8422.143" Y="1367.708" Z="104.675" />
+	<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+<!--
+<If Condition="Me.Gender == WoWGender.Female">
+  <PickUp QuestName="Life of the Party" QuestId="14153" GiverName="Chip Endale" GiverId="35054" X="-8422.143" Y="1367.708" Z="104.675" />
+<Else>
+-->
+</While>
+<While Condition="HasQuestAvailable(35053)" >
+  <CustomBehavior File="InteractWith" MobId="35053" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8425.201" Y="1367.755" Z="104.6778" />
+	<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+<!--
+  <PickUp QuestName="Life of the Party" QuestId="14113" GiverName="Candy Cane" GiverId="35053" X="-8425.201" Y="1367.755" Z="104.6778" />
+  </Else>
+</If>
+-->
+</While>
+<While Condition="((HasQuest(14113)) &amp;&amp; (!IsQuestCompleted(14113)))" >
+  <CustomBehavior File="InteractWith" QuestId="14113" MobId="35186" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+  <If Condition="Me.CurrentTarget.HasAura(75042)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" />
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75044)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton2" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75046)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton3" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75048)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton4" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75050)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton5" />
+	  </ElseIf>
+  <Else>
+  </Else>
+  </If>
+  <CustomBehavior File="InteractWith" QuestId="14113" MobId="35175" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+  <If Condition="Me.CurrentTarget.HasAura(75042)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" />
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75044)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton2" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75046)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton3" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75048)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton4" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75050)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton5" />
+	  </ElseIf>
+  <Else>
+  </Else>
+  </If>
+  <CustomBehavior File="InteractWith" QuestId="14113" MobId="35201" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+  <If Condition="Me.CurrentTarget.HasAura(75042)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" />
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75044)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton2" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75046)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton3" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75048)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton4" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75050)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton5" />
+	  </ElseIf>
+  <Else>
+  </Else>
+  </If>
+</While>
+<While Condition="((HasQuest(14153)) &amp;&amp; (!IsQuestCompleted(14153)))" >
+  <CustomBehavior File="InteractWith" QuestId="14153" MobId="35186" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+  <If Condition="Me.CurrentTarget.HasAura(75042)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" />
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75044)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton2" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75046)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton3" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75048)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton4" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75050)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton5" />
+	  </ElseIf>
+  <Else>
+  </Else>
+  </If>
+  <CustomBehavior File="InteractWith" QuestId="14153" MobId="35175" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+  <If Condition="Me.CurrentTarget.HasAura(75042)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" />
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75044)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton2" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75046)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton3" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75048)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton4" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75050)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton5" />
+	  </ElseIf>
+  <Else>
+  </Else>
+  </If>
+  <CustomBehavior File="InteractWith" QuestId="14153" MobId="35201" WaitTime="1000" X="-8427.5" Y="1305.22" Z="102.3335" />
+  <If Condition="Me.CurrentTarget.HasAura(75042)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" />
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75044)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton2" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75046)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton3" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75048)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton4" />
+	  </ElseIf>
+  <ElseIf Condition="Me.CurrentTarget.HasAura(75050)">
+	  <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton5" />
+	  </ElseIf>
+  <Else>
+  </Else>
+  </If>
+</While>
+<If Condition="((HasQuest(14113)) &amp;&amp; (IsQuestCompleted(14113)))" >
+  <TurnIn QuestName="Life of the Party" QuestId="14113" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+</If>
+<If Condition="((HasQuest(14153)) &amp;&amp; (IsQuestCompleted(14153)))" >
+  <TurnIn QuestName="Life of the Party" QuestId="14153" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+</If>
+<PickUp QuestName="Pirate Party Crashers" QuestId="14115" GiverName="Sassy Hardwrench" GiverId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+<Objective QuestName="Pirate Party Crashers" QuestId="14115" Type="KillMob" MobId="35200" KillCount="12" />
+  <!-- Level 4 -->
+<TurnIn QuestName="Pirate Party Crashers" QuestId="14115" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+<PickUp QuestName="The Uninvited Guest" QuestId="14116" GiverName="Sassy Hardwrench" GiverId="34668" X="-8423.816" Y="1366.066" Z="104.675" />
+<TurnIn QuestName="The Uninvited Guest" QuestId="14116" TurnInName="Trade Prince Gallywix" TurnInId="35222" X="-8423.747" Y="1362.064" Z="116.8615" />
+<PickUp QuestName="A Bazillion Macaroons?!" QuestId="14120" GiverName="Trade Prince Gallywix" GiverId="35222" X="-8423.747" Y="1362.064" Z="116.8615" />
+<TurnIn QuestName="A Bazillion Macaroons?!" QuestId="14120" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8424.748" Y="1322.33" Z="102.9292" />
+<PickUp QuestName="The Great Bank Heist" QuestId="14122" GiverName="Sassy Hardwrench" GiverId="34668" X="-8424.748" Y="1322.33" Z="102.9292" />
+<PickUp QuestName="Waltz Right In" QuestId="14123" GiverName="Slinky Sharpshiv" GiverId="34693" X="-8427.5" Y="1305.22" Z="102.3335" />
+<PickUp QuestName="Robbing Hoods" QuestId="14121" GiverName="Megs Dreadshredder" GiverId="34874" X="-8435.328" Y="1316.877" Z="102.6322" />
+<PickUp QuestName="Liberate the Kaja'mite" QuestId="14124" GiverName="Foreman Dampwick" GiverId="34872" X="-8431.545" Y="1276.95" Z="103.5289" />
+<While Condition="((HasQuest(14124)) &amp;&amp; (!IsQuestCompleted(14124)))" >
+  <CustomBehavior File="UseItemTargetLocation" MobId="195488" ObjectType="GameObject" WaitTime="2000" UseType="ToObject" MinRange="2" Range="5" ItemId="48768" CollectionDistance="200" X="-8464.21" Y="1204.967" Z="42.80505" />
+	<CustomBehavior File="InteractWith" QuestId="14124" ObjectType="Gameobject" MobId="195492" NumOfTimes="30"  WaitForNpcs="False" CollectionDistance="200" X="-8464.21" Y="1204.967" Z="42.80505" />
+</While>
+<TurnIn QuestName="Liberate the Kaja'mite" QuestId="14124" TurnInName="Foreman Dampwick" TurnInId="34872" X="-8431.545" Y="1276.95" Z="103.5289" />
+<If Condition="HasQuest(14121) &amp;&amp; !IsQuestCompleted(14121)" >
+  <RunTo X="-8347.588" Y="1381.902" Z="95.92965" />
+  <CustomBehavior File="MyCTM" X="-8291.693" Y="1433.638" Z="40.15383" />
+</If>
+<Objective QuestName="Robbing Hoods" QuestId="14121" Type="CollectItem" ItemId="47530" CollectCount="12" />
+<If Condition="((HasQuest(14122)) &amp;&amp; (!IsQuestCompleted(14122)))" >
+	<RunTo X="-8373.546" Y="1727.475" Z="39.94706" />
+  <CustomBehavior File="14122" QuestId="14122" /> <!-- Azenius behavior -->
+	<CustomBehavior File="WaitTimer" WaitTime="3000"/>
+	<CustomBehavior File="EjectVeh" Eject="True" />
+</If>
+<If Condition="HasQuest(14123) &amp;&amp; !IsQuestCompleted(14123)" >
+  <RunTo X="-8123.096" Y="1797.781" Z="25.08519" />
+  <RunTo X="-8008.244" Y="1868.068" Z="52.51615" />
+  <CustomBehavior File="MyCTM" X="-8007.152" Y="1860.539" Z="53.19692" />
+  <Objective QuestName="Waltz Right In" QuestId="14123" Type="CollectItem" ItemId="48941" CollectCount="1" />
+  <CustomBehavior File="MyCTM" X="-8008.244" Y="1868.068" Z="52.51615" />
+</If>
+
+
+
+<Objective QuestName="Waltz Right In" QuestId="14123" Type="CollectItem" ItemId="48939" CollectCount="1" />
+<Objective QuestName="Waltz Right In" QuestId="14123" Type="CollectItem" ItemId="48937" CollectCount="1" />
+<If Condition="HasQuest(14123)">
+  <While Condition="(Me.Location.Distance(new WoWPoint(-8423.81, 1361.3, 104.671)) &gt; 80)">
+    <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1000" />
+    <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for Hearth {TimeRemaining}" />
+  </While>
+</If>
+<TurnIn QuestName="Waltz Right In" QuestId="14123" TurnInName="Slinky Sharpshiv" TurnInId="34693" X="-8427.5" Y="1305.22" Z="102.3335" />
+<TurnIn QuestName="The Great Bank Heist" QuestId="14122" TurnInName="Sassy Hardwrench" TurnInId="34668" X="-8424.748" Y="1322.33" Z="102.9292" />
+<TurnIn QuestName="Robbing Hoods" QuestId="14121" TurnInName="Megs Dreadshredder" TurnInId="34874" X="-8435.328" Y="1316.877" Z="102.6322" />
+<PickUp QuestName="447" QuestId="14125" GiverName="Sassy Hardwrench" GiverId="34668" X="-8424.748" Y="1322.33" Z="102.9292" />
+  <!-- Level 5 -->
+<Objective QuestName="447" QuestId="14125" Type="UseObject" ObjectId="201735" UseCount="1" />
+<Objective QuestName="447" QuestId="14125" Type="UseObject" ObjectId="201733" UseCount="1" />
+<Objective QuestName="447" QuestId="14125" Type="UseObject" ObjectId="201734" UseCount="1" />
+<If Condition="HasQuest(14125)" >
+	<CustomBehavior File="InteractWith" MobId="201736" ObjectType="Gameobject" WaitTime="1000" Range="6" NumOfTimes="1" CollectionDistance="1000" X="-8421.049" Y="1325.749" Z="101.9332" />
+<!--
+  <Objective QuestName="447" QuestId="14125" Type="UseObject" ObjectId="201736" UseCount="1" />
+-->
+   <CustomBehavior File="WaitTimer" WaitTime="12000" />
+</If>
+<TurnIn QuestName="447" QuestId="14125" TurnInName="Claims Adjuster" TurnInId="37602" X="-8419.556" Y="1323.385" Z="104.5969" />
+<PickUp QuestName="Life Savings" QuestId="14126" GiverName="Sassy Hardwrench" GiverId="34668" X="-8424.748" Y="1322.33" Z="102.9292" />
+<If Condition="HasQuest(14126)">
+  <CustomBehavior File="WaitTimer" WaitTime="3000" />
+  <CustomBehavior File="InteractWith" MobId="34668" GossipOptions="1" X="-8424.748" Y="1322.33" Z="102.9292" />
+  <CustomBehavior File="WaitTimer" WaitTime="56000" />
+</If>
+<TurnIn QuestName="Life Savings" QuestId="14126" TurnInName="Trade Prince Gallywix" TurnInId="35222" X="-7854.503" Y="1847.41" Z="7.133956" />
+<If Condition="!HasQuest(14239) &amp;&amp; !IsQuestCompleted(14239)" >
+  <CustomBehavior File="WaitTimer" WaitTime="165000" />
+</If>
+<CustomBehavior File="LoadProfile" ProfileName="[H-Quest]The Lost Isles(5-13)[Cava]" />
+
+
+
+
+<!--
+
+
+goto The Lost Isles,24.6,77.9
+.talk 36608
+..accept 14239 |instant
+step
+goto 24.77,77.9
+.talk 36600
+..' You will be offered one of these two quests
+..accept 14001 |or
+..accept 14474 |or
+step
+goto 26.0,80.1
+.click Goblin Escape Pod##9092+
+.' Rescue 6 Goblin Survivors |q 14001/1
+step
+goto 26.0,80.1
+.click Goblin Escape Pod##9092+
+.' Rescue 6 Goblin Survivors |q 14474/1
+step
+goto 27.9,75.5
+.talk 35650
+..' You will only be able to turn in one of these two quests
+..turnin 14001
+..turnin 14474
+..accept 14014
+step
+goto 27.9,74.4
+.talk 35758
+..accept 14019
+step
+goto 27.9,74.3
+.talk 35786
+..accept 14473
+step
+goto 27.2,69.8
+.kill 6 Teraptor Hatchling##36740+ |q 14473/1
+.' Use your Nitro-Potassium Bananas on Bomb-Throwing Monkeys |use Nitro-Potassium Bananas##49028
+.' Feed 10 Bomb-Throwing Monkeys |q 14019/1
+.click Crate of Tools##9116+
+.get 8 Crate of Tools |q 14014/1
+step
+goto 27.8,74.3
+.talk 35786
+..turnin 14473
+step
+goto 27.9,74.4
+.talk 35758
+..turnin 14019
+step
+goto 27.9,75.5
+.talk 35650
+..turnin 14014
+..accept 14248
+step
+ding 6
+step
+goto 31.3,79.3
+.talk 35769
+..turnin 14248
+..accept 14021
+..accept 14031
+step
+goto 31.8,76.8
+.' Escort the Frightened Miner and protect him
+.' Use your KTC Snapflash near the floating green camera hologram on the left wall as you enter the cave |use KTC Snapflash##49887
+.' Capture Cave Painting 1 |q 14031/1
+step
+goto 32.5,76.6
+.' Escort the Frightened Miner and protect him
+.' Use your KTC Snapflash near the floating green camera hologram, it will be on the roof of the cave after take the ramp down |use KTC Snapflash##49887
+.' Capture Cave Painting 2 |q 14031/2
+step
+goto 33.9,75.3
+.' Escort the Frightened Miner and protect him
+.' Use your KTC Snapflash near the floating green camera hologram, it will be on the right wall |use KTC Snapflash##49887
+.' Capture Cave Painting 3 |q 14031/3
+step
+goto 31.4,74.1
+.' Escort the Frightened Miner and protect him
+.' Make the Kaja'mite Ore mining a success! |q 14021/1
+.' Use your KTC Snapflash near the floating green camera hologram, it will be next to a big face statue with spiked teeth |use KTC Snapflash##49887
+.' Capture the Pygmy Altar |q 14031/4
+step
+goto 31.2,74.1
+.talk 35837
+..accept 14233
+step
+goto 31.5,78.2 |n
+.' Leave the cave |goto The Lost Isles,31.4,78.4,0.5 |noway |c
+step
+goto 31.3,79.3
+.talk 35769
+..turnin 14021
+step
+goto 27.9,75.5
+.talk 35650
+..turnin 14031
+..turnin 14233
+..accept 14234
+step
+goto 37.6,78.0
+.talk 35875
+..turnin 14234
+..accept 14235
+step
+goto 35.4,75.7
+.talk 40926
+..turnin 14235
+..accept 14236
+step
+'Use your Weed Whacker |use Weed Whacker##49108
+.' Become a weed whacker |havebuff Interface\Icons\Ability_Whirlwind |c |q 14236
+step
+goto 35.3,75.1
+.' Spin around next to the plants all around this area
+.' Mow down 100 Deadly Jungle Plants |q 14236/1
+step
+goto 35.4,75.7
+.talk 40926
+..turnin 14236
+..accept 14303
+step
+goto 37.6,78.0
+.talk 35875
+..turnin 14303
+..accept 14237
+step
+goto 34.6,66.8
+.talk 40926
+..turnin 14237
+..accept 14238
+step
+'Use your Infrared Heat Focals |use Infrared Heat Focals##49611
+.' Wear the Infrared Heat Focals |havebuff INTERFACE\ICONS\inv_helmet_47 |q 14238
+step
+goto 31.2,65.6
+.kill 10 SI:7 Assassin##36092+ |q 14238/1
+step
+goto 34.6,66.8
+.talk 35917
+..turnin 14238
+..accept 14240
+step
+goto 25.3,59.8
+.talk 36112
+..turnin 14240
+..accept 14241
+step
+goto 24.6,64.3
+.from SI:7 Operative##36103+
+.get Gyrochoppa Keys |q 14241/1
+step
+goto 23.2,67.5
+.clicknpc Gyrochoppa##36127
+..turnin 14241
+..accept 14242
+step
+goto 11.8,62.7
+.' Go downstairs in the ship
+.talk 4949
+.' Locate the Precious Cargo |q 14242/1
+step
+goto 11.8,62.7
+.talk 4949
+..turnin 14242
+..accept 14326
+step
+goto 12.4,63.1
+.' Go upstairs on the ship
+.talk 36161
+..turnin 14326
+..accept 14243
+step
+'Use your Lightning Strike ability on the Alliance Sailors in the tiny boats as you fly around
+.kill 50 Alliance Sailor##36391+ |q 14243/1
+step
+goto 35.9,66.7
+.talk 36188
+..turnin 14243
+..accept 14445
+step
+goto 36.0,67.5
+.talk 36425
+..turnin 14445
+..accept 14244
+step
+goto 36.3,66.6
+.click Rocket Sling##9112
+..' Choose Up, Up & Away!
+.' Survive the Rocket Sling Trip |q 14244/1
+step
+goto 44.5,64.4
+.talk 36470
+..turnin 14244
+..accept 14245
+step
+goto 45.5,65.4
+.click Town-In-A-Box Plunger##9277
+.' Set Off the Town-In-A-Box |q 14245/1
+step
+ding 7
+step
+goto 45.4,64.8
+.talk 36471
+..turnin 14245
+..accept 27139
+step
+goto 45.3,65.2
+.talk 38120
+..turnin 27139
+..accept 24671
+step
+goto 46.5,65.4
+.clicknpc Wild Clucker##38111+
+.' Capture 10 Wild Cluckers |q 24671/1
+step
+goto 45.3,65.2
+.talk 38120
+..turnin 24671
+step
+goto 45.3,64.8
+.talk 38122
+..accept 24741
+step
+goto 49.2,73.9
+.' Use your Wild Clucker Eggs while standing in Raptor Traps around this area near Spiny Raptors |use Wild Clucker Eggs##50232 |tip They look like big spiked metal traps on the ground around this area.  Don't kill the Spiny Raptors by attacking them.
+.click Raptor Egg##3851+
+.get 5 Spiny Raptor Egg |q 24741/1
+step
+goto 45.3,64.9
+.talk 38122
+..turnin 24741
+step
+goto 45.3,65.2
+.talk 38120
+..accept 24744
+step
+goto 45.6,56.6
+.from Mechachicken##38224
+.click The Biggest Egg Ever##1411
+.get The Biggest Egg Ever |q 24744/1
+step
+goto 45.3,65.2
+.talk 38120
+..turnin 24744
+..accept 24816
+step
+goto 42.5,62.6
+.from Ravenous Lurker##36681+
+.get 6 Shark Parts |q 24816/1
+step
+'Hearth to Town-In-A-Box |goto 45.0,65.4,0.5 |use Hearthstone##6948 |noway |c
+step
+goto 45.3,65.6
+.talk 39199
+..turnin 24816
+..accept 24817
+step
+goto 43.6,65.1
+.click Mechashark X-Steam Controller##6424
+.' Use the Mechashark X-Steam Controller |q 24817/2
+step
+goto 42.1,66.3
+.kill The Hammer##36682 |q 24817/2
+step
+goto 45.3,65.2
+.talk 38120
+..turnin 24817
+..accept 24856
+step
+goto 52.2,73.1
+.talk 38432
+..turnin 24856
+..accept 24858
+step
+goto 52.2,73.2
+.talk 38381
+..accept 24859
+step
+goto 53.7,79.1
+.from Vashj'elan Warrior##38359+, Vashj'elan Siren##38360+
+.get 5 Intact Naga Hide |q 24859/1
+.click Naga Banner##9267+
+.' Replace 10 Naga Banners |q 24858/1
+step
+goto 52.2,73.2
+.talk 38381
+..turnin 24859
+step
+goto 52.2,73.2
+.talk 38432
+..turnin 24858
+..accept 24864
+step
+ding 8
+step
+goto 58.1,80.3
+.' Use your Irresistible Pool Pony in the water |use Irresistible Pool Pony##50602
+.' Ride your irresistible Pool Pony |havebuff Interface\Icons\Ability_Mount_RidingHorse |q 24864
+step
+goto 58.9,83.1
+.talk 44589
+.' Lure 12 Naga Hatchlings |q 24864/1
+step
+goto 52.2,73.1
+.talk 38432
+..turnin 24864
+..accept 24868
+step
+goto 54.1,90.1
+.' Follow Ace as he runs with the Naga Hatchlings
+.from Faceless of the Deep##38448
+.' Deal with the leader of the naga |q 24868/1
+step
+goto 52.2,73.1
+.talk 38432
+..turnin 24868
+..accept 24897
+step
+'Hearth to Town-In-A-Box |goto 45.0,65.4,0.5 |use Hearthstone##6948 |noway |c
+step
+goto 45.2,64.9
+.talk 38387
+..turnin 24897
+..accept 24901
+step
+goto 45.7,65.1
+.clicknpc B.C. Eliminator##38526
+.' Use the Fire Cannon ability on your hotbar to shoot at the Oomlot Warriors
+.' Defeat 30 Oomlot Warriors |q 24901/1
+step
+goto 45.2,64.9
+.talk 38869
+..turnin 24901
+..accept 24924
+step
+goto 56.6,72.0
+.talk 38647
+..turnin 24924
+..accept 24925
+..accept 24929
+step
+goto 59.2,69.0 |n
+.' Follow the path up |goto 59.2,69.0,0.5 |noway |c
+step
+goto 63.0,68.6
+.kill Yngwie##38696 |q 24929/1
+step
+goto 58.9,71.4
+.from Oomlot Shaman##38644+ |tip Only kill the Oomlot Shamans that are casting a green spell on Goblin Captives.
+.' Free 5 Goblin Captives |q 24925/1
+step
+goto 56.6,71.9
+.talk 38647
+..turnin 24925
+..turnin 24929
+..accept 24937
+step
+goto 45.2,64.9
+.talk 38387
+..turnin 24937
+..accept 24940
+step
+goto 51.8,47.1
+.talk 38738
+..turnin 24940
+..accept 24942
+step
+goto 51.9,47.2
+.talk 36471
+..accept 24945
+step
+goto 51.7,47.4
+.talk 39199
+..accept 24946
+step
+'Use your Super Booster Rocket Boots |use Super Booster Rocket Boot##52013
+.' Wear the Super Booster Rocket Boots in your inventory |havebuff Interface\Icons\INV_Gizmo_RocketBoot_01 |q 24946
+step
+goto 59.6,40.2
+.kill Gaahl##38808 |q 24945/1
+.click Rockin' Powder##49+
+.get 5 Rockin' Powder |q 24946/1
+step
+'Use your Super Booster Rocket Boots |use Super Booster Rocket Boots##52013
+.' Wear the Super Booster Rocket Boots in your inventory |havebuff Interface\Icons\INV_Gizmo_RocketBoot_01 |q 24946
+step
+goto 58.8,47.1
+.kill Malmo##38809 |q 24945/2
+step
+'Use your Super Booster Rocket Boots |use Super Booster Rocket Boots##52013
+.' Wear the Super Booster Rocket Boots in your inventory |havebuff Interface\Icons\INV_Gizmo_RocketBoot_01 |q 24946
+step
+goto 63.6,52.7
+.kill Teloch##38810 |q 24945/3
+step
+'Use your Super Booster Rocket Boots |use Super Booster Rocket Boots##52013
+.' Wear the Super Booster Rocket Boots in your inventory |havebuff Interface\Icons\INV_Gizmo_RocketBoot_01 |q 24946
+step
+goto 56.5,44.1
+.' Use your Super Booster Rocket Boots |use Super Booster Rocket Boots##52013
+.' Go near Goblin Zombies with your Super Booster Rocket Boots active
+.kill 50 Goblin Zombie##38816+ |q 24942/1
+step
+ding 9
+step
+goto 51.8,47.1
+.talk 38738
+..turnin 24942
+step
+goto 51.9,47.2
+.talk 36471
+..turnin 24945
+step
+goto 51.7,47.4
+.talk 38124
+..turnin 24946
+step
+goto 51.8,47.1
+.talk 38738
+..accept 24952
+step
+'Use your Rockin' Powder Infused Rocket Boots in your bags |use Rockin' Powder Infused Rocket Boots##52032 |q 24952/1
+step
+goto 68.9,46.4
+.talk 38120
+..turnin 24952
+..accept 24954
+step
+goto 68.0,44.4
+.from Child of Volcanoth##38845+
+.get 10 Fire Gland |q 24954/1
+step
+goto 68.9,46.4
+.talk 38120
+..turnin 24954
+..accept 24958
+step
+goto 71.1,53.1
+.' Use your Bootzooka repeatedly on Volcanoth |use Bootzooka##52043 |tip He's a huge turtle inside a cave.  Move to the side and take cover behind the rock on the left when Volcanoth is about to breathe fire.
+.' Kill Volcanoth |q 24958/1
+step
+goto 72.9,57.0
+.talk 38928
+..turnin 24958
+..accept 25023
+step
+goto 36.8,43.1
+.talk 38935
+..turnin 25023
+..accept 25024
+step
+goto 36.3,43.4
+.talk 39065
+..accept 25093
+step
+goto 37.4,41.9
+.talk 38387
+..accept 25058
+step
+goto 32.3,42.9
+.' Use your Satchel of Grenades on the land mines |use Satchel of Grenades##52280 |tip They are all along this beach.
+.from Commander Arrington##39141
+.get Commander Arrington's Head |q 25093/1
+step
+goto 30.8,33.9
+.' Use your Satchel of Grenades on the land mines |use Satchel of Grenades##52280 |tip They are all along this beach.
+.from Alexi Silenthowl##39143
+.get Alexi Silenthowl's Head |q 25093/3
+step
+goto 33.4,27.9
+.' Use your Satchel of Grenades on the land mines |use Satchel of Grenades##52280 |tip They are all along this beach.
+.from Darkblade Cyn##39142
+.get Darkblade Cyn's Head |q 25093/2
+step
+goto 33.4,34.1
+.kill 15 Alliance Paratrooper##39069+ |q 25024/1
+.' Use your Satchel of Grenades on the land mines |use Satchel of Grenades##52280 |tip They are all along this beach.
+.' Detonate 12 Land Mines |q 25058/1
+step
+goto 34.1,38.7 |n
+.' Follow the path up |goto 34.1,38.7,0.5 |noway |c
+step
+goto 37.4,41.9
+.talk 38387
+..turnin 25058
+step
+goto 36.8,43.1
+.talk 38935
+..turnin 25024
+step
+goto 36.3,43.4
+.talk 39065
+..turnin 25093
+step
+goto 37.4,41.9
+.talk 38387
+..accept 25066
+step
+goto 37.4,41.9
+.talk 38869
+..' Tell her to get you up into the skies
+.' You will get in an air plane |invehicle |c |q 25066
+step
+goto 33.7,38.8
+.' Use your abilities on your hotbar to Gnomeregan Stealth Fighters |tip They are stealthed airplanes flying around in the sky.
+.' Shoot down 10 Gnomeregan Stealth Fighters |q 25066/1
+step
+goto 37.4,41.9 |n
+.' Click the red arrow on your hotbar to stop flying to plane |outvehicle |noway |c |q 25066
+step
+goto 37.4,41.9
+.talk 38387
+..turnin 25066
+..accept 25098
+step
+goto 36.8,43.1
+.talk 38935
+..turnin 25098
+..accept 25099
+step
+goto 33.8,38.8
+.talk 40926
+..turnin 25099
+..accept 25100
+step
+goto 53.7,34.9
+.talk 38517
+..turnin 25100
+..accept 25109
+step
+goto 54.1,36.0 |n
+.' Enter the cave |goto 54.1,36.0,0.5 |noway |c
+step
+goto 53.2,36.5
+.talk 38124
+..turnin 25109
+..accept 25110
+step
+ding 10
+step
+goto 54.6,36.0
+.click Kaja'Cola Zero-One##9357
+.get Kaja'Cola Zero-One |q 25110/1
+step
+goto 53.2,36.5
+.talk 38124
+..turnin 25110
+step
+'Next to you:
+.talk 39199
+..accept 25122
+..accept 25123
+step
+goto 55.8,32.1
+.from Blastshadow the Brutemaster##39194
+.click Kaja'Cola Zero-One##9357+ |tip You will need 9 total, just get as many as you can find for now.
+.click Blastshadow's Soulstone##8552
+.collect Blastshadow's Soulstone##52481 |n
+.' Use Blastshadow's Soulstone on Blastshadow the Brutemaster's corpse |use Blastshadow's Soulstone##52481
+.' Destroy Blastshadow's Soulstone |q 25123/1
+step
+'Next to you:
+.talk 39199
+..turnin 25123
+step
+goto 57.0,35.0
+.click Kaja'Cola Zero-One##9357+ |tip You will need 9 total, just get as many as you can find for now.
+.' Use a Kaja'Cola Zero-One on Izzy |use Kaja'Cola Zero-One##52484
+.' Free Izzy's mind |q 25122/2
+step
+goto 56.9,37.2
+.click Kaja'Cola Zero-One##9357+ |tip You will need 9 total, just get as many as you can find for now.
+.' Use a Kaja'Cola Zero-One on Ace |use Kaja'Cola Zero-One##52484
+.' Free Ace's mind |q 25122/1
+step
+goto 57.0,32.1
+.click Kaja'Cola Zero-One##9357+ |tip You will need 9 total, just get as many as you can find for now.
+.' Use a Kaja'Cola Zero-One on Gobber |use Kaja'Cola Zero-One##52484
+.' Free Gobber's mind |q 25122/3
+.' Use a Kaja'Cola Zero-One on Kezan Citizens and Goblin Survivors |use Kaja'Cola Zero-One##52484
+.' Free 6 other goblin's minds |q 25122/4
+step
+Next to you:
+.talk 39199
+..turnin 25122
+..accept 25125
+step
+goto 56.6,28.5 |n
+.' Leave the cave |goto 56.6,28.5,0.5 |noway |c
+step
+goto 56.3,27.3
+.clicknpc Mine Cart##39341
+..turnin 25125
+..accept 25184
+.' Ride the Mine Cart |q 25184/1
+step
+goto 54.4,16.9
+.talk 38124
+..turnin 25184
+..accept 25200
+step
+goto 54.4,16.9
+.talk 38738
+..accept 25201
+step
+goto 54.2,17.7
+.kill 10 Steamwheedle Shark##39354+ |q 25200/1
+.click Spare Shredder Parts##7835
+.get 10 Spare Shredder Parts |q 25201/1
+step
+goto 54.4,16.9
+.talk 38124
+..turnin 25200
+step
+goto 54.4,16.9
+.talk 38738
+..turnin 25201
+step
+goto 54.4,16.9
+.talk 38124
+..accept 25204
+step
+goto 54.1,17.2
+.talk 38441
+..accept 25203
+only if _G['UnitSex']("player")==2 //male
+step
+goto 54.0,17.0
+.talk 38647
+..accept 25202
+only if _G['UnitSex']("player")==3 //female
+step
+ goto 50.8,13.8
+.click Valve #1##353
+.' Release Valve #1 |q 25204/1
+step
+goto 50.5,13.1
+.click Valve #3##353
+.' Release Valve #3 |q 25204/3
+step
+goto 50.2,11.8
+.click Valve #2##353
+.' Release Valve #2 |q 25204/2
+step
+goto 49.9,12.7
+.click Valve #4##353
+.' Release Valve #4 |q 25204/4
+step
+goto 49.9,13.9
+.kill Chip Endale##39363 |q 25203/1
+only if _G['UnitSex']("player")==2 //male
+step
+goto 49.9,13.9
+.from Chip Endale##39363
+.collect Still-Beating Heart |q 25202/1
+only if _G['UnitSex']("player")==3 //female
+step
+goto 51.4,13.1
+.click Platform Control Panel##356
+..turnin 25204
+..accept 25207
+.click Big Red Button##339
+.' Destroy the KTC Oil Platform |q 25207/1
+step
+goto 54.2,17.2
+.talk 38441
+..turnin 25203
+only if _G['UnitSex']("player")==2 //male
+step
+goto 54.0,17.0
+.talk 38647
+..accept 25202
+only if _G['UnitSex']("player")==3 //female
+step
+goto 54.4,16.9
+.talk 38124
+..turnin 25207
+step
+goto The Lost Isles,54.0,17.0
+.talk 38647
+..turnin 25202
+step
+goto 54.4,16.9
+.talk 38124
+..accept 25213
+step
+goto 43.6,25.3
+.talk 38869
+..turnin 25213
+..accept 25243 |only if _G['UnitSex']("player")==2 //male
+..accept 25244 |only if _G['UnitSex']("player")==3 //female
+step
+goto 43.9,25.3
+.talk 38120
+..accept 25214
+step
+goto 39.7,27.1
+.from Candy Cane##39426
+.get Fickle Heart |q 25243/1
+only if _G['UnitSex']("player")==2 //male
+step
+goto 39.7,27.1
+.kill Candy Cane##39426 |q 25244/1
+only if _G['UnitSex']("player")==3 //female
+step
+goto 40.9,25.5
+.clicknpc Captured Goblin##39456+ |tip They are in wooden cages all around this area.
+.' Launch 8 cages |q 25214/1
+step
+goto 43.9,25.3
+.talk 38120
+..turnin 25214
+step
+goto 43.6,25.3
+.talk 38869
+..turnin 25243 |only if _G['UnitSex']("player")==2 //male
+..turnin 25244 |only if _G['UnitSex']("player")==3 //female
+step
+goto 43.6,25.3
+.talk 38869
+..accept 25251
+step
+ding 11
+step
+goto 43.9,25.2
+.clicknpc Ultimate Footbomb Uniform##39592
+.' Take control of the Ultimate Footbomb Uniform |q 25251/1
+step
+goto 42.3,18.5 |n
+.' Follow the path up |goto 42.3,18.5,0.5 |noway |c
+step
+goto 43.5,20.0
+.' Use your abilities on your hotbar to kill Trade Prince Gallywix |tip Stand behind Trade Prince Gallywix when you are fighting him.
+.' Deal with Trade Prince Gallywix |q 25251/2
+step
+goto 43.6,25.3
+.talk 38869
+..turnin 25251
+..accept 25265
+step
+goto 42.1,17.4
+.talk 4949
+..turnin 25265
+..accept 25266
+step
+goto 42.6,16.4
+.talk 38869
+..' Tell her to set sail for Orgrimmar before the island blows for good! |goto Durotar |noway |c
+step
+goto Durotar,57.7,9.8
+.talk 39609
+..turnin 25266
+..accept 25267
+step
+'Go west into Orgrimmar |goto Orgrimmar |noway |c
+step
+goto Orgrimmar,49.2,72.3
+.talk 3144
+..accept 26803
+step
+goto 48.1,70.5
+.talk 25237
+..turnin 25267
+..accept 25275
+step
+goto 47.6,71.2
+.talk 35068
+..accept 26642
+step
+goto 51.2,63.1 |n
+.' Ride the elevator up |goto 51.2,63.1,0.5 |noway |c
+step
+goto 49.7,59.2
+.talk 3310
+..turnin 26803
+..accept 26804
+step
+goto 49.7,59.2
+.talk 3310
+.' Fly to Razor Hill, Durotar |goto Durotar,53.0,43.6,0.5 |noway |c
+step
+goto Durotar,52.0,43.5
+.talk 3139
+..turnin 26804
+..accept 26806
+step
+goto 53.1,43.6
+.talk 41140
+..turnin 26806
+step
+goto 50.8,43.6
+.talk 3336
+..accept 840
+step
+'Go west to Northern Barrens |goto Northern Barrens |noway |c
+step
+goto Northern Barrens,67.7,39.4
+.talk 3337
+..turnin 840
+..turnin 26642
+..accept 871
+step
+goto 67.5,38.7
+.talk 34258
+..accept 844
+step
+goto 67.8,30.3
+.from Greater Plainstrider##3244+
+.get 7 Plainstrider Beak |q 844/1
+.' You can find more Greater Plainstriders at [64.6,41.3]
+step
+goto 67.4,38.7
+.talk 34258
+..turnin 844
+step
+goto 67.1,45.5
+.talk 34284
+..accept 13878
+step
+goto 66.6,47.3
+.click Wolf Chains##8721+
+.' Free 3 Wolves |q 13878/1
+step
+goto 66.8,49.8
+.kill 8 Razormane Plunderer##3267+ |q 871/1
+.kill 3 Razormane Hunter##3265+ |q 871/2
+step
+goto 67.1,45.5
+.talk 34284
+..turnin 13878
+step
+ding 12
+step
+goto 67.7,39.4
+.talk 3337
+..turnin 871
+..accept 872
+step
+goto 67.4,38.7
+.talk 34258
+..accept 5041
+step
+goto 66.0,52.5 |n
+.' Enter the cave |goto Northern Barrens,66.0,52.5,0.5 |noway |c
+step
+goto 64.3,55.0
+.' Follow the path in the cave until it dead ends on a small platform.
+.from Kreenig Snarlsnout##3438
+.get Kreenig Snarlsnout's Tusk |q 872/3
+step
+goto 64.7,53.2
+.kill 5 Razormane Thornweaver##3268+ |q 872/1
+.kill 5 Razormane Defender##3266+ |q 872/2
+.click Crossroads Supply Crate##5531+
+.get 5 Crossroads Supply Crate |q 5041/1
+step
+goto 66.0,52.5 |n
+.' Leave the cave |goto Northern Barrens,66.0,52.5,0.5 |noway |c
+step
+goto 67.7,39.4
+.talk 3337
+..turnin 872
+step
+goto 67.4,38.7
+.talk 34258
+..turnin 5041
+..accept 13949
+step
+goto 67.4,38.7
+.talk 34258
+..' Tell her you're ready
+.clicknpc Lead Caravan Kodo##34430
+.' Use your Shoot ability to kill the quilboars that attack the caravan as you ride the kodo |tip The to kill them very easily, spam the 1 button and the Tab key on your keyboard together.
+.' Escort the Caravan |q 13949/1
+step
+goto 56.4,40.3
+.talk 5907
+..turnin 13949
+step
+goto 54.6,41.5
+.talk 34578
+..accept 13975
+step
+goto 54.6,41.5
+.talk 34578
+..' Tell him to bring it on
+.clicknpc Head Caravan Kodo##34577
+.' Use your abilities on your hotbar on the Burning Blade mobs that attack you |tip It's easier to just manually left click them Burning Blade mobs and spam the 1 button on your hotbar to shoot them all.  Don't bother with the melee attack at all.
+.' Escort the Crossroads Caravan |q 13975/1
+step
+goto 50.0,59.9
+.talk 3338
+..accept 845
+..accept 903
+step
+goto 49.6,57.9
+.talk 3934
+.home The Crossroads
+step
+goto 48.7,59.6
+.talk 3429
+..turnin 13975
+step
+goto 48.7,58.7
+.talk 3615
+.fpath The Crossroads
+step
+goto 43.2,51.6
+.from Savannah Huntress##3415+
+.get 5 Huntress Claws |q 903/1
+.from Zhevra Runner##3242+
+.get 4 Zhevra Hooves |q 845/1
+step
+'Hearth to The Crossroads |goto 49.5,57.9,0.5 |use Hearthstone##6948 |noway |c
+step
+goto 50.0,59.8
+.talk 3338
+..turnin 845
+..turnin 903
+step
+ding 13
+step
+goto 48.7,58.7
+.talk 3615
+.' Fly to Orgrimmar, Durotar |goto Orgrimmar,49.3,59.4,0.5 |noway |c
+
+-->
+
+
+
+<CustomBehavior File="LoadProfile" ProfileName="[H-Quest]The Lost Isles(5-13)[Cava]" />
+</QuestOrder>
+</HBProfile>

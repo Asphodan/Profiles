@@ -1,0 +1,103 @@
+<HBProfile>
+<Name>[Quest] 1 to 90 By [Cava]</Name>
+	
+<QuestOrder>
+  <CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura,Anti Drown,AutoEquip2,Talented" />
+	<CustomBehavior File="UserDialog" AllowBotStop="False" SoundCue="Exclamation" SoundCueInterval="15" ExpiryTime="30" ExpiryAction="InputEnabled_Continue"
+  Text="Thank you for taking the time to use Cava's profiles hope you like it\n\n
+
+   Please reporte any bugs to help me improving this profiles\n\n
+   Make sure you do the folowing:\n
+   setup AutoEquip2\n\n
+   If you can, then please:\n
+   Send some money to char at start and - set food and drinks as well\n
+   Send bags to char at start and - equip the bags\n\n
+
+   Config a mail recipient or some valuable itens will be destroid!\n
+    (Settings and Tools Button)" />
+
+<If Condition="Me.IsHorde" >
+	<If Condition="(Me.LevelFraction &gt;= 85)" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]The Jade Forest(85-86)[Cava]" />
+  </If>
+	<If Condition="Me.Race == WoWRace.Orc">
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Orc(1-5)[Cava]" />
+ 	</If>
+	<If Condition="Me.Race == WoWRace.Undead">
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Undead(1-5)[Cava]" />
+	</If>
+	<If Condition="Me.Race == WoWRace.Tauren">
+	  <If Condition="(Me.LevelFraction &gt;= 4.88)" >
+      <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Mulgore(4-10)[Cava]" />
+	  </If>
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Tauren(1-4)[Cava]" />
+	</If>
+ 	<If Condition="Me.Race == WoWRace.Troll">
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Troll(1-5)[Cava]" />
+	</If>
+	<If Condition="Me.Race == WoWRace.BloodElf">
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Blood Elf(1-5)[Cava]" />
+	</If>
+	<If Condition="Me.Race == WoWRace.Goblin" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[H-Quest]Goblin(1-5)[Cava]" />
+	</If>
+</If>
+<!-- #######################################################################################################################-->
+<If Condition="Me.IsAlliance" >
+  <If Condition="(Me.LevelFraction &gt;= 88)" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Townlong Steppes(88-89)[Cava]" />
+  </If>
+  <If Condition="(Me.LevelFraction &gt;= 87.75)" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Kun-Lai Summit(87-88)[Cava]" />
+  </If>
+  <If Condition="(Me.LevelFraction &gt;= 87)" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Krasarang Wilds(87)[Cava]" />
+  </If>
+  <If Condition="(Me.LevelFraction &gt;= 86)" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Valley of the Four Winds(86-87)[Cava]" />
+  </If>
+  <If Condition="(Me.LevelFraction &gt;= 85)" >
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]The Jade Forest(85-86)[Cava]" />
+  </If>
+	<If Condition="Me.Race == WoWRace.Human">
+ 	  <If Condition="(Me.LevelFraction &gt;= 7.2)" >
+      <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Elwynn Forest(7-10)[Cava]" />
+	  </If>
+ 	  <If Condition="(Me.LevelFraction &gt;= 5.1)" >
+      <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Elwynn Forest(5-7)[Cava]" />
+	  </If>
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Human(1-5)[Cava]" />
+ 	</If>
+	<If Condition="Me.Race == WoWRace.Dwarf || Me.Race == WoWRace.Gnome">
+ 	  <If Condition="(Me.LevelFraction &gt;= 8.2)" >
+      <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Dun Morogh(8-10)[Cava]" />
+	  </If>
+ 	  <If Condition="(Me.LevelFraction &gt;= 5.4)" >
+      <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Dun Morogh(5-8)[Cava]" />
+	  </If>
+  </If>
+	<If Condition="Me.Race == WoWRace.Dwarf">
+    <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Dwarf(1-5)[Cava]" />
+	</If>
+	<If Condition="Me.Race == WoWRace.NightElf">
+ 	  <If Condition="(Me.LevelFraction &gt;= 5.5)" >
+      <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Teldrassil(5-11)[Cava]" />
+ 	  </If>
+	  <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Night Elf(1-5)[Cava]" />
+	</If>
+ 	<If Condition="Me.Race == WoWRace.Gnome">
+	  <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Gnome(1-5)[Cava]" />
+	</If>
+	<If Condition="Me.Race == WoWRace.Draenei">
+ 	  <If Condition="(Me.LevelFraction &gt;= 5.43)" >
+      <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Azuremyst Isle(5-11)[Cava]" />
+	  </If>
+	  <CustomBehavior File="LoadProfile" ProfileName="..\Cava\Scripts\[A-Quest]Draenei(1-5)[Cava]" />
+	</If>
+	<If Condition="Me.Race == WoWRace.Worgen" >
+	</If>
+</If>
+
+</QuestOrder>
+</HBProfile>
