@@ -36,15 +36,26 @@
 <QuestOrder>
 <!-- Level Check! -->
 	<If Condition="(Me.Level &gt;= 10)" >
-		<CustomBehavior File="LoadProfile" ProfileName="010-015" />
+		<CustomBehavior File="LoadProfile" ProfileName="Westfall" />
 	</If>
+<!--	<If Condition="((HasQuest(26391)) &amp;&amp; (IsQuestCompleted(26391)))" >		
+		<CustomBehavior File="UserSettings" PullDistance="25" />
+		<TurnIn QuestName="Extenguishing Hope" QuestId="26391" TurnInName="Milly" TurnInId="9296" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	</If> 
 <RunTo DestName="Goldshire" X="-9460.672" Y="69.90316" Z="56.38046" /> -->
 <!-- Level 5.5 --> <!-- Get Intial Quests -->
+<CustomBehavior File="UserSettings" PullDistance="30" LootMobs="True" UseFlightPaths="True" />
+
 	<If Condition="((HasQuest(54)) &amp;&amp; (IsQuestCompleted(54)))" >
 		<TurnIn QuestName="Report to Goldshire" QuestId="54" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
 	</If>
 	<While Condition="HasQuestAvailable(240)" >
 		<CustomBehavior File="InteractWith"  MobId="240" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(241)" >
+		<CustomBehavior File="InteractWith"  MobId="241" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
@@ -56,15 +67,39 @@
 	<If Condition="((HasQuest(2158)) &amp;&amp; (IsQuestCompleted(2158)))" >
 		<TurnIn QuestName="Rest and Relaxation" QuestId="2158" TurnInName="Innkeeper Farley" TurnInId="295" X="-9465.52" Y="74.01" Z="56.60" />
 	</If>
-	<If Condition="((HasQuest(60)) &amp;&amp; (!IsQuestCompleted(60)))" > <!-- Leave The Inn -->
-		<RunTo DestName="Outside" X="-9492.683" Y="71.70184" Z="56.08181" />
-	</If>
-	<While Condition="HasQuestAvailable(241)" >
-		<CustomBehavior File="InteractWith"  MobId="241" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+<!-- ### SET HEARTHSTONE ### -->
+	<While Condition="HasQuestAvailable(514)" > <!-- Begin Flight Master Series -->
+		<CustomBehavior File="InteractWith"  MobId="514" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Leave Goldshire first time and do quests -->
+	<If Condition="((HasQuest(26393)) &amp;&amp; (IsQuestCompleted(26393)))" >
+		<TurnIn QuestName="Swift Message" QuestId="26393" TurnInName="Bartlett the Brave" TurnInId="42983" X="-9435.714" Y="87.61111" Z="57.12767" />
+	</If>
+	<While Condition="HasQuestAvailable(42983)" >
+		<CustomBehavior File="InteractWith"  MobId="42983" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="((HasQuest(26394)) &amp;&amp; (IsQuestCompleted(26394)))" >
+		<TurnIn QuestId="26394" QuestName="Continue to Stormwind" TurnInName="Bartlett the Brave" TurnInId="1323" X="-8702.275" Y="382.0517" Z="103.7259" />
+	</If>
+	<While Condition="HasQuestAvailable(1323)" >
+		<CustomBehavior File="InteractWith"  MobId="1323" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="((HasQuest(26395)) &amp;&amp; (IsQuestCompleted(26395)))" >
+		<TurnIn QuestId="26395" QuestName="Dungar Longdrink" TurnInName="Dungarr Longdrink" TurnInId="352" X="-8835.292" Y="490.3976" Z="109.6168" />
+	</If>
+	<While Condition="HasQuestAvailable(352)" >
+		<CustomBehavior File="InteractWith"  MobId="352" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="((HasQuest(36396)) &amp;&amp; (IsQuestCompleted(36396)))" >
+		<TurnIn QuestName="Return to Argus" QuestId="36396" TurnInName="Smith Argus" TurnInId="514" X="-9435.714" Y="87.61111" Z="57.12767" />
+	</If> <!-- End Flight Master Series -->
 	<If Condition="((HasQuest(62)) &amp;&amp; (!IsQuestCompleted(62)))" > <!-- Fargodeep Mine -->
 		<RunTo DestName="Fargodeep Mine" X="-9845.907" Y="130.4514" Z="5.203507" />
 	</If>
@@ -75,17 +110,6 @@
 		<Objective Type="CollectItem" QuestName="Kobold Candles" QuestId="60"  ItemId="772" CollectCount="8" />
 	</If>
 <!-- Level 6. Turn in old, get new quests. -->
-	<If Condition="((HasQuest(47)) &amp;&amp; (IsQuestCompleted(47)))" >
-		<TurnIn QuestName="Gold Exchange" QuestId="47" TurnInName="Remy TwoTimes" TurnInId="241" X="-9496.319" Y="72.82639" Z="56.41537" />
-	</If>
-	<If Condition="((HasQuest(62)) &amp;&amp; (IsQuestCompleted(62)))" >
-		<TurnIn QuestName="Fargodeep Mine" QuestId="62" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
-	</If>
-	<While Condition="HasQuestAvailable(240)" >
-		<CustomBehavior File="InteractWith"  MobId="240" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
 	<If Condition="((HasQuest(60)) &amp;&amp; (IsQuestCompleted(60)))" >
 		<TurnIn QuestName="Kobold Candles" QuestId="60" TurnInName="Pestle" TurnInId="253" X="-9460.302" Y="31.93891" Z="56.96619" />
 	</If>
@@ -94,13 +118,16 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<While Condition="HasQuestAvailable(514)" >
-		<CustomBehavior File="InteractWith"  MobId="514" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+	<If Condition="((HasQuest(62)) &amp;&amp; (IsQuestCompleted(62)))" >
+		<TurnIn QuestName="Fargodeep Mine" QuestId="62" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
+	</If>
+	<While Condition="HasQuestAvailable(240)" >
+		<CustomBehavior File="InteractWith"  MobId="240" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="((HasQuest(26393)) &amp;&amp; (IsQuestCompleted(26393)))" >
-		<TurnIn QuestName="Kobold Candles" QuestId="26393" TurnInName="Bartlett the Brave" TurnInId="42983" X="-9435.714" Y="87.61111" Z="57.12767" />
+	<If Condition="((HasQuest(47)) &amp;&amp; (IsQuestCompleted(47)))" >
+		<TurnIn QuestName="Gold Exchange" QuestId="47" TurnInName="Remy TwoTimes" TurnInId="241" X="-9496.319" Y="72.82639" Z="56.41537" />
 	</If>
 <!-- Visit Maybell -->
 	<If Condition="((HasQuest(26150)) &amp;&amp; (IsQuestCompleted(26150)))" >
@@ -139,6 +166,9 @@
 	<If Condition="HasQuest(88) &amp;&amp; IsQuestCompleted(88)"> 
 		<TurnIn QuestId="88" QuestName="Pricess Die" TurnInName="Maybell" TurnInId="244" X="-9895" Y="332.4236" Z="36.3707" />
 	</If>
+<!-- 
+Guard Thomas	
+-->
 	<If Condition="HasQuest(111) &amp;&amp; IsQuestCompleted(111)"> 
 		<TurnIn QuestId="111" QuestName="Speak with Gramma" TurnInName="Gramma Stonefield" TurnInId="248" X="-9880.63" Y="322.6189" Z="37.74078" />
 	</If>
