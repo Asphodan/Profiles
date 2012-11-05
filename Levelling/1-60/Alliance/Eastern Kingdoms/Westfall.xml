@@ -1,3 +1,8 @@
+<!-- Notes
+26213 needs proper Overrides for effeciency.
+26237: Item 57786 (Fleshripper Meat) needs effeciency overrides.
+26241: Can't UseItem on Hobos
+-->
 <HBProfile>
 <Name>Westfall</Name>
 <MinLevel>10</MinLevel>
@@ -27,21 +32,172 @@
 </Blackspots>
   
 <Mailboxes>
+	<Mailbox X="-10644.57" Y="1156.897" Z="33.22118" />
 </Mailboxes>
 
 <Vendors>
+	<Vendor Name="William MacGregor" Entry="1668" Type="Repair" X="-10653.31" Y="996.5868" Z="32.87469" />
 </Vendors>
 
 <QuestOrder>
-<!-- Level Check! 
-	<If Condition="(Me.Level &gt;= 10)" >
-		<CustomBehavior File="LoadProfile" ProfileName="..\Levelling\1-60\Alliance\Human\010-015" />
-	</If> -->
 	<If Condition="((HasQuest(26378)) &amp;&amp; (IsQuestCompleted(26378)))" >
-		<CustomBehavior File="AbandonQuest" QuestId="76" />
-		<CustomBehavior File="AbandonQuest" QuestId="1097" />
-		<TurnIn QuestId="26378" QuestName="Westfall Breadcrumb" TurnInName="Horatio " TurnInId="42308" X="-9849.855" Y="914.9617" Z="30.26953" />
+		<TurnIn QuestId="26378" QuestName="Hero's Call: Westfall!" TurnInName="Horatio " TurnInId="42308" X="-9849.855" Y="914.9617" Z="30.26953" />
 	</If>
+	<While Condition="HasQuestAvailable(42308)" >
+		<CustomBehavior File="InteractWith"  MobId="42308" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="((HasQuest(26209)) &amp;&amp; (!IsQuestCompleted(26209)))" >
+			<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="HonorBuddy isn't smart enough for this quest. Interact with Hobos until it's complete." />
+	</While>
+<!-- ### Bot Can't Do Quest ### 
+	<While Condition="((HasQuest(26209)) &amp;&amp; (!IsQuestCompleted(26209)))" >
+		<CustomBehavior File="InteractWith"  MobId="42384" NumOfTimes="1" CollectionDistance="30" WaitTime="1000" X="-9830.265" Y="963.4177" Z="29.13091" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton2" />
+		<CustomBehavior File="InteractWith"  MobId="42385" NumOfTimes="1" CollectionDistance="30" WaitTime="1000" X="-9830.265" Y="963.4177" Z="29.13091" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton2" />
+		<CustomBehavior File="InteractWith"  MobId="42386" NumOfTimes="1" CollectionDistance="30" WaitTime="1000" X="-9822.217" Y="1006.497" Z="29.13057" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton2" />
+		<CustomBehavior File="InteractWith"  MobId="42391" NumOfTimes="1" CollectionDistance="30" WaitTime="1000" X="-9813.461" Y="959.9138" Z="29.13052" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton2" />
+	</While> -->
+	<If Condition="((HasQuest(26209)) &amp;&amp; (IsQuestCompleted(26209)))" >
+		<TurnIn QuestId="26209" QuestName="Murder Was The Case" TurnInName="Horatio " TurnInId="42308" X="-9849.855" Y="914.9617" Z="30.26953" />
+	</If>
+	<While Condition="HasQuestAvailable(42308)" >	
+		<PickUp QuestName="Hot On The Trail" QuestId="26213" GiverName="Horatio" GiverId="42308" />
+		<PickUp QuestName="Hot On The Trail" QuestId="26214" GiverName="Horatio" GiverId="42308" />
+	</While>
+	<If Condition="HasQuest(26213) &amp;&amp; !IsQuestCompleted(26213)"> 
+		<Objective QuestId="26213" Type="CollectItem" QuestName="Riverpaw Clue" ItemId="57755" CollectCount="1" />
+	</If>
+	<If Condition="HasQuest(26214) &amp;&amp; !IsQuestCompleted(26214)"> 
+		<Objective QuestId="26214" Type="CollectItem" QuestName="Murloc Clue" ItemId="57756" CollectCount="1" />
+	</If>
+	<If Condition="((HasQuest(26213)) &amp;&amp; (IsQuestCompleted(26213)))" >
+		<TurnIn QuestId="26213" QuestName="Murder Was The Case" TurnInName="Horatio " TurnInId="42308" X="-9849.855" Y="914.9617" Z="30.26953" />
+	</If>
+	<If Condition="((HasQuest(26214)) &amp;&amp; (IsQuestCompleted(26214)))" >
+		<TurnIn QuestId="26214" QuestName="Murder Was The Case" TurnInName="Horatio " TurnInId="42308" X="-9849.855" Y="914.9617" Z="30.26953" />
+	</If>
+	<While Condition="HasQuestAvailable(42308)" >
+		<CustomBehavior File="InteractWith"  MobId="42308" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="((HasQuest(26215)) &amp;&amp; (IsQuestCompleted(26215)))" > <!-- Move on to next hub -->
+		<TurnIn QuestId="26215" QuestName="Two Shoed Lou" TurnInName="Horatio " TurnInId="42405" X="-9852.321" Y="1278.76" Z="40.91479" />
+	</If>
+	<While Condition="HasQuestAvailable(42405)" >
+		<CustomBehavior File="InteractWith"  MobId="42405" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(42498)" >
+		<CustomBehavior File="InteractWith"  MobId="42498" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(42497)" >
+		<CustomBehavior File="InteractWith"  MobId="42497" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="HasQuest(26230) &amp;&amp; !IsQuestCompleted(26230)"> 
+		<Objective QuestId="26230" Type="CollectItem" QuestName="Feast or Famine" ItemId="57789" CollectCount="5" />
+		<Objective QuestId="26230" Type="CollectItem" QuestName="Feast or Famine" ItemId="57787" CollectCount="6" />
+	</If>
+	<If Condition="HasQuest(26228) &amp;&amp; !IsQuestCompleted(26228)"> 
+		<UseItem QuestId="26228" ItemId="57761" QuestName="Laying Waste to the Unwanted" X="-9846.348" Y="1391.978" Z="38.21983" />
+	</If>
+	<If Condition="HasQuest(26229) &amp;&amp; !IsQuestCompleted(26229)"> 
+		<Objective QuestId="26229" Type="KillMob" QuestName="I TAKE Candle!" MobId="1236" KillCount="12" />
+	</If>
+	<If Condition="((HasQuest(26228)) &amp;&amp; (IsQuestCompleted(26228)))" > <!-- Move out of Cave -->
+		<TurnIn QuestId="26228" QuestName="Two Shoed Lou" TurnInName="Horatio " TurnInId="42405" X="-9852.321" Y="1278.76" Z="40.91479" />
+	</If>
+	<While Condition="HasQuestAvailable(42405)" >
+		<CustomBehavior File="InteractWith"  MobId="42405" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="HasQuest(26229) &amp;&amp; IsQuestCompleted(26229)"> 
+		<TurnIn QuestId="26229" QuestName="I TAKE Candle!" TurnInName="Jimb " TurnInId="42498" X="-9852.321" Y="1278.76" Z="40.91479" />
+	</If>
+	<If Condition="HasQuest(26230) &amp;&amp; IsQuestCompleted(26230)"> 
+		<TurnIn QuestId="26230" QuestName="Feast or Famile" TurnInName="Old Lady" TurnInId="42497" X="-9852.321" Y="1278.76" Z="40.91479" />
+	</If>
+	<While Condition="HasQuest(26232) &amp;&amp; !IsQuestCompleted(26232)" >
+			<RunTo DestName="Parting Thoughts" X="-9860.994" Y="1331.673" Z="41.90265" />
+	</While>
+	<If Condition="HasQuest(26232) &amp;&amp; IsQuestCompleted(26232)"> 
+		<TurnIn QuestId="26232" QuestName="Parting Thoughts" TurnInName="Horatio" TurnInId="42558" X="-9854.271" Y="1277.396" Z="40.84632" />
+	</If>
+	<While Condition="HasQuestAvailable(42558)" >
+		<CustomBehavior File="InteractWith"  MobId="42558" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While> 
+	<If Condition="HasQuest(26236) &amp;&amp; IsQuestCompleted(26236)"> 
+		<TurnIn QuestId="26236" QuestName="Saldean Shakedown" TurnInName="Farmer Saldean" TurnInId="233" X="-10128.7" Y="1055.21" Z="36.2503" />
+	</If>
+	<While Condition="HasQuestAvailable(233)" >
+		<CustomBehavior File="InteractWith"  MobId="233" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(235)" >
+		<CustomBehavior File="InteractWith"  MobId="235" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While> 
+	<While Condition="HasQuest(26241) &amp;&amp; !IsQuestCompleted(26241)" >
+		<Objective QuestName="Westfall Stew" QuestId="26241" Type="CollectItem" ItemId="57911" CollectCount="6" />
+		<Objective QuestName="Westfall Stew" QuestId="26241" Type="CollectItem" ItemId="57788" CollectCount="6" />
+		<Objective QuestName="Westfall Stew" QuestId="26241" Type="CollectItem" ItemId="57786" CollectCount="6" />
+	</While>
+	<While Condition="HasQuest(26237) &amp;&amp; !IsQuestCompleted(26237)" >
+			<Objective QuestId="26237" QuestName="Times are Tough" Type="KillMob" MobId="114" KillCount="10" />
+	</While>
+	<If Condition="HasQuest(26237) &amp;&amp; IsQuestCompleted(26237)"> 
+		<TurnIn QuestName="Times are Tough" QuestId="26237" TurnInName="Farmer Saldean" TurnInId="233" X="-10128.7" Y="1055.21" Z="36.2503" />
+	</If>
+	<If Condition="HasQuest(26237) &amp;&amp; IsQuestCompleted(26237)"> 
+		<TurnIn QuestName="Westfall Stew" QuestId="26241" TurnInName="Salma Saldean" TurnInId="235" X="-10128.7" Y="1055.21" Z="36.2503" />
+	</If>
+	<While Condition="HasQuestAvailable(233)" >
+		<CustomBehavior File="InteractWith"  MobId="233" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="HasQuest(26270) &amp;&amp; IsQuestCompleted(26270)"> 
+		<TurnIn QuestName="You Have Our Thanks" QuestId="26270" TurnInName="Salma Saldean" TurnInId="235" />
+	</If>
+	<While Condition="HasQuestAvailable(235)" >
+		<CustomBehavior File="InteractWith"  MobId="235" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+		<TurnIn QuestName="Hope for the People" QuestId="26266" TurnInName="Hope Saldean" TurnInId="42575" />
+<PickUp QuestName="Feeding the Hungry and the Hopeless" QuestId="26271" GiverName="Hope Saldean" GiverId="42575" />
+<PickUp QuestName="In Defense of Westfall" QuestId="26286" GiverName="Marshal Gryan Stoutmantle" GiverId="234" />
+<PickUp QuestName="The Westfall Brigade" QuestId="26287" GiverName="Captain Danuvin" GiverId="821" />
+<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Hobos are soon. Make sure it works." />
+<!-- ### Set Heartstone to Sentinel Hill ### -->
+<Objective QuestName="In Defense of Westfall" QuestId="26286" Type="CollectItem" ItemId="58111" CollectCount="1" />
+<Objective QuestName="The Westfall Brigade" QuestId="26287" Type="KillMob" MobId="42652" KillCount="12" />
+	<While Condition="HasQuest(26241) &amp;&amp; !IsQuestCompleted(26241)" >
+		<RunTo DestName="Homeless Hobos" X="-10747.33" Y="1018.349" Z="34.00597" />
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="HonorBuddy isn't smart enough for this quest. Feed Hobos until it's complete." />
+	</While>
+<TurnIn QuestName="Feeding the Hungry and the Hopeless" QuestId="26271" TurnInName="Hope Saldean" TurnInId="42575" />
+<TurnIn QuestName="In Defense of Westfall" QuestId="26286" TurnInName="Marshal Gryan Stoutmantle" TurnInId="234" />
+<TurnIn QuestName="The Westfall Brigade" QuestId="26287" TurnInName="Captain Danuvin" TurnInId="821" />
+
+<CheckPoint Level="15">
+<CustomBehavior File="LoadProfile" ProfileName="Redridge" />
+<!-- Ghost Quests -
 	<If Condition="((HasQuest(26371)) &amp;&amp; (IsQuestCompleted(26371)))" >
 		<TurnIn QuestId="26371" QuestName="Ghost Man" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
 	</If>
@@ -56,7 +212,8 @@
 <TurnIn QuestId="26348" QuestName="Ghost Man" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
 <TurnIn QuestId="26349" QuestName="Ghost Man" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
 <Objective Type="CollectItem" QuestName="Keeper of the Flame" QuestId="26347"  ItemId="58204" CollectCount="5" />
-<TurnIn QuestId="26347" QuestName="Keeper of the flame" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" />
+<TurnIn QuestId="26347" QuestName="Keeper of the flame" TurnInName="Captain Grayson " TurnInId="392" X="-11397.82" Y="1949.042" Z="10.01406" /> -->
+<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="This Profile is not complete yet, sorry! But the bot will defend until you check in." />
 </QuestOrder>
 <!-- Quest Overrides  -->
 </HBProfile>

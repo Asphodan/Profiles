@@ -45,6 +45,9 @@
 </If>
 <!-- #######################################################################################################################-->
 <If Condition="Me.IsAlliance" >
+  <If Condition="(Me.Class == WoWClass.DeathKnight &amp;&amp; !HasQuest(13188) &amp;&amp; !IsQuestCompleted(13188))" >
+    <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]DeathKnight(55-58)[Cava]" />
+  </If>
   <If Condition="(Me.LevelFraction &gt;= 88)" >
     <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]TownlongSteppes(88-89)[Cava]" />
   </If>

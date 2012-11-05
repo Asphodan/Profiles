@@ -218,104 +218,87 @@ Virmen Overrides
 Get Quests
  -->
 <CustomBehavior File="FlyTo" DestName="Halfhill" X="-294.0206" Y="584.3316" Z="165.3191" />
-<!-- Jogu First -->
-	<While Condition="HasQuestAvailable(58710)" >
+	<While Condition="HasQuestAvailable(58710)" ><!-- Jogu First -->
 		<CustomBehavior File="InteractWith"  MobId="58710" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Anthea Ironpaw -->
-	<While Condition="HasQuestAvailable(58713)" >
+	<While Condition="HasQuestAvailable(58713)" ><!-- Anthea Ironpaw -->
 		<CustomBehavior File="InteractWith"  MobId="58713" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Ella -->
-	<While Condition="HasQuestAvailable(58647)" >
+	<While Condition="HasQuestAvailable(58647)" ><!-- Ella -->
 		<CustomBehavior File="InteractWith"  MobId="58647" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Chee Chee -->
-	<While Condition="HasQuestAvailable(58709)" >
+	<While Condition="HasQuestAvailable(58709)" ><!-- Chee Chee -->
 		<CustomBehavior File="InteractWith"  MobId="58709" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Yan Ironpaw -->
-	<While Condition="HasQuestAvailable(58715)" >
+	<While Condition="HasQuestAvailable(58715)" ><!-- Yan Ironpaw -->
 		<CustomBehavior File="InteractWith"  MobId="58715" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Haohan Mudclaw -->
-	<While Condition="HasQuestAvailable(57402)" >
+	<While Condition="HasQuestAvailable(57402)" ><!-- Haohan Mudclaw -->
 		<CustomBehavior File="InteractWith"  MobId="57402" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Farmer Fung -->
-	<While Condition="HasQuestAvailable(57298)" >
+	<While Condition="HasQuestAvailable(57298)" ><!-- Farmer Fung -->
 		<CustomBehavior File="InteractWith"  MobId="57298" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Gina -->
-	<While Condition="HasQuestAvailable(58706)" >
+	<While Condition="HasQuestAvailable(58706)" ><!-- Gina -->
 		<CustomBehavior File="InteractWith"  MobId="58706" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-259.54" Y="592.67" Z="167.55" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Mei Mei Ironpaw -->
-	<While Condition="HasQuestAvailable(58714)" >
+	<While Condition="HasQuestAvailable(58714)" ><!-- Mei Mei Ironpaw -->
 		<CustomBehavior File="InteractWith"  MobId="58714" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Sho -->
-	<While Condition="HasQuestAvailable(58708)" >
+	<While Condition="HasQuestAvailable(58708)" ><!-- Sho -->
 		<CustomBehavior File="InteractWith"  MobId="58708" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Jian Ironpaw -->
-	<While Condition="HasQuestAvailable(58716)" >
+	<While Condition="HasQuestAvailable(58716)" ><!-- Jian Ironpaw -->
 		<CustomBehavior File="InteractWith"  MobId="58716" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Tina Mudclaw -->
-	<While Condition="HasQuestAvailable(58761)" >
+	<While Condition="HasQuestAvailable(58761)" ><!-- Tina Mudclaw -->
 		<CustomBehavior File="InteractWith"  MobId="58761" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Old Hillpaw -->
-	<While Condition="HasQuestAvailable(58707)" >
+	<While Condition="HasQuestAvailable(58707)" ><!-- Old Hillpaw -->
 		<CustomBehavior File="InteractWith"  MobId="58707" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Fish Fellreed -->
-	<While Condition="HasQuestAvailable(58705)" >
+	<While Condition="HasQuestAvailable(58705)" ><!-- Fish Fellreed -->
 		<CustomBehavior File="InteractWith"  MobId="58705" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Kol Ironpaw -->
-	<While Condition="HasQuestAvailable(58712)" >
+	<While Condition="HasQuestAvailable(58712)" ><!-- Kol Ironpaw -->
 		<CustomBehavior File="InteractWith"  MobId="58712" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Andi -->
-	<While Condition="HasQuestAvailable(64464)" >
+	<While Condition="HasQuestAvailable(64464)" ><!-- Andi -->
 		<CustomBehavior File="InteractWith"  MobId="64464" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-225.19" Y="607.32" Z="167.17" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Farmer Yoon Goes Last-->
-	<While Condition="HasQuestAvailable(58646)" > <!-- Always goes last. -->
+	<While Condition="HasQuestAvailable(58646)" ><!-- Farmer Yoon Goes Last-->
 		<CustomBehavior File="InteractWith"  MobId="58646" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
@@ -420,6 +403,7 @@ Do Quests
 		<UseItem ItemId="79885" QuestName="Simian Sabotage" QuestId="30337" X="519.6665" Y="1309.705" Z="383.5246" />
 	</If>
 	<If Condition="HasQuest(30335) &amp;&amp; !IsQuestCompleted(30335)"> <!-- Stalling The Ravage -->
+		<CustomBehavior File="FlyTo" X="-108.26" Y="1479.47" Z="340.46" />
 		<Objective QuestName="Stalling The Ravage" QuestId="30335" Type="KillMob" MobId="59119" KillCount="12" />
 	</If>
 <!-- Miscs Quests -->
@@ -442,13 +426,36 @@ Do Quests
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
 	</If>
-	
-	
+	<If Condition="HasQuest(30479) &amp;&amp; !IsQuestCompleted(30479)">
+		<CustomBehavior File="FlyTo" DestName="Get Orchid" X="116.4677" Y="1206.747" Z="301.5111" />
+		<Objective QuestName="A Gift For Gina" QuestId="30479" Type="CollectItem" ItemId="80231" CollectCount="1" />
+	</If>
+
+	<If Condition="HasQuest(30317) &amp;&amp; !IsQuestCompleted(30317)"> <!-- Water, Water Everywhere. -->
+		<CustomBehavior File="InteractWith"  MobId="60231" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-266.51" Y="497.22" Z="169.60" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Does not know how to do the water part." />
+	</If>
+<!-- Failed Water, Water attempts:
+<CustomBehavior File="VehicleBehavior" AttackButton="1" VehicleId="63274" VehicleMountId="63274" MobId1="59574" 
+											StartObjectivePointX="4391.007" StartObjectivePointY="-4399.501" StartObjectivePointZ="939.4135" 
+											StartPointX="4084.388" StartPointY="-3996.015" StartPointZ="971.3682" VehicleType="1"/>
+		<CustomBehavior File="VehicleBehavior"
+		QuestId="30317"
+		NpcMountID="63274"
+		VehicleID="63274"
+		SpellID="114591"
+		FireHeight="35"
+		MobId1="59574"
+		FireLocation="-1401.78 2391.123 69.04076"
+		TargetLocation="-1418.158 2425.404 77.10014"
+		PreviousFireLocation="-1376.874 2351.254 56.54487" />											-->
 <!-- Virmin Quests -->
 	<If Condition="HasQuest(30328) &amp;&amp; !IsQuestCompleted(30328)"> <!-- 1000 Dumpling -->
 		<CustomBehavior File="FlyTo" DestName="1000 Dumpling" X="486.868" Y="909.1344" Z="273.5185" />
 		<CustomBehavior File="ForcedDismount" />
-		<Objective Type="Collect" QuestId="31232" QuestName="1000 Dumpling" CollectCount="7" ItemId="210957" ObjectType="GameObject" CollectionDistance="20000" />
+		<Objective Type="Collect" QuestId="30328" QuestName="1000 Dumpling" CollectCount="7" ItemId="210957" ObjectType="GameObject" CollectionDistance="20000" />
 	</If>
 	<If Condition="HasQuest(30333) &amp;&amp; !IsQuestCompleted(30333)"> <!-- Lesser of Two Evils -->
 		<CustomBehavior File="FlyTo" DestName="1000 Dumpling" X="486.868" Y="909.1344" Z="273.5185" />
@@ -505,6 +512,11 @@ Turn In Quests
 <!-- Gina -->
 	<If Condition="((HasQuest(30322)) &amp;&amp; (IsQuestCompleted(30322)))" >
 		<TurnIn QuestName="Money Matters" QuestId="30322" TurnInName="Gina" TurnInId="58706" />
+	</If>
+<TurnIn QuestName="A Gift For Gina" QuestId="30479" TurnInName="Gina Mudclaw" TurnInId="58706" />
+<!-- Yan Ironpaw -->
+	<If Condition="((HasQuest(30328)) &amp;&amp; (IsQuestCompleted(30328)))" >
+		<TurnIn QuestName="The Thousand-Year Dumpling" QuestId="30328" TurnInName="Yan Ironpaw" TurnInId="58715" />
 	</If>
 <!-- Andi -->
 	<If Condition="((HasQuest(30476)) &amp;&amp; (IsQuestCompleted(30476)))" >

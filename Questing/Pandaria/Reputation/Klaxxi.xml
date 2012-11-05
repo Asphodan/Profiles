@@ -133,9 +133,22 @@ Do Quests
 <!-- South West -->
 	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)"> <!-- Fear Takes Rot -->
 		<CustomBehavior File="FlyTo" X="-1520.772" Y="4454.977" Z="125.0728" />
-		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" />
-		<Objective QuestName="Fear Takes Root" QuestId="31509" Type="UseObject" ObjectId="65242" UseCount="15" />
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Does does not know how to get the bulbs. Run over them and hit Continue." />
 	</If>
+<!-- Failed 31509 attempts
+		<Objective QuestName="Fear Takes Root" QuestId="31509" Type="UseObject" ObjectId="65242" UseCount="15" />
+-->
+	<If Condition="((HasQuest(31111)) &amp;&amp; (!IsQuestCompleted(31111)))" >
+		<CustomBehavior File="FlyTo" DestName="Eradication" X="-1206.671" Y="4459.365" Z="108.4697" />
+		<Objective QuestName="Eradicating the Zan'thik" QuestId="31111" Type="KillMob" MobId="64971" KillCount="6" />
+		<Objective QuestName="Eradicating the Zan'thik" QuestId="31111" Type="KillMob" MobId="64973" KillCount="6" />
+	</If>
+
+<CustomBehavior File="FlyTo" DestName="Eradication" X="-1206.671" Y="4459.365" Z="108.4697" />
+<Objective QuestName="Specimen Request" QuestId="31508" Type="CollectItem" ItemId="87874" CollectCount="6" />
+<Objective QuestName="Meltdown" QuestId="31507" Type="KillMob" MobId="64982" KillCount="6" />
+<Objective QuestName="Shackles of Manipulation" QuestId="31506" Type="CollectItem" ItemId="87813" CollectCount="6" />
+<Objective QuestName="Vess-Guard Duty" QuestId="31505" Type="KillMob" MobId="64979" KillCount="1" />
 <!-- Turn In Quests -->
 <CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
 <!-- Kil'ruk -->

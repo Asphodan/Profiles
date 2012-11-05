@@ -1,5 +1,5 @@
 <HBProfile creator="Cava" version="1">
-  <Name>[H-Quest]The Jade Forest(85-86)[Cava]</Name>
+  <Name>[H-Quest]The Jade Forest(WL)(85-86)[Cava]</Name>
   <MinLevel>85</MinLevel>
   <MaxLevel>91</MaxLevel>
   <MinDurability>0.2</MinDurability>
@@ -732,7 +732,7 @@
 </Quest>
 <!-- ################################### End of Quest Overrides #################################################################### -->
   <QuestOrder IgnoreCheckPoints="False" >
-	<CustomBehavior File="UserSettings" LootMobs="False" UseFlightPaths="True" GroundMountFarmingMode="False" KillBetweenHotspots="True" />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" GroundMountFarmingMode="False" KillBetweenHotspots="True" />
 	<CustomBehavior File="UserSettings" PullDistance="25" />
   <If Condition="(Me.Class == WoWClass.Hunter) || (Me.Class == WoWClass.Priest) || (Me.Class == WoWClass.Mage) || (Me.Class == WoWClass.Warlock)">
 	  <CustomBehavior File="UserSettings" PullDistance="35" />
@@ -1006,7 +1006,7 @@
 <Objective QuestName="Cryin' My Eyes Out" QuestId="29765" Type="CollectItem" ItemId="74162" CollectCount="1" />
 <Objective QuestName="Cryin' My Eyes Out" QuestId="29765" Type="CollectItem" ItemId="74163" CollectCount="1" />
 <If Condition="HasQuest(29765) &amp;&amp; IsQuestCompleted(29765)" >
-	<CustomBehavior File="UserSettings" PullDistance="1" LootMobs="False" />
+	<CustomBehavior File="UserSettings" PullDistance="1" LootMobs="True" />
   <If Condition="HasQuestAvailable(55497, &quot;TurnIn&quot;)" >
     <TurnIn QuestName="Cryin' My Eyes Out" QuestId="29765" TurnInName="Zin'Jun" TurnInId="55497" />
     <PickUp QuestName="Seein' Red" QuestId="29804" GiverName="Zin'Jun" GiverId="55497" />
@@ -1187,7 +1187,7 @@
 		<CustomBehavior File="InteractWith" MobId="63809" MobState="Dead"  WaitForNpcs="False" CollectionDistance="1000" X="1731.009" Y="-699.9305" Z="323.9586" />
     <CustomBehavior File="WaitTimer" WaitTime="6000" />
   </While>
-  <CustomBehavior File="UserSettings" PullDistance="25" LootMobs="False" />
+  <CustomBehavior File="UserSettings" PullDistance="25" LootMobs="True" />
 </If>
 <PickUp QuestName="Captain Jack's Dead" QuestId="31261" GiverName="Captain Jack's Head" GiverId="85783" GiverType="Item" />
 <Objective QuestName="Wicked Wikkets" QuestId="31241" Type="CollectItem" ItemId="85784" CollectCount="6" />
@@ -1255,7 +1255,7 @@
 		<CustomBehavior File="WaitTimer" QuestId="29939" WaitTime="3000" />
 		<CustomBehavior File="InteractWith" QuestId="29939" MobId="209877" ObjectType="Gameobject" NumOfTimes="5" WaitForNpcs="False" CollectionDistance="1000" X="1077.033" Y="-415.8375" Z="259.1892" />
 	</While>
-	<CustomBehavior File="UserSettings" PullDistance="25" LootMobs="False" />
+	<CustomBehavior File="UserSettings" PullDistance="25" LootMobs="True" />
   <If Condition="(Me.Class == WoWClass.Hunter) || (Me.Class == WoWClass.Priest) || (Me.Class == WoWClass.Mage) || (Me.Class == WoWClass.Warlock)">
 	  <CustomBehavior File="UserSettings" PullDistance="35" />
   </If>
@@ -1361,7 +1361,7 @@
 </If>
 <Objective QuestName="Green-ish Energy" QuestId="29968" Type="CollectItem" ItemId="76333" CollectCount="7" />
 <If Condition="HasQuest(29943) &amp;&amp; !IsQuestCompleted(29943)" >
-	<CustomBehavior File="UserSettings" PullDistance="25" LootMobs="False" />
+	<CustomBehavior File="UserSettings" PullDistance="25" LootMobs="True" />
   <If Condition="(Me.Class == WoWClass.Hunter) || (Me.Class == WoWClass.Priest) || (Me.Class == WoWClass.Mage) || (Me.Class == WoWClass.Warlock)">
 	  <CustomBehavior File="UserSettings" PullDistance="35" />
   </If>
@@ -1619,7 +1619,7 @@
 <Objective QuestName="Ritual Artifacts" QuestId="29751" Type="CollectItem" ItemId="74761" CollectCount="1" />
 <Objective QuestName="Ritual Artifacts" QuestId="29751" Type="CollectItem" ItemId="74760" CollectCount="1" />
 <If Condition="HasQuest(29750) &amp;&amp; IsQuestCompleted(29750)" >
-	<CustomBehavior File="UserSettings" LootMobs="False" />
+	<CustomBehavior File="UserSettings" LootMobs="True" />
 </If>
 <If Condition="HasQuest(29752) &amp;&amp; !IsQuestCompleted(29752)" >
   <While Condition="!IsQuestCompleted(29752)" >
@@ -1633,7 +1633,7 @@
 </If>
 <Objective QuestName="Vessels of the Spirit" QuestId="29750" Type="CollectItem" ItemId="74763" CollectCount="8" />
 <If Condition="HasQuest(29750) &amp;&amp; IsQuestCompleted(29750)" >
-	<CustomBehavior File="UserSettings" LootMobs="False" PullDistance="1" />
+	<CustomBehavior File="UserSettings" LootMobs="True" PullDistance="1" />
 </If>
 <TurnIn QuestName="Ritual Artifacts" QuestId="29751" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
 <TurnIn QuestName="Vessels of the Spirit" QuestId="29750" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
@@ -2061,7 +2061,7 @@
 <TurnIn QuestName="Sufficient Motivation" QuestId="30466" TurnInName="General Nazgrim" TurnInId="57108" X="1455.46" Y="-505.1701" Z="346.2649" />
 <TurnIn QuestName="Gauging Our Progress" QuestId="30484" TurnInName="General Nazgrim" TurnInId="57108" X="1455.46" Y="-505.1701" Z="346.2649" />
 <PickUp QuestName="Last Piece of the Puzzle" QuestId="30485" GiverName="Lorewalker Cho" GiverId="59377" X="1477.609" Y="-518.5729" Z="345.5929" />
-<If Condition="HasQuest(30485) &amp;&amp; !IsQuestCompleted(30485)" >
+<If Condition="HasQuest(304851) &amp;&amp; !IsQuestCompleted(30485)" >
   <CustomBehavior File="InteractWith" MobId="64207" GossipOptions="1" X="1477.727" Y="-516.7274" Z="345.8423" />
   <RunTo X="535.4587" Y="-1657.276" Z="200.5515" />
   <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(80071)" WaitTime="1000" />
@@ -2147,7 +2147,6 @@
   <TurnIn QuestName="Emergency Response" QuestId="30504" TurnInName="Lorewalker Cho" TurnInId="59418" X="790.9219" Y="-1990.325" Z="54.25745" />
 	<CustomBehavior File="InteractWith" MobId="59899" GossipOptions="1" X="793.3941" Y="-1990.938" Z="54.30451" />
 </If>
-<CheckPoint Level="86" />
-<CustomBehavior File="LoadProfile" ProfileName="[H-Quest]ValleyoftheFourWinds(86-87)[Cava]" />
+<CustomBehavior File="LoadProfile" ProfileName="[H-Quest]ValleyoftheFourWinds(WL)(86-87)[Cava]" />
 </QuestOrder>
 </HBProfile>

@@ -34,17 +34,15 @@
 </Vendors>
 
 <QuestOrder>
-<!-- Level Check! -->
-	<If Condition="(Me.Level &gt;= 10)" >
-		<CustomBehavior File="LoadProfile" ProfileName="Westfall" />
-	</If>
-<!--	<If Condition="((HasQuest(26391)) &amp;&amp; (IsQuestCompleted(26391)))" >		
-		<CustomBehavior File="UserSettings" PullDistance="25" />
-		<TurnIn QuestName="Extenguishing Hope" QuestId="26391" TurnInName="Milly" TurnInId="9296" X="-8913.069" Y="-137.4063" Z="80.81811" />
-	</If> 
-<RunTo DestName="Goldshire" X="-9460.672" Y="69.90316" Z="56.38046" /> -->
-<!-- Level 5.5 --> <!-- Get Intial Quests -->
+<!-- Level Check! 
+<Checkpoint Level="5" />
+<RunTo DestName="Elwynn Start" X="-9043.543" Y="-52.76099" Z="88.16646" /> -->
 <CustomBehavior File="UserSettings" PullDistance="30" LootMobs="True" UseFlightPaths="True" />
+	<While Condition="HasQuestAvailable(6774)" >
+		<CustomBehavior File="InteractWith"  MobId="6774" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 
 	<If Condition="((HasQuest(54)) &amp;&amp; (IsQuestCompleted(54)))" >
 		<TurnIn QuestName="Report to Goldshire" QuestId="54" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
@@ -97,8 +95,8 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="((HasQuest(36396)) &amp;&amp; (IsQuestCompleted(36396)))" >
-		<TurnIn QuestName="Return to Argus" QuestId="36396" TurnInName="Smith Argus" TurnInId="514" X="-9435.714" Y="87.61111" Z="57.12767" />
+	<If Condition="((HasQuest(26396)) &amp;&amp; (IsQuestCompleted(26396)))" >
+		<TurnIn QuestName="Return to Argus" QuestId="26396" TurnInName="Smith Argus" TurnInId="514" X="-9435.714" Y="87.61111" Z="57.12767" />
 	</If> <!-- End Flight Master Series -->
 	<If Condition="((HasQuest(62)) &amp;&amp; (!IsQuestCompleted(62)))" > <!-- Fargodeep Mine -->
 		<RunTo DestName="Fargodeep Mine" X="-9845.907" Y="130.4514" Z="5.203507" />
@@ -121,15 +119,15 @@
 	<If Condition="((HasQuest(62)) &amp;&amp; (IsQuestCompleted(62)))" >
 		<TurnIn QuestName="Fargodeep Mine" QuestId="62" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
 	</If>
-	<While Condition="HasQuestAvailable(240)" >
+<!--	<While Condition="HasQuestAvailable(240)" >
 		<CustomBehavior File="InteractWith"  MobId="240" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 	<If Condition="((HasQuest(47)) &amp;&amp; (IsQuestCompleted(47)))" >
 		<TurnIn QuestName="Gold Exchange" QuestId="47" TurnInName="Remy TwoTimes" TurnInId="241" X="-9496.319" Y="72.82639" Z="56.41537" />
-	</If>
-<!-- Visit Maybell -->
+	</If> -->
+<!-- Visit Maybell 
 	<If Condition="((HasQuest(26150)) &amp;&amp; (IsQuestCompleted(26150)))" >
 		<TurnIn QuestName="Visit Maybell" QuestId="26150" TurnInName="Maybell" TurnInId="251" X="-10014.04" Y="37.6059" Z="35.17136" />
 	</If>
@@ -154,21 +152,19 @@
 	<If Condition="((HasQuest(106)) &amp;&amp; (IsQuestCompleted(106)))" >
 		<TurnIn QuestName="Young Lovers" QuestId="106" TurnInName="Tommy" TurnInId="252" X="-9930.049" Y="499.7344" Z="32.3396" />
 	</If>
-	<While Condition="HasQuestAvailable(252)" > <!-- Get Tommy's Quest -->
+	<While Condition="HasQuestAvailable(252)" >
 		<CustomBehavior File="InteractWith"  MobId="252" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Level 7 -->
-	<If Condition="HasQuest(88) &amp;&amp; !IsQuestCompleted(88)"> <!-- Kill the Pig on way back -->
+## Level 7 ##
+	<If Condition="HasQuest(88) &amp;&amp; !IsQuestCompleted(88)"> Kill the Pig on way back 
 		<Objective Type="CollectItem" ItemId="1006" QuestName="Princess Must Die!" QuestId="88" CollectCount="1" />
 	</If>
 	<If Condition="HasQuest(88) &amp;&amp; IsQuestCompleted(88)"> 
 		<TurnIn QuestId="88" QuestName="Pricess Die" TurnInName="Maybell" TurnInId="244" X="-9895" Y="332.4236" Z="36.3707" />
-	</If>
-<!-- 
-Guard Thomas	
--->
+	</If> 
+
 	<If Condition="HasQuest(111) &amp;&amp; IsQuestCompleted(111)"> 
 		<TurnIn QuestId="111" QuestName="Speak with Gramma" TurnInName="Gramma Stonefield" TurnInId="248" X="-9880.63" Y="322.6189" Z="37.74078" />
 	</If>
@@ -177,7 +173,7 @@ Guard Thomas
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="HasQuest(85) &amp;&amp; IsQuestCompleted(85)"> <!-- Run to Billy Maclure -->
+	<If Condition="HasQuest(85) &amp;&amp; IsQuestCompleted(85)"> 
 		<TurnIn QuestId="85" QuestName="A Note" TurnInName="Billy" TurnInId="247" X="-9923.681" Y="38.38715" Z="32.41258" />
 	</If>
 	<While Condition="HasQuestAvailable(247)" > 
@@ -185,7 +181,7 @@ Guard Thomas
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="HasQuest(86) &amp;&amp; !IsQuestCompleted(86)"> <!-- Pig Pie -->
+	<If Condition="HasQuest(86) &amp;&amp; !IsQuestCompleted(86)"> 
 		<Objective Type="CollectItem" ItemId="60401" QuestName="Pie For Billy" QuestId="86" CollectCount="4" />
 	</If>
 	<If Condition="HasQuest(86) &amp;&amp; IsQuestCompleted(86)"> 
@@ -196,7 +192,7 @@ Guard Thomas
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="HasQuest(84) &amp;&amp; IsQuestCompleted(84)"> <!-- Run to Billy Maclure -->
+	<If Condition="HasQuest(84) &amp;&amp; IsQuestCompleted(84)"> 
 		<TurnIn QuestId="84" QuestName="A Note" TurnInName="Billy" TurnInId="247" X="-9923.681" Y="38.38715" Z="32.41258" />
 	</If>
 	<While Condition="HasQuestAvailable(247)" > 
@@ -204,13 +200,12 @@ Guard Thomas
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="HasQuest(87) &amp;&amp; !IsQuestCompleted(87)"> <!-- Goldtooth -->
+	<If Condition="HasQuest(87) &amp;&amp; !IsQuestCompleted(87)"> 
 		<Objective Type="CollectItem" ItemId="981" QuestName="Goldtooth" QuestId="87" CollectCount="1" />
 	</If>
 	<If Condition="HasQuest(87) &amp;&amp; IsQuestCompleted(87)"> 
 		<TurnIn QuestId="87" QuestName="Goldtooth" TurnInName="Auntie" TurnInId="246" X="-9889.681" Y="338.4665" Z="36.49805" />
 	</If>
-<!-- Level 8 -->
 	<If Condition="((HasQuest(107)) &amp;&amp; (IsQuestCompleted(107)))" >
 		<TurnIn QuestId="107" QuestName="A Letter" TurnInName="Pestle" TurnInId="253" X="-9460.302" Y="31.93891" Z="56.96619" />
 	</If>
@@ -232,18 +227,20 @@ Guard Thomas
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="HasQuest(112) &amp;&amp; !IsQuestCompleted(112)"> <!-- Collecting Kelp -->
+	<If Condition="HasQuest(112) &amp;&amp; !IsQuestCompleted(112)">
 		<Objective QuestId="112" Type="CollectItem" ItemId="1256" QuestName="Kelp" CollectCount="4" />
-	</If>
+	</If> -->
 	<If Condition="((HasQuest(35)) &amp;&amp; (IsQuestCompleted(35)))" >
 		<TurnIn QuestId="35" QuestName="Further Concerns" TurnInName="Guard Thomas" TurnInId="261" X="-9610.232" Y="-1032.052" Z="41.12374" />
 	</If>
-	<If Condition="((HasQuest(112)) &amp;&amp; (IsQuestCompleted(112)))" > <!-- ##Need a better way of getting these quests ## -->
-		<PickUp QuestName="Find the Lost Guards" QuestId="37" GiverName="Guard Thomas" GiverId="261" X="-9610.232" Y="-1032.052" Z="41.12282" />
-		<PickUp QuestName="Protect the Frontier" QuestId="52" GiverName="Guard Thomas" GiverId="261" X="-9610.232" Y="-1032.052" Z="41.12282" />
+<GrindTo Condition="Me.LevelFraction &gt;= 7" />
+<Checkpoint Level="7" />
+<PickUp QuestName="Protect the Frontier" QuestId="52" GiverName="Guard Thomas" GiverId="261" />
+	<If Condition="((HasQuest(52)) &amp;&amp; (!IsQuestCompleted(52)))" > <!-- ##Need a better way of getting these quests ## -->
 		<PickUp QuestName="Bounty on Murlocs" QuestId="46" GiverType="Object" GiverId="203733" X="-9613.294" Y="-1033.362" Z="40.24664" />
 		<PickUp QuestName="Wanted: James Clark" QuestId="26152" GiverType="Object" GiverId="203733" X="-9613.294" Y="-1033.362" Z="40.24664" />
 	</If>
+<PickUp QuestName="Fine Linen Goods" QuestId="83" GiverName="Sara Timberlain" GiverId="278" />
 	<If Condition="HasQuest(46) &amp;&amp; !IsQuestCompleted(46)">
 		<Objective QuestId="46" Type="CollectItem" ItemId="780" QuestName="Murloc Bounty" CollectCount="8" />
 	</If>
@@ -251,44 +248,28 @@ Guard Thomas
 		<Objective QuestId="52" Type="KillMob" MobId="118" QuestName="Protect Frontier" KillCount="8" />
 		<Objective QuestId="52" Type="KillMob" MobId="822" QuestName="Protect Frontier" KillCount="5" />
 	</If>
-<!-- Level 9 -->
-	<If Condition="HasQuest(26152) &amp;&amp; !IsQuestCompleted(26152)">
+	<While Condition="HasQuest(26152) &amp;&amp; !IsQuestCompleted(26152)">
 		<Objective QuestId="26152" QuestName="James Clark" Type="CollectItem" ItemId="57122" CollectCount="1" />
-	</If>
+	</While>
+<If Condition="(HasItem(1307))" >
+	<PickUp QuestName="The Collector" QuestId="123" GiverType="Item" GiverId="1307" />
+</If>
 <!-- Eastvale Logging Camp -->
-	<While Condition="HasQuestAvailable(278)" >
-		<CustomBehavior File="InteractWith"  MobId="278" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-9530.045" Y="-1222.585" Z="47.28968" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-	<While Condition="HasQuestAvailable(10616)" >
-		<CustomBehavior File="InteractWith"  MobId="10616" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-9530.045" Y="-1222.585" Z="47.28968" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
+<PickUp QuestName="A Bundle of Trouble" QuestId="5545" GiverName="Supervisor Raelen" GiverId="10616" X="-9469.795" Y="-1289.215" Z="41.34293" />
 	<If Condition="HasQuest(5545) &amp;&amp; !IsQuestCompleted(5545)">
 		<Objective QuestName="A Bundle of Trouble" QuestId="5545" Type="CollectItem" ItemId="13872" CollectCount="8" />
 	</If>
+<TurnIn QuestName="Wanted: James Clark" QuestId="26152" TurnInName="Marshal McCree" TurnInId="42256" X="-9468.153" Y="-1305.781" Z="44.15004" />
 <!-- Do Marshall Here -->
 	<If Condition="((HasQuest(37)) &amp;&amp; (IsQuestCompleted(37)))" >
 		<TurnIn QuestName="Find the Lost Guards" QuestId="37" TurnInName="A half-eaten body" TurnInId="55" X="-9335.764" Y="-986.4834" Z="67.69179" />
 	</If>
-	<If Condition="((HasQuest(83)) &amp;&amp; (IsQuestCompleted(83)))" >
-		<PickUp QuestName="Discover Rolf's Fate" QuestId="45" GiverType="Object" GiverId="55" X="-9335.764" Y="-986.4834" Z="67.69179" />
-	</If>
+
 	<If Condition="HasQuest(83) &amp;&amp; !IsQuestCompleted(83)">
 		<Objective QuestName="Fine Linen Goods" QuestId="83" Type="CollectItem" ItemId="1019" CollectCount="6" />
 	</If>
-	<If Condition="((HasQuest(45)) &amp;&amp; (IsQuestCompleted(45)))" >
-		<TurnIn QuestId="45" QuestName="Discover Rolf's Fate" TurnInType="Object" TurnInId="56" X="-9224.173" Y="-1234.316" Z="73.73194" />
-	</If>
-<!-- Level 10 -->
-	<If Condition="((HasQuest(83)) &amp;&amp; (IsQuestCompleted(83)))" >
-		<PickUp QuestName="Report to Thomas" QuestId="71" GiverType="Object" GiverId="56" X="-9224.173" Y="-1234.316" Z="73.73194" />
-	</If>
-	<If Condition="((HasQuest(26152)) &amp;&amp; (IsQuestCompleted(26152)))" >
-		<TurnIn QuestName="Wanted: James Clark" QuestId="26152" TurnInName="Marshal McCree" TurnInId="42256" X="-9468.153" Y="-1305.781" Z="44.15004" />
-	</If>
+
+<Checkpoint Level="10" />
 	<While Condition="HasQuestAvailable(42256)" > <!-- Pickup Westfall Breadcrumb, turn in existing quests -->
 		<CustomBehavior File="InteractWith"  MobId="42256" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-9530.045" Y="-1222.585" Z="47.28968" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -311,14 +292,11 @@ Guard Thomas
 	</If>
 	<If Condition="((HasQuest(112)) &amp;&amp; (IsQuestCompleted(112)))" >
 		<TurnIn QuestId="112" QuestName="Kelp" TurnInName="Pestle" TurnInId="253" X="-9460.302" Y="31.93891" Z="56.96619" />
-	</If>
+	</If> -->
 	<If Condition="(Me.Level &gt;= 10)" >
 		<CustomBehavior File="LoadProfile" ProfileName="Westfall" />
-	</If> -->
+	</If>
 </QuestOrder>
-<!-- Quest Overrides  -->
-<!-- Goldshire -->
-<!-- Level 5 -->
 <Quest Id="47" Name="Gold Dust Exchange">
 	<Objective Type="CollectItem" ItemId="773" CollectCount="10">
 		<CollectFrom>

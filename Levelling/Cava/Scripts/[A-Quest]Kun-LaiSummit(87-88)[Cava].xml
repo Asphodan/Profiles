@@ -1617,10 +1617,9 @@ need confirm
 <Objective QuestName="They Stole My Luck!" QuestId="30621" Type="CollectItem" ItemId="80318" CollectCount="1" />
 <Objective QuestName="They Stole My Luck!" QuestId="30621" Type="CollectItem" ItemId="80319" CollectCount="1" />
 <If Condition="HasQuest(30621) &amp;&amp; IsQuestCompleted(30621)" >
-  <While Condition="(Me.Location.Distance(new WoWPoint(3113.589, 1249.401, 654.8171)) &gt; 80)">
+    <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for Hearth {TimeRemaining}" />
     <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1000" />
     <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for Hearth {TimeRemaining}" />
-  </While>
 </If>
 <TurnIn QuestName="They Stole My Luck!" QuestId="30621" TurnInName="Ji-Lu the Lucky" TurnInId="59716" X="3106.916" Y="1252.368" Z="655.1705" />
 <TurnIn QuestName="Resupplying One Keg" QuestId="30618" TurnInName="Big Sal" TurnInId="59695" X="3041.338" Y="1227.514" Z="655.0031" />
@@ -2087,10 +2086,9 @@ Turn-in quest and start bot"     />
 	<CustomBehavior File="UserSettings" PullDistance="1" />
 </If>
 <If Condition="HasQuest(31228) &amp;&amp; IsQuestCompleted(31228)" >
-  <While Condition="(Me.Location.Distance(new WoWPoint(4417.924, 928.5174, 115.9788)) &gt; 80)">
+    <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for Hearth {TimeRemaining}" />
     <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1000" />
     <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for Hearth {TimeRemaining}" />
-  </While>
 </If>
 <TurnIn QuestName="Prophet Khar'zul" QuestId="31228" TurnInName="Lorewalker Cho" TurnInId="63784" X="4406.11" Y="939.1094" Z="116.0033" />
 <If Condition="!HasQuest(30592) &amp;&amp; !IsQuestCompleted(30592)" >
