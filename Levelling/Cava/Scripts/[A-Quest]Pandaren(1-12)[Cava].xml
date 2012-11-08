@@ -870,6 +870,7 @@
   <CustomBehavior File="NoCombatMoveTo" X="650.2739" Y="4223.023" Z="202.9093" />
   <CustomBehavior File="UserSettings" PullDistance="1" />
   <CustomBehavior File="Escort" QuestId="29785" MobId="55744" X="650.2739" Y="4223.023" Z="202.9093" />
+  <CustomBehavior File="WaitTimer" WaitTime="3000" />
 </If>
 <If Condition="HasQuest(29785) &amp;&amp; IsQuestCompleted(29785)" >
 	<CustomBehavior File="UserSettings" PullDistance="25" />
@@ -879,10 +880,27 @@
 </If>
 <TurnIn QuestName="Dafeng, the Spirit of Air" QuestId="29785" TurnInName="Dafeng" TurnInId="55592" X="543.5643" Y="4320.984" Z="212.239" />
 <PickUp QuestName="Battle for the Skies" QuestId="29786" GiverName="Aysa Cloudsinger" GiverId="55595" X="543.9462" Y="4317.313" Z="212.239" />
-<If Condition="((HasQuest(29786)) &amp;&amp; (!IsQuestCompleted(29786)))" >
+<If Condition="HasQuest(29786) &amp;&amp; !IsQuestCompleted(29786)" >
   <RunTo X="691.741" Y="4176.63" Z="196.1567" />
-	<CustomBehavior File="UserDialog" QuestId="29786" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Need human interaction for quest, use fireworks and move away from aoe things\n\n
-    tip Follow the Shadow of the Onyx on the ground and click the Firework Launchers until the Serpent is dead." />
+  <CustomBehavior File="UserDialog" QuestId="29786" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1"
+   Text="Bot will do next quest alone, but can fail\n
+   If you can help just need use fireworks and move away from aoe things\n\n
+TIP Follow the Shadow of the Onyx on the ground and click the Firework Launchers until the Serpent is dead." />
+  <CustomBehavior File="UserSettings" PullDistance="1" />
+  <While Condition="!IsQuestCompleted(29786)" >
+    <RunTo QuestId="29786" X="684.8547" Y="4173.926" Z="196.9196" />
+    <CustomBehavior File="InteractWith" QuestId="29786" MobId="64507" WaitForNpcs="False" WaitTime="1" CollectionDistance="10" X="684.8547" Y="4173.926" Z="196.9196" />
+    <RunTo QuestId="29786" X="689.3113" Y="4153.901" Z="197.5442" />
+    <CustomBehavior File="InteractWith" QuestId="29786" MobId="64507" WaitForNpcs="False" WaitTime="1" CollectionDistance="10" X="689.3113" Y="4153.901" Z="197.5442" />
+    <RunTo QuestId="29786" X="717.2311" Y="4141" Z="199.8079" />
+    <CustomBehavior File="InteractWith" QuestId="29786" MobId="64507" WaitForNpcs="False" WaitTime="1" CollectionDistance="10" X="717.2311" Y="4141" Z="199.8079" />
+    <RunTo QuestId="29786" X="746.1208" Y="4154.455" Z="203.5305" />
+    <CustomBehavior File="InteractWith" QuestId="29786" MobId="64507" WaitForNpcs="False" WaitTime="1" CollectionDistance="10" X="746.1208" Y="4154.455" Z="203.5305" />
+    <RunTo QuestId="29786" X="736.9695" Y="4183.376" Z="201.3408" />
+    <CustomBehavior File="InteractWith" QuestId="29786" MobId="64507" WaitForNpcs="False" WaitTime="1" CollectionDistance="10" X="736.9695" Y="4183.376" Z="201.3408" />
+    <RunTo QuestId="29786" X="704.817" Y="4190.127" Z="198.2463" />
+    <CustomBehavior File="InteractWith" QuestId="29786" MobId="64507" WaitForNpcs="False" WaitTime="1" CollectionDistance="10" X="704.817" Y="4190.127" Z="198.2463" />
+  </While>
 </If>
 <TurnIn QuestName="Battle for the Skies" QuestId="29786" TurnInName="Master Shang Xi" TurnInId="55586" X="711.3351" Y="4178.052" Z="197.7626" />
 <PickUp QuestName="Worthy of Passing" QuestId="29787" GiverName="Master Shang Xi" GiverId="55586" X="711.3351" Y="4178.052" Z="197.7626" />
@@ -1013,6 +1031,6 @@
 	<GrindTo Condition="(IsQuestCompleted(30989))" />
 </If>
 <TurnIn QuestName="An Old Pit Fighter" QuestId="30989" TurnInName="King Varian Wrynn" TurnInId="29611" X="-8363.06" Y="232.2361" Z="156.9908" />
-<CustomBehavior File="LoadProfile" ProfileName="[A-Quest]Westfall (10-14)[Cava]" />
+<CustomBehavior File="LoadProfile" ProfileName="[A-Quest]Westfall(10-14)[Cava]" />
 </QuestOrder>
 </HBProfile>

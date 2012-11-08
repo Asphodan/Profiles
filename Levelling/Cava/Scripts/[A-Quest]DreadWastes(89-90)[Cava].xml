@@ -474,18 +474,20 @@
     <CustomBehavior File="UserSettings" PullDistance="1" />
     <RunTo X="1436.687" Y="2799.713" Z="302.011" />
     <RunTo X="1345.231" Y="2436.406" Z="330.6844" />
-		<CustomBehavior File="NoCombatMoveTo" X="1236.801" Y="2441.08" Z="315.4126" />
-		<RunTo X="1126.425" Y="2550.387" Z="322.8257" />
-		<RunTo X="1056.712" Y="2644.894" Z="292.8615" />
-		<CustomBehavior File="NoCombatMoveTo" X="762.5263" Y="2731.887" Z="300.8044" />
-		<CustomBehavior File="NoCombatMoveTo" X="532.0211" Y="2714.236" Z="240.4446" />
-		<RunTo X="411.5024" Y="2667.115" Z="213.7563" />
-		<CustomBehavior File="NoCombatMoveTo" X="360.1742" Y="2442.194" Z="218.1238" />
-		<CustomBehavior File="NoCombatMoveTo" X="505.4664" Y="2285.849" Z="256.4005" />
-		<RunTo X="505.4664" Y="2285.849" Z="256.4005" />
+	<CustomBehavior File="NoCombatMoveTo" X="1236.801" Y="2441.08" Z="315.4126" />
+	<RunTo X="1126.425" Y="2550.387" Z="322.8257" />
+	<RunTo X="1056.712" Y="2644.894" Z="292.8615" />
+	<CustomBehavior File="NoCombatMoveTo" X="762.5263" Y="2731.887" Z="300.8044" />
+	<CustomBehavior File="NoCombatMoveTo" X="532.0211" Y="2714.236" Z="240.4446" />
+	<RunTo X="411.5024" Y="2667.115" Z="213.7563" />
+	<CustomBehavior File="NoCombatMoveTo" X="360.1742" Y="2442.194" Z="218.1238" />
+	<CustomBehavior File="NoCombatMoveTo" X="505.4664" Y="2285.849" Z="256.4005" />
+	<RunTo X="505.4664" Y="2285.849" Z="256.4005" />
     <RunTo X="597.1423" Y="2299.812" Z="297.0101" />
-    <RunTo X="659.2054" Y="2120.563" Z="326.9876" />
+    <RunTo X="658.0291" Y="2118.557" Z="327.0804" />
+    <CustomBehavior File="WaitTimer" WaitTime="4000" />
     <CustomBehavior File="InteractWith" MobId="215393" ObjectType="GameObject" WaitTime="1000" X="658.0291" Y="2118.557" Z="327.0804" />
+    <CustomBehavior File="WaitTimer" WaitTime="4000" />
     <RunTo X="609.7953" Y="2126.61" Z="367.7319" />
     </Else>
   </If>
@@ -497,6 +499,8 @@
 <PickUp QuestName="Nope" QuestId="31002" GiverName="Bowmistress Li" GiverId="62112" X="649.0434" Y="2122.863" Z="369.102" />
 <If Condition="HasQuest(31002) &amp;&amp; !IsQuestCompleted(31002)" >
   <CustomBehavior File="InteractWith" MobId="212229" ObjectType="GameObject" WaitTime="1000" X="650.3364" Y="2121.989" Z="369.2226" />
+  <CustomBehavior File="WaitTimer" WaitTime="4000" />
+  <CustomBehavior File="MyCTM" X="682.6614" Y="2122.252" Z="329.4705" />
   <While Condition="!IsObjectiveComplete(1, 31002)" >
     <CustomBehavior File="UseItemOn" QuestId="31002" MobId="62077" ItemId="82807" Range="15" WaitTime="1" CollectionDistance="1000" X="643.1854" Y="2157.866" Z="325.4464" />
     <CustomBehavior File="UseItemOn" QuestId="31002" MobId="62077" ItemId="82807" Range="7" WaitTime="4000" CollectionDistance="1000" X="643.1854" Y="2157.866" Z="325.4464" />
