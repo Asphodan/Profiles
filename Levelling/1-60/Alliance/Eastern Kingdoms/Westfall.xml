@@ -179,7 +179,9 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+	<If Condition="HasQuest(26270) &amp;&amp; IsQuestCompleted(26270)"> 
 		<TurnIn QuestName="Hope for the People" QuestId="26266" TurnInName="Hope Saldean" TurnInId="42575" />
+	</If>
 <PickUp QuestName="Feeding the Hungry and the Hopeless" QuestId="26271" GiverName="Hope Saldean" GiverId="42575" />
 <PickUp QuestName="In Defense of Westfall" QuestId="26286" GiverName="Marshal Gryan Stoutmantle" GiverId="234" />
 <PickUp QuestName="The Westfall Brigade" QuestId="26287" GiverName="Captain Danuvin" GiverId="821" />
@@ -195,7 +197,7 @@
 <TurnIn QuestName="In Defense of Westfall" QuestId="26286" TurnInName="Marshal Gryan Stoutmantle" TurnInId="234" />
 <TurnIn QuestName="The Westfall Brigade" QuestId="26287" TurnInName="Captain Danuvin" TurnInId="821" />
 
-<CheckPoint Level="15">
+<CheckPoint Level="15" />
 <CustomBehavior File="LoadProfile" ProfileName="Redridge" />
 <!-- Ghost Quests -
 	<If Condition="((HasQuest(26371)) &amp;&amp; (IsQuestCompleted(26371)))" >

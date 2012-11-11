@@ -119,15 +119,14 @@
 	<If Condition="((HasQuest(62)) &amp;&amp; (IsQuestCompleted(62)))" >
 		<TurnIn QuestName="Fargodeep Mine" QuestId="62" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
 	</If>
-<!--	<While Condition="HasQuestAvailable(240)" >
+	<While Condition="HasQuestAvailable(240)" >
 		<CustomBehavior File="InteractWith"  MobId="240" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 	<If Condition="((HasQuest(47)) &amp;&amp; (IsQuestCompleted(47)))" >
 		<TurnIn QuestName="Gold Exchange" QuestId="47" TurnInName="Remy TwoTimes" TurnInId="241" X="-9496.319" Y="72.82639" Z="56.41537" />
-	</If> -->
-<!-- Visit Maybell 
+	</If> 
 	<If Condition="((HasQuest(26150)) &amp;&amp; (IsQuestCompleted(26150)))" >
 		<TurnIn QuestName="Visit Maybell" QuestId="26150" TurnInName="Maybell" TurnInId="251" X="-10014.04" Y="37.6059" Z="35.17136" />
 	</If>
@@ -157,8 +156,7 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-## Level 7 ##
-	<If Condition="HasQuest(88) &amp;&amp; !IsQuestCompleted(88)"> Kill the Pig on way back 
+	<If Condition="HasQuest(88) &amp;&amp; !IsQuestCompleted(88)">
 		<Objective Type="CollectItem" ItemId="1006" QuestName="Princess Must Die!" QuestId="88" CollectCount="1" />
 	</If>
 	<If Condition="HasQuest(88) &amp;&amp; IsQuestCompleted(88)"> 
@@ -233,8 +231,6 @@
 	<If Condition="((HasQuest(35)) &amp;&amp; (IsQuestCompleted(35)))" >
 		<TurnIn QuestId="35" QuestName="Further Concerns" TurnInName="Guard Thomas" TurnInId="261" X="-9610.232" Y="-1032.052" Z="41.12374" />
 	</If>
-<GrindTo Condition="Me.LevelFraction &gt;= 7" />
-<Checkpoint Level="7" />
 <PickUp QuestName="Protect the Frontier" QuestId="52" GiverName="Guard Thomas" GiverId="261" />
 	<If Condition="((HasQuest(52)) &amp;&amp; (!IsQuestCompleted(52)))" > <!-- ##Need a better way of getting these quests ## -->
 		<PickUp QuestName="Bounty on Murlocs" QuestId="46" GiverType="Object" GiverId="203733" X="-9613.294" Y="-1033.362" Z="40.24664" />
