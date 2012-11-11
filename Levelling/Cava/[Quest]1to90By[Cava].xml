@@ -64,33 +64,42 @@
     <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]TheJadeForest(85-86)[Cava]" />
   </If>
 	<If Condition="Me.Race == WoWRace.Human">
+ 	  <If Condition="(Me.LevelFraction &gt;= 10.7)" >
+      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Westfall(10-14)[Cava]" />
+	  </If>
  	  <If Condition="(Me.LevelFraction &gt;= 7.2)" >
-      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Elwynn Forest(7-10)[Cava]" />
+      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]ElwynnForest(7-10)[Cava]" />
 	  </If>
  	  <If Condition="(Me.LevelFraction &gt;= 5.1)" >
-      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Elwynn Forest(5-7)[Cava]" />
+      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]ElwynnForest(5-7)[Cava]" />
 	  </If>
     <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Human(1-5)[Cava]" />
  	</If>
 	<If Condition="Me.Race == WoWRace.Dwarf || Me.Race == WoWRace.Gnome">
+ 	  <If Condition="(Me.LevelFraction &gt;= 12.55)" >
+      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]LochModan(12-13)[Cava]" />
+	  </If>
+ 	  <If Condition="(Me.LevelFraction &gt;= 10.75)" >
+      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]LochModan(10-12)[Cava]" />
+	  </If>
  	  <If Condition="(Me.LevelFraction &gt;= 8.2)" >
-      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Dun Morogh(8-10)[Cava]" />
+      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]DunMorogh(8-10)[Cava]" />
 	  </If>
  	  <If Condition="(Me.LevelFraction &gt;= 5.4)" >
-      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Dun Morogh(5-8)[Cava]" />
+      <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]DunMorogh(5-8)[Cava]" />
 	  </If>
   </If>
 	<If Condition="Me.Race == WoWRace.Dwarf">
     <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Dwarf(1-5)[Cava]" />
+	</If>
+ 	<If Condition="Me.Race == WoWRace.Gnome">
+	  <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Gnome(1-5)[Cava]" />
 	</If>
 	<If Condition="Me.Race == WoWRace.NightElf">
  	  <If Condition="(Me.LevelFraction &gt;= 5.5)" >
       <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Teldrassil(5-11)[Cava]" />
  	  </If>
 	  <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Night Elf(1-5)[Cava]" />
-	</If>
- 	<If Condition="Me.Race == WoWRace.Gnome">
-	  <CustomBehavior File="LoadProfile" ProfileName="Scripts\[A-Quest]Gnome(1-5)[Cava]" />
 	</If>
 	<If Condition="Me.Race == WoWRace.Draenei">
  	  <If Condition="(Me.LevelFraction &gt;= 5.43)" >
