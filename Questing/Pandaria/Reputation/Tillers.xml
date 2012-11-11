@@ -338,7 +338,7 @@ Do Quests
 	<If Condition="HasQuest(30318) &amp;&amp; !IsQuestCompleted(30318)"> <!-- Chasing the Chicken -->
 		<CustomBehavior File="FlyTo" X="-296.8539" Y="1446.722" Z="231.519" />
 		<CustomBehavior File="ForcedDismount" />
-		<CustomBehavior File="InteractWith" QuestId="30318" ObjectType="Npc" MobId="58918" NumOfTimes="30" CollectionDistance="50" X="-296.8539" Y="1446.722" Z="231.519" />
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="You will need to manually do the Chickens." />
 	</If>
 <!-- Fish Fellreed -->
 	<If Condition="HasQuest(30326) &amp;&amp; !IsQuestCompleted(30326)"> <!-- Kunzen Legend-Chief -->
@@ -382,7 +382,6 @@ Do Quests
 	</If>
 	<If Condition="HasQuest(30476) &amp;&amp; !IsQuestCompleted(30476)"> <!-- A Gift for Old Hillpaw -->
 		<CustomBehavior File="FlyTo" X="316.3763" Y="857.4071" Z="155.1287" />
-		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="You will need to manually cancel the chicken aura." />
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="A Gift For Old Hillpaw" QuestId="30476" Type="CollectItem" ItemId="80229" CollectCount="1" />
 	</If>
@@ -492,7 +491,6 @@ Turn In Quests
 		<TurnIn QuestName="A Gift for Fish" QuestId="30473" TurnInName="Fish Fellreed" TurnInId="58705" />
 	</If>
  	<If Condition="((HasQuest(30326)) &amp;&amp; (IsQuestCompleted(30326)))" >
-		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
 		<TurnIn QuestName="The Kunzen Legend-Chief" QuestId="30326" TurnInName="Fish Fellreed" TurnInId="58705" />
 	</If>
 <!-- Sho -->
@@ -508,6 +506,10 @@ Turn In Quests
 <!-- Haohan Mudclaw -->
 	<If Condition="((HasQuest(30319)) &amp;&amp; (IsQuestCompleted(30319)))" >
 		<TurnIn QuestName="Pest Problems" QuestId="30319" TurnInName="Haohan" TurnInId="57402" />
+	</If>
+	<If Condition="((HasQuest(30477)) &amp;&amp; (IsQuestCompleted(30477)))" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
+		<TurnIn QuestName="A Gift for Haohan" QuestId="30477" TurnInName="Haohan" TurnInId="57402" />
 	</If>
 <!-- Gina -->
 	<If Condition="((HasQuest(30322)) &amp;&amp; (IsQuestCompleted(30322)))" >
@@ -526,10 +528,7 @@ Turn In Quests
 		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
 		<TurnIn QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" />
 	</If>
-	<If Condition="((HasQuest(30477)) &amp;&amp; (IsQuestCompleted(30477)))" >
-		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
-		<TurnIn QuestName="A Gift for Haohan" QuestId="30477" TurnInName="Haohan" TurnInId="57402" />
-	</If>
+
 <!-- Old Hillpaw -->
 	<If Condition="((HasQuest(30318)) &amp;&amp; (IsQuestCompleted(30318)))" >
 		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-228.8456" Y="608.3925" Z="166.8103" />
