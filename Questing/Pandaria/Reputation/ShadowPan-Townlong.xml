@@ -1,5 +1,5 @@
 <!-- Notes
-Incomplete:  Hatchlings.
+Incomplete:
 -->
 <HBProfile>
 <Name>Shado Pan Townlong Steppes.</Name>
@@ -41,7 +41,7 @@ Incomplete:  Hatchlings.
 		<CustomBehavior File="InteractWith"  MobId="62304" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
+	</While> -->
 <!-- Get Assistant. -->
 	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)"> 
 		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
