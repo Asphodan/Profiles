@@ -82,11 +82,22 @@ Do Quests
 		<CustomBehavior File="FlyTo" X="589.1747" Y="2233.863" Z="307.4598" />
 		<Objective QuestName="Deadspinner Extermination" QuestId="31231" Type="KillMob" MobId="61981" KillCount="8" />
 	</If>
-<!--	<If Condition="((HasQuest(31233)) &amp;&amp; (!IsQuestCompleted(31233)))" >  Sap Tapping 
-		<CustomBehavior File="FlyTo" X="20.35941" Y="2313.101" Z="204.6583"  />
-		<CustomBehavior File="ForcedDismount" />
-		<Objective QuestName="Sap Tapping" QuestId="31233" Type="Collect" CollectCount="6" ItemId="63740" ObjectType="GameObject" CollectionDistance="20000" />
-	</If> -->
+	<If Condition="HasQuest(31233) &amp;&amp; !IsQuestCompleted(31233)">
+		<CustomBehavior File="UserSettings" QuestId="31233" LootMobs="True" PullDistance="20" />
+		<While Condition="!IsQuestCompleted(31233)">
+			<CustomBehavior File="InteractWith" MobId="63740" Range="5" WaitTime="6000" ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="384.5976" Y="2385.874" Z="219.0938" />
+					<Hotspot X="559.2505" Y="2572.864" Z="275.9264" />
+					<Hotspot X="559.2505" Y="2572.864" Z="275.9264" />
+					<Hotspot X="629.1552" Y="2628.038" Z="287.5912" />
+					<Hotspot X="709.637" Y="2716.399" Z="295.0992" />
+					<Hotspot X="691.0659" Y="2524.741" Z="304.498" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<CustomBehavior File="InteractWith" MobId="213319" NumOfTimes="3" CollectionDistance="15" WaitForNpcs="False" ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" />
+		</While>
+ 	</If>
 	<If Condition="HasQuest(31234) &amp;&amp; !IsQuestCompleted(31234)"> <!-- Putting An Eye Out -->
 		<CustomBehavior File="FlyTo" X="-1.856784" Y="2474.058" Z="161.4677" />
 		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" /> 
@@ -173,9 +184,13 @@ Do Quests
 	<If Condition="((HasQuest(31111)) &amp;&amp; (IsQuestCompleted(31111)))" >
 		<TurnIn QuestName="Eradicating" QuestId="31111" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
 	</If>
+	
 <!-- Korven -->
-	<If Condition="((HasQuest(31232)) &amp;&amp; (IsQuestCompleted(31232)))" > <!-- Ancient Empire -->
+	<If Condition="((HasQuest(31232)) &amp;&amp; (IsQuestCompleted(31232)))" > 
 		<TurnIn QuestName="Ancient Empire" QuestId="31232" TurnInName="Korven" TurnInId="62180" />
+	</If>
+	<If Condition="((HasQuest(31233)) &amp;&amp; (IsQuestCompleted(31233)))" > 
+		<TurnIn QuestName="Sap Tapping" QuestId="31233" TurnInName="Korven" TurnInId="62180" />
 	</If>
 <!-- Kaz'tik -->
 	<If Condition="((HasQuest(31238)) &amp;&amp; (IsQuestCompleted(31238)))" >
