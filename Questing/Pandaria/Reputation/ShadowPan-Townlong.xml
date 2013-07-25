@@ -1,5 +1,5 @@
 <!-- Notes
-Incomplete:
+Incomplete: Hatchlings.
 -->
 <HBProfile>
 <Name>Shado Pan Townlong Steppes.</Name>
@@ -81,12 +81,13 @@ Incomplete:
 	<If Condition="((HasQuest(31039)) &amp;&amp; (IsQuestCompleted(31039)))" >
 		<TurnIn QuestName="Mogu Menace" QuestId="31039" TurnInName="Ban Bearheart" TurnInId="62304" />
 	</If>
-<!-- Darkwoods Faerie Comes After -->
+<!-- Secondary Quest -->
 	<If Condition="((HasQuest(31049)) &amp;&amp; (!IsQuestCompleted(31049)))" > <!-- Fly to Darkwood Faerie. -->
 		<CustomBehavior File="FlyTo" X="3951.908" Y="5910.817" Z="117.9382"  />
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="In Sprite Of Everything" QuestId="31049" Type="KillMob" MobId="62522" KillCount="1" />
 	</If>
+<!-- Turn in Secondary Quests. -->
 <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
 	<If Condition="((HasQuest(31049)) &amp;&amp; (IsQuestCompleted(31049)))" >
 		<TurnIn QuestName="In Sprite Blahblahblah." QuestId="31049" TurnInName="Ban Bearheart" TurnInId="62304" />
