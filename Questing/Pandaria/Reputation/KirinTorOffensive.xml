@@ -31,65 +31,95 @@ Incomplete:
    
 <Blackspots>
 </Blackspots>
-   
-<!-- Quest Behavior -->
+
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Get Quests -->
-<!-- <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
-	<While Condition="HasQuestAvailable(62304)" >
-		<CustomBehavior File="InteractWith"  MobId="62304" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+	<While Condition="HasQuestAvailable(67993)" >
+		<CustomBehavior File="InteractWith"  MobId="67993" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While> -->
-<!-- Get Assistant. -->
-	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)"> 
-		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+	</While>
+	<While Condition="HasQuestAvailable(67995)" >
+		<CustomBehavior File="InteractWith"  MobId="67995" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</If>
+	</While>
 <!-- Do Quests -->
-<!-- Shanze Dao -->
-	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > <!-- Fly to Shanze Dao -->
-		<CustomBehavior File="FlyTo" X="3482.928" Y="5192.418" Z="1.663973"  />
+<!-- Ighaluk Crag -->
+	<If Condition="((HasQuest(32732)) &amp;&amp; (IsQuestCompleted(32732)))" > 
+		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
 		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Ihgaluk Crag" QuestId="32732" TurnInName="Archmage Modera" TurnInId="67996" />
 	</If>
-	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > 
-		<Objective QuestName="Egg Rescue!" QuestId="31041" Type="CollectItem" ItemId="83129" CollectCount="8" />
+	<While Condition="HasQuestAvailable(67996)" > <!-- Get Modera Quests. -->
+		<CustomBehavior File="InteractWith"  MobId="67996" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(69677)" > <!-- Get Gnome Quests. -->
+		<CustomBehavior File="InteractWith"  MobId="69677" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<If Condition="HasQuest(32546) &amp;&amp; !IsQuestCompleted(32546)" >
+		<CustomBehavior File="UserSettings" QuestId="32546" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="25" />
+		<RunTo X="5936.555" Y="5465.421" Z="30.49908" />
+		<CustomBehavior File="CollectThings" CollectUntil="QuestComplete" QuestId="32546" MobId="69251" MobId2="69282" MobState="Alive" NonCompeteDistance="5" HuntingGroundRadius="50" >
+			<Hotspot X="5944.483" Y="5445.594" Z="30.49892" />
+			<Hotspot X="5932.566" Y="5494.266" Z="30.49921" />
+			<Hotspot X="5913.896" Y="5534.81" Z="30.49941" />
+			<Hotspot X="5914.896" Y="5579.35" Z="30.5411" />
+			<Hotspot X="5942.059" Y="5640.925" Z="43.29585" />
+		</CustomBehavior>
 	</If>
-	<If Condition="((HasQuest(31040)) &amp;&amp; (!IsQuestCompleted(31040)))" > 
-		<Objective QuestName="Spiteful Sprites" QuestId="31040" Type="KillMob" MobId="62268" KillCount="30" />
+	<If Condition="HasQuest(32536) &amp;&amp; !IsQuestCompleted(32536)" >
+		<CustomBehavior File="Message" Text="Starting Manipulating the Saurok" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32536" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
+		<If Condition="!IsObjectiveComplete(3,32536)" >
+			<RunTo X="6106.76" Y="5523.68" Z="67.94" />
+			<While Condition="!IsObjectiveComplete(3,32536)" >
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69685" WaitForNpcs="False" CollectionDistance="300" WaitTime="100" />
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69686" WaitForNpcs="False" CollectionDistance="300" />
+			</While>
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="32536" QuestObjectiveIndex="2" MobId="69684" IgnoreCombat="True" X="5804.76" Y="5524.77" Z="40.25" />
+		<If Condition="!IsObjectiveComplete(1,32536)" >
+			<RunTo X="5859.02" Y="5814.50" Z="20.52" />
+			<While Condition="!IsObjectiveComplete(1,32536)" >
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69681" WaitForNpcs="False" />
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69682" WaitForNpcs="False" />
+			</While>
+		</If>
 	</If>
-<!-- Little Hatclings Does not Work.	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > 
-		<Objective QuestName="Little Hatchlings" QuestId="31046" Type="KillMob" MobId="62567" KillCount="20" />
-	</If> -->
-	<If Condition="((HasQuest(31039)) &amp;&amp; (!IsQuestCompleted(31039)))" >
-		<Objective QuestName="The Mogu Menace" QuestId="31039" Type="KillMob" MobId="62293" KillCount="12" />
+	<If Condition="HasQuest(32535) &amp;&amp; !IsQuestCompleted(32535)" >
+		<Objective QuestName="The Skumblade Threat" QuestId="32535" Type="KillMob" MobId="69362" KillCount="10" />
+	</If>
+	<If Condition="HasQuest(32573) &amp;&amp; !IsQuestCompleted(32573)" >
+		<Objective QuestName="Enemies Beneath the Tower" QuestId="32573" Type="KillMob" MobId="69431" KillCount="7" />
 	</If>
 
+
 <!-- Turn In Quests -->
-<CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
-	<If Condition="((HasQuest(61046)) &amp;&amp; (IsQuestCompleted(61046)))" >
-		<TurnIn QuestName="Little Hatchlings" QuestId="61046" TurnInName="Ban Bearheart" TurnInId="62304" />
+	<!-- Saurok -->
+	<If Condition="((HasQuest(32546)) &amp;&amp; (IsQuestCompleted(32546)))" >
+		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
+		<TurnIn QuestName="Manipulating the Saurok" QuestId="32536" TurnInName="Archmage Modera" TurnInId="67996" />
+		<TurnIn QuestName="Manipulating the Saurok" QuestId="32535" TurnInName="Archmage Modera" TurnInId="67996" />
+		<TurnIn QuestName="Just Some Light Clean-Up Work" QuestId="32546" TurnInName="Sanitation Sorcerer Stephen Litmatch" TurnInId="69677" />
 	</If>
-	<If Condition="((HasQuest(31040)) &amp;&amp; (IsQuestCompleted(31040)))" >
-		<TurnIn QuestName="Spiteful Sprites" QuestId="31040" TurnInName="Ban Bearheart" TurnInId="62304" />
+	<!-- Base Camp -->
+	<If Condition="((HasQuest(32573)) &amp;&amp; (IsQuestCompleted(32573)))" >
+		<CustomBehavior File="FlyTo" X="6122.193" Y="5061.02" Z="37.27309" />
+		<TurnIn QuestName="Enemies Beneath the Tower" QuestId="32573" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
 	</If>
-	<If Condition="((HasQuest(31041)) &amp;&amp; (IsQuestCompleted(31041)))" >
-		<TurnIn QuestName="Spiteful Sprites" QuestId="31041" TurnInName="Ban Bearheart" TurnInId="62304" />
+	<If Condition="((HasQuest(32574)) &amp;&amp; (IsQuestCompleted(32574)))" >
+		<CustomBehavior File="FlyTo" X="6158.706" Y="5036.553" Z="37.61765" />
+		<TurnIn QuestName="The Shuddering Moor" QuestId="32574" TurnInName="Vereesa Windrunner" TurnInId="67993" />
 	</If>
-	<If Condition="((HasQuest(31039)) &amp;&amp; (IsQuestCompleted(31039)))" >
-		<TurnIn QuestName="Mogu Menace" QuestId="31039" TurnInName="Ban Bearheart" TurnInId="62304" />
-	</If>
-<!-- Darkwoods Faerie Comes After -->
-	<If Condition="((HasQuest(31049)) &amp;&amp; (!IsQuestCompleted(31049)))" > <!-- Fly to Darkwood Faerie. -->
-		<CustomBehavior File="FlyTo" X="3951.908" Y="5910.817" Z="117.9382"  />
-		<CustomBehavior File="ForcedDismount" />
-		<Objective QuestName="In Sprite Of Everything" QuestId="31049" Type="KillMob" MobId="62522" KillCount="1" />
-	</If>
-<CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
-	<If Condition="((HasQuest(31049)) &amp;&amp; (IsQuestCompleted(31049)))" >
-		<TurnIn QuestName="In Sprite Blahblahblah." QuestId="31049" TurnInName="Ban Bearheart" TurnInId="62304" />
-	</If>
+	
+<!-- Get Second Batch of BaseCamp Dailies. -->
 </QuestOrder> 
+<!-- Behavior Overrides -->
+<!-- Saurok  -->
 </HBProfile>
