@@ -143,13 +143,22 @@ Do Quests
 		<Objective QuestName="Eradicating the Zan'thik" QuestId="31111" Type="KillMob" MobId="64971" KillCount="6" />
 		<Objective QuestName="Eradicating the Zan'thik" QuestId="31111" Type="KillMob" MobId="64973" KillCount="6" />
 	</If>
-
-<CustomBehavior File="FlyTo" DestName="Eradication" X="-1206.671" Y="4459.365" Z="108.4697" />
-<Objective QuestName="Specimen Request" QuestId="31508" Type="CollectItem" ItemId="87874" CollectCount="6" />
-<Objective QuestName="Meltdown" QuestId="31507" Type="KillMob" MobId="64982" KillCount="6" />
-<Objective QuestName="Shackles of Manipulation" QuestId="31506" Type="CollectItem" ItemId="87813" CollectCount="6" />
-<Objective QuestName="Vess-Guard Duty" QuestId="31505" Type="KillMob" MobId="64979" KillCount="1" />
-<!-- Turn In Quests -->
+	<If Condition="((HasQuest(31508)) &amp;&amp; (!IsQuestCompleted(31508)))" >
+		<CustomBehavior File="FlyTo" DestName="Zan'Vess" X="-1206.671" Y="4459.365" Z="108.4697" />
+	</If>
+	<If Condition="((HasQuest(31508)) &amp;&amp; (!IsQuestCompleted(31508)))" >
+		<Objective QuestName="Specimen Request" QuestId="31508" Type="CollectItem" ItemId="87874" CollectCount="6" />
+	</If>
+	<If Condition="((HasQuest(31507)) &amp;&amp; (!IsQuestCompleted(31507)))" >
+		<Objective QuestName="Meltdown" QuestId="31507" Type="KillMob" MobId="64982" KillCount="6" />
+	</If>
+	<If Condition="((HasQuest(31506)) &amp;&amp; (!IsQuestCompleted(31506)))" >
+		<Objective QuestName="Shackles of Manipulation" QuestId="31506" Type="CollectItem" ItemId="87813" CollectCount="6" />
+	</If>
+	<If Condition="((HasQuest(31505)) &amp;&amp; (!IsQuestCompleted(31505)))" >
+		<Objective QuestName="Vess-Guard Duty" QuestId="31505" Type="KillMob" MobId="64979" KillCount="1" />
+	</If>
+		<!-- Turn In Quests -->
 <CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
 <!-- Kil'ruk -->
 	<If Condition="((HasQuest(31231)) &amp;&amp; (IsQuestCompleted(31231)))" >
