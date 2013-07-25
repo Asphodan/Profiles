@@ -1,5 +1,5 @@
 <!-- Notes
-Incomplete:
+Incomplete:  Hatchlings.
 -->
 <HBProfile>
 <Name>Shado Pan Townlong Steppes.</Name>
@@ -36,12 +36,12 @@ Incomplete:
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Get Quests -->
-<!-- <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
+ <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
 	<While Condition="HasQuestAvailable(62304)" >
 		<CustomBehavior File="InteractWith"  MobId="62304" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While> -->
+	</While>
 <!-- Get Assistant. -->
 	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)"> 
 		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
