@@ -1,0 +1,95 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Shado Pan Townlong Steppes.</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+   
+<!-- Quest Behavior -->
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<!-- Get Quests -->
+<!-- <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
+	<While Condition="HasQuestAvailable(62304)" >
+		<CustomBehavior File="InteractWith"  MobId="62304" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While> -->
+<!-- Get Assistant. -->
+	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)"> 
+		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</If>
+<!-- Do Quests -->
+<!-- Shanze Dao -->
+	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > <!-- Fly to Shanze Dao -->
+		<CustomBehavior File="FlyTo" X="3482.928" Y="5192.418" Z="1.663973"  />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > 
+		<Objective QuestName="Egg Rescue!" QuestId="31041" Type="CollectItem" ItemId="83129" CollectCount="8" />
+	</If>
+	<If Condition="((HasQuest(31040)) &amp;&amp; (!IsQuestCompleted(31040)))" > 
+		<Objective QuestName="Spiteful Sprites" QuestId="31040" Type="KillMob" MobId="62268" KillCount="30" />
+	</If>
+<!-- Little Hatclings Does not Work.	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > 
+		<Objective QuestName="Little Hatchlings" QuestId="31046" Type="KillMob" MobId="62567" KillCount="20" />
+	</If> -->
+	<If Condition="((HasQuest(31039)) &amp;&amp; (!IsQuestCompleted(31039)))" >
+		<Objective QuestName="The Mogu Menace" QuestId="31039" Type="KillMob" MobId="62293" KillCount="12" />
+	</If>
+
+<!-- Turn In Quests -->
+<CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
+	<If Condition="((HasQuest(61046)) &amp;&amp; (IsQuestCompleted(61046)))" >
+		<TurnIn QuestName="Little Hatchlings" QuestId="61046" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+	<If Condition="((HasQuest(31040)) &amp;&amp; (IsQuestCompleted(31040)))" >
+		<TurnIn QuestName="Spiteful Sprites" QuestId="31040" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+	<If Condition="((HasQuest(31041)) &amp;&amp; (IsQuestCompleted(31041)))" >
+		<TurnIn QuestName="Spiteful Sprites" QuestId="31041" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+	<If Condition="((HasQuest(31039)) &amp;&amp; (IsQuestCompleted(31039)))" >
+		<TurnIn QuestName="Mogu Menace" QuestId="31039" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+<!-- Darkwoods Faerie Comes After -->
+	<If Condition="((HasQuest(31049)) &amp;&amp; (!IsQuestCompleted(31049)))" > <!-- Fly to Darkwood Faerie. -->
+		<CustomBehavior File="FlyTo" X="3951.908" Y="5910.817" Z="117.9382"  />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="In Sprite Of Everything" QuestId="31049" Type="KillMob" MobId="62522" KillCount="1" />
+	</If>
+<CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
+	<If Condition="((HasQuest(31049)) &amp;&amp; (IsQuestCompleted(31049)))" >
+		<TurnIn QuestName="In Sprite Blahblahblah." QuestId="31049" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+</QuestOrder> 
+</HBProfile>
