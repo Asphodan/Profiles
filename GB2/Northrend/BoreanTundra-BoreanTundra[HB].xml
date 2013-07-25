@@ -1,0 +1,48 @@
+<HBProfile>
+  <Name></Name>
+  <MinDurability>0.4</MinDurability>
+  <MinFreeBagSlots>1</MinFreeBagSlots>
+  
+  <MinLevel>1</MinLevel>
+  <MaxLevel>86</MaxLevel>
+  <Factions>99999</Factions>
+  
+  <MailGrey>False</MailGrey>
+  <MailWhite>True</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+ 
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>False</SellBlue>
+  <SellPurple>False</SellPurple>
+
+	<Vendors>
+		<Vendor Name="Broff Bombast" Entry="27011" Type="Repair" X="2359.466" Y="5237.433" Z="7.712843" />
+	</Vendors>
+	
+	<Mailboxes>
+		<Mailbox X="2262.062" Y="5197.083" Z="11.36678" />
+	</Mailboxes>
+
+  <Hotspots>
+    <Hotspot X="2992.954" Y="6633.933" Z="80" />
+    <Hotspot X="3229.729" Y="6161.814" Z="80" />
+    <Hotspot X="3580.279" Y="5885.114" Z="80" />
+    <Hotspot X="4439.742" Y="5723.706" Z="80" />
+    <Hotspot X="3607.954" Y="5347.278" Z="80" />
+    <Hotspot X="3360.417" Y="4811.172" Z="80" />
+    <Hotspot X="4270.617" Y="4984.686" Z="80" />
+    <Hotspot X="3412.691" Y="4331.559" Z="80" />
+    <Hotspot X="4055.366" Y="4163.809" Z="80" />
+    <Hotspot X="3677.142" Y="3121.573" Z="80" />
+    <Hotspot X="3059.067" Y="4063.506" Z="80" />
+    <Hotspot X="3126.717" Y="4907.44" Z="80" />
+    <Hotspot X="2568.604" Y="5181.835" Z="80" />
+    <Hotspot X="2419.467" Y="5562.874" Z="80" />
+    <Hotspot X="1924.392" Y="5711.023" Z="80" />
+    <Hotspot X="2204.217" Y="6486.937" Z="80" />
+  </Hotspots>
+</HBProfile>
