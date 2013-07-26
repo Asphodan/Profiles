@@ -98,7 +98,10 @@ Incomplete:
 	<If Condition="HasQuest(32573) &amp;&amp; !IsQuestCompleted(32573)" >
 		<Objective QuestName="Enemies Beneath the Tower" QuestId="32573" Type="KillMob" MobId="69431" KillCount="7" />
 	</If>
-
+	<If Condition="HasQuest(32578) &amp;&amp; !IsQuestCompleted(32578)" >
+		<CustomBehavior File="FlyTo" X="5973.458" Y="5923.316" Z="0.5423404" />
+		<Objective QuestName="Among the Bones" QuestId="32578" Type="KillMob" MobId="69666" KillCount="1" />
+	</If>
 
 <!-- Turn In Quests -->
 	<!-- Saurok -->
@@ -119,6 +122,32 @@ Incomplete:
 	</If>
 	
 <!-- Get Second Batch of BaseCamp Dailies. -->
+	<While Condition="HasQuestAvailable(67992)" >
+		<CustomBehavior File="InteractWith"  MobId="67992" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+	<If Condition="((HasQuest(32578)) &amp;&amp; (IsQuestCompleted(32578)))" >
+		<CustomBehavior File="FlyTo" X="6122.193" Y="5061.02" Z="37.27309" />
+		<TurnIn QuestName="Among the Bones" QuestId="32578" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+<!-- Third Batch of Quests -->
+	<If Condition="((HasQuest(32568)) &amp;&amp; (IsQuestCompleted(32568)))" >
+		<CustomBehavior File="FlyTo" X="6714.727" Y="5094.89" Z="31.08037" />
+		<TurnIn QuestName="No Time To Rest" QuestId="32568" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	<While Condition="HasQuestAvailable(67999)" > <!-- Get Modera Quests. -->
+		<CustomBehavior File="InteractWith"  MobId="67999" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67998)" > <!-- Get Modera Quests. -->
+		<CustomBehavior File="InteractWith"  MobId="67998" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 </QuestOrder> 
 <!-- Behavior Overrides -->
 <!-- Saurok  -->

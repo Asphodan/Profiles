@@ -33,18 +33,55 @@ Incomplete: Hatchlings.
 </Blackspots>
    
 <!-- Quest Behavior -->
+	<Quest Id="31116" Name="Spirit Dust">
+		<Objective Type="CollectItem" ItemId="84727" CollectCount="32">
+			<CollectFrom>
+				<Mob Name="Spirits" Id="62679" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="2549.248" Y="4169.015" Z="172.4348" />
+				<Hotspot X="2616.385" Y="4160.761" Z="174.0955" />
+				<Hotspot X="2612.572" Y="4060.791" Z="172.5084" />
+				<Hotspot X="2540.122" Y="4092.792" Z="176.5586" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Get Quests -->
+
+<CustomBehavior File="Message" Text="Flying to Shado-Pan Garrison to begin Dailies." LogColor="Red"  />
  <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
 	<While Condition="HasQuestAvailable(62304)" >
 		<CustomBehavior File="InteractWith"  MobId="62304" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While> -->
+	</While>
+		<While Condition="HasQuestAvailable(63009)" >
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton2" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton3" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton4" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton5" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
 <!-- Get Assistant. -->
 	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)"> 
 		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</If>
+	<If Condition="HasQuest(31116) &amp;&amp; !IsQuestCompleted(31116)"> 
+		<CustomBehavior File="InteractWith"  MobId="62546" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</If>
@@ -66,8 +103,34 @@ Incomplete: Hatchlings.
 	<If Condition="((HasQuest(31039)) &amp;&amp; (!IsQuestCompleted(31039)))" >
 		<Objective QuestName="The Mogu Menace" QuestId="31039" Type="KillMob" MobId="62293" KillCount="12" />
 	</If>
-
+<!-- Deadtalker's Plateau -->
+	<If Condition="((HasQuest(31116)) &amp;&amp; (!IsQuestCompleted(31116)))" >
+		<CustomBehavior File="Message" Text="Flying to Deadtalker's Plateau because we have quest 31116." LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="2523.365" Y="4193.128" Z="186.4108" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+	<If Condition="((HasQuest(31116)) &amp;&amp; (!IsQuestCompleted(31116)))" > 
+		<Objective QuestName="Spirit Dust" QuestId="31116" Type="CollectItem" ItemId="84727" CollectCount="32" />
+		<CustomBehavior File="UserSettings" QuestId="31267" LootMobs="True" PullDistance="5" />
+		<CustomBehavior File="Message" Text="Adjusting PullDistance to 5." LogColor="Green"  />
+		<While Condition="!IsQuestCompleted(31116)" >
+			<CustomBehavior File="UserSettings" QuestId="31116" LootMobs="True" PullDistance="10" />
+			<CustomBehavior File="InteractWith" CollectionDistance="5000" MobId="212779" WaitForNpcs="False" />
+		</While>
+		<CustomBehavior File="UserSettings" QuestId="31267" LootMobs="True" PullDistance="20" />
+		<CustomBehavior File="Message" Text="Returning PullDistance to 20." LogColor="Green"  />
+	</If>
+	<If Condition="((HasQuest(31114)) &amp;&amp; (!IsQuestCompleted(31114)))" >
+		<CustomBehavior File="FlyTo" X="2523.365" Y="4193.128" Z="186.4108" />
+		<Objective QuestName="Assault Deadtalker's Plateau" QuestId="31114" Type="KillMob" MobId="62677" KillCount="8" />
+		<Objective QuestName="Assault Deadtalker's Plateau" QuestId="31114" Type="KillMob" MobId="62844" KillCount="1" />
+	</If>
+	<If Condition="((HasQuest(31113)) &amp;&amp; (!IsQuestCompleted(31113)))" >
+		<CustomBehavior File="FlyTo" X="2871.542" Y="3548.398" Z="377.7647" />
+		<Objective QuestName="Assault Fire Camp Gai-Cho" QuestId="31113" Type="KillMob" MobId="62552" KillCount="16" />
+	</If>
 <!-- Turn In Quests -->
+<CustomBehavior File="Message" Text="Flying to Shado-Pan to turn in dailies." LogColor="Red"  />
 <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
 	<If Condition="((HasQuest(61046)) &amp;&amp; (IsQuestCompleted(61046)))" >
 		<TurnIn QuestName="Little Hatchlings" QuestId="61046" TurnInName="Ban Bearheart" TurnInId="62304" />
