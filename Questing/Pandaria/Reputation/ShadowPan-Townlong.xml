@@ -57,25 +57,30 @@ Incomplete: Hatchlings.
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-		<While Condition="HasQuestAvailable(63009)" >
-			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
-			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton1" />
-			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
-			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton2" />
-			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
-			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton3" />
-			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
-			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton4" />
-			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
-			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton5" />
-			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-		</While>
+	<While Condition="HasQuestAvailable(63009)" >
+		<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton2" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton3" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton4" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton5" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Get Assistant. -->
 	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)"> 
+		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</If>
+	<If Condition="HasQuest(31106) &amp;&amp; !IsQuestCompleted(31106)"> 
 		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
@@ -91,11 +96,23 @@ Incomplete: Hatchlings.
 		<CustomBehavior File="FlyTo" X="3482.928" Y="5192.418" Z="1.663973"  />
 		<CustomBehavior File="ForcedDismount" />
 	</If>
+	<If Condition="((HasQuest(31106)) &amp;&amp; (!IsQuestCompleted(31106)))" > <!-- Fly to Shanze Dao -->
+		<CustomBehavior File="FlyTo" X="3482.928" Y="5192.418" Z="1.663973"  />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="The Mogu Menace" QuestId="31106" Type="KillMob" MobId="62293" KillCount="12" />
+	</If>
 	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > 
 		<Objective QuestName="Egg Rescue!" QuestId="31041" Type="CollectItem" ItemId="83129" CollectCount="8" />
 	</If>
 	<If Condition="((HasQuest(31040)) &amp;&amp; (!IsQuestCompleted(31040)))" > 
 		<Objective QuestName="Spiteful Sprites" QuestId="31040" Type="KillMob" MobId="62268" KillCount="30" />
+	</If>
+ 	<If Condition="HasQuest(31048) &amp;&amp; !IsQuestCompleted(31048)">
+		<CustomBehavior File="FlyTo" X="3975.413" Y="5463.72" Z="173.3093" />
+		<CustomBehavior File="ForcedDismount"/>
+		<While Condition="!IsQuestCompleted(31048)" >
+			<CustomBehavior File="InteractWith" QuestId="31048" MobId="212324" CollectionDistance="10000" WaitForNpcs="False" />
+		</While>
 	</If>
 <!-- Little Hatclings Does not Work.	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > 
 		<Objective QuestName="Little Hatchlings" QuestId="31046" Type="KillMob" MobId="62567" KillCount="20" />
@@ -135,6 +152,18 @@ Incomplete: Hatchlings.
 	<If Condition="((HasQuest(61046)) &amp;&amp; (IsQuestCompleted(61046)))" >
 		<TurnIn QuestName="Little Hatchlings" QuestId="61046" TurnInName="Ban Bearheart" TurnInId="62304" />
 	</If>
+	<If Condition="((HasQuest(31106)) &amp;&amp; (IsQuestCompleted(31106)))" >
+		<TurnIn QuestName="Mogu Menace" QuestId="31106" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+	<If Condition="((HasQuest(31048)) &amp;&amp; (IsQuestCompleted(31048)))" >
+		<TurnIn QuestName="Grave Consequences" QuestId="31048" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+	<If Condition="((HasQuest(31045)) &amp;&amp; (IsQuestCompleted(31045)))" >
+		<TurnIn QuestName="Illusions" QuestId="31045" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+	<If Condition="((HasQuest(31044)) &amp;&amp; (IsQuestCompleted(31044)))" >
+		<TurnIn QuestName="Bronze Claws" QuestId="31044" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
 	<If Condition="((HasQuest(31040)) &amp;&amp; (IsQuestCompleted(31040)))" >
 		<TurnIn QuestName="Spiteful Sprites" QuestId="31040" TurnInName="Ban Bearheart" TurnInId="62304" />
 	</If>
@@ -149,6 +178,11 @@ Incomplete: Hatchlings.
 		<CustomBehavior File="FlyTo" X="3951.908" Y="5910.817" Z="117.9382"  />
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="In Sprite Of Everything" QuestId="31049" Type="KillMob" MobId="62522" KillCount="1" />
+	</If>
+	<If Condition="((HasQuest(31062)) &amp;&amp; (!IsQuestCompleted(31062)))" > <!-- Fly to Darkwood Faerie. -->
+		<CustomBehavior File="FlyTo" X="4227.209" Y="5278.464" Z="176.9823" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="When The Dead Speak" QuestId="31062" Type="KillMob" MobId="62559" KillCount="1" />
 	</If>
 <!-- Turn in Secondary Quests. -->
 <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />

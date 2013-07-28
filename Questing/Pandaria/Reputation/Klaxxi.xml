@@ -166,6 +166,9 @@ Incomplete:
 	<If Condition="((HasQuest(31508)) &amp;&amp; (!IsQuestCompleted(31508)))" >
 		<CustomBehavior File="FlyTo" DestName="Zan'Vess" X="-1206.671" Y="4459.365" Z="108.4697" />
 	</If>
+	<If Condition="((HasQuest(31510)) &amp;&amp; (!IsQuestCompleted(31510)))" >
+		<CustomBehavior File="FlyTo" DestName="Quiet Now" X="-1675.497" Y="4836.451" Z="59.85176" />
+	</If>
 	<If Condition="((HasQuest(31508)) &amp;&amp; (!IsQuestCompleted(31508)))" >
 		<Objective QuestName="Specimen Request" QuestId="31508" Type="CollectItem" ItemId="87874" CollectCount="6" />
 	</If>
