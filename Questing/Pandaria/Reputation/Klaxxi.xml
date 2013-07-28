@@ -193,11 +193,16 @@ Incomplete:
 	<If Condition="((HasQuest(31111)) &amp;&amp; (IsQuestCompleted(31111)))" >
 		<TurnIn QuestName="Eradicating" QuestId="31111" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
 	</If>
-	
+	<If Condition="((HasQuest(31505)) &amp;&amp; (IsQuestCompleted(31505)))" >
+		<TurnIn QuestName="Vess-Guard Duty" QuestId="31505" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
 <!-- Korven -->
 	<If Condition="((HasQuest(31232)) &amp;&amp; (IsQuestCompleted(31232)))" > 
 		<TurnIn QuestName="Ancient Empire" QuestId="31232" TurnInName="Korven" TurnInId="62180" />
 	</If>
+	<If Condition="((HasQuest(31507)) &amp;&amp; (IsQuestCompleted(31507)))" > 
+			<TurnIn QuestName="Meltdown" QuestId="31507" TurnInName="Korven the Prime" TurnInId="62180" />
+	</If> 
 	<If Condition="((HasQuest(31233)) &amp;&amp; (IsQuestCompleted(31233)))" > 
 		<TurnIn QuestName="Sap Tapping" QuestId="31233" TurnInName="Korven" TurnInId="62180" />
 	</If>
@@ -217,6 +222,9 @@ Incomplete:
 	<If Condition="((HasQuest(31268)) &amp;&amp; (IsQuestCompleted(31268)))" >
 		<TurnIn QuestName="Brain Work" QuestId="31268" TurnInName="Kaz'tik" TurnInId="63758" />
 	</If>
+	<If Condition="((HasQuest(31506)) &amp;&amp; (IsQuestCompleted(31506)))" >
+		<TurnIn QuestName="Shackles of Manipulation" QuestId="31506" TurnInName="Kaz\'tik the Manipulator" TurnInId="63758" />
+	</If>
 <!-- Rik'tal the Dissector -->
 	<If Condition="((HasQuest(31234)) &amp;&amp; (IsQuestCompleted(31234)))" >
 		<TurnIn QuestName="An Eye Out" QuestId="31234" TurnInName="Dissector" TurnInId="63072" />
@@ -226,6 +234,9 @@ Incomplete:
 	</If>
 	<If Condition="((HasQuest(31271)) &amp;&amp; (IsQuestCompleted(31271)))" >
 		<TurnIn QuestName="Bad Genes" QuestId="31271" TurnInName="Dissector" TurnInId="63072" />
+	</If>
+	<If Condition="((HasQuest(31508)) &amp;&amp; (IsQuestCompleted(31508)))" >
+		<TurnIn QuestName="Specimen Request" QuestId="31508" TurnInName="Rik\'kal the Dissector" TurnInId="63072" />
 	</If>
 </QuestOrder>
 
