@@ -519,7 +519,9 @@ Turn In Quests
 	<If Condition="((HasQuest(30322)) &amp;&amp; (IsQuestCompleted(30322)))" >
 		<TurnIn QuestName="Money Matters" QuestId="30322" TurnInName="Gina" TurnInId="58706" />
 	</If>
-<TurnIn QuestName="A Gift For Gina" QuestId="30479" TurnInName="Gina Mudclaw" TurnInId="58706" />
+	<If Condition="((HasQuest(30479)) &amp;&amp; (IsQuestCompleted(30479)))" >
+		<TurnIn QuestName="A Gift For Gina" QuestId="30479" TurnInName="Gina Mudclaw" TurnInId="58706" />
+	</If>
 <!-- Yan Ironpaw -->
 	<If Condition="((HasQuest(30328)) &amp;&amp; (IsQuestCompleted(30328)))" >
 		<TurnIn QuestName="The Thousand-Year Dumpling" QuestId="30328" TurnInName="Yan Ironpaw" TurnInId="58715" />
