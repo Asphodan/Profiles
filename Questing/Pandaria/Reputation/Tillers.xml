@@ -364,10 +364,14 @@ Do Quests
 	<If Condition="HasQuest(30319) &amp;&amp; !IsQuestCompleted(30319)"> <!-- Pest Problems -->
 		<CustomBehavior File="FlyTo" X="-94.52983" Y="1121.462" Z="171.5027" />
 		<CustomBehavior File="ForcedDismount" />
-		<CustomBehavior File="InteractWith"  MobId="59532" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-92.06424" Y="1123.313" Z="173.4099" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="InteractWith" QuestId="30319" ObjectType="Npc" MobId="59530" NumOfTimes="25" CollectionDistance="100" X="-92.05967" Y="1125.195" Z="171.5" />
-<!-- 		<Objective QuestName="Pest Problems" QuestId="30319" Type="KillMob" MobId="59530" KillCount="25" /> -->
+		<CustomBehavior File="UserSettings" QuestId="30319" LootMobs="True" PullDistance="1" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30319)" >
+			<CustomBehavior File="InteractWith" QuestId="30319" MobId="59532" NonCompeteDistance="0" InteractByGossipOptions="1" IgnoreLoSToTarget="True" WaitTime="2000" X="-92.06" Y="1126.441" Z="171.5581" />
+			<While Condition="(Me.HasAura(114573) || Me.HasAura(114517))" >
+				<CustomBehavior File="InteractWith" MobId="59530" WaitTime="100" NonCompeteDistance="1" Range="10" IgnoreCombat="True" MobState="Alive" WaitForNpcs="False" X="-85.90" Y="1118.68" Z="171.39" />
+			</While>	
+		</While>
 	</If>
 <!-- Andi -->
 	<If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)"> <!-- A Gift for Ella -->
