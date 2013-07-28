@@ -38,6 +38,12 @@ Incomplete:
 <QuestOrder>
 <!-- Get Quests  -->
 <CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
+<!-- HiSek -->
+	<While Condition="HasQuestAvailable(63785)" >
+		<CustomBehavior File="InteractWith"  MobId="63785" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Kil'ruk -->
 	<While Condition="HasQuestAvailable(62538)" >
 		<CustomBehavior File="InteractWith"  MobId="62538" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
@@ -62,9 +68,7 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- 
-Do Quests
- -->
+<!-- Do Quests -->
  <!-- North Central -->
 	<If Condition="HasQuest(31238) &amp;&amp; !IsQuestCompleted(31238)"> <!-- Brain Food -->
 		<CustomBehavior File="FlyTo" X="498.5069" Y="3204.416" Z="263.6812" />
@@ -141,6 +145,11 @@ Do Quests
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Kunchong Treats" QuestId="31024" Type="Collect" CollectCount="4" ItemId="82869" />
 	</If>
+	<If Condition="((HasQuest(31272)) &amp;&amp; (!IsQuestCompleted(31272)))" > <!-- Infection -->
+		<CustomBehavior File="FlyTo"  X="-922.2022" Y="2648.816" Z="139.2546" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Infection" QuestId="31272" Type="KillMob" MobId="63869" KillCount="6" />
+	</If>	
 <!-- South West -->
 	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)"> <!-- Fear Takes Rot -->
 		<CustomBehavior File="FlyTo" X="-1520.772" Y="4454.977" Z="125.0728" />
@@ -191,6 +200,12 @@ Do Quests
 	</If>
 	<If Condition="((HasQuest(31233)) &amp;&amp; (IsQuestCompleted(31233)))" > 
 		<TurnIn QuestName="Sap Tapping" QuestId="31233" TurnInName="Korven" TurnInId="62180" />
+	</If>
+	<If Condition="((HasQuest(31270)) &amp;&amp; (IsQuestCompleted(31270)))" > 
+		<TurnIn QuestName="Fight Against Fear" QuestId="31270" TurnInName="Korven" TurnInId="62180" />
+	</If>
+	<If Condition="((HasQuest(31269)) &amp;&amp; (IsQuestCompleted(31269)))" > 
+		<TurnIn QuestName="Scale Lord" QuestId="31269" TurnInName="Korven" TurnInId="62180" />
 	</If>
 <!-- Kaz'tik -->
 	<If Condition="((HasQuest(31238)) &amp;&amp; (IsQuestCompleted(31238)))" >
