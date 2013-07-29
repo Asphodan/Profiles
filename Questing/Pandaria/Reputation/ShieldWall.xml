@@ -1,0 +1,74 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>NAME</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+   
+<!-- Quest Behavior -->
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<!-- Get Breadcrumb -->
+<!-- <CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" /> -->
+	<While Condition="HasQuestAvailable(68908)" >
+		<CustomBehavior File="InteractWith"  MobId="68908" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-1122.365" Y="-1258.869" Z="29.03654" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Go to Breadcrumb -->
+	<If Condition="((HasQuest(32451)) &amp;&amp; (IsQuestCompleted(32451)))" >
+		<CustomBehavior File="FlyTo" X="-2566.055" Y="2125.257" Z="206.9073" />
+		<CustomBehavior File="FlyTo" X="-2581.747" Y="2167.555" Z="148.6862" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Send A Message" QuestId="32451" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+	</If>
+	<While Condition="HasQuestAvailable(67386)" >
+		<CustomBehavior File="InteractWith"  MobId="67386" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67444)" >
+		<CustomBehavior File="InteractWith"  MobId="67444" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67976)" >
+		<CustomBehavior File="InteractWith"  MobId="67976" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Turn In Quests -->
+<CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" />
+	<If Condition="((HasQuest(30321)) &amp;&amp; (IsQuestCompleted(30321)))" >
+		<TurnIn QuestName="Weed War II" QuestId="30321" TurnInName="Jogu The Drunk" TurnInId="58710" X="-280.2503" Y="577.9972" Z="165.9456" />
+	</If>
+</QuestOrder> 
+</HBProfile>
