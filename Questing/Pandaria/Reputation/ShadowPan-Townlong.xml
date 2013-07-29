@@ -173,6 +173,19 @@ Incomplete: Hatchlings.
 	<If Condition="((HasQuest(31039)) &amp;&amp; (IsQuestCompleted(31039)))" >
 		<TurnIn QuestName="Mogu Menace" QuestId="31039" TurnInName="Ban Bearheart" TurnInId="62304" />
 	</If>
+<!-- Master Snowdrift -->
+	<If Condition="((HasQuest(31113)) &amp;&amp; (IsQuestCompleted(31113)))" >
+		<TurnIn QuestName="Assault Fire Camp Gai-Cho" QuestId="31113" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+	<If Condition="((HasQuest(31114)) &amp;&amp; (IsQuestCompleted(31114)))" >
+		<TurnIn QuestName="Assault Deadtalker's Plateau" QuestId="31114" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+	<If Condition="((HasQuest(31116)) &amp;&amp; (IsQuestCompleted(31116)))" >
+		<TurnIn QuestName="Spirit Dust" QuestId="31116" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+	<If Condition="((HasQuest(31119)) &amp;&amp; (IsQuestCompleted(31119)))" >
+		<TurnIn QuestName="The Enemy of My Enemy... Is Still My Enemy!" QuestId="31119" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
 <!-- Secondary Quest -->
 	<If Condition="((HasQuest(31049)) &amp;&amp; (!IsQuestCompleted(31049)))" > <!-- Fly to Darkwood Faerie. -->
 		<CustomBehavior File="FlyTo" X="3951.908" Y="5910.817" Z="117.9382"  />
@@ -188,6 +201,9 @@ Incomplete: Hatchlings.
 <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
 	<If Condition="((HasQuest(31049)) &amp;&amp; (IsQuestCompleted(31049)))" >
 		<TurnIn QuestName="In Sprite Blahblahblah." QuestId="31049" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+	<If Condition="((HasQuest(31117)) &amp;&amp; (IsQuestCompleted(31117)))" >
+		<TurnIn QuestName="Uruk!" QuestId="31117" TurnInName="Master Snowdrift" TurnInId="63009" />
 	</If>
 </QuestOrder> 
 </HBProfile>
