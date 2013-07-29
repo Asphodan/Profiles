@@ -36,6 +36,7 @@ Mudclaw, "Pest Problems" is too slow.
 </AvoidMobs>
    
 <Blackspots>
+	<Blackspot X="-306.188" Y="1474.175" Z="238.0216" Radius="5.602729" /> <!-- Keep me out of chicken house. -->
 </Blackspots>
    
 <!-- Quest Behavior -->
@@ -336,9 +337,25 @@ Do Quests
 	</If>
 <!-- Old Hillpaw -->
 	<If Condition="HasQuest(30318) &amp;&amp; !IsQuestCompleted(30318)"> <!-- Chasing the Chicken -->
-		<CustomBehavior File="FlyTo" X="-296.8539" Y="1446.722" Z="231.519" />
+		<CustomBehavior File="FlyTo" X="-232.4239" Y="1371.21" Z="222.1096" />
 		<CustomBehavior File="ForcedDismount" />
-		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="You will need to manually do the Chickens." />
+		<While Condition="HasQuest(30318) &amp;&amp; !HasItem(80223)" >
+			<CustomBehavior File="InteractWith" MobId="58918" PreInteractMountStrategy="DismountOrCancelShapeshift" CollectionDistance="250" ProactiveCombatStrategy="NoClear" />
+			<If Condition="Me.HasAura(114652)" >
+				<CustomBehavior File="InteractWith" MobId="210604" PreInteractMountStrategy="DismountOrCancelShapeshift" Range="8" MinRange="3" X="-223.5774" Y="1392.699" Z="222.1099" WaitForNpcs="False" />
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+			<If Condition="Me.HasAura(114670)" >
+				<RunTo X="-268.5858" Y="1443.193" Z="231.1687" />
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+			<If Condition="Me.HasAura(114672)" >
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+			<If Condition="Me.HasAura(114677)" >
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+		</While>
 	</If>
 <!-- Fish Fellreed -->
 	<If Condition="HasQuest(30326) &amp;&amp; !IsQuestCompleted(30326)"> <!-- Kunzen Legend-Chief -->
