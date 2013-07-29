@@ -2,7 +2,7 @@
 Incomplete:
 -->
 <HBProfile>
-<Name>NAME</Name>
+<Name>Shieldwall</Name>
 <MinLevel>90</MinLevel>
 <MaxLevel>101</MaxLevel>
   
@@ -33,12 +33,49 @@ Incomplete:
 </Blackspots>
    
 <!-- Quest Behavior -->
+	<Quest Id="32121" Name="Spirit Tap"> 
+		<Objective Type="KillMob" MobId="68074" KillCount="3">
+			<Hotspots>
+				<Hotspot X="-777.3196" Y="-938.3776" Z="-64.20338" />
+				<Hotspot X="-690.3925" Y="-987.4019" Z="-70.6199" />
+				<Hotspot X="-645.5105" Y="-1005.334" Z="-66.13054" />
+				<Hotspot X="-595.1046" Y="-995.6245" Z="-65.63251" />
+				<Hotspot X="-595.7509" Y="-849.9907" Z="-67.88496" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="32346" Name="Ghosts"> 
+		<Objective Type="KillMob" MobId="68073" KillCount="12">
+			<Hotspots>
+				<Hotspot X="-777.3196" Y="-938.3776" Z="-64.20338" />
+				<Hotspot X="-690.3925" Y="-987.4019" Z="-70.6199" />
+				<Hotspot X="-645.5105" Y="-1005.334" Z="-66.13054" />
+				<Hotspot X="-595.1046" Y="-995.6245" Z="-65.63251" />
+				<Hotspot X="-595.7509" Y="-849.9907" Z="-67.88496" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="32346" Name="Eviction Notice"> 
+		<Objective Type="KillMob" MobId="68126" KillCount="10">
+			<Hotspots>
+				<Hotspot X="-711.5515" Y="-955.5721" Z="-87.96953" />
+				<Hotspot X="-733.6912" Y="-889.9023" Z="-82.70139" />
+				<Hotspot X="-662.5125" Y="-880.6309" Z="-84.31011" />
+				<Hotspot X="-685.7874" Y="-922.0834" Z="-87.7856" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Get Breadcrumb -->
 <!-- <CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" /> -->
 	<While Condition="HasQuestAvailable(68908)" >
 		<CustomBehavior File="InteractWith"  MobId="68908" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-1122.365" Y="-1258.869" Z="29.03654" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67631)" >
+		<CustomBehavior File="InteractWith"  MobId="67631" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-1122.365" Y="-1258.869" Z="29.03654" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
@@ -49,6 +86,15 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Send A Message" QuestId="32451" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
 	</If>
+	<If Condition="((HasQuest(32116)) &amp;&amp; (IsQuestCompleted(32116)))" >
+		<CustomBehavior File="FlyTo" X="-694.8665" Y="-845.2947" Z="68.96535" />
+		<CustomBehavior File="FlyTo" X="-654.7825" Y="-816.1026" Z="2.474635" />
+		<CustomBehavior File="FlyTo" X="-624.1313" Y="-812.6096" Z="2.306886" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Priorities, People!" QuestId="32116" TurnInName="Hilda Hornswaggle" TurnInId="68275" />
+	</If>
+<!-- Retrieve Quests after Breadcrumb. -->
+    <!-- Skyboat -->
 	<While Condition="HasQuestAvailable(67386)" >
 		<CustomBehavior File="InteractWith"  MobId="67386" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -64,11 +110,48 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+	<!-- Mines -->
+	<While Condition="HasQuestAvailable(68275)" >
+		<CustomBehavior File="InteractWith"  MobId="68275" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Do Quests -->
+<!-- Skyboat -->
+<!-- Mines -->
 
-<!-- Turn In Quests -->
-<CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" />
-	<If Condition="((HasQuest(30321)) &amp;&amp; (IsQuestCompleted(30321)))" >
-		<TurnIn QuestName="Weed War II" QuestId="30321" TurnInName="Jogu The Drunk" TurnInId="58710" X="-280.2503" Y="577.9972" Z="165.9456" />
+ 	<If Condition="HasQuest(32121) &amp;&amp; !IsQuestCompleted(32121)">
+		<Objective QuestName="The Spirit Trap" QuestId="32121" Type="KillMob" MobId="68061" KillCount="3" />
 	</If>
+ 	<If Condition="HasQuest(32115) &amp;&amp; !IsQuestCompleted(32115)">
+		<Objective QuestName="Shackles of the Past" QuestId="32115" Type="KillMob" MobId="68074" KillCount="14" />
+	</If>
+ 	<If Condition="HasQuest(32122) &amp;&amp; !IsQuestCompleted(32122)">
+		<Objective QuestName="Ogudei's Lieutenants" QuestId="32122" Type="KillMob" MobId="68169" KillCount="1" />
+	</If>
+ 	<If Condition="HasQuest(32346) &amp;&amp; !IsQuestCompleted(32346)">
+		<Objective QuestName="Oi Ain't Afraid o' No Ghosts!" QuestId="32346" Type="KillMob" MobId="68073" KillCount="12" />
+	</If>
+ 	<If Condition="HasQuest(32347) &amp;&amp; !IsQuestCompleted(32347)">
+		<Objective QuestName="Eviction Notice" QuestId="32347" Type="KillMob" MobId="68126" KillCount="10" />
+	</If>
+<!-- Turn In Mines Quests -->
+	<If Condition="((HasQuest(32121)) &amp;&amp; (IsQuestCompleted(32121)))" >
+		<TurnIn QuestId="32121" TurnInId="68275" X="-623.125" Y="-810.9722" Z="2.255177" />
+	</If>
+	<If Condition="((HasQuest(32115)) &amp;&amp; (IsQuestCompleted(32115)))" >
+		<TurnIn QuestId="32115" TurnInId="68275" X="-623.125" Y="-810.9722" Z="2.255177" />
+	</If>
+	<If Condition="((HasQuest(32122)) &amp;&amp; (IsQuestCompleted(32122)))" >
+		<TurnIn QuestId="32122" TurnInId="68275" X="-623.125" Y="-810.9722" Z="2.255177" />
+	</If>
+	<If Condition="((HasQuest(32346)) &amp;&amp; (IsQuestCompleted(32346)))" >
+		<TurnIn QuestId="32346" TurnInId="68275" X="-623.125" Y="-810.9722" Z="2.255177" />
+	</If>
+	<If Condition="((HasQuest(32347)) &amp;&amp; (IsQuestCompleted(32347)))" >
+		<TurnIn QuestId="32347" TurnInId="68275" X="-623.125" Y="-810.9722" Z="2.255177" />
+	</If> <!-- Need to make it move out of the cave to X="-675.8142" Y="-817.8589" Z="1.674785" afterward. -->
+<!-- Return to Basecamp. -->
+<CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" />
 </QuestOrder> 
 </HBProfile>
