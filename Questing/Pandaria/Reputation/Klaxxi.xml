@@ -269,6 +269,13 @@ Incomplete:
 		<CustomBehavior File="ForcedMount" QuestId="31238" MountType="Flying" /> 
 		<Objective QuestName="Putting An Eye Out" QuestId="31234" Type="CollectItem" ItemId="85635" CollectCount="1" />
 	</If>
+ 	<If Condition="HasQuest(31237) &amp;&amp; !IsQuestCompleted(31237)"> <!-- [BrodieMan] -->
+		<CustomBehavior File="Message" Text="Starting Debugging The Terrace" LogColor="Green"  />
+		<CustomBehavior File="UserSettings" QuestId="31808" LootMobs="True" PullDistance="25" />
+		<CustomBehavior File="FlyTo" X="-41.11" Y="2667.56" Z="157.18" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="SpecificQuests\31237-DreadWastes-DebuggingTheTerrace" />
+	</If>
 	<If Condition="((HasQuest(31235)) &amp;&amp; (!IsQuestCompleted(31235)))" > <!-- Nope Nope Nope -->
 		<CustomBehavior File="FlyTo" X="634.8793" Y="2331.431" Z="299.6941" />
 		<CustomBehavior File="ForcedDismount" />
@@ -473,6 +480,10 @@ Incomplete:
 	</If>
 	<If Condition="((HasQuest(31505)) &amp;&amp; (IsQuestCompleted(31505)))" >
 		<TurnIn QuestName="Vess-Guard Duty" QuestId="31505" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+<!-- HiSek -->
+	<If Condition="((HasQuest(31237)) &amp;&amp; (IsQuestCompleted(31237)))" >
+		<TurnIn QuestName="Debugging the Terrace" QuestId="31237" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" />
 	</If>
 <!-- Korven -->
 	<If Condition="((HasQuest(31232)) &amp;&amp; (IsQuestCompleted(31232)))" > 
