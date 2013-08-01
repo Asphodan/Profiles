@@ -96,6 +96,6 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Offerings" QuestId="32539" TurnInName="Dalvin" TurnInId="69674" />
 	</If>
-
+<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>

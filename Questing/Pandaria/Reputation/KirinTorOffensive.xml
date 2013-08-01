@@ -34,7 +34,7 @@ Incomplete:
 
 <!-- End of Quest Overrides -->
 <QuestOrder>
-<!-- Breadcrumb -->
+<!-- Get Initial Quests -->
 	<While Condition="HasQuestAvailable(67993)" >
 		<CustomBehavior File="InteractWith"  MobId="67993" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -52,13 +52,18 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Ihgaluk Crag" QuestId="32732" TurnInName="Archmage Modera" TurnInId="67996" />
 	</If>
+<!-- Load Za'Tual -->
 	<If Condition="((HasQuest(32733)) &amp;&amp; (IsQuestCompleted(32733)))" > 
-		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
-		<CustomBehavior File="ForcedDismount" />
-		<TurnIn QuestName="Za'Tual" QuestId="32733" TurnInName="Archmage Lan\'dalock" TurnInId="70517" />
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ZaTual" />
 	</If>
-<PickUp QuestName="Za'Tual" QuestId="32733" GiverName="Lady Jaina Proudmoore" GiverId="67992" />
-
+<!-- Load Court of Bones -->
+	<If Condition="((HasQuest(32731)) &amp;&amp; (IsQuestCompleted(32731)))" > 
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
+	</If>
+<!-- Beast Pens -->
+	<If Condition="((HasQuest(32567)) &amp;&amp; (IsQuestCompleted(32567)))" > 
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-BeastPens" />
+	</If>
 
 <!-- Get Quests -->
 	<While Condition="HasQuestAvailable(67996)" > <!-- Get Modera Quests. -->
