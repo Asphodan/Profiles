@@ -1,0 +1,92 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Kirin Tor Offensive - Court of Bones</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+
+<!-- Quest Behaviors -->
+	<Quest Id="32542" Name="Surgical"> 
+		<Objective Type="KillMob" MobId="69065" KillCount="3">
+			<Hotspots>
+				<Hotspot X="6032.123" Y="5995.451" Z="58.69223" />
+				<Hotspot X="6000.866" Y="6061.799" Z="57.89703" />
+				<Hotspot X="6022.009" Y="6096.478" Z="63.72193" />
+				<Hotspot X="6005.423" Y="6049.965" Z="57.63706" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<!-- Turn in Breadcrum -->
+	<If Condition="((HasQuest(32731)) &amp;&amp; (IsQuestCompleted(32731)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<TurnIn QuestName="The Court of Bones" QuestId="32731" TurnInName="Narasi Snowdawn" TurnInId="67997" />
+	</If>
+<!-- Get Quests -->
+	<While Condition="HasQuestAvailable(69668)" > 
+		<CustomBehavior File="InteractWith"  MobId="69668" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67997)" > 
+		<CustomBehavior File="InteractWith"  MobId="67997" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Do Quests -->
+	<If Condition="HasQuest(32525) &amp;&amp; !IsQuestCompleted(32525)" > <!-- [BrodieMan] -->
+		<CustomBehavior File="Message" Text="Starting Ashes of the Enemy" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32525" LootMobs="True" KillBetweenHotspots="True" PullDistance="5" /> 
+		<CustomBehavior File="InteractWith" QuestId="32525" MobId="69331" MobId2="69337" InteractByUsingItemId="93751" IgnoreLoSToTarget="True" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" MinRange="3" Range="10"
+			AuraIdMissingFromMob="136711" CollectionDistance="1000" NumOfTimes="1000" X="6512.10" Y="6070.66" Z="39.41" />
+	</If>
+<!-- Turn in Quests -->
+	<If Condition="((HasQuest(32527)) &amp;&amp; (IsQuestCompleted(32527)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Grave Circumstances" QuestId="32527" TurnInName="Narasi Snowdawn" TurnInId="67997" />
+	</If>
+	
+	<If Condition="((HasQuest(32525)) &amp;&amp; (IsQuestCompleted(32525)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Ashes of the Enemy" QuestId="32525" TurnInName="Danara Silverglass" TurnInId="69668" />
+	</If>
+<!-- Get Next Breadcrumb -->
+	<While Condition="HasQuestAvailable(69668)" > 
+		<CustomBehavior File="InteractWith"  MobId="69668" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
+</QuestOrder> 
+</HBProfile>

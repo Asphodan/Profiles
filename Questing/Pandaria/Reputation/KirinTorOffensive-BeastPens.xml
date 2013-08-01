@@ -1,0 +1,40 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Kirin Tor Offensive - Beast Pens</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+
+<!-- Quest Behaviors -->
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
+</QuestOrder> 
+</HBProfile>
