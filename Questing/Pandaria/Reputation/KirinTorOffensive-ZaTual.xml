@@ -1,0 +1,101 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Kirin Tor Offensive - Za'Tual</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+
+<!-- Quest Behaviors -->
+	<Quest Id="32542" Name="Surgical"> 
+		<Objective Type="KillMob" MobId="69065" KillCount="3">
+			<Hotspots>
+				<Hotspot X="6032.123" Y="5995.451" Z="58.69223" />
+				<Hotspot X="6000.866" Y="6061.799" Z="57.89703" />
+				<Hotspot X="6022.009" Y="6096.478" Z="63.72193" />
+				<Hotspot X="6005.423" Y="6049.965" Z="57.63706" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<!-- Turn in Breadcrum -->
+	<If Condition="((HasQuest(32733)) &amp;&amp; (IsQuestCompleted(32733)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Za'Tual" QuestId="32733" TurnInName="Archmage Lan\'dalock" TurnInId="70517" />
+	</If>
+<!-- Get Quests -->
+	<While Condition="HasQuestAvailable(69674)" > 
+		<CustomBehavior File="InteractWith"  MobId="69674" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(70517)" > 
+		<CustomBehavior File="InteractWith"  MobId="70517" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Do Quests -->
+	<If Condition="HasQuest(32539) &amp;&amp; !IsQuestCompleted(32539)" >
+		<CustomBehavior File="UserSettings" QuestId="32539" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<CustomBehavior File="CollectThings" QuestId="32539" ObjectId="216991" CollectUntil="QuestComplete" HuntingGroundRadius="120" NonCompeteDistance="5" PostInteractDelay="1000" >
+			<Hotspot X="6153.896" Y="5999.071" Z="50.39996" />
+			<Hotspot X="6125.761" Y="5988.801" Z="49.529" />
+			<Hotspot X="6099.266" Y="5969.421" Z="49.62283" />
+			<Hotspot X="6045.454" Y="6038.854" Z="56.91856" />
+			<Hotspot X="6099.266" Y="5969.421" Z="49.62283" />
+			<Hotspot X="6125.761" Y="5988.801" Z="49.529" />
+			<Hotspot X="6153.896" Y="5999.071" Z="50.39996" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasQuest(32542) &amp;&amp; !IsQuestCompleted(32542)" >
+		<Objective QuestName="Surgical Strike" QuestId="32542" Type="KillMob" MobId="69065" KillCount="3" />
+		<Objective QuestName="Surgical Strike" QuestId="32542" Type="KillMob" MobId="69171" KillCount="3" />
+		<Objective QuestName="Surgical Strike" QuestId="32542" Type="KillMob" MobId="69225" KillCount="3" />
+	</If>
+	<If Condition="HasQuest(32540) &amp;&amp; !IsQuestCompleted(32540)" >
+		<CustomBehavior File="UserSettings" QuestId="32540" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<Objective QuestName="Harbringers of the Loa" QuestId="32540" Type="KillMob" MobId="69281" MobId2="69285" KillCount="2" />
+	</If>
+<!-- Turn in Quests -->
+	<If Condition="((HasQuest(32540)) &amp;&amp; (IsQuestCompleted(32540)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Harbingers" QuestId="32540" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+		<TurnIn QuestName="Surgical Strike" QuestId="32542" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	<If Condition="((HasQuest(32539)) &amp;&amp; (IsQuestCompleted(32539)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Offerings" QuestId="32539" TurnInName="Dalvin" TurnInId="69674" />
+	</If>
+
+</QuestOrder> 
+</HBProfile>
