@@ -34,7 +34,7 @@ Incomplete:
 
 <!-- End of Quest Overrides -->
 <QuestOrder>
-<!-- Get Quests -->
+<!-- Breadcrumb -->
 	<While Condition="HasQuestAvailable(67993)" >
 		<CustomBehavior File="InteractWith"  MobId="67993" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -45,13 +45,14 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Do Quests -->
 <!-- Ighaluk Crag -->
+<!-- Turn in Breadcrum -->
 	<If Condition="((HasQuest(32732)) &amp;&amp; (IsQuestCompleted(32732)))" > 
 		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Ihgaluk Crag" QuestId="32732" TurnInName="Archmage Modera" TurnInId="67996" />
 	</If>
+<!-- Get Quests -->
 	<While Condition="HasQuestAvailable(67996)" > <!-- Get Modera Quests. -->
 		<CustomBehavior File="InteractWith"  MobId="67996" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -62,6 +63,7 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+<!-- Do Quests -->
 	<If Condition="HasQuest(32546) &amp;&amp; !IsQuestCompleted(32546)" >
 		<CustomBehavior File="UserSettings" QuestId="32546" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="25" />
 		<RunTo X="5936.555" Y="5465.421" Z="30.49908" />
@@ -95,6 +97,78 @@ Incomplete:
 	<If Condition="HasQuest(32535) &amp;&amp; !IsQuestCompleted(32535)" >
 		<Objective QuestName="The Skumblade Threat" QuestId="32535" Type="KillMob" MobId="69362" KillCount="10" />
 	</If>
+	<If Condition="HasQuest(32537) &amp;&amp; !IsQuestCompleted(32537)" >
+		<CustomBehavior File="Message" Text="Starting Deconstructed" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32537" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="5" />
+		<CustomBehavior File="InteractWith" QuestId="32537" QuestObjectiveIndex="4" MobId="69697" WaitTime="1000" NumOfTimes="1000" 
+			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="6160.3" Y="5730.055" Z="7.020272" />
+		<CustomBehavior File="InteractWith" QuestId="32537" QuestObjectiveIndex="1" MobId="69693" WaitTime="1000" NumOfTimes="1000" 
+			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="5893.066" Y="5827.657" Z="21.64524" />
+		<CustomBehavior File="InteractWith" QuestId="32537" QuestObjectiveIndex="2" MobId="69688" WaitTime="1000" NumOfTimes="1000" 
+			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="5635.40" Y="5441.19" Z="2.31" />
+		<CustomBehavior File="InteractWith" QuestId="32255" QuestObjectiveIndex="3" MobId="69290" CollectionDistance="1000" WaitTime="1000" 
+			NumOfTimes="1000" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" >
+			<HuntingGrounds>
+				<Hotspot X="5839.262" Y="5590.107" Z="40.07038" />
+				<Hotspot X="5705.648" Y="5629.287" Z="14.65259" />
+				<Hotspot X="5626.132" Y="5522.049" Z="3.948158" />
+				<Hotspot X="5695.5" Y="5429.003" Z="3.434925" />
+				<Hotspot X="5845.18" Y="5325.857" Z="5.576776" />
+				<Hotspot X="5913.124" Y="5398.176" Z="33.1066" />
+				<Hotspot X="6011.305" Y="5437.688" Z="39.40099" />
+				<Hotspot X="6106.173" Y="5532.547" Z="68.11538" />
+				<Hotspot X="5973.005" Y="5588.532" Z="41.45647" />
+				<Hotspot X="5914.528" Y="5639.815" Z="44.99718" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	<If Condition="HasQuest(32548) &amp;&amp; !IsQuestCompleted(32548)" > <!-- [BrodieMan] -->
+		<CustomBehavior File="UserSettings" QuestId="32548" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<Objective QuestName="Left To Rot" QuestId="32548" Type="KillMob" MobId="69247" KillCount="3" />
+	</If>
+	<If Condition="HasQuest(32606) &amp;&amp; !IsQuestCompleted(32606)" > <!-- [BrodieMan] -->
+		<CustomBehavior File="UserSettings" QuestId="32606" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<RunTo X="6163.82" Y="5732.19" Z="6.01" />
+		<While Condition="!IsQuestCompleted(32606)" >
+			<If Condition="(Me.Class == WoWClass.Rogue)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="121733" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warlock)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="172" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warrior)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="355" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.DeathKnight )" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="49576" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Druid)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="8921" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Hunter)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="3044" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Mage)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="2136" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Paladin)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="62124" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Priest)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="589" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Shaman)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="403" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Monk)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="115546" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			<CustomBehavior File="RunMacro" Macro="/cleartarget" />
+		</While>
+	</If>
+<!-- Dunno -->
 	<If Condition="HasQuest(32573) &amp;&amp; !IsQuestCompleted(32573)" >
 		<Objective QuestName="Enemies Beneath the Tower" QuestId="32573" Type="KillMob" MobId="69431" KillCount="7" />
 	</If>

@@ -74,7 +74,7 @@ Incomplete: Hatchlings.
 		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton5" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Get Assistant. -->
+<!-- Get Assistant. 
 	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)"> 
 		<CustomBehavior File="InteractWith"  MobId="62354" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -89,7 +89,7 @@ Incomplete: Hatchlings.
 		<CustomBehavior File="InteractWith"  MobId="62546" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</If>
+	</If> -->
 <!-- Do Quests -->
 <!-- Shanze Dao -->
 	<If Condition="((HasQuest(31041)) &amp;&amp; (!IsQuestCompleted(31041)))" > <!-- Fly to Shanze Dao -->
