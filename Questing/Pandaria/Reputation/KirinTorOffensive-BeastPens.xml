@@ -33,6 +33,17 @@ Incomplete:
 </Blackspots>
 
 <!-- Quest Behaviors -->
+	<Quest Id="32551" Name="Compy Stomp"> 
+		<Objective Type="KillMob" MobId="58071" KillCount="10" >
+			<Hotspots>
+				<Hotspot X="6958.926" Y="5485.224" Z="29.57454" />
+				<Hotspot X="6947.429" Y="5583.052" Z="31.91465" />
+				<Hotspot X="6913.555" Y="5550.122" Z="29.82876" />
+				<Hotspot X="6892.14" Y="5519.236" Z="29.20298" />
+				<Hotspot X="6994.41" Y="5618.381" Z="31.13311" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Turn in Breadcrum -->
@@ -60,6 +71,17 @@ Incomplete:
 		<CustomBehavior File="CollectThings" QuestId="32553" CollectUntil="QuestComplete" MobState="Alive" MobId="69286" HuntingGroundRadius="75" NonCompeteDistance="1" >
 			<Hotspot X="6976.67" Y="5420.00" Z="28.04" />
 		</CustomBehavior>
+	</If>
+	<If Condition="HasQuest(32551) &amp;&amp; !IsQuestCompleted(32551)" >
+		<CustomBehavior File="Message" Text="Starting Compy Stomp" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32551" LootMobs="True" KillBetweenHotspots="True" PullDistance="15" />
+		<Objective QuestName="Compy Stomp" QuestId="32551" Type="KillMob" MobId="69183" KillCount="5" />
+		<Objective QuestName="Compy Stomp" QuestId="32551" Type="KillMob" MobId="58071" KillCount="10" />
+	</If>
+	<If Condition="HasQuest(32550) &amp;&amp; !IsQuestCompleted(32550)" >
+		<CustomBehavior File="Message" Text="Starting Saur Loser" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32550" LootMobs="True" KillBetweenHotspots="True" PullDistance="15" />
+		<Objective QuestName="Loa-Saur" QuestId="32550" Type="KillMob" MobId="69154" MobId2="69286" MobId3="69144" MobId4="70328" MobId5="69155" MobId6="70401" KillCount="10" />
 	</If>
 <!-- Turn in Quests -->
 	<If Condition="((HasQuest(32540)) &amp;&amp; (IsQuestCompleted(32540)))" > 
