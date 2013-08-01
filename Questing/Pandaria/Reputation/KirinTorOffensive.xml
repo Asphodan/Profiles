@@ -226,16 +226,6 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6714.727" Y="5094.89" Z="31.08037" />
 		<TurnIn QuestName="No Time To Rest" QuestId="32568" TurnInName="Scout Captain Daelin" TurnInId="67998" />
 	</If>
-	<While Condition="HasQuestAvailable(67999)" > <!-- Get Modera Quests. -->
-		<CustomBehavior File="InteractWith"  MobId="67999" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-	<While Condition="HasQuestAvailable(67998)" > <!-- Get Modera Quests. -->
-		<CustomBehavior File="InteractWith"  MobId="67998" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
 </QuestOrder> 
 <!-- Behavior Overrides -->
 <!-- Saurok  -->

@@ -35,6 +35,44 @@ Incomplete:
 <!-- Quest Behaviors -->
 <!-- End of Quest Overrides -->
 <QuestOrder>
+<!-- Turn in Breadcrum -->
+	<If Condition="((HasQuest(32567)) &amp;&amp; (IsQuestCompleted(32567)))" > 
+		<CustomBehavior File="FlyTo" X="6848.579" Y="5509.318" Z="29.91566" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="The Beast Pens" QuestId="32567" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+		</If>
+<!-- Get Quests -->
+	<While Condition="HasQuestAvailable(67998)" >
+		<CustomBehavior File="InteractWith"  MobId="67998" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67999)" >
+		<CustomBehavior File="InteractWith"  MobId="67999" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Do Quests -->
+	<If Condition="HasQuest(32553) &amp;&amp; !IsQuestCompleted(32553)" >
+		<CustomBehavior File="Message" Text="Starting Direhorn vs Devilsaur" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32553" LootMobs="True" KillBetweenHotspots="True" PullDistance="15" />
+		<RunTo X="6976.67" Y="5420.00" Z="28.04" />
+		<CustomBehavior File="CollectThings" QuestId="32553" CollectUntil="QuestComplete" MobState="Alive" MobId="69286" HuntingGroundRadius="75" NonCompeteDistance="1" >
+			<Hotspot X="6976.67" Y="5420.00" Z="28.04" />
+		</CustomBehavior>
+	</If>
+<!-- Turn in Quests -->
+	<If Condition="((HasQuest(32540)) &amp;&amp; (IsQuestCompleted(32540)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Harbingers" QuestId="32540" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+		<TurnIn QuestName="Surgical Strike" QuestId="32542" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	<If Condition="((HasQuest(32539)) &amp;&amp; (IsQuestCompleted(32539)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Offerings" QuestId="32539" TurnInName="Dalvin" TurnInId="69674" />
+	</If>
 <CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>
