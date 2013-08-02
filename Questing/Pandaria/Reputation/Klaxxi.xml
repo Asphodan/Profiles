@@ -51,6 +51,18 @@ Incomplete:
 			</Hotspots>
 		</Objective>
 	</Quest>
+	<Quest Id="31508" Name="Specimen Request"> <!-- [BrodieMan] -->
+		<Objective Type="CollectItem" ItemId="87874" CollectCount="6">
+			<CollectFrom>
+				<Mob Name="Kypari Crawler" Id="65231" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-1143.80" Y="4166.77" Z="53.56" />
+				<Hotspot X="-1190.14" Y="4157.39" Z="56.84" />
+				<Hotspot X="-1263.235" Y="4129.526" Z="58.788" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 	<Quest Id="31502" Name="Wing Clip"> <!-- [BrodieMan] -->
 		<Objective Type="CollectItem" ItemId="87401" CollectCount="24">
 			<CollectFrom>
@@ -93,6 +105,15 @@ Incomplete:
 				<Hotspot X="-1200.593" Y="4946.873" Z="39.04089" />
 				<Hotspot X="-1150.055" Y="4879.214" Z="45.59641" />
 				<Hotspot X="-1188.143" Y="4798.381" Z="34.18766" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="31507" Name="Meltdown">
+		<Objective Type="KillMob" MobId="64982" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-1419.12" Y="4918.8" Z="29.57" />
+				<Hotspot X="-1293.054" Y="4930.099" Z="20.542" />
+				<Hotspot X="-1331.026" Y="4865.011" Z="24.6" />
 			</Hotspots>
 		</Objective>
 	</Quest>
@@ -433,9 +454,18 @@ Incomplete:
 		<Objective QuestName="Sonic Disruption" QuestId="31487" Type="KillMob" MobId="64720" KillCount="6" />
 	</If>
 	<!-- South West -->
-	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)"> <!-- Fear Takes Root -->
-		<CustomBehavior File="FlyTo" X="-1520.772" Y="4454.977" Z="125.0728" />
-		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Does does not know how to get the bulbs. Run over them and hit Continue." />
+ 	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)">
+		<CustomBehavior File="Message" Text="Starting Fear Takes Root" LogColor="Green"  />
+		<CustomBehavior File="UserSettings" QuestId="31509" LootMobs="True" PullDistance="1" />
+		<CustomBehavior File="FlyTo" X="-1168.03" Y="4896.25" Z="44.05" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" ObjectId="214543" ObjectId2="214549" CollectUntil="QuestComplete" QuestId="31509" HuntingGroundRadius="200" NonCompeteDistance="5" PostInteractDelay="100" >
+			<Hotspot X="-1210.71" Y="4859.17" Z="34.68" />
+			<Hotspot X="-1119.33" Y="4652.03" Z="67.44" />
+			<Hotspot X="-1063.94" Y="4522.37" Z="68.50" />
+			<Hotspot X="-1102.52" Y="4409.04" Z="79.39" />
+			<Hotspot X="-1187.26" Y="4329.15" Z="75.21" />
+		</CustomBehavior>
 	</If>
 <!-- Failed 31509 attempts
 		<Objective QuestName="Fear Takes Root" QuestId="31509" Type="UseObject" ObjectId="65242" UseCount="15" />
@@ -447,12 +477,13 @@ Incomplete:
 	</If>
 	<If Condition="((HasQuest(31508)) &amp;&amp; (!IsQuestCompleted(31508)))" >
 		<CustomBehavior File="FlyTo" DestName="Zan'Vess" X="-1206.671" Y="4459.365" Z="108.4697" />
+		<Objective QuestName="Specimen Request" QuestId="31508" Type="CollectItem" ItemId="87874" CollectCount="6" />
 	</If>
 	<If Condition="((HasQuest(31510)) &amp;&amp; (!IsQuestCompleted(31510)))" >
 		<CustomBehavior File="FlyTo" DestName="Quiet Now" X="-1675.497" Y="4836.451" Z="59.85176" />
-	</If>
-	<If Condition="((HasQuest(31508)) &amp;&amp; (!IsQuestCompleted(31508)))" >
-		<Objective QuestName="Specimen Request" QuestId="31508" Type="CollectItem" ItemId="87874" CollectCount="6" />
+		<While Condition="!IsQuestCompleted(31510)">
+			<CustomBehavior File="InteractWith" QuestId="31510" MobId="214455" WaitTime="1000" WaitForNpcs="False" />
+		</While>
 	</If>
 	<If Condition="((HasQuest(31507)) &amp;&amp; (!IsQuestCompleted(31507)))" >
 		<Objective QuestName="Meltdown" QuestId="31507" Type="KillMob" MobId="64982" KillCount="6" />

@@ -29,8 +29,9 @@ Incomplete:
 <AvoidMobs>
 </AvoidMobs>
    
-<Blackspots>
-</Blackspots>
+	<Blackspots>
+		<Blackspot X="6722.147" Y="6155.117" Z="26.55798" Radius="5.853319" />
+	</Blackspots>
 
 <!-- Quest Behaviors -->
 	<Quest Id="32542" Name="Surgical"> 
@@ -63,11 +64,15 @@ Incomplete:
 	</While>
 <!-- Do Quests -->
 	<If Condition="HasQuest(32525) &amp;&amp; !IsQuestCompleted(32525)" > <!-- [BrodieMan] -->
-		<CustomBehavior File="Message" Text="Starting Ashes of the Enemy" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32525" LootMobs="True" KillBetweenHotspots="True" PullDistance="5" /> 
 		<CustomBehavior File="InteractWith" QuestId="32525" MobId="69331" MobId2="69337" InteractByUsingItemId="93751" IgnoreLoSToTarget="True" 
 			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" MinRange="3" Range="10"
 			AuraIdMissingFromMob="136711" CollectionDistance="1000" NumOfTimes="1000" X="6512.10" Y="6070.66" Z="39.41" />
+	</If>
+	<If Condition="HasQuest(32527) &amp;&amp; !IsQuestCompleted(32527)" >
+		<CustomBehavior File="UserSettings" QuestId="32527" LootMobs="True" KillBetweenHotspots="True" PullDistance="20" />
+		<RunTo X="6614.61" Y="6195.92" Z="32.47" />
+		<Objective QuestName="Grave Circumstances" QuestId="32527" Type="KillMob" MobId="69235" MobId2="69264" KillCount="10" />
 	</If>
 <!-- Turn in Quests -->
 	<If Condition="((HasQuest(32527)) &amp;&amp; (IsQuestCompleted(32527)))" > 
@@ -87,6 +92,19 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+	<While Condition="HasQuestAvailable(67997)" > 
+		<CustomBehavior File="InteractWith"  MobId="67997" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Finish up last quests before leaving for next profile. -->
+
+	<If Condition="HasQuest(32578) &amp;&amp; !IsQuestCompleted(32578)" >
+		<CustomBehavior File="FlyTo" X="5994.66" Y="5912.837" Z="0.8158995" />
+		<Objective QuestName="Among the Bones" QuestId="32578" Type="KillMob" MobId="69666" KillCount="1" />
+	</If>
+
 <CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>

@@ -49,7 +49,7 @@ Incomplete:
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Turn in Breadcrum -->
-	<If Condition="((HasQuest(32567)) &amp;&amp; (IsQuestCompleted(32567)))" > 
+	<If Condition="((HasQuest(32567)) &amp;&amp; (!IsQuestCompleted(32567)))" > 
 		<CustomBehavior File="FlyTo" X="6848.579" Y="5509.318" Z="29.91566" />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="The Beast Pens" QuestId="32567" TurnInName="Scout Captain Daelin" TurnInId="67998" />
@@ -101,6 +101,12 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Direhorn vs Devilsaur" QuestId="32553" TurnInName="Miura Brightweaver" TurnInId="67999" />
 	</If>
+<!-- Get Final Quest -->
+	<While Condition="HasQuestAvailable(67999)" >
+		<CustomBehavior File="InteractWith"  MobId="67999" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Next Profle -->
 <CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
 </QuestOrder> 

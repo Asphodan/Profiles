@@ -1,0 +1,125 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Kirin Tor Offensive - Thunder Mines</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Horned Battlebeast" Entry="69142" />
+		<Mob Name="Disciple of Jalak" Entry="69376" />
+		<Mob Name="Bloodtalon Raptors" Entry="69180" />
+	</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+
+<!-- Quest Behaviors -->
+   	<Quest Id="32586" Name="Maximum Capacitor">
+		<Objective Type="KillMob" MobId="69326" KillCount="1">
+			<Hotspots>
+				<Hotspot X="7312.25" Y="5365.44" Z="47.85" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+   	<Quest Id="32587" Name="Forge Ahead!">
+		<Objective Type="KillMob" MobId="69461" KillCount="1">
+			<Hotspots>
+				<Hotspot X="7225.765" Y="5285.303" Z="65.98432" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="93731" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Fleshcrafter Hoku" Id="69435" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="7087.47" Y="5359.25" Z="65.98" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<!-- Do Quests -->
+	<If Condition="HasQuest(32586) &amp;&amp; !IsQuestCompleted(32586)" > <!-- [BrodieMan] -->
+		<CustomBehavior File="Message" Text="Starting Maximum Capacitor" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32586" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<While Condition="!IsQuestCompleted(32586)" >
+			<If Condition="!IsObjectiveComplete(3,32586)" >
+				<RunTo X="7478.02" Y="5476.50" Z="57.61" />
+				<CustomBehavior File="InteractWith" QuestId="32586" MobId="69320" />
+			</If>
+			<If Condition="!IsObjectiveComplete(2,32586)" >
+				<RunTo X="7400.76" Y="5615.24" Z="23.15" />
+				<CustomBehavior File="InteractWith" QuestId="32586" MobId="69319" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,32586)" >
+				<RunTo X="7307.81" Y="5666.43" Z="31.69" />
+				<CustomBehavior File="InteractWith" QuestId="32586" MobId="69316" />
+			</If>
+			<If Condition="!IsObjectiveComplete(4,32586)" >
+				<RunTo X="7312.25" Y="5365.44" Z="47.85" />
+				<CustomBehavior File="GetOutOfGroundEffectAndAuras" QuestId="32586" StartNpcId="69326"
+					EventX="7312.25" EventY="5365.44" EventZ="47.85"
+					MoveOutOfGroundEffectAuraId1="137542"
+					MoveAwayFromMobCastingSpellId1="137545"
+					MoveAwayFromMobCastingSpellId2="136906"
+					MoveAwayFromMobWithAuraId1="136906" >
+					<Safespots>
+						<Hotspot X="7317.73" Y="5347.32" Z="48.10" />
+						<Hotspot X="7293.82" Y="5346.548" Z="56.87947" />
+						<Hotspot X="7323.026" Y="5378.004" Z="48.02763" />
+					</Safespots>
+				</CustomBehavior>
+			</If>
+		</While>
+		<CustomBehavior File="CompleteLogQuest" QuestId="32586" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</If>
+	
+	<If Condition="HasQuest(32586) &amp;&amp; IsQuestCompleted(32586)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="32586" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</If>
+	<If Condition="HasQuest(32587) &amp;&amp; !IsQuestCompleted(32587)" >
+		<CustomBehavior File="UserSettings" QuestId="32587" LootMobs="True" KillBetweenHotspots="False" PullDistance="15" />
+		<Objective QuestName="Forge Ahead!" QuestId="32587" Type="KillMob" MobId="69461" KillCount="1" />
+		<Objective QuestName="Forge Ahead!" QuestId="32587" Type="CollectItem" ItemId="93731" CollectCount="1" />
+	</If>
+<!-- Turn in Quests -->
+	<If Condition="((HasQuest(32540)) &amp;&amp; (IsQuestCompleted(32540)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Harbingers" QuestId="32540" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+		<TurnIn QuestName="Surgical Strike" QuestId="32542" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	<If Condition="((HasQuest(32539)) &amp;&amp; (IsQuestCompleted(32539)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Offerings" QuestId="32539" TurnInName="Dalvin" TurnInId="69674" />
+	</If>
+<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
+</QuestOrder> 
+</HBProfile>

@@ -34,7 +34,46 @@ Incomplete:
 
 <!-- End of Quest Overrides -->
 <QuestOrder>
+<!-- Jump to Profiles-in-progress -->
+<!-- Court of Bones -->
+	<If Condition="(HasQuest(32525) ||
+					HasQuest(32526) ||
+					HasQuest(32527) ||
+					HasQuest(32528) ||
+					HasQuest(32529) ||
+					HasQuest(32530) ||
+					HasQuest(32531) ||
+					HasQuest(32532) ||
+					HasQuest(32533) ||
+					HasQuest(32731) ||
+					HasQuest(32733))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
+	</If>
+<!-- Beast Pens -->
+	<If Condition="(HasQuest(32550) ||
+					HasQuest(32551) ||
+					HasQuest(32552) ||
+					HasQuest(32553) ||
+					HasQuest(32554) ||
+					HasQuest(32567))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-BeastPens" />
+	</If>
+<!-- Thunder Mines -->
+	<If Condition="(HasQuest(32586) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ThunderMines" />
+	</If>
+
 <!-- Get Initial Quests -->
+	<While Condition="HasQuestAvailable(67992)" >
+		<CustomBehavior File="InteractWith"  MobId="67992" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 	<While Condition="HasQuestAvailable(67993)" >
 		<CustomBehavior File="InteractWith"  MobId="67993" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -51,10 +90,6 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Ihgaluk Crag" QuestId="32732" TurnInName="Archmage Modera" TurnInId="67996" />
-	</If>
-<!-- Load Za'Tual -->
-	<If Condition="((HasQuest(32733)) &amp;&amp; (IsQuestCompleted(32733)))" > 
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ZaTual" />
 	</If>
 <!-- Load Court of Bones -->
 	<If Condition="((HasQuest(32731)) &amp;&amp; (IsQuestCompleted(32731)))" > 
@@ -185,10 +220,6 @@ Incomplete:
 	<If Condition="HasQuest(32573) &amp;&amp; !IsQuestCompleted(32573)" >
 		<Objective QuestName="Enemies Beneath the Tower" QuestId="32573" Type="KillMob" MobId="69431" KillCount="7" />
 	</If>
-	<If Condition="HasQuest(32578) &amp;&amp; !IsQuestCompleted(32578)" >
-		<CustomBehavior File="FlyTo" X="5973.458" Y="5923.316" Z="0.5423404" />
-		<Objective QuestName="Among the Bones" QuestId="32578" Type="KillMob" MobId="69666" KillCount="1" />
-	</If>
 <!-- Za'Tul -->
 
 <!-- Turn In Quests -->
@@ -221,11 +252,6 @@ Incomplete:
 		<TurnIn QuestName="Among the Bones" QuestId="32578" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
 	</If>
 	
-<!-- Third Batch of Quests -->
-	<If Condition="((HasQuest(32568)) &amp;&amp; (IsQuestCompleted(32568)))" >
-		<CustomBehavior File="FlyTo" X="6714.727" Y="5094.89" Z="31.08037" />
-		<TurnIn QuestName="No Time To Rest" QuestId="32568" TurnInName="Scout Captain Daelin" TurnInId="67998" />
-	</If>
 </QuestOrder> 
 <!-- Behavior Overrides -->
 <!-- Saurok  -->
