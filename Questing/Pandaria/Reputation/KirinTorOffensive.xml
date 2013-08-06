@@ -34,6 +34,11 @@ Incomplete:
 
 <!-- End of Quest Overrides -->
 <QuestOrder>
+<!-- Kill Boss Quests -->
+	<If Condition="HasQuest(32581) &amp;&amp; !IsQuestCompleted(32581)" >
+		<CustomBehavior File="UserSettings" QuestId="32581" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<Objective QuestName="Imposing Threat" QuestId="32581" Type="KillMob" MobId="70176" KillCount="1" />
+	</If>
 <!-- Jump to Profiles-in-progress -->
 <!-- Court of Bones -->
 	<If Condition="(HasQuest(32525) ||
@@ -45,9 +50,36 @@ Incomplete:
 					HasQuest(32531) ||
 					HasQuest(32532) ||
 					HasQuest(32533) ||
-					HasQuest(32731) ||
-					HasQuest(32733))" >
+					HasQuest(32731))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
+	</If>
+<!-- Court of Bones -->
+	<If Condition="(HasQuest(32733) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ZaTual" />
+	</If>
+<!-- Ighaluk -->
+	<If Condition="(HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-Ighaluk" />
 	</If>
 <!-- Beast Pens -->
 	<If Condition="(HasQuest(32550) ||
@@ -60,7 +92,7 @@ Incomplete:
 	</If>
 <!-- Thunder Mines -->
 	<If Condition="(HasQuest(32586) ||
-					HasQuest(11111) ||
+					HasQuest(32588) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||
@@ -84,174 +116,11 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Ighaluk Crag -->
-<!-- Turn in Breadcrum -->
-	<If Condition="((HasQuest(32732)) &amp;&amp; (IsQuestCompleted(32732)))" > 
-		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
-		<CustomBehavior File="ForcedDismount" />
-		<TurnIn QuestName="Ihgaluk Crag" QuestId="32732" TurnInName="Archmage Modera" TurnInId="67996" />
-	</If>
-<!-- Load Court of Bones -->
-	<If Condition="((HasQuest(32731)) &amp;&amp; (IsQuestCompleted(32731)))" > 
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
-	</If>
-<!-- Beast Pens -->
-	<If Condition="((HasQuest(32567)) &amp;&amp; (IsQuestCompleted(32567)))" > 
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-BeastPens" />
-	</If>
 
-<!-- Get Quests -->
-	<While Condition="HasQuestAvailable(67996)" > <!-- Get Modera Quests. -->
-		<CustomBehavior File="InteractWith"  MobId="67996" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-	<While Condition="HasQuestAvailable(69677)" > <!-- Get Gnome Quests. -->
-		<CustomBehavior File="InteractWith"  MobId="69677" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-<!-- Do Quests -->
-	<If Condition="HasQuest(32546) &amp;&amp; !IsQuestCompleted(32546)" >
-		<CustomBehavior File="UserSettings" QuestId="32546" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="25" />
-		<RunTo X="5936.555" Y="5465.421" Z="30.49908" />
-		<CustomBehavior File="CollectThings" CollectUntil="QuestComplete" QuestId="32546" MobId="69251" MobId2="69282" MobState="Alive" NonCompeteDistance="5" HuntingGroundRadius="50" >
-			<Hotspot X="5944.483" Y="5445.594" Z="30.49892" />
-			<Hotspot X="5932.566" Y="5494.266" Z="30.49921" />
-			<Hotspot X="5913.896" Y="5534.81" Z="30.49941" />
-			<Hotspot X="5914.896" Y="5579.35" Z="30.5411" />
-			<Hotspot X="5942.059" Y="5640.925" Z="43.29585" />
-		</CustomBehavior>
+<!-- Turn in Base quests. -->
+	<If Condition="HasQuest(32581) &amp;&amp; IsQuestCompleted(32581)">
+		<TurnIn QuestName="Imposing Threat" QuestId="32581" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
 	</If>
-	<If Condition="HasQuest(32536) &amp;&amp; !IsQuestCompleted(32536)" >
-		<CustomBehavior File="Message" Text="Starting Manipulating the Saurok" LogColor="Green" />
-		<CustomBehavior File="UserSettings" QuestId="32536" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
-		<If Condition="!IsObjectiveComplete(3,32536)" >
-			<RunTo X="6106.76" Y="5523.68" Z="67.94" />
-			<While Condition="!IsObjectiveComplete(3,32536)" >
-				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69685" WaitForNpcs="False" CollectionDistance="300" WaitTime="100" />
-				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69686" WaitForNpcs="False" CollectionDistance="300" />
-			</While>
-		</If>
-		<CustomBehavior File="InteractWith" QuestId="32536" QuestObjectiveIndex="2" MobId="69684" IgnoreCombat="True" X="5804.76" Y="5524.77" Z="40.25" />
-		<If Condition="!IsObjectiveComplete(1,32536)" >
-			<RunTo X="5859.02" Y="5814.50" Z="20.52" />
-			<While Condition="!IsObjectiveComplete(1,32536)" >
-				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69681" WaitForNpcs="False" />
-				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69682" WaitForNpcs="False" />
-			</While>
-		</If>
-	</If>
-	<If Condition="HasQuest(32535) &amp;&amp; !IsQuestCompleted(32535)" >
-		<Objective QuestName="The Skumblade Threat" QuestId="32535" Type="KillMob" MobId="69362" KillCount="10" />
-	</If>
-	<If Condition="HasQuest(32537) &amp;&amp; !IsQuestCompleted(32537)" >
-		<CustomBehavior File="Message" Text="Starting Deconstructed" LogColor="Green" />
-		<CustomBehavior File="UserSettings" QuestId="32537" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="5" />
-		<CustomBehavior File="InteractWith" QuestId="32537" QuestObjectiveIndex="4" MobId="69697" WaitTime="1000" NumOfTimes="1000" 
-			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="6160.3" Y="5730.055" Z="7.020272" />
-		<CustomBehavior File="InteractWith" QuestId="32537" QuestObjectiveIndex="1" MobId="69693" WaitTime="1000" NumOfTimes="1000" 
-			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="5893.066" Y="5827.657" Z="21.64524" />
-		<CustomBehavior File="InteractWith" QuestId="32537" QuestObjectiveIndex="2" MobId="69688" WaitTime="1000" NumOfTimes="1000" 
-			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="5635.40" Y="5441.19" Z="2.31" />
-		<CustomBehavior File="InteractWith" QuestId="32255" QuestObjectiveIndex="3" MobId="69290" CollectionDistance="1000" WaitTime="1000" 
-			NumOfTimes="1000" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" >
-			<HuntingGrounds>
-				<Hotspot X="5839.262" Y="5590.107" Z="40.07038" />
-				<Hotspot X="5705.648" Y="5629.287" Z="14.65259" />
-				<Hotspot X="5626.132" Y="5522.049" Z="3.948158" />
-				<Hotspot X="5695.5" Y="5429.003" Z="3.434925" />
-				<Hotspot X="5845.18" Y="5325.857" Z="5.576776" />
-				<Hotspot X="5913.124" Y="5398.176" Z="33.1066" />
-				<Hotspot X="6011.305" Y="5437.688" Z="39.40099" />
-				<Hotspot X="6106.173" Y="5532.547" Z="68.11538" />
-				<Hotspot X="5973.005" Y="5588.532" Z="41.45647" />
-				<Hotspot X="5914.528" Y="5639.815" Z="44.99718" />
-			</HuntingGrounds>
-		</CustomBehavior>
-	</If>
-	<If Condition="HasQuest(32548) &amp;&amp; !IsQuestCompleted(32548)" > <!-- [BrodieMan] -->
-		<CustomBehavior File="UserSettings" QuestId="32548" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
-		<Objective QuestName="Left To Rot" QuestId="32548" Type="KillMob" MobId="69247" KillCount="3" />
-	</If>
-	<If Condition="HasQuest(32606) &amp;&amp; !IsQuestCompleted(32606)" > <!-- [BrodieMan] -->
-		<CustomBehavior File="UserSettings" QuestId="32606" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
-		<RunTo X="6163.82" Y="5732.19" Z="6.01" />
-		<While Condition="!IsQuestCompleted(32606)" >
-			<If Condition="(Me.Class == WoWClass.Rogue)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="121733" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Warlock)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="172" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Warrior)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="355" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.DeathKnight )" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="49576" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Druid)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="8921" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Hunter)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="3044" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Mage)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="2136" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Paladin)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="62124" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Priest)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="589" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Shaman)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="403" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<If Condition="(Me.Class == WoWClass.Monk)" >
-				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="115546" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
-			</If>
-			<CustomBehavior File="WaitTimer" WaitTime="1000" />
-			<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
-			<CustomBehavior File="RunMacro" Macro="/cleartarget" />
-		</While>
-	</If>
-<!-- Dunno -->
-	<If Condition="HasQuest(32573) &amp;&amp; !IsQuestCompleted(32573)" >
-		<Objective QuestName="Enemies Beneath the Tower" QuestId="32573" Type="KillMob" MobId="69431" KillCount="7" />
-	</If>
-<!-- Za'Tul -->
-
-<!-- Turn In Quests -->
-	<!-- Saurok -->
-	<If Condition="((HasQuest(32546)) &amp;&amp; (IsQuestCompleted(32546)))" >
-		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
-		<TurnIn QuestName="Manipulating the Saurok" QuestId="32536" TurnInName="Archmage Modera" TurnInId="67996" />
-		<TurnIn QuestName="Manipulating the Saurok" QuestId="32535" TurnInName="Archmage Modera" TurnInId="67996" />
-		<TurnIn QuestName="Just Some Light Clean-Up Work" QuestId="32546" TurnInName="Sanitation Sorcerer Stephen Litmatch" TurnInId="69677" />
-	</If>
-	<!-- Base Camp -->
-	<If Condition="((HasQuest(32573)) &amp;&amp; (IsQuestCompleted(32573)))" >
-		<CustomBehavior File="FlyTo" X="6122.193" Y="5061.02" Z="37.27309" />
-		<TurnIn QuestName="Enemies Beneath the Tower" QuestId="32573" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
-	</If>
-	<If Condition="((HasQuest(32574)) &amp;&amp; (IsQuestCompleted(32574)))" >
-		<CustomBehavior File="FlyTo" X="6158.706" Y="5036.553" Z="37.61765" />
-		<TurnIn QuestName="The Shuddering Moor" QuestId="32574" TurnInName="Vereesa Windrunner" TurnInId="67993" />
-	</If>
-	
-<!-- Get Second Batch of BaseCamp Dailies. -->
-	<While Condition="HasQuestAvailable(67992)" >
-		<CustomBehavior File="InteractWith"  MobId="67992" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-
-	<If Condition="((HasQuest(32578)) &amp;&amp; (IsQuestCompleted(32578)))" >
-		<CustomBehavior File="FlyTo" X="6122.193" Y="5061.02" Z="37.27309" />
-		<TurnIn QuestName="Among the Bones" QuestId="32578" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
-	</If>
-	
 </QuestOrder> 
 <!-- Behavior Overrides -->
 <!-- Saurok  -->

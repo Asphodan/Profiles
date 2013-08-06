@@ -57,6 +57,11 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+	<While Condition="HasQuestAvailable(69673)" > 
+		<CustomBehavior File="InteractWith"  MobId="69673" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 	<While Condition="HasQuestAvailable(70517)" > 
 		<CustomBehavior File="InteractWith"  MobId="70517" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -84,6 +89,10 @@ Incomplete:
 		<CustomBehavior File="UserSettings" QuestId="32540" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
 		<Objective QuestName="Harbringers of the Loa" QuestId="32540" Type="KillMob" MobId="69281" MobId2="69285" KillCount="2" />
 	</If>
+	<While Condition="HasQuest(32544) &amp;&amp; !IsQuestCompleted(32544)" >
+		<CustomBehavior File="FlyTo" X="6220.558" Y="5949.839" Z="40.78791" />
+		<CustomBehavior File="UserSettings" QuestId="32544" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+	</While>
 <!-- Turn in Quests -->
 	<If Condition="((HasQuest(32540)) &amp;&amp; (IsQuestCompleted(32540)))" > 
 		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
@@ -96,6 +105,26 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Offerings" QuestId="32539" TurnInName="Dalvin" TurnInId="69674" />
 	</If>
+	<If Condition="HasQuest(32544) &amp;&amp; IsQuestCompleted(32544)" >
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<TurnIn QuestName="Pterrible Ptorment" QuestId="32544" TurnInName="Ako" TurnInId="69673" />
+	</If>
+<!-- Get Quests Again -->
+	<While Condition="HasQuestAvailable(69674)" > 
+		<CustomBehavior File="InteractWith"  MobId="69674" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(69673)" > 
+		<CustomBehavior File="InteractWith"  MobId="69673" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(70517)" > 
+		<CustomBehavior File="InteractWith"  MobId="70517" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>

@@ -1,0 +1,94 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Kirin Tor Offensive - Ihgaluk Crag</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Horned Battlebeast" Entry="69142" />
+		<Mob Name="Disciple of Jalak" Entry="69376" />
+	</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+
+<!-- Quest Behaviors -->
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<!-- Turn in Breadcrum -->
+	<If Condition="((HasQuest(32732)) &amp;&amp; (IsQuestCompleted(32732)))" > 
+		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Ihgaluk Crag" QuestId="32732" TurnInName="Archmage Modera" TurnInId="67996" />
+	</If>
+<!-- Get Quests -->
+	<While Condition="HasQuestAvailable(67996)" > <!-- Get Modera Quests. -->
+		<CustomBehavior File="InteractWith"  MobId="67996" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(69677)" > <!-- Get Gnome Quests. -->
+		<CustomBehavior File="InteractWith"  MobId="69677" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Do Quests -->
+	<If Condition="HasQuest(32535) &amp;&amp; !IsQuestCompleted(32535)" >
+		<Objective QuestName="The Skumblade Threat" QuestId="32535" Type="KillMob" MobId="69362" KillCount="10" />
+	</If>
+	<If Condition="HasQuest(32547) &amp;&amp; !IsQuestCompleted(32547)" > <!-- Roaches Go Last -->
+		<CustomBehavior File="UserSettings" QuestId="32547" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
+		<While Condition="!IsQuestCompleted(32547)" >
+			<RunTo X="5981.361" Y="5512.725" Z="40.1333" />
+			<RunTo X="5977.61" Y="5579.485" Z="40.98503" />
+			<RunTo X="5949.524" Y="5639.886" Z="42.83137" />
+			<RunTo X="5886.573" Y="5610.742" Z="41.95531" />
+			<RunTo X="5844.389" Y="5572.482" Z="41.42295" />
+			<RunTo X="5855.642" Y="5515.049" Z="41.42038" />
+			<RunTo X="5879.044" Y="5472.708" Z="42.74852" />
+			<RunTo X="5894.469" Y="5434.867" Z="40.07657" />
+		</While>
+	</If>
+<!-- Turn in Quests -->
+	<If Condition="((HasQuest(32546)) &amp;&amp; (IsQuestCompleted(32546)))" >
+		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
+		<TurnIn QuestName="Manipulating the Saurok" QuestId="32536" TurnInName="Archmage Modera" TurnInId="67996" />
+		<TurnIn QuestName="Manipulating the Saurok" QuestId="32535" TurnInName="Archmage Modera" TurnInId="67996" />
+		<TurnIn QuestName="Just Some Light Clean-Up Work" QuestId="32546" TurnInName="Sanitation Sorcerer Stephen Litmatch" TurnInId="69677" />
+	</If>
+	<If Condition="HasQuest(32547) &amp;&amp; IsQuestCompleted(32547)" >
+		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
+		<TurnIn QuestName="The Creeping Carpet of Ihgaluk" QuestId="32547" TurnInName="Sanitation Sorcerer Stephen Litmatch" TurnInId="69677" />
+	</If>
+<!-- Get Final Quest -->
+	<While Condition="HasQuestAvailable(67999)" >
+		<CustomBehavior File="InteractWith"  MobId="67999" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Next Profle -->
+<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
+</QuestOrder> 
+</HBProfile>

@@ -61,6 +61,41 @@ Incomplete:
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Do Quests -->
+	<If Condition="HasQuest(32588) &amp;&amp; !IsQuestCompleted(32588)" >
+		<CustomBehavior File="UserSettings" QuestId="32588" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<While Condition="!IsQuestCompleted(32588)" >
+			<While Condition="!IsObjectiveComplete(3,32588)" >
+				<RunTo X="7389.191" Y="5532.316" Z="50.32116" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93761)" WaitTime="6000" />
+			</While>
+			<While Condition="!IsObjectiveComplete(2,32588)" >
+				<RunTo X="7358.583" Y="5575.728" Z="29.44196" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93761)" WaitTime="6000" />
+			</While>
+			<While Condition="!IsObjectiveComplete(1,32588)" >
+				<RunTo X="7303.608" Y="5605.65" Z="31.16815" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93761)" WaitTime="6000" />
+			</While>
+			<If Condition="!IsObjectiveComplete(4,32588)" >
+				<RunTo X="7312.25" Y="5365.44" Z="47.85" />
+				<CustomBehavior File="GetOutOfGroundEffectAndAuras" QuestId="32588" StartNpcId="69326"
+					EventX="7312.25" EventY="5365.44" EventZ="47.85"
+					MoveOutOfGroundEffectAuraId1="137542"
+					MoveAwayFromMobCastingSpellId1="137545"
+					MoveAwayFromMobCastingSpellId2="136906"
+					MoveAwayFromMobWithAuraId1="136906" >
+					<Safespots>
+						<Hotspot X="7317.73" Y="5347.32" Z="48.10" />
+						<Hotspot X="7293.82" Y="5346.548" Z="56.87947" />
+						<Hotspot X="7323.026" Y="5378.004" Z="48.02763" />
+					</Safespots>
+				</CustomBehavior>
+			</If>
+		</While>
+		<CustomBehavior File="CompleteLogQuest" QuestId="32588" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</If>
 	<If Condition="HasQuest(32586) &amp;&amp; !IsQuestCompleted(32586)" > <!-- [BrodieMan] -->
 		<CustomBehavior File="Message" Text="Starting Maximum Capacitor" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32586" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
@@ -108,6 +143,7 @@ Incomplete:
 		<Objective QuestName="Forge Ahead!" QuestId="32587" Type="KillMob" MobId="69461" KillCount="1" />
 		<Objective QuestName="Forge Ahead!" QuestId="32587" Type="CollectItem" ItemId="93731" CollectCount="1" />
 	</If>
+
 <!-- Turn in Quests -->
 	<If Condition="((HasQuest(32540)) &amp;&amp; (IsQuestCompleted(32540)))" > 
 		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
