@@ -53,7 +53,21 @@ Incomplete:
 					HasQuest(32731))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
 	</If>
-<!-- Court of Bones -->
+<!-- Ighaluk -->
+	<If Condition="(HasQuest(32732) ||
+					HasQuest(32535) ||
+					HasQuest(32536) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(32546))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-Ihgaluk" />
+	</If>
+<!-- ZaTual -->
 	<If Condition="(HasQuest(32733) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||
@@ -66,20 +80,6 @@ Incomplete:
 					HasQuest(11111) ||
 					HasQuest(11111))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ZaTual" />
-	</If>
-<!-- Ighaluk -->
-	<If Condition="(HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-Ighaluk" />
 	</If>
 <!-- Beast Pens -->
 	<If Condition="(HasQuest(32550) ||
