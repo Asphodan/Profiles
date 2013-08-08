@@ -32,6 +32,8 @@ Incomplete:
 	</AvoidMobs>
    
 <Blackspots>
+	<Blackspot X="5858.913" Y="5805.785" Z="20.66088" Radius="11.25469" /> <!-- Fire Ruins Illusion -->
+	<Blackspot X="5856.374" Y="5806.159" Z="20.47607" Radius="8.77083" /> <!-- Fire Ruins Illusion -->
 </Blackspots>
 
 <!-- Quest Behaviors -->
@@ -55,6 +57,25 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
+	<If Condition="HasQuest(32536) &amp;&amp; !IsQuestCompleted(32536)" >
+		<CustomBehavior File="Message" Text="Starting Manipulating the Saurok" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32536" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
+		<If Condition="!IsObjectiveComplete(3,32536)" >
+			<RunTo X="6106.76" Y="5523.68" Z="67.94" />
+			<While Condition="!IsObjectiveComplete(3,32536)" >
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69685" WaitForNpcs="False" CollectionDistance="300" WaitTime="100" />
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69686" WaitForNpcs="False" CollectionDistance="300" />
+			</While>
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="32536" QuestObjectiveIndex="2" MobId="69684" IgnoreCombat="True" X="5804.76" Y="5524.77" Z="40.25" />
+		<If Condition="!IsObjectiveComplete(1,32536)" >
+			<RunTo X="5859.02" Y="5814.50" Z="20.52" />
+			<While Condition="!IsObjectiveComplete(1,32536)" >
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69681" WaitForNpcs="False" />
+				<CustomBehavior File="InteractWith" IgnoreCombat="True" MobId="69682" WaitForNpcs="False" />
+			</While>
+		</If>
+	</If>
 	<If Condition="HasQuest(32535) &amp;&amp; !IsQuestCompleted(32535)" >
 		<Objective QuestName="The Skumblade Threat" QuestId="32535" Type="KillMob" MobId="69362" KillCount="10" />
 	</If>
@@ -70,6 +91,18 @@ Incomplete:
 			<RunTo X="5879.044" Y="5472.708" Z="42.74852" />
 			<RunTo X="5894.469" Y="5434.867" Z="40.07657" />
 		</While>
+	</If>
+	<If Condition="HasQuest(32546) &amp;&amp; !IsQuestCompleted(32546)" >
+		<CustomBehavior File="Message" Text="Starting Just Some Light Clean-Up Work" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32546" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="25" />
+		<RunTo X="5936.555" Y="5465.421" Z="30.49908" />
+		<CustomBehavior File="CollectThings" CollectUntil="QuestComplete" QuestId="32546" MobId="69251" MobId2="69282" MobState="Alive" NonCompeteDistance="5" HuntingGroundRadius="50" >
+			<Hotspot X="5944.483" Y="5445.594" Z="30.49892" />
+			<Hotspot X="5932.566" Y="5494.266" Z="30.49921" />
+			<Hotspot X="5913.896" Y="5534.81" Z="30.49941" />
+			<Hotspot X="5914.896" Y="5579.35" Z="30.5411" />
+			<Hotspot X="5942.059" Y="5640.925" Z="43.29585" />
+		</CustomBehavior>
 	</If>
 <!-- Turn in Quests -->
 	<If Condition="((HasQuest(32546)) &amp;&amp; (IsQuestCompleted(32546)))" >
