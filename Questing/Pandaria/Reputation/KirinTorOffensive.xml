@@ -40,19 +40,6 @@ Incomplete:
 		<Objective QuestName="Imposing Threat" QuestId="32581" Type="KillMob" MobId="70176" KillCount="1" />
 	</If>
 <!-- Jump to Profiles-in-progress -->
-<!-- Court of Bones -->
-	<If Condition="(HasQuest(32525) ||
-					HasQuest(32526) ||
-					HasQuest(32527) ||
-					HasQuest(32528) ||
-					HasQuest(32529) ||
-					HasQuest(32530) ||
-					HasQuest(32531) ||
-					HasQuest(32532) ||
-					HasQuest(32533) ||
-					HasQuest(32731))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
-	</If>
 <!-- Ighaluk -->
 	<If Condition="(HasQuest(32732) ||
 					HasQuest(32535) ||
@@ -66,6 +53,19 @@ Incomplete:
 					HasQuest(11111) ||
 					HasQuest(32546))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-Ihgaluk" />
+	</If>
+<!-- Court of Bones -->
+	<If Condition="(HasQuest(32525) ||
+					HasQuest(32526) ||
+					HasQuest(32527) ||
+					HasQuest(32528) ||
+					HasQuest(32529) ||
+					HasQuest(32530) ||
+					HasQuest(32531) ||
+					HasQuest(32532) ||
+					HasQuest(32533) ||
+					HasQuest(32731))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
 	</If>
 <!-- ZaTual -->
 	<If Condition="(HasQuest(32733) ||
