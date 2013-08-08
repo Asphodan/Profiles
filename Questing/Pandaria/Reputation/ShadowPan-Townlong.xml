@@ -249,6 +249,50 @@ Incomplete: Hatchlings.
 		<CustomBehavior File="ForcedDismount"/>
 		<Objective QuestName="Sra'vess Wetwork" QuestId="31196" Type="KillMob" MobId="63677" KillCount="15" />
 	</If>
+
+ 	<If Condition="HasQuest(31200) &amp;&amp; !IsQuestCompleted(31200)"> <!-- [BrodieMan] -->
+		<CustomBehavior File="UserSettings" QuestId="31200" LootMobs="True" PullDistance="10" />
+		<If Condition="!IsObjectiveComplete(1,31200)" >
+			<CustomBehavior File="FlyTo" X="2800.912" Y="5876.463" Z="138.1241" />
+			<CustomBehavior File="ForcedDismount"/>
+			<While Condition="!IsObjectiveComplete(1,31200)" >
+				<RunTo X="2800.912" Y="5876.463" Z="138.1241" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(3,31200)" >
+			<CustomBehavior File="FlyTo" X="2849.064" Y="5716.589" Z="126.1583" />
+			<CustomBehavior File="ForcedDismount"/>
+			<While Condition="!IsObjectiveComplete(3,31200)" >
+				<RunTo X="2849.064" Y="5716.589" Z="126.1583" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(4,31200)" >
+			<CustomBehavior File="FlyTo" X="2970.775" Y="5814.73" Z="81.08456" />
+			<CustomBehavior File="ForcedDismount"/>
+			<While Condition="!IsObjectiveComplete(4,31200)" >
+				<RunTo X="2970.775" Y="5814.73" Z="81.08456" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(5,31200)" >
+			<CustomBehavior File="FlyTo" X="2906.76" Y="5867.02" Z="127.52" />
+			<CustomBehavior File="ForcedDismount"/>
+			<While Condition="!IsObjectiveComplete(5,31200)" >
+				<RunTo X="2905.997" Y="5865.388" Z="127.445" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(2,31200)" >
+			<CustomBehavior File="FlyTo" X="2743.37" Y="5703.776" Z="76.66451" />
+			<CustomBehavior File="ForcedDismount"/>
+			<While Condition="!IsObjectiveComplete(2,31200)" >
+				<RunTo X="2743.37" Y="5703.776" Z="76.66451" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+	</If>
 <!-- Turn In Quests -->
 <CustomBehavior File="Message" Text="Flying to Shado-Pan to turn in dailies." LogColor="Red"  />
 <CustomBehavior File="FlyTo" DestName="Shado-Pan Garrison" X="1858.533" Y="4264.845" Z="148.8694" />
@@ -331,6 +375,9 @@ Incomplete: Hatchlings.
 	</If>
 	<If Condition="HasQuest(31204) &amp;&amp; IsQuestCompleted(31204)" >
 		<TurnIn QuestName="Sra'vess Wetwork" QuestId="31204" TurnInName="Ling" TurnInId="63614" />
+	</If>
+	<If Condition="HasQuest(31200) &amp;&amp; IsQuestCompleted(31200)" >
+		<TurnIn QuestName="Fumigation" QuestId="31200" TurnInName="Ling" TurnInId="63614" />
 	</If>
 </QuestOrder> 
 </HBProfile>
