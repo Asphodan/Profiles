@@ -246,6 +246,11 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+	<While Condition="HasQuestAvailable(62151)" ><!-- Xaril -->
+		<CustomBehavior File="InteractWith"  MobId="62151" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 <!-- Do Quests -->
  <!-- North Central -->
 	<If Condition="HasQuest(31238) &amp;&amp; !IsQuestCompleted(31238)"> <!-- Brain Food -->
@@ -338,7 +343,6 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Infection" QuestId="31272" Type="KillMob" MobId="63869" KillCount="6" />
 	</If>	
-
 <!-- Heart of Fear -->
  	<If Condition="HasQuest(31496) &amp;&amp; !IsQuestCompleted(31496)"> <!-- [BrodieMan] Sampling Empire's Finest-->
 		<CustomBehavior File="UserSettings" QuestId="31496" LootMobs="True" PullDistance="1" />
@@ -513,6 +517,9 @@ Incomplete:
 <!-- HiSek -->
 	<If Condition="((HasQuest(31237)) &amp;&amp; (IsQuestCompleted(31237)))" >
 		<TurnIn QuestName="Debugging the Terrace" QuestId="31237" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" />
+	</If>
+	<If Condition="((HasQuest(31272)) &amp;&amp; (IsQuestCompleted(31272)))" >
+		<TurnIn QuestName="Debugging the Terrace" QuestId="31272" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" />
 	</If>
 <!-- Korven -->
 	<If Condition="((HasQuest(31232)) &amp;&amp; (IsQuestCompleted(31232)))" > 
