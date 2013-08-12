@@ -221,32 +221,27 @@ Incomplete:
 <!-- === GET QUESTS === -->
 
 <CustomBehavior File="FlyTo" DestName="Klaxxi Core" X="136.1074" Y="3219.246" Z="214.9966" />
-<!-- HiSek -->
-	<While Condition="HasQuestAvailable(63785)" >
+	<While Condition="HasQuestAvailable(63785)" ><!-- HiSek -->
 		<CustomBehavior File="InteractWith"  MobId="63785" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Kil'ruk -->
-	<While Condition="HasQuestAvailable(62538)" >
+	<While Condition="HasQuestAvailable(62538)" ><!-- Kil'ruk -->
 		<CustomBehavior File="InteractWith"  MobId="62538" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Korven -->
-	<While Condition="HasQuestAvailable(62180)" >
+	<While Condition="HasQuestAvailable(62180)" ><!-- Korven -->
 		<CustomBehavior File="InteractWith"  MobId="62180" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Rik'kal -->
-	<While Condition="HasQuestAvailable(63072)" >
+	<While Condition="HasQuestAvailable(63072)" ><!-- Rik'kal -->
 		<CustomBehavior File="InteractWith"  MobId="63072" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Kaz'tik -->
-	<While Condition="HasQuestAvailable(63758)" >
+	<While Condition="HasQuestAvailable(63758)" ><!-- Kaz'tik -->
 		<CustomBehavior File="InteractWith"  MobId="63758" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="137.092" Y="3192.54" Z="214.7606" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
@@ -318,9 +313,12 @@ Incomplete:
 		<Objective QuestName="The Scale-Lord" QuestId="31269" Type="KillMob" MobId="63179" KillCount="1"/>
 	</If>
 	<If Condition="((HasQuest(31268)) &amp;&amp; (!IsQuestCompleted(31268)))" > <!-- Brain Work -->
-		<CustomBehavior File="FlyTo"  X="-901.7958" Y="2837.85" Z="113.4554" />
-		<CustomBehavior File="ForcedDismount" />
 		<While Condition="((HasQuest(31268)) &amp;&amp; (!IsQuestCompleted(31268)))" >
+			<CustomBehavior File="FlyTo"  X="-901.7958" Y="2837.85" Z="113.4554" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseItemOn" QuestId="31268" MobId="63728" ItemId="85884" Range="10"/>
+			<CustomBehavior File="FlyTo" X="-969.3554" Y="2883.503" Z="97.74947" />
+			<CustomBehavior File="ForcedDismount" />
 			<CustomBehavior File="UseItemOn" QuestId="31268" MobId="63728" ItemId="85884" Range="10"/>
 		</While>
 	</If>
