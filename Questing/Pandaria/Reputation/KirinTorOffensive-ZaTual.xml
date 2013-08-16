@@ -46,7 +46,7 @@ Incomplete:
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Turn in Breadcrum -->
-	<If Condition="((HasQuest(32733)) &amp;&amp; (IsQuestCompleted(32733)))" > 
+	<If Condition="((HasQuest(32733)) &amp;&amp; (IsQuestCompleted(32733)))" >
 		<CustomBehavior File="FlyTo" X="6334.872" Y="5544.073" Z="9.086551" /> <!-- Got to make it avoid the center to save time. -->
 		<CustomBehavior File="FlyTo" X="6308.427" Y="5726.472" Z="8.524138" /> <!-- This one looks like it's just under Diremoore. -->
 		<CustomBehavior File="FlyTo" X="6271.814" Y="5832.516" Z="5.519899" /> <!-- Go around the big tree. -->
@@ -71,6 +71,15 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
+	<If Condition="HasQuest(32538) &amp;&amp; !IsQuestCompleted(32538)" >
+		<CustomBehavior File="Message" Text="Changing UserSettings: Pull distance to 1." LogColor="Red"  />
+		<CustomBehavior File="UserSettings" PullDistance="1" UseMount="True" KillBetweenHotspots="False" />
+		<CustomBehavior File="InteractWith" QuestId="32538" QuestObjectiveIndex="1" MobId="217201" MobId2="218424" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="100" X="6047.05" Y="6245.00" Z="22.96" />
+		<CustomBehavior File="InteractWith" QuestId="32538" QuestObjectiveIndex="3" MobId="217203" MobId2="218426" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="100" X="5981.98" Y="6054.16" Z="58.59" />
+		<CustomBehavior File="InteractWith" QuestId="32538" QuestObjectiveIndex="2" MobId="217202" MobId2="218425" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="100" X="6348.41" Y="6015.33" Z="29.35" />
+		<CustomBehavior File="Message" Text="Changing UserSettings: Returning Pull Distance to 15." LogColor="Red"  />
+		<CustomBehavior File="UserSettings" PullDistance="15" UseMount="True" KillBetweenHotspots="False" />
+	</If>
 	<If Condition="HasQuest(32539) &amp;&amp; !IsQuestCompleted(32539)" >
 		<CustomBehavior File="UserSettings" QuestId="32539" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
 		<CustomBehavior File="CollectThings" QuestId="32539" ObjectId="216991" CollectUntil="QuestComplete" HuntingGroundRadius="120" NonCompeteDistance="5" PostInteractDelay="1000" >
@@ -111,6 +120,10 @@ Incomplete:
 	<If Condition="HasQuest(32544) &amp;&amp; IsQuestCompleted(32544)" >
 		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
 		<TurnIn QuestName="Pterrible Ptorment" QuestId="32544" TurnInName="Ako" TurnInId="69673" />
+	</If>
+	<If Condition="HasQuest(32538) &amp;&amp; IsQuestCompleted(32538)" >
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<TurnIn QuestName="Heinous Sacrifice" QuestId="32538" TurnInName="Dalvin Jaacor" TurnInId="69674" />
 	</If>
 <!-- Get Quests Again -->
 	<While Condition="HasQuestAvailable(69674)" > 

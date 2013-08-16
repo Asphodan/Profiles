@@ -52,6 +52,11 @@ Incomplete:
 		<TurnIn QuestName="The Court of Bones" QuestId="32731" TurnInName="Narasi Snowdawn" TurnInId="67997" />
 	</If>
 <!-- Get Quests -->
+	<While Condition="HasQuestAvailable(69670)" > 
+		<CustomBehavior File="InteractWith"  MobId="69670" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 	<While Condition="HasQuestAvailable(69668)" > 
 		<CustomBehavior File="InteractWith"  MobId="69668" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -63,6 +68,19 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
+<!-- Single Quest -->
+	<If Condition="HasQuest(32531) &amp;&amp; !IsQuestCompleted(32531)" >
+		<CustomBehavior File="FlyTo" X="6378.913" Y="6201.98" Z="45.94157" /> <!-- Temple Center -->
+		<While Condition="HasQuest(32531) &amp;&amp; !IsQuestCompleted(32531)" >
+			<If Condition="(Me.Class == WoWClass.Rogue)"> <!-- Cast Sinister Strike to attack mobs. -->
+			   <CustomBehavior File="CastSpellOn"
+                   MobId="69903"
+                   SpellId="1752"
+                   X="6379.002" Y="6202.226" Z="45.94131"
+				   />
+			</If>
+		</While>
+	</If>
 	<If Condition="HasQuest(32525) &amp;&amp; !IsQuestCompleted(32525)" > <!-- [BrodieMan] -->
 		<CustomBehavior File="UserSettings" QuestId="32525" LootMobs="True" KillBetweenHotspots="True" PullDistance="5" /> 
 		<CustomBehavior File="InteractWith" QuestId="32525" MobId="69331" MobId2="69337" InteractByUsingItemId="93751" IgnoreLoSToTarget="True" 
@@ -75,12 +93,16 @@ Incomplete:
 		<Objective QuestName="Grave Circumstances" QuestId="32527" Type="KillMob" MobId="69235" MobId2="69264" KillCount="10" />
 	</If>
 <!-- Turn in Quests -->
+	<If Condition="((HasQuest(32531)) &amp;&amp; (IsQuestCompleted(32531)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Grave Circumstances" QuestId="32531" TurnInName="Narasi Snowdawn" TurnInId="69670" />
+	</If>
 	<If Condition="((HasQuest(32527)) &amp;&amp; (IsQuestCompleted(32527)))" > 
 		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Grave Circumstances" QuestId="32527" TurnInName="Narasi Snowdawn" TurnInId="67997" />
 	</If>
-	
 	<If Condition="((HasQuest(32525)) &amp;&amp; (IsQuestCompleted(32525)))" > 
 		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
 		<CustomBehavior File="ForcedDismount" />
