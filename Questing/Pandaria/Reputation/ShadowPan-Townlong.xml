@@ -142,6 +142,7 @@ Incomplete: Hatchlings.
 		<Objective QuestName="Egg Rescue!" QuestId="31041" Type="CollectItem" ItemId="83129" CollectCount="8" />
 	</If>
 	<If Condition="((HasQuest(31040)) &amp;&amp; (!IsQuestCompleted(31040)))" > 
+		<CustomBehavior File="FlyTo" X="3753.727" Y="5762.648" Z="108.237" />
 		<Objective QuestName="Spiteful Sprites" QuestId="31040" Type="KillMob" MobId="62268" KillCount="30" />
 	</If>
  	<If Condition="HasQuest(31048) &amp;&amp; !IsQuestCompleted(31048)">
