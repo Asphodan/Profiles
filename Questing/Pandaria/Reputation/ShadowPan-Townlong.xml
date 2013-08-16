@@ -162,8 +162,6 @@ Incomplete: Hatchlings.
 		<CustomBehavior File="Message" Text="Flying to Deadtalker's Plateau because we have quest 31116." LogColor="Green"  />
 		<CustomBehavior File="FlyTo" X="2523.365" Y="4193.128" Z="186.4108" />
 		<CustomBehavior File="ForcedDismount" />
-	</If>
-	<If Condition="((HasQuest(31116)) &amp;&amp; (!IsQuestCompleted(31116)))" > 
 		<Objective QuestName="Spirit Dust" QuestId="31116" Type="CollectItem" ItemId="84727" CollectCount="32" />
 		<CustomBehavior File="UserSettings" QuestId="31267" LootMobs="True" PullDistance="5" />
 		<CustomBehavior File="Message" Text="Adjusting PullDistance to 5." LogColor="Green"  />
