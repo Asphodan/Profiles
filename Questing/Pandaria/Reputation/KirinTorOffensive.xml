@@ -39,7 +39,24 @@ Incomplete:
 		<CustomBehavior File="UserSettings" QuestId="32581" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
 		<Objective QuestName="Imposing Threat" QuestId="32581" Type="KillMob" MobId="70176" KillCount="1" />
 	</If>
-<!-- Jump to Profiles-in-progress -->
+
+<!-- Get Initial Quests -->
+	<While Condition="HasQuestAvailable(67992)" >
+		<CustomBehavior File="InteractWith"  MobId="67992" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67993)" >
+		<CustomBehavior File="InteractWith"  MobId="67993" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67995)" >
+		<CustomBehavior File="InteractWith"  MobId="67995" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
 <!-- Ighaluk -->
 	<If Condition="(HasQuest(32732) ||
 					HasQuest(32535) ||
@@ -99,24 +116,6 @@ Incomplete:
 					HasQuest(11111))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ThunderMines" />
 	</If>
-
-<!-- Get Initial Quests -->
-	<While Condition="HasQuestAvailable(67992)" >
-		<CustomBehavior File="InteractWith"  MobId="67992" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-	<While Condition="HasQuestAvailable(67993)" >
-		<CustomBehavior File="InteractWith"  MobId="67993" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-	<While Condition="HasQuestAvailable(67995)" >
-		<CustomBehavior File="InteractWith"  MobId="67995" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-
 <!-- Turn in Base quests. -->
 	<If Condition="HasQuest(32581) &amp;&amp; IsQuestCompleted(32581)">
 		<TurnIn QuestName="Imposing Threat" QuestId="32581" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
