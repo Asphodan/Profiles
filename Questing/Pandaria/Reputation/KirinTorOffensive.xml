@@ -73,7 +73,7 @@ Incomplete:
 	</If>
 <!-- ZaTual -->
 	<If Condition="(HasQuest(32733) ||
-					HasQuest(11111) ||
+					HasQuest(32538) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||

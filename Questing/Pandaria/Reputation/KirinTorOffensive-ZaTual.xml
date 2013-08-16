@@ -47,7 +47,10 @@ Incomplete:
 <QuestOrder>
 <!-- Turn in Breadcrum -->
 	<If Condition="((HasQuest(32733)) &amp;&amp; (IsQuestCompleted(32733)))" > 
-		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="FlyTo" X="6334.872" Y="5544.073" Z="9.086551" /> <!-- Got to make it avoid the center to save time. -->
+		<CustomBehavior File="FlyTo" X="6308.427" Y="5726.472" Z="8.524138" /> <!-- This one looks like it's just under Diremoore. -->
+		<CustomBehavior File="FlyTo" X="6271.814" Y="5832.516" Z="5.519899" /> <!-- Go around the big tree. -->
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" /> <!-- Finally turn in quest. -->
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Za'Tual" QuestId="32733" TurnInName="Archmage Lan\'dalock" TurnInId="70517" />
 	</If>
