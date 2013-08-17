@@ -37,6 +37,26 @@ Incomplete:
 </Blackspots>
 
 <!-- Quest Behaviors -->
+	<Quest Id="32545" Name="Residents of Ihgaluk"> 
+		<Objective Type="KillMob" MobId="69338" KillCount="1">
+			<Hotspots>
+				<Hotspot X="6195.27" Y="5735.79" Z="8.39" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="69226" KillCount="1">
+			<Hotspots>
+				<Hotspot X="5652.013" Y="5597.862" Z="5.126498" />
+				<Hotspot X="5622.337" Y="5537.509" Z="2.464661" />
+				<Hotspot X="5639.372" Y="5478.289" Z="3.234082" />
+				<Hotspot X="5686.018" Y="5426.031" Z="4.090561" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="69229" KillCount="1">
+			<Hotspots>
+				<Hotspot X="6059.674" Y="5594.538" Z="80.23376" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Turn in Breadcrum -->
@@ -51,12 +71,24 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
+	<While Condition="HasQuestAvailable(69675)" > <!-- Get Sentinel Quests. -->
+		<CustomBehavior File="InteractWith"  MobId="69675" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
 	<While Condition="HasQuestAvailable(69677)" > <!-- Get Gnome Quests. -->
 		<CustomBehavior File="InteractWith"  MobId="69677" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1860.689" Y="4263.849" Z="148.868" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
+	<If Condition="HasQuest(32545) &amp;&amp; !IsQuestCompleted(32545)" > <!-- BrodieMan -->
+		<CustomBehavior File="Message" Text="Starting The Residents of Ihgaluk" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32545" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="15" />
+		<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69338" KillCount="1" />
+		<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69226" KillCount="1" />
+		<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69229" KillCount="1" />
+	</If>
 	<If Condition="HasQuest(32548) &amp;&amp; !IsQuestCompleted(32548)" > <!-- BrodieMan -->
 		<CustomBehavior File="Message" Text="Starting Left To Rot" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32548" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
@@ -161,6 +193,15 @@ Incomplete:
 	<If Condition="HasQuest(32547) &amp;&amp; IsQuestCompleted(32547)" >
 		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
 		<TurnIn QuestName="The Creeping Carpet of Ihgaluk" QuestId="32547" TurnInName="Sanitation Sorcerer Stephen Litmatch" TurnInId="69677" />
+	</If>
+	<If Condition="HasQuest(32548) &amp;&amp; IsQuestCompleted(32548)" >
+		<TurnIn QuestName="Left To Rot" QuestId="32548" TurnInName="Sanitation Sorcerer Stephen Litmatch" TurnInId="69677" />
+	</If>
+	<If Condition="HasQuest(32606) &amp;&amp; IsQuestCompleted(32606)" >
+		<TurnIn QuestName="Subtle Encouragement" QuestId="32606" TurnInName="Archmage Modera" TurnInId="67996" />
+	</If>
+	<If Condition="HasQuest(32545) &amp;&amp; IsQuestCompleted(32545)" >
+		<TurnIn QuestName="The Residents of Ihgaluk" QuestId="32545" TurnInName="Lyalia" TurnInId="69675" />
 	</If>
 <!-- Get Final Quest -->
 	<While Condition="HasQuestAvailable(67999)" >
