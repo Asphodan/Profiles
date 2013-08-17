@@ -1,0 +1,52 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Klaxxi Attunement</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+   
+<!-- Quest Behavior -->
+<!-- End of Quest Overrides -->
+<QuestOrder>
+<!-- Get Quests -->
+<CustomBehavior File="FlyTo" DestName="Air above wall" X="633.2899" Y="2119.12" Z="397.247" /> <!-- Let's check start of the chain. -->
+	<While Condition="HasQuestAvailable(62112)" >
+		<CustomBehavior File="FlyTo" DestName="Beside first Panda NPC." X="645.419" Y="2122.171" Z="368.9095" />
+		<CustomBehavior File="InteractWith"  MobId="62112" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="645.419" Y="2122.171" Z="368.9095" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<CustomBehavior File="FlyTo" DestName="Air above wall" X="393.7802" Y="2263.307" Z="235.6926" /> <!-- Check second part of the chain. -->
+	<If Condition="((HasQuest(31001)) &amp;&amp; (!IsQuestCompleted(31001)))" >
+		<CustomBehavior File="FlyTo" DestName="Air above wall" X="395.9351" Y="2264.894" Z="235.8807" /> <!-- Turn in Falling Down. -->
+		<TurnIn QuestName="Falling Down" QuestId="31001" TurnInName="Marksman Lann" TurnInId="62166" />
+	</If>
+</QuestOrder> 
+</HBProfile>

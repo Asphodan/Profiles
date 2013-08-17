@@ -123,7 +123,10 @@ Incomplete:
 <!-- Finish up last quests before leaving for next profile. -->
 
 	<If Condition="HasQuest(32578) &amp;&amp; !IsQuestCompleted(32578)" >
-		<CustomBehavior File="FlyTo" X="5994.66" Y="5912.837" Z="0.8158995" />
+		<CustomBehavior File="FlyTo" X="6314.122" Y="5748.618" Z="7.859536" />
+		<CustomBehavior File="FlyTo" X="6139.008" Y="5771.553" Z="9.564074" />
+		<CustomBehavior File="FlyTo" X="6096.719" Y="5803.362" Z="11.57421" />
+		<CustomBehavior File="FlyTo" X="6068.479" Y="5889.342" Z="6.15856" />
 		<Objective QuestName="Among the Bones" QuestId="32578" Type="KillMob" MobId="69666" KillCount="1" />
 	</If>
 

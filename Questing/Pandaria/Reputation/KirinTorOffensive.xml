@@ -116,6 +116,14 @@ Incomplete:
 					HasQuest(11111))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ThunderMines" />
 	</If>
+<!-- Conqueror's Terrace -->
+	<If Condition="(HasQuest(32568) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ConqTerrace" />
+	</If>
 <!-- Turn in Base quests. -->
 	<If Condition="HasQuest(32581) &amp;&amp; IsQuestCompleted(32581)">
 		<TurnIn QuestName="Imposing Threat" QuestId="32581" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
