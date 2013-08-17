@@ -61,7 +61,7 @@ Incomplete:
 	<If Condition="(HasQuest(32732) ||
 					HasQuest(32535) ||
 					HasQuest(32536) ||
-					HasQuest(11111) ||
+					HasQuest(32606) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||

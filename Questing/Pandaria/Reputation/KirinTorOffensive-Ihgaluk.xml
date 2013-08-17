@@ -57,6 +57,53 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
+	<If Condition="HasQuest(32548) &amp;&amp; !IsQuestCompleted(32548)" > <!-- BrodieMan -->
+		<CustomBehavior File="Message" Text="Starting Left To Rot" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32548" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<Objective QuestName="Left To Rot" QuestId="32548" Type="KillMob" MobId="69247" KillCount="3" />
+	</If>
+	<If Condition="HasQuest(32606) &amp;&amp; !IsQuestCompleted(32606)" > <!-- BrodieMan -->
+		<CustomBehavior File="UserSettings" QuestId="32606" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<RunTo X="6163.82" Y="5732.19" Z="6.01" />
+		<While Condition="!IsQuestCompleted(32606)" >
+			<If Condition="(Me.Class == WoWClass.Rogue)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="121733" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warlock)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="172" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warrior)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="355" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.DeathKnight )" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="49576" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Druid)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="8921" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Hunter)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="3044" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Mage)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="2136" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Paladin)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="62124" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Priest)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="589" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Shaman)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="403" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Monk)" >
+				<CustomBehavior File="InteractWith" MobId="69210" MobId2="69227" MobState="Alive" InteractByCastingSpellId="115546" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+			</If>
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			<CustomBehavior File="RunMacro" Macro="/cleartarget" />
+		</While>
+	</If>
 	<If Condition="HasQuest(32536) &amp;&amp; !IsQuestCompleted(32536)" >
 		<CustomBehavior File="Message" Text="Starting Manipulating the Saurok" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32536" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
@@ -79,6 +126,18 @@ Incomplete:
 	<If Condition="HasQuest(32535) &amp;&amp; !IsQuestCompleted(32535)" >
 		<Objective QuestName="The Skumblade Threat" QuestId="32535" Type="KillMob" MobId="69362" KillCount="10" />
 	</If>
+	<If Condition="HasQuest(32546) &amp;&amp; !IsQuestCompleted(32546)" >
+		<CustomBehavior File="Message" Text="Starting Just Some Light Clean-Up Work" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32546" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="25" />
+		<RunTo X="5936.555" Y="5465.421" Z="30.49908" />
+		<CustomBehavior File="CollectThings" CollectUntil="QuestComplete" QuestId="32546" MobId="69251" MobId2="69282" MobState="Alive" NonCompeteDistance="5" HuntingGroundRadius="50" >
+			<Hotspot X="5944.483" Y="5445.594" Z="30.49892" />
+			<Hotspot X="5932.566" Y="5494.266" Z="30.49921" />
+			<Hotspot X="5913.896" Y="5534.81" Z="30.49941" />
+			<Hotspot X="5914.896" Y="5579.35" Z="30.5411" />
+			<Hotspot X="5942.059" Y="5640.925" Z="43.29585" />
+		</CustomBehavior>
+	</If>
 	<If Condition="HasQuest(32547) &amp;&amp; !IsQuestCompleted(32547)" > <!-- Roaches Go Last -->
 		<CustomBehavior File="UserSettings" QuestId="32547" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
 		<While Condition="!IsQuestCompleted(32547)" >
@@ -91,18 +150,6 @@ Incomplete:
 			<RunTo X="5879.044" Y="5472.708" Z="42.74852" />
 			<RunTo X="5894.469" Y="5434.867" Z="40.07657" />
 		</While>
-	</If>
-	<If Condition="HasQuest(32546) &amp;&amp; !IsQuestCompleted(32546)" >
-		<CustomBehavior File="Message" Text="Starting Just Some Light Clean-Up Work" LogColor="Green" />
-		<CustomBehavior File="UserSettings" QuestId="32546" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="25" />
-		<RunTo X="5936.555" Y="5465.421" Z="30.49908" />
-		<CustomBehavior File="CollectThings" CollectUntil="QuestComplete" QuestId="32546" MobId="69251" MobId2="69282" MobState="Alive" NonCompeteDistance="5" HuntingGroundRadius="50" >
-			<Hotspot X="5944.483" Y="5445.594" Z="30.49892" />
-			<Hotspot X="5932.566" Y="5494.266" Z="30.49921" />
-			<Hotspot X="5913.896" Y="5534.81" Z="30.49941" />
-			<Hotspot X="5914.896" Y="5579.35" Z="30.5411" />
-			<Hotspot X="5942.059" Y="5640.925" Z="43.29585" />
-		</CustomBehavior>
 	</If>
 <!-- Turn in Quests -->
 	<If Condition="((HasQuest(32546)) &amp;&amp; (IsQuestCompleted(32546)))" >
