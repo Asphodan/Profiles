@@ -82,13 +82,55 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
-	<If Condition="HasQuest(32545) &amp;&amp; !IsQuestCompleted(32545)" > <!-- BrodieMan -->
-		<CustomBehavior File="Message" Text="Starting The Residents of Ihgaluk" LogColor="Green" />
-		<CustomBehavior File="UserSettings" QuestId="32545" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="15" />
-		<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69338" KillCount="1" />
-		<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69226" KillCount="1" />
-		<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69229" KillCount="1" />
-	</If>
+	<While Condition="HasQuest(32545) &amp;&amp; !IsQuestCompleted(32545)" >
+		<While Condition="!IsObjectiveComplete(1,32545)" > <!-- Brute -->
+			<CustomBehavior File="Message" Text="Trying to find Brute..." LogColor="Green" />
+			<CustomBehavior File="FlyTo" X="5891.902" Y="5472.332" Z="42.35271" />
+				<If Condition="(Me.Class == WoWClass.Rogue)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="121733" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Warlock)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="172" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Warrior)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="355" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.DeathKnight )" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="49576" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Druid)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="8921" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Hunter)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="3044" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Mage)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="2136" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Paladin)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="62124" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Priest)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="589" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Shaman)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="403" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+				<If Condition="(Me.Class == WoWClass.Monk)" >
+					<CustomBehavior File="InteractWith" MobId="69338" MobState="Alive" InteractByCastingSpellId="115546" Range="30" CollectionDistance="500" NonCompeteDistance="0" />
+				</If>
+		</While>
+		<While Condition="!IsObjectiveComplete(3,32545)" > <!-- SeaDragon -->
+			<CustomBehavior File="Message" Text="Trying to find SeaDragon..." LogColor="Green" />
+			<CustomBehavior File="FlyTo" X="5836.073" Y="5339.532" Z="6.372356" />
+			<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69226" KillCount="1" />
+		</While>
+		<While Condition="!IsObjectiveComplete(2,32545)" > <!-- SaurPriest -->
+			<CustomBehavior File="Message" Text="Trying to find SaurPriest..." LogColor="Green" />
+			<CustomBehavior File="FlyTo" X="6053.453" Y="5586.334" Z="77.67753" />
+			<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69229" KillCount="1" />
+		</While>
+	</While>
 	<If Condition="HasQuest(32548) &amp;&amp; !IsQuestCompleted(32548)" > <!-- BrodieMan -->
 		<CustomBehavior File="Message" Text="Starting Left To Rot" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32548" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
@@ -137,7 +179,6 @@ Incomplete:
 		</While>
 	</If>
 	<If Condition="HasQuest(32536) &amp;&amp; !IsQuestCompleted(32536)" >
-		<CustomBehavior File="Message" Text="Starting Manipulating the Saurok" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32536" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
 		<If Condition="!IsObjectiveComplete(3,32536)" >
 			<RunTo X="6106.76" Y="5523.68" Z="67.94" />
@@ -159,7 +200,6 @@ Incomplete:
 		<Objective QuestName="The Skumblade Threat" QuestId="32535" Type="KillMob" MobId="69362" KillCount="10" />
 	</If>
 	<If Condition="HasQuest(32546) &amp;&amp; !IsQuestCompleted(32546)" >
-		<CustomBehavior File="Message" Text="Starting Just Some Light Clean-Up Work" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32546" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="25" />
 		<RunTo X="5936.555" Y="5465.421" Z="30.49908" />
 		<CustomBehavior File="CollectThings" CollectUntil="QuestComplete" QuestId="32546" MobId="69251" MobId2="69282" MobState="Alive" NonCompeteDistance="5" HuntingGroundRadius="50" >
