@@ -36,7 +36,6 @@ Incomplete:
 <QuestOrder>
 <!-- Kill Boss Quests -->
 	<If Condition="HasQuest(32581) &amp;&amp; !IsQuestCompleted(32581)" >
-		<CustomBehavior File="UserSettings" QuestId="32581" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
 		<Objective QuestName="Imposing Threat" QuestId="32581" Type="KillMob" MobId="70176" KillCount="1" />
 	</If>
 

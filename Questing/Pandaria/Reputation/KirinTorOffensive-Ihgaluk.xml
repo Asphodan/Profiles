@@ -86,7 +86,8 @@ Incomplete:
 		<While Condition="!IsObjectiveComplete(1,32545)" > <!-- Brute -->
 			<CustomBehavior File="FlyTo" X="5969.019" Y="5562.405" Z="39.48882" />
 			<CustomBehavior File="BasicInteractWith" MobId="69338" />
-			<CustomBehavior File="Misc\RangeAttack" /> 
+			<CustomBehavior File="Misc\RangeAttack" />
+			<Objective QuestName="The Residents of Ihgaluk" QuestId="32545" Type="KillMob" MobId="69338" KillCount="1" />
 		</While>
 		<While Condition="!IsObjectiveComplete(3,32545)" > <!-- SeaDragon -->
 			<CustomBehavior File="FlyTo" X="5836.073" Y="5339.532" Z="6.372356" />
@@ -98,7 +99,6 @@ Incomplete:
 		</While>
 	</While>
 	<If Condition="HasQuest(32548) &amp;&amp; !IsQuestCompleted(32548)" > <!-- BrodieMan -->
-		<CustomBehavior File="Message" Text="Starting Left To Rot" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32548" UseMount="False" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
 		<Objective QuestName="Left To Rot" QuestId="32548" Type="KillMob" MobId="69247" KillCount="3" />
 	</If>
@@ -190,7 +190,7 @@ Incomplete:
 		</While>
 	</If>
 <!-- Turn in Quests -->
-	<If Condition="((HasQuest(32546)) &amp;&amp; (IsQuestCompleted(32546)))" >
+	<If Condition="((HasQuest(32536)) &amp;&amp; (IsQuestCompleted(32536)))" >
 		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
 		<TurnIn QuestName="Manipulating the Saurok" QuestId="32536" TurnInName="Archmage Modera" TurnInId="67996" />
 		<TurnIn QuestName="Manipulating the Saurok" QuestId="32535" TurnInName="Archmage Modera" TurnInId="67996" />
