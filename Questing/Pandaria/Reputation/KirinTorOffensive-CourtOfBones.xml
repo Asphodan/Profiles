@@ -160,13 +160,3 @@ Incomplete:
 <CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>
-
-		<CustomBehavior File="FlyTo" X="6476.207" Y="5955.053" Z="8.313509" />
-		<CustomBehavior File="FlyTo" X="6324.312" Y="5916.095" Z="12.62342" />
-		<CustomBehavior File="FlyTo" X="6276.657" Y="5797.521" Z="5.701661" />
-		<CustomBehavior File="FlyTo" X="6316.886" Y="5716.65" Z="8.495222" />
-		<CustomBehavior File="FlyTo" X="6286.426" Y="5604.424" Z="9.371611" />
-		<CustomBehavior File="FlyTo" X="6349.477" Y="5473.921" Z="6.630041" />
-		<CustomBehavior File="FlyTo" X="6429.25" Y="5371.52" Z="13.32874" />
-		<CustomBehavior File="FlyTo" X="6478.089" Y="5173.859" Z="23.05902" />
-		<CustomBehavior File="FlyTo" X="6468.811" Y="5055.52" Z="1.344079" />
