@@ -29,8 +29,9 @@ Incomplete:
 <AvoidMobs>
 </AvoidMobs>
    
-<Blackspots>
-</Blackspots>
+	<Blackspots>
+		<Blackspot X="6589.231" Y="5988.962" Z="7.446207" Radius="16.27178" /> <!-- Random tree roots. -->
+	</Blackspots>
 
 <!-- End of Quest Overrides -->
 <QuestOrder>

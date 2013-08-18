@@ -31,6 +31,7 @@ Incomplete:
    
 	<Blackspots>
 		<Blackspot X="6722.147" Y="6155.117" Z="26.55798" Radius="5.853319" />
+		<Blackspot X="6589.231" Y="5988.962" Z="7.446207" Radius="16.27178" /> <!--Random tree roots. -->
 	</Blackspots>
 
 <!-- Quest Behaviors -->
