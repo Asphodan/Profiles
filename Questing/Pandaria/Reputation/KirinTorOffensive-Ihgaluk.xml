@@ -84,7 +84,7 @@ Incomplete:
 <!-- Do Quests -->
 	<While Condition="HasQuest(32545) &amp;&amp; !IsQuestCompleted(32545)" >
 		<While Condition="!IsObjectiveComplete(1,32545)" > <!-- Brute -->
-			<CustomBehavior File="FlyTo" X="5891.902" Y="5472.332" Z="42.35271" />
+			<CustomBehavior File="FlyTo" X="5969.019" Y="5562.405" Z="39.48882" />
 			<CustomBehavior File="BasicInteractWith" MobId="69338" />
 			<CustomBehavior File="Misc\RangeAttack" /> 
 		</While>
