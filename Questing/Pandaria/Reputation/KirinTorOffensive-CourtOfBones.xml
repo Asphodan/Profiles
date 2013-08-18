@@ -129,29 +129,37 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6068.479" Y="5889.342" Z="6.15856" />
 		<Objective QuestName="Among the Bones" QuestId="32578" Type="KillMob" MobId="69666" KillCount="1" />
 	</If>
+<!-- ==THIS QUEST SUCKS.
 	<If Condition="HasQuest(32580) &amp;&amp; !IsQuestCompleted(32580)" >
+		<CustomBehavior File="FlyTo" X="6476.207" Y="5955.053" Z="8.313509" />
+		<CustomBehavior File="FlyTo" X="6324.312" Y="5916.095" Z="12.62342" />
+		<CustomBehavior File="FlyTo" X="6276.657" Y="5797.521" Z="5.701661" />
+		<CustomBehavior File="FlyTo" X="6316.886" Y="5716.65" Z="8.495222" />
+		<CustomBehavior File="FlyTo" X="6286.426" Y="5604.424" Z="9.371611" />
+		<CustomBehavior File="FlyTo" X="6349.477" Y="5473.921" Z="6.630041" />
+		<CustomBehavior File="FlyTo" X="6429.25" Y="5371.52" Z="13.32874" />
+		<CustomBehavior File="FlyTo" X="6478.089" Y="5173.859" Z="23.05902" />
+		<CustomBehavior File="FlyTo" X="6468.811" Y="5055.52" Z="1.344079" />
 		<CustomBehavior File="CastSpellOn"
 			MobId="70420"
 			SpellId="1752"
-			X="6379.002" Y="6202.226" Z="45.94131" /> <!-- Kill the healer first. -->
+			X="6379.002" Y="6202.226" Z="45.94131" />
 		<CustomBehavior File="CastSpellOn"
 			MobId="70419"
 			SpellId="1752"
-			X="6379.002" Y="6202.226" Z="45.94131" /> <!-- Kill the Frostspear -->
+			X="6379.002" Y="6202.226" Z="45.94131" />
 		<CustomBehavior File="CastSpellOn"
 			MobId="70421"
 			SpellId="1752"
-			X="6379.002" Y="6202.226" Z="45.94131" /> <!-- Kill the FireSpear -->
+			X="6379.002" Y="6202.226" Z="45.94131" />
 		<CustomBehavior File="CastSpellOn"
 			MobId="69663"
 			SpellId="1752"
-			X="6379.002" Y="6202.226" Z="45.94131" /> <!-- Kill the Objective -->
-	</If>
+			X="6379.002" Y="6202.226" Z="45.94131" /> 
+	</If> -->
 <CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>
-
-<!-- 
 
 		<CustomBehavior File="FlyTo" X="6476.207" Y="5955.053" Z="8.313509" />
 		<CustomBehavior File="FlyTo" X="6324.312" Y="5916.095" Z="12.62342" />
@@ -162,4 +170,3 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6429.25" Y="5371.52" Z="13.32874" />
 		<CustomBehavior File="FlyTo" X="6478.089" Y="5173.859" Z="23.05902" />
 		<CustomBehavior File="FlyTo" X="6468.811" Y="5055.52" Z="1.344079" />
--->
