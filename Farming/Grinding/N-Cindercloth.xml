@@ -1,0 +1,46 @@
+ <HBProfile>
+<Name>Cindercloth Farm</Name>
+
+	<MinLevel>50</MinLevel>
+	<MaxLevel>999</MaxLevel>
+	<Factions>128</Factions>
+	
+	<MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>2</MinFreeBagSlots>
+
+    <SellGrey>True</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+  <Blackspots>
+  </Blackspots>
+	
+	<Vendors>
+		<Vendor Name="Fergus Gravelsmash" Entry="47937" Type="Repair" X="-7093.68" Y="-1268.31" Z="270.4855" />
+	</Vendors>
+
+	<Mailboxes>
+		<Mailbox X="-7113.773" Y="-1199.198" Z="306.5683" />
+	</Mailboxes>
+  
+
+	<Hotspots>
+		<Hotspot X="-6605.232" Y="-889.1293" Z="244.4172" />
+		<Hotspot X="-6642.088" Y="-832.3516" Z="244.1673" />
+		<Hotspot X="-6616.132" Y="-718.3239" Z="246.9101" />
+		<Hotspot X="-6619.937" Y="-633.4872" Z="233.7543" />
+		<Hotspot X="-6693.292" Y="-623.3481" Z="235.2288" />
+		<Hotspot X="-6641.24" Y="-646.0761" Z="242.0618" />
+		<Hotspot X="-6725.457" Y="-614.8729" Z="239.6279" />
+		<Hotspot X="-6747.767" Y="-675.7454" Z="238.2862" />
+		<Hotspot X="-6717.519" Y="-750.5093" Z="235.4692" />
+		<Hotspot X="-6642.961" Y="-755.5106" Z="249.0866" />
+		<Hotspot X="-6700.111" Y="-838.0139" Z="244.1439" />
+	</Hotspots>
+
+	<AvoidMobs>
+	</AvoidMobs>
+   
+</HBProfile>

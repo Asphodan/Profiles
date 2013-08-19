@@ -31,8 +31,9 @@ Incomplete:
 		<Mob Name="Disciple of Jalak" Entry="69376" />
 	</AvoidMobs>
    
-<Blackspots>
-</Blackspots>
+	<Blackspots>
+		<Blackspot X="7036.78" Y="5512.338" Z="28.7378" Radius="19.71722" /> <!-- Melee get stuck in the pavilion. -->
+	</Blackspots>
 
 <!-- Quest Behaviors -->
 	<Quest Id="32551" Name="Compy Stomp"> 
@@ -43,6 +44,15 @@ Incomplete:
 				<Hotspot X="6913.555" Y="5550.122" Z="29.82876" />
 				<Hotspot X="6892.14" Y="5519.236" Z="29.20298" />
 				<Hotspot X="6994.41" Y="5618.381" Z="31.13311" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="32550" Name="Loa-saur"> 
+		<Objective Type="KillMob" MobId="69302" KillCount="1" >
+			<Hotspots>
+				<Hotspot X="6931.696" Y="5482.841" Z="29.57229" />
+				<Hotspot X="6909.011" Y="5442.261" Z="31.08068" />
+				<Hotspot X="6940.453" Y="5445.415" Z="29.81667" />
 			</Hotspots>
 		</Objective>
 	</Quest>
@@ -66,9 +76,11 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
+	<If Condition="HasQuest(32552) &amp;&amp; !IsQuestCompleted(32552)" >
+		<RunTo X="6976.67" Y="5420.00" Z="28.04" />
+		<Objective QuestName="Loa-saur" QuestId="32552" Type="KillMob" MobId="69302" KillCount="1" />
+	</If>
 	<If Condition="HasQuest(32553) &amp;&amp; !IsQuestCompleted(32553)" >
-		<CustomBehavior File="Message" Text="Starting Direhorn vs Devilsaur" LogColor="Green" />
-		<CustomBehavior File="UserSettings" QuestId="32553" LootMobs="True" KillBetweenHotspots="True" PullDistance="15" />
 		<RunTo X="6976.67" Y="5420.00" Z="28.04" />
 		<CustomBehavior File="CollectThings" QuestId="32553" CollectUntil="QuestComplete" MobState="Alive" MobId="69286" HuntingGroundRadius="75" NonCompeteDistance="1" >
 			<Hotspot X="6976.67" Y="5420.00" Z="28.04" />
@@ -100,6 +112,11 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6848.579" Y="5509.318" Z="29.91566" />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Direhorn vs Devilsaur" QuestId="32553" TurnInName="Miura Brightweaver" TurnInId="67999" />
+	</If>
+	<If Condition="((HasQuest(32552)) &amp;&amp; (IsQuestCompleted(32552)))" > 
+		<CustomBehavior File="FlyTo" X="6934.017" Y="5484.959" Z="29.56685" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Loa-saur" QuestId="32552" TurnInName="Miura Brightweaver" TurnInId="67999" />
 	</If>
 <!-- Get Final Quest -->
 	<While Condition="HasQuestAvailable(67999)" >
