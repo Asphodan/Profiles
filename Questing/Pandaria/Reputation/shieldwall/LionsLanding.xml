@@ -32,7 +32,6 @@ Incomplete:
 	<Blackspots>
 	</Blackspots>
 
-
 <!-- Quest Behavior -->
 
 	<Quest Id="32151" Name="Tower Defense">
@@ -48,6 +47,15 @@ Incomplete:
 			</Hotspots>
 		</Objective>
 	</Quest>
+	
+	<Quest Id="32150" Name="Supply Block"> 
+		<Objective Type="KillMob" MobId="67756" KillCount="8">
+			<Hotspots>
+				<Hotspot X="-1005.148" Y="-669.9684" Z="11.03583" />
+				<Hotspot X="-1157.317" Y="-719.959" Z="1.090739" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 <!-- ==End of Quest Overrides== -->
 <QuestOrder>
 	<If Condition="((HasQuest(32151)) &amp;&amp; (!IsQuestCompleted(32151)))" >
@@ -55,8 +63,26 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Tower Defense" QuestId="32151" Type="CollectItem" ItemId="93022" CollectCount="20" />
 	</If>
+	<If Condition="((HasQuest(32149)) &amp;&amp; (!IsQuestCompleted(32149)))" >
+		<CustomBehavior File="CollectThings" QuestId="32149" 
+						CollectUntil="QuestComplete" ObjectId="216229"
+						HuntingGroundRadius="35" NonCompeteDistance="7"
+						CollectItemId="71034" CollectItemCount="12" >
+			<Hotspot X="-840.3542" Y="-716.6712" Z="19.09548" />
+			<Hotspot X="-863.2894" Y="-667.6795" Z="13.38491" />
+			<Hotspot X="-924.4493" Y="-666.4465" Z="12.51483" />
+			<Hotspot X="-985.7654" Y="-659.9652" Z="13.59182" />
+		</CustomBehavior>
+	</If>
+	 <If Condition="HasQuest(32150) &amp;&amp; !IsQuestCompleted(32150)">
+		<CustomBehavior File="FlyTo" X="-1005.148" Y="-669.9684" Z="11.03583" />
+		<CustomBehavior File="ForcedDismount"/>
+		<Objective QuestName="Supply Block" QuestId="32150" Type="KillMob" MobId="67756" KillCount="8" />
+	</If>
+	 <If Condition="HasQuest(32148) &amp;&amp; !IsQuestCompleted(32148)">
+		<Objective QuestName="Attack! Move!" QuestId="32148" Type="KillMob" MobId="67602" KillCount="12" />
+	</If>
 <!-- Turn In Quests -->
-<CustomBehavior File="FlyTo" DestName="30321 Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
 	<If Condition="((HasQuest(30321)) &amp;&amp; (IsQuestCompleted(30321)))" >
 		<TurnIn QuestName="Weed War II" QuestId="30321" TurnInName="Jogu The Drunk" TurnInId="58710" X="-280.2503" Y="577.9972" Z="165.9456" /> />
 	</If>
