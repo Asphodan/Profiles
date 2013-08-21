@@ -1,0 +1,64 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>ShieldWall - Lion's Landing</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+
+<!-- Quest Behavior -->
+
+	<Quest Id="32151" Name="Tower Defense">
+		<Objective Type="CollectItem" ItemId="93022" CollectCount="20">
+			<CollectFrom>
+				<Mob Name="Goblins" Id="2162" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-648.5477" Y="-693.4253" Z="32.40427" />
+				<Hotspot X="-699.5944" Y="-681.5409" Z="17.77221" />
+				<Hotspot X="-678.4339" Y="-769.4302" Z="15.95447" />
+				<Hotspot X="-644.2537" Y="-764.7138" Z="23.77523" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- ==End of Quest Overrides== -->
+<QuestOrder>
+	<If Condition="((HasQuest(32151)) &amp;&amp; (!IsQuestCompleted(32151)))" >
+		<CustomBehavior File="FlyTo" X="-629.4035" Y="-700.3813" Z="31.92575" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Tower Defense" QuestId="32151" Type="CollectItem" ItemId="93022" CollectCount="20" />
+	</If>
+<!-- Turn In Quests -->
+<CustomBehavior File="FlyTo" DestName="30321 Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
+	<If Condition="((HasQuest(30321)) &amp;&amp; (IsQuestCompleted(30321)))" >
+		<TurnIn QuestName="Weed War II" QuestId="30321" TurnInName="Jogu The Drunk" TurnInId="58710" X="-280.2503" Y="577.9972" Z="165.9456" /> />
+	</If>
+</QuestOrder> 
+</HBProfile>

@@ -160,7 +160,6 @@ Incomplete: Hatchlings.
 	</If>
 <!-- Deadtalker's Plateau -->
 	<If Condition="((HasQuest(31116)) &amp;&amp; (!IsQuestCompleted(31116)))" >
-		<CustomBehavior File="Message" Text="Flying to Deadtalker's Plateau because we have quest 31116." LogColor="Green"  />
 		<CustomBehavior File="FlyTo" X="2523.365" Y="4193.128" Z="186.4108" />
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Spirit Dust" QuestId="31116" Type="CollectItem" ItemId="84727" CollectCount="32" />

@@ -124,7 +124,6 @@ Incomplete:
 <!-- Do Quests -->
 <!-- Skyboat -->
 <!-- Mines -->
-
  	<If Condition="HasQuest(32121) &amp;&amp; !IsQuestCompleted(32121)">
 		<Objective QuestName="The Spirit Trap" QuestId="32121" Type="KillMob" MobId="68061" KillCount="3" />
 	</If>
