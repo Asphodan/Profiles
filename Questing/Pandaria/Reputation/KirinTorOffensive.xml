@@ -57,6 +57,12 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 
+<!-- No-Zone quests -->
+
+	<If Condition="HasQuest(32573) &amp;&amp; !IsQuestCompleted(32573)">
+		<Objective QuestName="Enemies Beneath the Tower" QuestId="32573" Type="KillMob" MobId="69431" KillCount="7" />
+	</If>
+
 <!-- Ighaluk -->
 	<If Condition="(HasQuest(32732) ||
 					HasQuest(32535) ||

@@ -82,6 +82,16 @@ Incomplete:
 			</If>
 		</While>
 	</If>
+ 	<While Condition="HasQuest(32526) &amp;&amp; !IsQuestCompleted(32526)">
+		<CustomBehavior File="FlyTo" X="6507.599" Y="6118.056" Z="36.9178" />
+		<CustomBehavior File="InteractWith" QuestId="32526" MobId="217768"  IgnoreLoSToTarget="True" />
+		<CustomBehavior File="FlyTo" X="6478.002" Y="6135.808" Z="36.94418" />
+		<CustomBehavior File="InteractWith" QuestId="32526" MobId="217768"  IgnoreLoSToTarget="True" />
+		<CustomBehavior File="FlyTo" X="6517.087" Y="6199.225" Z="36.27253" />
+		<CustomBehavior File="InteractWith" QuestId="32526" MobId="217768"  IgnoreLoSToTarget="True" />
+		<CustomBehavior File="FlyTo" X="6555.19" Y="6180.289" Z="36.27253" />
+		<CustomBehavior File="InteractWith" QuestId="32526" MobId="217768"  IgnoreLoSToTarget="True" />
+	</While>
 	<If Condition="HasQuest(32525) &amp;&amp; !IsQuestCompleted(32525)" > <!-- [BrodieMan] -->
 		<CustomBehavior File="UserSettings" QuestId="32525" LootMobs="True" KillBetweenHotspots="True" PullDistance="5" /> 
 		<CustomBehavior File="InteractWith" QuestId="32525" MobId="69331" MobId2="69337" InteractByUsingItemId="93751" IgnoreLoSToTarget="True" 
@@ -99,6 +109,11 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Grave Circumstances" QuestId="32531" TurnInName="Narasi Snowdawn" TurnInId="69670" />
 	</If>
+	<If Condition="((HasQuest(32526)) &amp;&amp; (IsQuestCompleted(32526)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Grave Circumstances" QuestId="32526" TurnInName="Narasi Snowdawn" TurnInId="67997" />
+	</If>
 	<If Condition="((HasQuest(32527)) &amp;&amp; (IsQuestCompleted(32527)))" > 
 		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
 		<CustomBehavior File="ForcedDismount" />
@@ -108,6 +123,11 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Ashes of the Enemy" QuestId="32525" TurnInName="Danara Silverglass" TurnInId="69668" />
+	</If>
+	<If Condition="((HasQuest(32532)) &amp;&amp; (IsQuestCompleted(32532)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Ashes of the Enemy" QuestId="32532" TurnInName="Danara Silverglass" TurnInId="69668" />
 	</If>
 <!-- Get Next Breadcrumb -->
 	<While Condition="HasQuestAvailable(69668)" > 
