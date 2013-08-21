@@ -32,7 +32,6 @@ Mudclaw, "Pest Problems" is too slow.
 </Vendors>
   
 <AvoidMobs>
-<Mob Name="Monstrous Plainshawk" Entry="59641" />
 </AvoidMobs>
    
 <Blackspots>
@@ -466,22 +465,30 @@ Do Quests
 	</If>
 	<If Condition="HasQuest(30322) &amp;&amp; !IsQuestCompleted(30322)"> <!-- Money Matters -->
 		<CustomBehavior File="FlyTo" DestName="30321 Halfhill" X="-274.8756" Y="580.908" Z="167.3229" />
-		<RunTo DestName="Money Matters Part 1" X="-266.51" Y="497.22" Z="169.60" />
-		<CustomBehavior File="InteractWith"  MobId="59585" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-266.51" Y="497.22" Z="169.60" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
-		<RunTo DestName="Money Matters Part 2" X="-266.51" Y="497.22" Z="169.60" />
-		<CustomBehavior File="InteractWith"  MobId="59582" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-228.7105" Y="512.7927" Z="190.9045" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
-		<RunTo DestName="Money Matters Part 3" X="-138.556" Y="457.2652" Z="211.5535" />
-		<CustomBehavior File="InteractWith"  MobId="59581" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-137.45" Y="454.75" Z="211.55" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
-		<RunTo DestName="Money Matters Part 4" X="-153.8199" Y="482.6367" Z="196.9179" />
-		<CustomBehavior File="InteractWith"  MobId="59583" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-137.45" Y="454.75" Z="211.55" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+		<While Condition="!IsObjectiveComplete(4,30322)" > <!-- Lolo Lio -->
+			<RunTo DestName="Money Matters Part 1" X="-266.51" Y="497.22" Z="169.60" />
+			<CustomBehavior File="InteractWith"  MobId="59585" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-266.51" Y="497.22" Z="169.60" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+		</While>
+		<While Condition="!IsObjectiveComplete(3,30322)" >
+			<RunTo DestName="Money Matters Part 2" X="-266.51" Y="497.22" Z="169.60" />
+			<CustomBehavior File="InteractWith"  MobId="59582" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-228.7105" Y="512.7927" Z="190.9045" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+		</While>
+		<While Condition="!IsObjectiveComplete(1,30322)" > <!-- Jin Jao -->
+			<RunTo DestName="Money Matters Part 3" X="-138.556" Y="457.2652" Z="211.5535" />
+			<CustomBehavior File="InteractWith"  MobId="59581" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-137.45" Y="454.75" Z="211.55" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+		</While>
+		<While Condition="!IsObjectiveComplete(2,30322)" >
+			<RunTo DestName="Money Matters Part 4" X="-153.8199" Y="482.6367" Z="196.9179" />
+			<CustomBehavior File="InteractWith"  MobId="59583" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-137.45" Y="454.75" Z="211.55" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+		</While>
 	</If>
 	<If Condition="HasQuest(30479) &amp;&amp; !IsQuestCompleted(30479)">
 		<CustomBehavior File="FlyTo" DestName="Get Orchid" X="116.4677" Y="1206.747" Z="301.5111" />
