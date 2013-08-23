@@ -135,6 +135,13 @@ Incomplete:
 	</If>
  	<If Condition="HasQuest(32346) &amp;&amp; !IsQuestCompleted(32346)">
 		<Objective QuestName="Oi Ain't Afraid o' No Ghosts!" QuestId="32346" Type="KillMob" MobId="68073" KillCount="12" />
+<!--		<CustomBehavior File="GetOutOfGroundEffectAndAuras" QuestId="32346"
+			MoveOutOfGroundEffectAuraId1="127189"
+			MoveBehindMobCastingSpellId1="127189"
+			MoveAwayFromMobCastingSpellId1="126633"
+			MoveAwayFromMobWithAuraId1="23719"
+			MoveAwayFromMobWithAuraId2="126633">
+		</CustomBehavior> -->
 	</If>
  	<If Condition="HasQuest(32347) &amp;&amp; !IsQuestCompleted(32347)">
 		<Objective QuestName="Eviction Notice" QuestId="32347" Type="KillMob" MobId="68126" KillCount="10" />
