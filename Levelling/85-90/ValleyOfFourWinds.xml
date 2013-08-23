@@ -1,6 +1,6 @@
-<HBProfile creator="Cava" version="1">
-  <Name>[A-Quest] (86-87) Valley of the Four Winds (WL) [Cava] $Rev: 354 $:</Name>
-  <MinLevel>85</MinLevel>
+<HBProfile>
+  <Name>Valley of the Four Winds </Name>
+  <MinLevel>86</MinLevel>
   <MaxLevel>91</MaxLevel>
   <MinDurability>0.2</MinDurability>
 	<MinFreeBagSlots>2</MinFreeBagSlots>
@@ -16,9 +16,9 @@
 	<SellPurple>False</SellPurple>
   <TargetElites>False</TargetElites>
   
-  <AvoidMobs>
-    <Mob Name="Ook-Ook" Entry="57628" />
-  </AvoidMobs>
+	<AvoidMobs>
+		<Mob Name="Ook-Ook" Entry="57628" />
+	</AvoidMobs>
   <Blackspots>
     <Blackspot X="-387.7618" Y="122.1077" Z="158.0701" Radius="13.55848" />
   </Blackspots>
@@ -584,7 +584,7 @@
 	</Objective>
 </Quest>
 <!-- ################################### End of Quest Overrides #################################################################### -->
-  <QuestOrder IgnoreCheckPoints="False" >
+	<QuestOrder IgnoreCheckPoints="False" >
 	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" GroundMountFarmingMode="False" KillBetweenHotspots="True" />
 	<CustomBehavior File="UserSettings" PullDistance="25" />
   <If Condition="(Me.Class == WoWClass.Hunter) || (Me.Class == WoWClass.Priest) || (Me.Class == WoWClass.Mage) || (Me.Class == WoWClass.Warlock)">
@@ -817,30 +817,13 @@
 <PickUp QuestName="Li Li's Day Off" QuestId="29950" GiverName="Li Li" GiverId="56138" X="-40.74479" Y="-20.15104" Z="154.2534" />
 
 <PickUp QuestName="Muddy Water" QuestId="29951" GiverName="Mudmug" GiverId="56474" X="-32.4132" Y="-17.81076" Z="154.8143" />
-<If Condition="HasQuest(29950) &amp;&amp; !IsQuestCompleted(29950) &amp;&amp; !IsObjectiveComplete(3, 29950) &amp;&amp; !IsObjectiveComplete(2, 29950)" >
-  <RunTo X="-55.26409" Y="-31.82655" Z="154.1214" />
-	<CustomBehavior File="ForcedMount" />
-	<RunTo X="-63.66038" Y="-75.91992" Z="161.6161" />
-	<RunTo X="-16.65322" Y="-160.782" Z="174.7224" />
-    <CustomBehavior File="RunMacro" Macro="/cancelform" />
-    <CustomBehavior File="ForcedDismount" />
-	<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(76350)" WaitTime="1000" />
-	<CustomBehavior File="ForcedMount" />
-  <While Condition="!IsObjectiveComplete(3, 29950)" >
-    <RunTo X="-12.93394" Y="-258.6284" Z="165.1984" />
-  </While>
-  <RunTo X="-18.04597" Y="-144.0621" Z="170.6396" />
-  <RunTo X="-109.237" Y="85.93336" Z="156.9812" />
-  <RunTo X="-48.26873" Y="269.5172" Z="162.2093" />
-  <RunTo X="79.88967" Y="291.5169" Z="158.2316" />
-    <CustomBehavior File="RunMacro" Macro="/cancelform" />
-    <CustomBehavior File="ForcedDismount" />
-	<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(76350)" WaitTime="1000" />
-	<CustomBehavior File="ForcedMount" />
-  <While Condition="!IsObjectiveComplete(2, 29950)" >
-    <RunTo X="176.9803" Y="263.6979" Z="154.0658" />
-  </While>
-</If>
+	<While Condition="((HasQuest(29950)) &amp;&amp; (!IsQuestCompleted(29950)))" >
+		<While Condition="!IsObjectiveComplete(2, 29950)" >
+			<CustomBehavior File="FlyTo" X="186.8104" Y="218.9276" Z="154.0545" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(76350)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		</While>
+	</While>
 <TurnIn QuestName="Clever Ashyo" QuestId="29871" TurnInName="Clever Ashyo" TurnInId="56113" X="200.2361" Y="275.8229" Z="153.8305" />
 <PickUp QuestName="Ashyo's Vision" QuestId="29577" GiverName="Clever Ashyo" GiverId="56113" X="200.2361" Y="275.8229" Z="153.8305" />
 <PickUp QuestName="Watery Woes" QuestId="30267" GiverName="Gladecaster Lang" GiverId="58736" X="236.066" Y="286.0295" Z="153.5946" />
