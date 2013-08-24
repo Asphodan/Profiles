@@ -817,7 +817,7 @@
 <PickUp QuestName="Li Li's Day Off" QuestId="29950" GiverName="Li Li" GiverId="56138" X="-40.74479" Y="-20.15104" Z="154.2534" />
 
 <PickUp QuestName="Muddy Water" QuestId="29951" GiverName="Mudmug" GiverId="56474" X="-32.4132" Y="-17.81076" Z="154.8143" />
-	<While Condition="((HasQuest(29950)) &amp;&amp; (!IsQuestCompleted(29950)))" >
+	<While Condition="((HasQuest(29950)) &amp;&amp; (!IsObjectiveComplete(2, 29950)))" >
 		<While Condition="!IsObjectiveComplete(2, 29950)" >
 			<CustomBehavior File="FlyTo" X="186.8104" Y="218.9276" Z="154.0545" />
 			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(76350)" WaitTime="1000" />
