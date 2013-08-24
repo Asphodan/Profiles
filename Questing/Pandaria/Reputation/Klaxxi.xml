@@ -51,6 +51,15 @@ Incomplete:
 			</Hotspots>
 		</Objective>
 	</Quest>
+	<Quest Id="31109" Name="Culling the Swarm">
+		<Objective Type="KillMob" MobId="62563" KillCount="40">
+			<Hotspots>
+				<Hotspot X="310.5345" Y="4060.702" Z="253.0492" />
+				<Hotspot X="367.60" Y="4097.22" Z="248.50" />
+				<Hotspot X="292.40" Y="4238.96" Z="258.48" />
+			</Hotspots>
+		</Objective>
+	</Quest>
 	<Quest Id="31508" Name="Specimen Request"> <!-- [BrodieMan] -->
 		<Objective Type="CollectItem" ItemId="87874" CollectCount="6">
 			<CollectFrom>
@@ -389,54 +398,32 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Ordnance Disposal" QuestId="31504" Type="CollectItem" ItemId="214341" CollectCount="8" />
 	</If>
- 	<If Condition="HasQuest(31494) &amp;&amp; !IsQuestCompleted(31494)" > <!-- [BrodieMan] Free From her Clutches -->
+ 	<If Condition="HasQuest(31494) &amp;&amp; !IsQuestCompleted(31494)" > 
 		<CustomBehavior File="FlyTo" X="117.7218" Y="3590.625" Z="233.62" />
 		<CustomBehavior File="ForcedDismount" />
 		<While Condition="!IsQuestCompleted(31494)" >
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<CustomBehavior File="FlyTo" X="117.7218" Y="3590.625" Z="233.62" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" Range="50" MinRange="8" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="124.2532" Y="3545.715" Z="233.6779" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="174.4177" Y="3522.092" Z="240.2173" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="195.3123" Y="3505.958" Z="243.612" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="223.2865" Y="3534.368" Z="243.4393" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="249.5217" Y="3543.792" Z="243.4423" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="271.6865" Y="3523.812" Z="243.8412" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="331.1143" Y="3585.448" Z="243.4435" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="312.3785" Y="3631.742" Z="243.7822" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="312.691" Y="3660.906" Z="245.142" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
-			<If Condition="!IsObjectiveComplete(1,31494)" >
 				<RunTo X="312.078" Y="3689.349" Z="243.4429" />
 				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="6" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
-			</If>
 		</While>
 	</If>
  	<If Condition="HasQuest(31503) &amp;&amp; !IsQuestCompleted(31503)">
@@ -454,6 +441,13 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Sonic Disruption" QuestId="31487" Type="KillMob" MobId="64717" KillCount="4" />
 		<Objective QuestName="Sonic Disruption" QuestId="31487" Type="KillMob" MobId="64720" KillCount="6" />
+	</If>
+ 	<If Condition="HasQuest(31109) &amp;&amp; !IsQuestCompleted(31109)">
+		<CustomBehavior File="Message" Text="Starting Culling the Swarm" LogColor="Green"  />
+		<CustomBehavior File="UserSettings" QuestId="31109" LootMobs="True" PullDistance="25" />
+		<CustomBehavior File="FlyTo" X="310.5345" Y="4060.702" Z="253.0492" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Culling the Swarm" QuestId="31109" Type="KillMob" MobId="62563" MobId2="64720" MobId3="64714" KillCount="40" />
 	</If>
 	<!-- South West -->
  	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)">
@@ -514,9 +508,19 @@ Incomplete:
 	<If Condition="((HasQuest(31505)) &amp;&amp; (IsQuestCompleted(31505)))" >
 		<TurnIn QuestName="Vess-Guard Duty" QuestId="31505" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
 	</If>
-<!-- HiSek -->
+	<If Condition="((HasQuest(31109)) &amp;&amp; (IsQuestCompleted(31109)))" >
+		<TurnIn QuestName="Culling The Swarm" QuestId="31109" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+<!-- Xaril -->
+	<If Condition="((HasQuest(31216)) &amp;&amp; (IsQuestCompleted(31216)))" >
+		<TurnIn QuestName="Dark Skies" QuestId="31216" TurnInName="Xaril" TurnInId="62151" />
+	</If>
+	<!-- HiSek -->
 	<If Condition="((HasQuest(31237)) &amp;&amp; (IsQuestCompleted(31237)))" >
 		<TurnIn QuestName="Debugging the Terrace" QuestId="31237" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" />
+	</If>
+	<If Condition="((HasQuest(31504)) &amp;&amp; (IsQuestCompleted(31504)))" >
+		<TurnIn QuestName="Ordnance Disposal" QuestId="31504" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" />
 	</If>
 	<If Condition="((HasQuest(31272)) &amp;&amp; (IsQuestCompleted(31272)))" >
 		<TurnIn QuestName="Debugging the Terrace" QuestId="31272" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" />
@@ -537,20 +541,16 @@ Incomplete:
 	<If Condition="((HasQuest(31269)) &amp;&amp; (IsQuestCompleted(31269)))" > 
 		<TurnIn QuestName="Scale Lord" QuestId="31269" TurnInName="Korven" TurnInId="62180" />
 	</If>
-<!-- Kaz'tik -->
-	<If Condition="((HasQuest(31238)) &amp;&amp; (IsQuestCompleted(31238)))" >
-		<TurnIn QuestName="Brain Food" QuestId="31238" TurnInName="Kaz'tik" TurnInId="63758" />
-	</If>
-	<If Condition="((HasQuest(31024)) &amp;&amp; (IsQuestCompleted(31024)))" >
-		<TurnIn QuestName="Kunchnog Treats" QuestId="31024" TurnInName="Kaz'tik" TurnInId="63758" />
-	</If>
-	<If Condition="((HasQuest(31268)) &amp;&amp; (IsQuestCompleted(31268)))" >
-		<TurnIn QuestName="Brain Work" QuestId="31268" TurnInName="Kaz'tik" TurnInId="63758" />
-	</If>
-	<If Condition="((HasQuest(31506)) &amp;&amp; (IsQuestCompleted(31506)))" >
-		<TurnIn QuestName="Shackles of Manipulation" QuestId="31506" TurnInName="Kaz\'tik the Manipulator" TurnInId="63758" />
+	<If Condition="((HasQuest(31496)) &amp;&amp; (IsQuestCompleted(31496)))" > 
+		<TurnIn QuestName="Scale Lord" QuestId="31496" TurnInName="Korven" TurnInId="62180" />
 	</If>
 <!-- Rik'tal the Dissector -->
+	<If Condition="((HasQuest(31502)) &amp;&amp; (IsQuestCompleted(31502)))" >
+		<TurnIn QuestName="Wing Clip" QuestId="31502" TurnInName="Dissector" TurnInId="63072" />
+	</If>
+	<If Condition="((HasQuest(31503)) &amp;&amp; (IsQuestCompleted(31503)))" >
+		<TurnIn QuestName="Shortcut to Ruin" QuestId="31503" TurnInName="Dissector" TurnInId="63072" />
+	</If>
 	<If Condition="((HasQuest(31234)) &amp;&amp; (IsQuestCompleted(31234)))" >
 		<TurnIn QuestName="An Eye Out" QuestId="31234" TurnInName="Dissector" TurnInId="63072" />
 	</If>
@@ -563,5 +563,25 @@ Incomplete:
 	<If Condition="((HasQuest(31508)) &amp;&amp; (IsQuestCompleted(31508)))" >
 		<TurnIn QuestName="Specimen Request" QuestId="31508" TurnInName="Rik\'kal the Dissector" TurnInId="63072" />
 	</If>
+	<!-- Kaz'tik -->
+	<If Condition="((HasQuest(31487)) &amp;&amp; (IsQuestCompleted(31487)))" >
+		<TurnIn QuestName="Sonic Disruption" QuestId="31487" TurnInName="Kaz'tik" TurnInId="63758" />
+	</If>
+	<If Condition="((HasQuest(31494)) &amp;&amp; (IsQuestCompleted(31494)))" >
+		<TurnIn QuestName="Free from her clutches" QuestId="31494" TurnInName="Kaz'tik" TurnInId="63758" />
+	</If>
+	<If Condition="((HasQuest(31238)) &amp;&amp; (IsQuestCompleted(31238)))" >
+		<TurnIn QuestName="Brain Food" QuestId="31238" TurnInName="Kaz'tik" TurnInId="63758" />
+	</If>
+	<If Condition="((HasQuest(31024)) &amp;&amp; (IsQuestCompleted(31024)))" >
+		<TurnIn QuestName="Kunchnog Treats" QuestId="31024" TurnInName="Kaz'tik" TurnInId="63758" />
+	</If>
+	<If Condition="((HasQuest(31268)) &amp;&amp; (IsQuestCompleted(31268)))" >
+		<TurnIn QuestName="Brain Work" QuestId="31268" TurnInName="Kaz'tik" TurnInId="63758" />
+	</If>
+	<If Condition="((HasQuest(31506)) &amp;&amp; (IsQuestCompleted(31506)))" >
+		<TurnIn QuestName="Shackles of Manipulation" QuestId="31506" TurnInName="Kaz\'tik the Manipulator" TurnInId="63758" />
+	</If>
+
 </QuestOrder>
 </HBProfile>
