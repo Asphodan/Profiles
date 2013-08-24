@@ -103,11 +103,36 @@ Incomplete:
 		<RunTo X="6614.61" Y="6195.92" Z="32.47" />
 		<Objective QuestName="Grave Circumstances" QuestId="32527" Type="KillMob" MobId="69235" MobId2="69264" KillCount="10" />
 	</If>
+	<If Condition="HasQuest(32533) &amp;&amp; !IsQuestCompleted(32533)" >
+		<CustomBehavior File="Message" Text="Starting Stone Cold" LogColor="Green" />
+		<CustomBehavior File="UserSettings" LootMobs="True" KillBetweenHotspots="True" PullDistance="10" /> 
+		<CustomBehavior File="InteractWith" QuestId="32533" MobState="Alive" MobId="69894" MobId2="69240" CollectionDistance="200" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" >
+			<Hotspots>
+				<Hotspot X="6567.13" Y="6108.35" Z="36.27" />
+				<Hotspot X="6561.52" Y="6201.09" Z="36.27" />
+				<Hotspot X="6474.34" Y="6107.52" Z="36.27" />
+				<Hotspot X="6514.89" Y="6085.92" Z="39.40" />
+			</Hotspots>
+		</CustomBehavior>
+	</If>
+	<If Condition="HasQuest(32529) &amp;&amp; !IsQuestCompleted(32529)" >
+		<CustomBehavior File="Message" Text="Starting The Call of Thunder" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32529" LootMobs="True" KillBetweenHotspots="True" PullDistance="20" />
+		<RunTo X="6609.79" Y="6290.33" Z="3.63" />
+		<CustomBehavior File="CollectThings" QuestId="32529" CollectUntil="QuestComplete" MobState="Alive" MobId="69264" HuntingGroundRadius="50" NonCompeteDistance="5" >
+			<Hotspot X="6611.16" Y="6289.20" Z="3.95" />
+		</CustomBehavior>
+	</If>
 <!-- Turn in Quests -->
 	<If Condition="((HasQuest(32531)) &amp;&amp; (IsQuestCompleted(32531)))" > 
 		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
 		<CustomBehavior File="ForcedDismount" />
-		<TurnIn QuestName="Grave Circumstances" QuestId="32531" TurnInName="Narasi Snowdawn" TurnInId="69670" />
+		<TurnIn QuestName="Grave Circumstances" QuestId="32531" TurnInName="Vylene Amaranth" TurnInId="69670" />
+	</If>
+	<If Condition="((HasQuest(32529)) &amp;&amp; (IsQuestCompleted(32529)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="The Call of Thunder" QuestId="32529" TurnInName="Vylene Amaranth" TurnInId="69670" />
 	</If>
 	<If Condition="((HasQuest(32526)) &amp;&amp; (IsQuestCompleted(32526)))" > 
 		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
@@ -128,6 +153,11 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Ashes of the Enemy" QuestId="32532" TurnInName="Danara Silverglass" TurnInId="69668" />
+	</If>
+	<If Condition="((HasQuest(32533)) &amp;&amp; (IsQuestCompleted(32533)))" > 
+		<CustomBehavior File="FlyTo" X="6509.615" Y="5993.505" Z="13.51404" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Stone Cold" QuestId="32533" TurnInName="Danara Silverglass" TurnInId="69668" />
 	</If>
 <!-- Get Next Breadcrumb -->
 	<While Condition="HasQuestAvailable(69668)" > 
