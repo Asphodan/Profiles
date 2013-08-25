@@ -89,13 +89,14 @@ Incomplete:
 	</While>
 <!-- Do Quests -->
 	<If Condition="HasQuest(32558) &amp;&amp; !IsQuestCompleted(32558)" >
-		<CustomBehavior File="Message" Text="Starting All In the Family" LogColor="Green" />
 		<CustomBehavior File="UserSettings" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
-		<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93733" CollectCount="1" />
+		<While Condition="!IsObjectiveComplete(1,32558)">
+			<CustomBehavior File="FlyTo" X="6591.95" Y="5202.025" Z="32.91293" />
+			<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93733" CollectCount="1" />
+		</While>
 		<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93734" CollectCount="1" />
 	</If>
 	<If Condition="HasQuest(32555) &amp;&amp; !IsQuestCompleted(32555)" >
-		<CustomBehavior File="Message" Text="Starting Centuries in Sentries" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="32555" LootMobs="True" KillBetweenHotspots="False" PullDistance="15" />
 		<CustomBehavior File="InteractWith" QuestId="32555" InteractByUsingItemId="93806" MobId="69335" MobState="Dead" AuraIdOnMob="136972" CollectionDistance="1000" NumOfTimes="100" >
 			<HuntingGrounds>
