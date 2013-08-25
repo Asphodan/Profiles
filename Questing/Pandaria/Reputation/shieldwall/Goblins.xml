@@ -1,0 +1,151 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Shieldwall - Goblins</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+   
+<!-- Quest Behavior -->
+	<Quest Id="32446" Name="Dis-Assembly Required">
+		<Objective Type="CollectItem" MobId="93179" CollectCount="6">
+			<Hotspots>
+				<Hotspot X="-2065.803" Y="2048.407" Z="18.65" />
+				<Hotspot X="-2009.26" Y="2068.30" Z="7.37" />
+				<Hotspot X="-1977.97" Y="2019.68" Z="7.76" />
+				<Hotspot X="-1952.22" Y="1992.87" Z="10.55" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- End of Quest Overrides -->
+	<QuestOrder>
+<!-- Turn in breadcrumb -->
+		<If Condition="((HasQuest(32452)) &amp;&amp; (IsQuestCompleted(32452)))" >
+			<CustomBehavior File="FlyTo" X="-2585.373" Y="2172.807" Z="148.4474" />
+			<CustomBehavior File="ForcedDismount" />
+			<TurnIn QuestName="And Then There Were Goblins" QuestId="32452" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
+    <!-- Skyboat -->
+		<While Condition="HasQuestAvailable(67386)" >
+			<CustomBehavior File="InteractWith"  MobId="67386" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuestAvailable(68182)" >
+			<CustomBehavior File="InteractWith"  MobId="68182" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuestAvailable(68166)" >
+			<CustomBehavior File="InteractWith"  MobId="68166" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuestAvailable(67444)" >
+			<CustomBehavior File="InteractWith"  MobId="67444" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuestAvailable(67976)" >
+			<CustomBehavior File="InteractWith"  MobId="67976" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+<!-- Do Quests -->
+		<If Condition="HasQuest(32154) &amp;&amp; !IsQuestCompleted(32154)">
+			<While Condition="!IsObjectiveComplete(1,32154)">
+				<CustomBehavior File="FlyTo" X="-1971.61" Y="1754.69" Z="2.35" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" InteractByUsingItemId="93187" QuestId="32154" MobId="68784" />
+			</While>
+			<While Condition="!IsObjectiveComplete(2,32154)">
+				<CustomBehavior File="FlyTo" X="-1812.273" Y="1833.404" Z="1.368482" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" InteractByUsingItemId="93187" QuestId="32154" MobId="68785" />
+			</While>
+			<While Condition="!IsObjectiveComplete(3,32154)">
+				<CustomBehavior File="FlyTo" X="-1960.793" Y="2230.317" Z="2.926838" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" InteractByUsingItemId="93187" QuestId="32154" MobId="68786" />
+			</While>
+		</If>
+		<If Condition="HasQuest(32446) &amp;&amp; !IsQuestCompleted(32446)">
+			<CustomBehavior File="FlyTo" X="-2065.803" Y="2048.407" Z="25" />
+			<CustomBehavior File="ForcedDismount" />
+			<Objective QuestName="Dis-Assembly Required" QuestId="32446" Type="CollectItem" ItemId="93179" CollectCount="6" />
+		</If>
+		<If Condition="HasQuest(32156) &amp;&amp; !IsQuestCompleted(32156)"> <!-- Its only right -->
+			<CustomBehavior File="FlyTo" X="-1867.3" Y="1918.964" Z="2.67689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="CollectThings" MobId="68700" QuestId="32156" CollectUntil="QuestComplete" HuntingGroundRadius="30" NonCompeteDistance="5" >
+				<Hotspot X="-1883.60" Y="1958.292" Z="2.544477" />
+				<Hotspot X="-1888.82" Y="1903.356" Z="2.644783" />
+				<Hotspot X="-1895.91" Y="1854.111" Z="1.280843" />
+				<Hotspot X="-1888.48" Y="1788.171" Z="2.887948" />
+				<Hotspot X="-1857.13" Y="1822.657" Z="3.794867" />
+				<Hotspot X="-1840.47" Y="1882.109" Z="3.030959" />
+				<Hotspot X="-1801.90" Y="1929.369" Z="3.082297" />
+			</CustomBehavior>
+		</If>
+		<If Condition="HasQuest(32158) &amp;&amp; !IsQuestCompleted(32158)">
+			<CustomBehavior File="FlyTo" X="-2049.92" Y="2037.093" Z="29.85687" />
+			<CustomBehavior File="ForcedDismount" />
+			<Objective QuestName="Two Step Program" QuestId="32158" Type="KillMob" MobId="67371" KillCount="1" />
+		</If>
+<!-- Turn in Quests -->
+		<CustomBehavior File="FlyTo" X="-2585.373" Y="2172.807" Z="148.4474" />
+		<If Condition="HasQuest(32157) &amp;&amp; IsQuestCompleted(32157)" >
+			<TurnIn QuestName="The Only Good Goblin..." QuestId="32157" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
+		<If Condition="HasQuest(32142) &amp;&amp; IsQuestCompleted(32142)" >
+			<TurnIn QuestName="We Will Rock You" QuestId="32142" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
+		<If Condition="HasQuest(32146) &amp;&amp; IsQuestCompleted(32146)" >
+			<TurnIn QuestName="Hammer Will Fall" QuestId="32146" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
+		<If Condition="HasQuest(32145) &amp;&amp; IsQuestCompleted(32145)" >
+			<TurnIn QuestName="Don't Lose Your Head" QuestId="32145" TurnInName="Tinkmaster" TurnInId="67976" />
+		</If>
+		<If Condition="HasQuest(32156) &amp;&amp; IsQuestCompleted(32156)" >
+			<TurnIn QuestName="It's Only Right" QuestId="32156" TurnInName="Mishka" TurnInId="67444" />
+		</If>
+		<If Condition="HasQuest(32144) &amp;&amp; IsQuestCompleted(32144)" >
+			<TurnIn QuestName="Under Pressure" QuestId="32144" TurnInName="Mishka" TurnInId="67444" />
+		</If>
+		<If Condition="HasQuest(32158) &amp;&amp; IsQuestCompleted(32158)" >
+			<TurnIn QuestName="Two Step Program" QuestId="32158" TurnInName="Seraphine of the Winter" TurnInId="68182" />
+		</If>
+		<If Condition="HasQuest(32154) &amp;&amp; IsQuestCompleted(32154)" >
+			<TurnIn QuestName="Burn Out" QuestId="32154" TurnInName="Sully" TurnInId="68166" />
+		</If>
+		<If Condition="HasQuest(32446) &amp;&amp; IsQuestCompleted(32446)" >
+			<TurnIn QuestName="Dis-Assembly Required" QuestId="32446" TurnInName="Sully" TurnInId="68166" />
+		</If>
+	</QuestOrder> 
+</HBProfile>

@@ -1,0 +1,40 @@
+ <HBProfile>
+<Name>Sindragosa's Rest</Name>
+
+	<MinLevel>75</MinLevel>
+	<MaxLevel>999</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>2</MinFreeBagSlots>
+
+    <SellGrey>True</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+  <Blackspots>
+  </Blackspots>
+	
+	<Vendors>
+		<Vendor Name="Fizzix Blastbolt" Entry="33594" Type="Repair" X="8553.434" Y="915.6268" Z="547.3912" />
+	</Vendors>
+
+	<Mailboxes>
+		<Mailbox X="8589.956" Y="694.142" Z="547.2934" />
+	</Mailboxes>
+  
+	<GrindArea>
+		<Factions>21,16,1885,1982</Factions>
+			<Hotspots>
+			<Hotspot X="7875.625" Y="965.3668" Z="450.7192" />
+			<Hotspot X="7905.062" Y="1132.84" Z="446.9033" />
+			<Hotspot X="7840.195" Y="1207.425" Z="440.8519" />
+			<Hotspot X="7801.184" Y="1173.575" Z="441.3868" />
+			<Hotspot X="7715.923" Y="1181.235" Z="439.8218" />
+			<Hotspot X="7717.561" Y="1055.734" Z="444.9503" />
+			<Hotspot X="7789.654" Y="985.7637" Z="448.8961" />
+		</Hotspots>
+	</GrindArea>
+   
+</HBProfile>
