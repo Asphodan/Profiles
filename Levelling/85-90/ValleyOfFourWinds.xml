@@ -1424,9 +1424,9 @@
 <TurnIn QuestName="The Fanciest Water" QuestId="30076" TurnInName="Mudmug" TurnInId="56474" X="-712.3212" Y="1266.222" Z="136.024" />
 <TurnIn QuestName="Clear the Way" QuestId="30075" TurnInName="Chen Stormstout" TurnInId="56133" X="-709.3073" Y="1264.693" Z="136.0241" />
 <PickUp QuestName="Cleaning House" QuestId="30078" GiverName="Chen Stormstout" GiverId="56133" X="-709.3073" Y="1264.693" Z="136.0241" />
-<If Condition="HasQuest(30078) &amp;&amp; !IsQuestCompleted(30078)" >
-  <CustomBehavior File="SpecificQuests\30078-FourWinds-CleaningHouse" />
-</If>
+	<While Condition="HasQuest(30078) &amp;&amp; !IsQuestCompleted(30078)" >
+		<CustomBehavior File="SpecificQuests\30078-FourWinds-CleaningHouse" />
+	</While>
 <TurnIn QuestName="Cleaning House" QuestId="30078" TurnInName="Chen Stormstout" TurnInId="56133" X="-712.7864" Y="1266.255" Z="136.0238" />
 <PickUp QuestName="Stoneplow Thirsts" QuestId="30117" GiverName="Emmi" GiverId="61026" X="-691.0799" Y="1258.526" Z="136.0238" />
 <TurnIn QuestName="Lin Tenderpaw" QuestId="29872" TurnInName="Lin Tenderpaw" TurnInId="56111" X="-393.4566" Y="1899.101" Z="133.1859" />
