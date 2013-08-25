@@ -903,7 +903,7 @@
 <TurnIn QuestName="Guess Whose Back" QuestId="29758" TurnInName="Yan" TurnInId="56773" X="214.4271" Y="300.2326" Z="153.789" />
 <If Condition="!HasQuest(32045) &amp;&amp; !IsQuestCompleted(32045)" >
   <RunTo X="-237.4535" Y="572.3489" Z="167.7342" />
-  <CustomBehavior File="SetHearthstone" MobId="59582" X="-229.8616" Y="510.9289" Z="190.9058" />
+<!--   <CustomBehavior File="SetHearthstone" MobId="59582" X="-229.8616" Y="510.9289" Z="190.9058" /> -->
   <CustomBehavior File="ForceSetVendor" DoMail="True" DoSell="True" DoRepair="True" />
 </If>
 <PickUp QuestName="Children of the Water" QuestId="32045" GiverName="Stonecarver Mac" GiverId="64315" X="-143.7379" Y="514.9236" Z="207.8529" />
