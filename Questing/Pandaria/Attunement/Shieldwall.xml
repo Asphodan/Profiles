@@ -72,10 +72,12 @@ Incomplete:
 			<CustomBehavior File="InteractWith"  MobId="68331" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-894.1983" Y="-786.9479" Z="6.521688" />
 			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
 		</While>
-		<While Condition="!IsObjectiveComplete(3,32247)" > <!-- Troteman -->
+		<While Condition="!IsObjectiveComplete(3,32247)" > <!-- Hilda -->
 			<CustomBehavior File="FlyTo" X="-657.5911" Y="-821.8378" Z="1.770908" />
 			<CustomBehavior File="InteractWith"  MobId="68312" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-894.1983" Y="-786.9479" Z="6.521688" />
 			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
+			<CustomBehavior File="WaitTimer" WaitTime="7000" />
+			<CustomBehavior File="FlyTo" X="-751.6976" Y="-800.3132" Z="10.47744" /> <!-- Get away from her -->
 		</While>
 		<Objective QuestName="A King Among Men" QuestId="32247" Type="KillMob" MobId="68332" KillCount="25" />
 	</If>
