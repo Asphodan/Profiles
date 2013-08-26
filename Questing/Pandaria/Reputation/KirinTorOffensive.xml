@@ -124,7 +124,7 @@ Incomplete:
 	</If>
 <!-- Conqueror's Terrace -->
 	<If Condition="(HasQuest(32568) ||
-					HasQuest(11111) ||
+					HasQuest(32557) ||
 					HasQuest(11111) ||
 					HasQuest(11111) ||
 					HasQuest(11111))" >

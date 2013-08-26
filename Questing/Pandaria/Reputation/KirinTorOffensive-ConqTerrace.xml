@@ -87,7 +87,11 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-<!-- Do Quests -->
+<!-- Do Quests -->	
+	<If Condition="HasQuest(32557) &amp;&amp; !IsQuestCompleted(32557)" >
+		<CustomBehavior File="UserSettings" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
+		<Objective QuestName="Out of Enemy Hands" QuestId="32557" Type="CollectItem" ItemId="93736" CollectCount="7" />
+	</If>
 	<If Condition="HasQuest(32558) &amp;&amp; !IsQuestCompleted(32558)" >
 		<CustomBehavior File="UserSettings" LootMobs="True" KillBetweenHotspots="False" PullDistance="10" />
 		<While Condition="!IsObjectiveComplete(1,32558)">

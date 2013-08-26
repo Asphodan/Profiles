@@ -43,8 +43,12 @@ Incomplete:
 </Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
-<!-- Get Quests 
-<CustomBehavior File="FlyTo" DestName="Shrine" X="836.309" Y="342.7973" Z="503.1016" />  Let's check start of the chain. -->
+<!-- Get Quests -->
+	<If Condition="((!HasQuest(32247) ||
+					(HasQuest(32558) ||
+					(HasQuest(32560) ||)" >
+		<CustomBehavior File="FlyTo" DestName="Shrine" X="836.309" Y="342.7973" Z="503.1016" />  Let's check start of the chain. 
+	</If>
 	<While Condition="HasQuestAvailable(64610)" >
 		<CustomBehavior File="InteractWith"  MobId="64610" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -64,12 +68,12 @@ Incomplete:
 	</While>
 	<If Condition="((HasQuest(32247)) &amp;&amp; (!IsQuestCompleted(32247)))" >
 		<While Condition="!IsObjectiveComplete(2,32247)" > <!-- Troteman -->
-			<RunTo DestName="Troteman" X="-894.1983" Y="-786.9479" Z="6.521688" />
+			<CustomBehavior File="FlyTo" X="-894.1983" Y="-786.9479" Z="6.521688" />
 			<CustomBehavior File="InteractWith"  MobId="68331" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-894.1983" Y="-786.9479" Z="6.521688" />
 			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
 		</While>
 		<While Condition="!IsObjectiveComplete(3,32247)" > <!-- Troteman -->
-			<RunTo DestName="Hilda" X="-657.5911" Y="-821.8378" Z="1.770908" />
+			<CustomBehavior File="FlyTo" X="-657.5911" Y="-821.8378" Z="1.770908" />
 			<CustomBehavior File="InteractWith"  MobId="68312" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-894.1983" Y="-786.9479" Z="6.521688" />
 			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1500" />
 		</While>
