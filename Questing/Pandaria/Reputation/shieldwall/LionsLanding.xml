@@ -30,6 +30,7 @@ Incomplete:
 	</AvoidMobs>
    
 	<Blackspots>
+		<Mob Name="Demonlishers" Entry="67671" />
 	</Blackspots>
 
 <!-- Quest Behavior -->
@@ -58,12 +59,14 @@ Incomplete:
 	</Quest>
 <!-- ==End of Quest Overrides== -->
 <QuestOrder>
+
 	<If Condition="((HasQuest(32151)) &amp;&amp; (!IsQuestCompleted(32151)))" >
 		<CustomBehavior File="FlyTo" X="-629.4035" Y="-700.3813" Z="31.92575" />
 		<CustomBehavior File="ForcedDismount" />
 		<Objective QuestName="Tower Defense" QuestId="32151" Type="CollectItem" ItemId="93022" CollectCount="20" />
 	</If>
 	<If Condition="((HasQuest(32149)) &amp;&amp; (!IsQuestCompleted(32149)))" >
+		<CustomBehavior File="FlyTo" X="-817.3811" Y="-716.8666" Z="19.61619" />
 		<CustomBehavior File="CollectThings" QuestId="32149" 
 						CollectUntil="QuestComplete" ObjectId="216229"
 						HuntingGroundRadius="35" NonCompeteDistance="7"

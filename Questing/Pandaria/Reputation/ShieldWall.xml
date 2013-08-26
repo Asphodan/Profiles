@@ -79,14 +79,18 @@ Incomplete:
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<While Condition="HasQuestAvailable(67631)" >
-		<CustomBehavior File="InteractWith"  MobId="67631" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-1122.365" Y="-1258.869" Z="29.03654" />
+	<While Condition="HasQuestAvailable(67630)" >
+		<CustomBehavior File="InteractWith"  MobId="67630" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-1122.365" Y="-1258.869" Z="29.03654" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 	
 <!-- Load Dailies -->
-<!-- Ighaluk -->
+	<If Condition="(HasQuest(32149) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/LionsLanding.xml" />
+	</If>
 	<If Condition="(HasQuest(32452) ||
 					HasQuest(11111) ||
 					HasQuest(11111))" >
