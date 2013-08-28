@@ -1,0 +1,145 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Shieldwall - Domination Point</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+   
+<!-- Quest Behavior -->
+	<Quest Id="32142" Name="We Will Rock You">
+		<Objective Type="KillMob" MobId="67357" KillCount="10">
+			<Hotspots>
+				<Hotspot X="-1994.781" Y="2415.605" Z="4.300503" />
+				<Hotspot X="-1996.006" Y="2495.207" Z="7.631973" />
+				<Hotspot X="-2060.141" Y="2518.608" Z="8.345868" />
+				<Hotspot X="-2114.503" Y="2457.937" Z="4.533043" />
+				<Hotspot X="-2137.894" Y="2367.81" Z="4.023705" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="32146" Name="Hammer to Fall">
+		<Objective Type="KillMob" MobId="67399" KillCount="5">
+			<Hotspots>
+				<Hotspot X="-2017.241" Y="2347.468" Z="9.671196" />
+				<Hotspot X="-2015.854" Y="2455.507" Z="5.695435" />
+				<Hotspot X="-2143.587" Y="2374.433" Z="3.564952" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+<!-- End of Quest Overrides -->
+	<QuestOrder>
+	
+		<If Condition="HasQuest(32143) &amp;&amp; !IsQuestCompleted(32143)">
+			<CustomBehavior File="Message" Text="Starting A Kind of Magic" LogColor="Green"  />
+			<CustomBehavior File="UserSettings" QuestId="32143" LootMobs="True" PullDistance="10" />
+			<While Condition="!IsObjectiveComplete(1,32143)">
+				<CustomBehavior File="FlyTo" X="-2238.243" Y="2402.571" Z="0.89485" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="67544" QuestId="32143" />
+			</While>
+			<While Condition="!IsObjectiveComplete(2,32143)">
+				<CustomBehavior File="FlyTo" X="-2013.359" Y="2436.496" Z="4.253854" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="67546" QuestId="32143" />
+			</While>
+			<While Condition="!IsObjectiveComplete(3,32143)">
+				<CustomBehavior File="FlyTo" X="-1878.873" Y="2354.065" Z="11.29493" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="67547" QuestId="32143" />
+			</While>
+			<If Condition="IsQuestCompleted(32143)" >
+				<CustomBehavior File="CompleteLogQuest" QuestId="32143" />
+			</If>
+		</If>
+		<If Condition="HasQuest(32144) &amp;&amp; !IsQuestCompleted(32144)">
+			<CustomBehavior File="Message" Text="Starting Under Pressure" LogColor="Green"  />
+			<CustomBehavior File="UserSettings" QuestId="32142" LootMobs="True" PullDistance="5" />
+			<CustomBehavior File="FlyTo" X="-2008.043" Y="2392.704" Z="5.490005" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="CollectThings" QuestId="32144" CollectUntil="QuestComplete" ObjectId="216150" HuntingGroundRadius="200" NonCompeteDistance="3" PostInteractDelay="1000" >
+				<Hotspot X="-2008.043" Y="2392.704" Z="5.490005" />
+				<Hotspot X="-1944.545" Y="2362.576" Z="7.431448" />
+				<Hotspot X="-1860.609" Y="2309.441" Z="8.76289" />
+				<Hotspot X="-2098.098" Y="2499.457" Z="7.132452" />
+				<Hotspot X="-2160.167" Y="2359.855" Z="6.670245" />
+			</CustomBehavior>
+		</If>
+		<If Condition="HasQuest(32142) &amp;&amp; !IsQuestCompleted(32142)">
+			<CustomBehavior File="UserSettings" QuestId="32142" LootMobs="True" PullDistance="25" />
+			<CustomBehavior File="FlyTo" X="-2011.07" Y="2455.51" Z="6.21" />
+			<CustomBehavior File="ForcedDismount" />
+			<Objective QuestName="We Will Rock You" QuestId="32142" Type="KillMob" MobId="67334" MobId2="67429" KillCount="10" />
+		</If>
+		<If Condition="HasQuest(32146) &amp;&amp; !IsQuestCompleted(32146)">
+			<CustomBehavior File="UserSettings" QuestId="32146" LootMobs="True" PullDistance="25" />
+			<CustomBehavior File="FlyTo" X="-2017.241" Y="2347.468" Z="9.671196" />
+			<CustomBehavior File="ForcedDismount" />
+			<Objective QuestName="Hammer to Fall" QuestId="32146" Type="KillMob" MobId="67399" KillCount="5" />
+		</If>
+		<If Condition="HasQuest(32145) &amp;&amp; !IsQuestCompleted(32145)">
+			<CustomBehavior File="Message" Text="Starting Don't Lose Your Head" LogColor="Green"  />
+			<CustomBehavior File="UserSettings" QuestId="32145" LootMobs="True" PullDistance="15" />
+			<CustomBehavior File="FlyTo" X="-1919.89" Y="2399.75" Z="6.48" />
+			<CustomBehavior File="ForcedDismount" />
+			<Objective QuestName="Don't Lose Your Head" QuestId="32145" Type="KillMob" MobId="67435" KillCount="1" />
+			<Objective QuestName="Don't Lose Your Head" QuestId="32145" Type="KillMob" MobId="67429" KillCount="1" />
+			<Objective QuestName="Don't Lose Your Head" QuestId="32145" Type="KillMob" MobId="67427" KillCount="1" />
+		</If>
+<!-- Turn in Quests -->
+		<CustomBehavior File="FlyTo" X="-2585.373" Y="2172.807" Z="148.4474" />
+		<If Condition="HasQuest(32157) &amp;&amp; IsQuestCompleted(32157)" >
+			<TurnIn QuestName="The Only Good Goblin..." QuestId="32157" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
+		<If Condition="HasQuest(32142) &amp;&amp; IsQuestCompleted(32142)" >
+			<TurnIn QuestName="We Will Rock You" QuestId="32142" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
+		<If Condition="HasQuest(32146) &amp;&amp; IsQuestCompleted(32146)" >
+			<TurnIn QuestName="Hammer Will Fall" QuestId="32146" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
+		<If Condition="HasQuest(32145) &amp;&amp; IsQuestCompleted(32145)" >
+			<TurnIn QuestName="Don't Lose Your Head" QuestId="32145" TurnInName="Tinkmaster" TurnInId="67976" />
+		</If>
+		<If Condition="HasQuest(32156) &amp;&amp; IsQuestCompleted(32156)" >
+			<TurnIn QuestName="It's Only Right" QuestId="32156" TurnInName="Mishka" TurnInId="67444" />
+		</If>
+		<If Condition="HasQuest(32144) &amp;&amp; IsQuestCompleted(32144)" >
+			<TurnIn QuestName="Under Pressure" QuestId="32144" TurnInName="Mishka" TurnInId="67444" />
+		</If>
+		<If Condition="HasQuest(32158) &amp;&amp; IsQuestCompleted(32158)" >
+			<TurnIn QuestName="Two Step Program" QuestId="32158" TurnInName="Seraphine of the Winter" TurnInId="68182" />
+		</If>
+		<If Condition="HasQuest(32154) &amp;&amp; IsQuestCompleted(32154)" >
+			<TurnIn QuestName="Burn Out" QuestId="32154" TurnInName="Sully" TurnInId="68166" />
+		</If>
+		<If Condition="HasQuest(32446) &amp;&amp; IsQuestCompleted(32446)" >
+			<TurnIn QuestName="Dis-Assembly Required" QuestId="32446" TurnInName="Sully" TurnInId="68166" />
+		</If>
+	</QuestOrder> 
+</HBProfile>

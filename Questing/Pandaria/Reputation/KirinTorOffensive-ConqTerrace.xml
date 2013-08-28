@@ -98,7 +98,10 @@ Incomplete:
 			<CustomBehavior File="FlyTo" X="6591.95" Y="5202.025" Z="32.91293" />
 			<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93733" CollectCount="1" />
 		</While>
-		<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93734" CollectCount="1" />
+		<While Condition="!IsObjectiveComplete(1,32558)">
+			<CustomBehavior File="FlyTo" X="6873.971" Y="5305.868" Z="34.58076" />
+			<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93734" CollectCount="1" />
+		</While>
 	</If>
 	<If Condition="HasQuest(32555) &amp;&amp; !IsQuestCompleted(32555)" >
 		<CustomBehavior File="UserSettings" QuestId="32555" LootMobs="True" KillBetweenHotspots="False" PullDistance="15" />
@@ -122,7 +125,6 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6711.15" Y="5095.72" Z="31.21" />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Harbingers" QuestId="32555" TurnInName="Brightweaver" TurnInId="67999" />
-		<TurnIn QuestName="Harbingers" QuestId="32558" TurnInName="Brightweaver" TurnInId="67999" />
 	</If>
 	<If Condition="((HasQuest(32560)) &amp;&amp; (IsQuestCompleted(32560)))" > 
 		<CustomBehavior File="FlyTo" X="6711.15" Y="5095.72" Z="31.21" />

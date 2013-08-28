@@ -68,7 +68,7 @@ Incomplete:
 <!-- End of Quest Overrides -->
 <QuestOrder>
 <!-- Get Breadcrumb -->
-<!-- <CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" /> -->
+<CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" /> 
 	<While Condition="HasQuestAvailable(68908)" >
 		<CustomBehavior File="InteractWith"  MobId="68908" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-1122.365" Y="-1258.869" Z="29.03654" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -95,6 +95,11 @@ Incomplete:
 					HasQuest(11111) ||
 					HasQuest(11111))" >
 		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/Goblins.xml" />
+	</If>
+	<If Condition="(HasQuest(32143) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/DominationPoint.xml" />
 	</If>
 <!-- Go to Breadcrumb -->
 	<If Condition="((HasQuest(32451)) &amp;&amp; (IsQuestCompleted(32451)))" >

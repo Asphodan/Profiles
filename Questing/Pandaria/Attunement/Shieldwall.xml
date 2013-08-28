@@ -29,8 +29,11 @@ Incomplete:
 <AvoidMobs>
 </AvoidMobs>
    
-<Blackspots>
-</Blackspots>
+	<Blackspots>
+		<Blackspot X="-622.6242" Y="-815.3171" Z="4.989117" Radius="24.25316" />
+		<Blackspot X="-629.525" Y="-812.5996" Z="4.7349" Radius="21.24138" />
+		<Blackspot X="-614.9975" Y="-814.2205" Z="5.091249" Radius="14.04214" />
+	</Blackspots>
    
 <!-- Quest Behavior -->
 <Quest Id="31002" Name="Nope">
@@ -38,6 +41,7 @@ Incomplete:
 		<Hotspots>
 			<Hotspot X="-910.4156" Y="-694.4674" Z="11.26946" />
 			<Hotspot X="-724.2803" Y="-706.314" Z="14.33883" />
+			<Hotspot X="-768.412" Y="-669.3424" Z="14.09982" />
 		</Hotspots>
 	</Objective>
 </Quest>
@@ -79,6 +83,7 @@ Incomplete:
 			<CustomBehavior File="WaitTimer" WaitTime="7000" />
 			<CustomBehavior File="FlyTo" X="-751.6976" Y="-800.3132" Z="10.47744" /> <!-- Get away from her -->
 		</While>
+		<CustomBehavior File="FlyTo" X="-768.412" Y="-669.3424" Z="14.09982" />
 		<Objective QuestName="A King Among Men" QuestId="32247" Type="KillMob" MobId="68332" KillCount="25" />
 	</If>
 	<If Condition="((HasQuest(32247)) &amp;&amp; (IsQuestCompleted(32247)))" >

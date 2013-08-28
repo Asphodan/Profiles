@@ -194,6 +194,9 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
 		<TurnIn QuestName="Manipulating the Saurok" QuestId="32536" TurnInName="Archmage Modera" TurnInId="67996" />
 		<TurnIn QuestName="Manipulating the Saurok" QuestId="32535" TurnInName="Archmage Modera" TurnInId="67996" />
+	</If>
+	<If Condition="((HasQuest(32546)) &amp;&amp; (IsQuestCompleted(32546)))" >
+		<CustomBehavior File="FlyTo" X="6096.472" Y="5348.858" Z="22.18239"  />
 		<TurnIn QuestName="Just Some Light Clean-Up Work" QuestId="32546" TurnInName="Sanitation Sorcerer Stephen Litmatch" TurnInId="69677" />
 	</If>
 	<If Condition="HasQuest(32547) &amp;&amp; IsQuestCompleted(32547)" >
