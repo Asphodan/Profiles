@@ -23,8 +23,9 @@ Incomplete:
   
 <TargetElites>True</TargetElites>
 
-<Vendors>
-</Vendors>
+	<Vendors>
+		<Vendor Name="Tinkmaster Overspark" Entry="67976" Type="Repair" X="-2587.911" Y="2175.33" Z="148.4259" />
+	</Vendors>
   
 <AvoidMobs>
 </AvoidMobs>
