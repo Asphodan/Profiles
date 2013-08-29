@@ -221,28 +221,28 @@
 		</Hotspots>
 	</Objective>
 </Quest>
-<Quest Id="30581" Name="... and the Pot, Too!Repossession">
-	<Objective Type="CollectItem" ItemId="80227" CollectCount="12">
-		<CollectFrom>
-		  <GameObject Name="Root Vegetable" Id="211017" />
-		  <GameObject Name="Root Vegetable" Id="211018" />
-		  <GameObject Name="Root Vegetable" Id="211019" />
-		</CollectFrom>
-		<Hotspots>
-      <Hotspot X="1974.863" Y="1042.672" Z="493.6171" />
-      <Hotspot X="1941.128" Y="1009.678" Z="493.8486" />
-      <Hotspot X="1966.012" Y="978.3353" Z="493.4854" />
-      <Hotspot X="2005.943" Y="995.536" Z="493.4548" />
-		</Hotspots>
-	</Objective>
-	<Objective Type="CollectItem" ItemId="80230" CollectCount="1">
-		<CollectFrom>
-		  <GameObject Name="Cast Iron Pot" Id="211023" />
-		</CollectFrom>
-		<Hotspots>
-      <Hotspot X="1931.288" Y="1075.462" Z="494.0195" />
-		</Hotspots>
-	</Objective>
+	<Quest Id="30581" Name="... and the Pot, Too!Repossession">
+		<Objective Type="CollectItem" ItemId="80227" CollectCount="12">
+			<CollectFrom>
+				<GameObject Name="Root Vegetable" Id="211017" />
+				<GameObject Name="Root Vegetable" Id="211018" />
+				<GameObject Name="Root Vegetable" Id="211019" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="1974.863" Y="1042.672" Z="493.6171" />
+				<Hotspot X="1941.128" Y="1009.678" Z="493.8486" />
+				<Hotspot X="1966.012" Y="978.3353" Z="493.4854" />
+				<Hotspot X="2005.943" Y="995.536" Z="493.4548" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="80230" CollectCount="1">
+			<CollectFrom>
+				<GameObject Name="Cast Iron Pot" Id="211023" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="1931.288" Y="1075.462" Z="494.0195" />
+			</Hotspots>
+		</Objective>
 </Quest>
 <Quest Id="30619" Name="Mogu?! Oh No-gu!">
   <Objective Type="KillMob" MobId="59797" KillCount="1">

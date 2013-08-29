@@ -25,6 +25,7 @@ Incomplete:
 
 	<Vendors>
 		<Vendor Name="Tinkmaster Overspark" Entry="67976" Type="Repair" X="-2587.911" Y="2175.33" Z="148.4259" />
+		<Vendor Name="Christofen Moonfeather" Entry="59079" Type="Food" X="-1149.359" Y="1766.179" Z="16.98944" />
 	</Vendors>
   
 <AvoidMobs>
