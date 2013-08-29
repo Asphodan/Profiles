@@ -99,8 +99,16 @@ Incomplete:
 			<CustomBehavior File="FlyTo" X="-2065.803" Y="2048.407" Z="25" />
 			<CustomBehavior File="ForcedDismount" />
 			<While Condition="HasQuest(32446) &amp;&amp; !IsQuestCompleted(32446)">
-				<UseItem ItemId="93180" QuestName="Re-assembly Required" QuestId="32446"
-                          TargetID="67285" TargetType="Npc" />
+				<CustomBehavior File="CombatUseItemOnV2" QuestId="32446" ItemId="93180" ItemAppliesAuraId="135422" MobId="67285"
+								UseWhenMobHasHealthPercent="100" MaxRangeToUseItem="15" UseItemStrategy="UseItemOncePerTarget"
+								RecallPetAtMobPercentHealth="50" >
+					<HuntingGrounds WaypointVisitStrategy="Random" >
+						<Hotspot X="-2065.803" Y="2048.407" Z="18.65" />
+						<Hotspot X="-2009.26" Y="2068.30" Z="7.37" />
+						<Hotspot X="-1977.97" Y="2019.68" Z="7.76" />
+						<Hotspot X="-1952.22" Y="1992.87" Z="10.55" />
+					</HuntingGrounds>
+				</CustomBehavior>
 			</While>
 		</If>
 		<If Condition="HasQuest(32156) &amp;&amp; !IsQuestCompleted(32156)"> <!-- Its only right -->
