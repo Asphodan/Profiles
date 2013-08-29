@@ -67,6 +67,24 @@ Incomplete:
 	</Quest>
 <!-- End of Quest Overrides -->
 <QuestOrder>
+<!-- Go to Previous Profiles -->
+	<If Condition="(HasQuest(32149) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/LionsLanding.xml" />
+	</If>
+	<If Condition="(HasQuest(32452) ||
+					HasQuest(32446) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/Goblins.xml" />
+	</If>
+	<If Condition="(HasQuest(32143) ||
+					HasQuest(11111) ||
+					HasQuest(11111))" >
+		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/DominationPoint.xml" />
+	</If>
+
+
 <!-- Get Breadcrumb -->
 <CustomBehavior File="FlyTo" DestName="Basecamp" X="-1122.365" Y="-1258.869" Z="29.03654" /> 
 	<While Condition="HasQuestAvailable(68908)" >
