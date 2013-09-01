@@ -464,7 +464,6 @@
   <If Condition="(Me.Class == WoWClass.Hunter) || (Me.Class == WoWClass.Priest) || (Me.Class == WoWClass.Mage) || (Me.Class == WoWClass.Warlock)">
 	  <CustomBehavior File="UserSettings" PullDistance="35" />
 	</If>
-	<CustomBehavior File="Message" Text="Compiling Dread Wastes (89-90)" LogColor="Green" />
   <!-- LVL 89-->
 <If Condition="!HasQuest(31001) &amp;&amp; !IsQuestCompleted(31001)" >
   <If Condition="HasSpell(115913) &amp;&amp; CanFly()" >
