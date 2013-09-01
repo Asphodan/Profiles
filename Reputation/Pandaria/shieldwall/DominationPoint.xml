@@ -61,6 +61,24 @@ Incomplete:
 			<CustomBehavior File="ForcedDismount" />
 			<TurnIn QuestName="Send A Message" QuestId="32451" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
 		</If>
+<!-- Get quests -->
+
+	<While Condition="HasQuestAvailable(67386)" >
+		<CustomBehavior File="InteractWith"  MobId="67386" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67444)" >
+		<CustomBehavior File="InteractWith"  MobId="67444" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<While Condition="HasQuestAvailable(67976)" >
+		<CustomBehavior File="InteractWith"  MobId="67976" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Do Quests. -->
 		<If Condition="HasQuest(32143) &amp;&amp; !IsQuestCompleted(32143)">
 			<CustomBehavior File="Message" Text="Starting A Kind of Magic" LogColor="Green"  />
 			<CustomBehavior File="UserSettings" QuestId="32143" LootMobs="True" PullDistance="10" />

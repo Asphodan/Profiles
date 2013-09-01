@@ -128,22 +128,6 @@ Incomplete:
 		<TurnIn QuestName="Priorities, People!" QuestId="32116" TurnInName="Hilda Hornswaggle" TurnInId="68275" />
 	</If>
 <!-- Retrieve Quests after Breadcrumb. -->
-    <!-- Skyboat -->
-	<While Condition="HasQuestAvailable(67386)" >
-		<CustomBehavior File="InteractWith"  MobId="67386" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-	<While Condition="HasQuestAvailable(67444)" >
-		<CustomBehavior File="InteractWith"  MobId="67444" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
-	<While Condition="HasQuestAvailable(67976)" >
-		<CustomBehavior File="InteractWith"  MobId="67976" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
-		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
-		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-	</While>
 	<!-- Mines -->
 	<While Condition="HasQuestAvailable(68275)" >
 		<CustomBehavior File="InteractWith"  MobId="68275" NumOfTimes="1" CollectionDistance="200" WaitTime="1000"/>
