@@ -55,7 +55,12 @@ Incomplete:
 	</Quest>
 <!-- End of Quest Overrides -->
 	<QuestOrder>
-	
+		<If Condition="((HasQuest(32451)) &amp;&amp; (IsQuestCompleted(32451)))" >
+			<CustomBehavior File="FlyTo" X="-2566.055" Y="2125.257" Z="206.9073" />
+			<CustomBehavior File="FlyTo" X="-2581.747" Y="2167.555" Z="148.6862" />
+			<CustomBehavior File="ForcedDismount" />
+			<TurnIn QuestName="Send A Message" QuestId="32451" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
+		</If>
 		<If Condition="HasQuest(32143) &amp;&amp; !IsQuestCompleted(32143)">
 			<CustomBehavior File="Message" Text="Starting A Kind of Magic" LogColor="Green"  />
 			<CustomBehavior File="UserSettings" QuestId="32143" LootMobs="True" PullDistance="10" />

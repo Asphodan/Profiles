@@ -115,17 +115,11 @@ Incomplete:
 		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/Goblins.xml" />
 	</If>
 	<If Condition="(HasQuest(32143) ||
-					HasQuest(11111) ||
+					HasQuest(32451) ||
 					HasQuest(11111))" >
 		<CustomBehavior File="LoadProfile" ProfileName="shieldwall/DominationPoint.xml" />
 	</If>
 <!-- Go to Breadcrumb -->
-	<If Condition="((HasQuest(32451)) &amp;&amp; (IsQuestCompleted(32451)))" >
-		<CustomBehavior File="FlyTo" X="-2566.055" Y="2125.257" Z="206.9073" />
-		<CustomBehavior File="FlyTo" X="-2581.747" Y="2167.555" Z="148.6862" />
-		<CustomBehavior File="ForcedDismount" />
-		<TurnIn QuestName="Send A Message" QuestId="32451" TurnInName="Sky Admiral Rogers" TurnInId="67386" />
-	</If>
 	<If Condition="((HasQuest(32116)) &amp;&amp; (IsQuestCompleted(32116)))" >
 		<CustomBehavior File="FlyTo" X="-694.8665" Y="-845.2947" Z="68.96535" />
 		<CustomBehavior File="FlyTo" X="-654.7825" Y="-816.1026" Z="2.474635" />
