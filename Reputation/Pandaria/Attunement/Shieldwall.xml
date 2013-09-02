@@ -49,8 +49,8 @@ Incomplete:
 <QuestOrder>
 <!-- Get Quests -->
 	<If Condition="((!HasQuest(32247) ||
-					(HasQuest(32558) ||
-					(HasQuest(32560) ||)" >
+					(!HasQuest(32558) ||
+					(!HasQuest(32560) ||)" >
 		<CustomBehavior File="FlyTo" DestName="Shrine" X="836.309" Y="342.7973" Z="503.1016" />  Let's check start of the chain. 
 	</If>
 	<While Condition="HasQuestAvailable(64610)" >
