@@ -70,14 +70,14 @@ Incomplete:
 					HasQuest(32606) ||
 					HasQuest(32545) ||
 					HasQuest(32546))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-Ihgaluk" />
+		<CustomBehavior File="LoadProfile" ProfileName="kto\Ihgaluk" />
 	</If>
 <!-- ZaTual -->
 	<If Condition="(HasQuest(32733) ||
 					HasQuest(32538) ||
 					HasQuest(32541) ||
 					HasQuest(11111))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ZaTual" />
+		<CustomBehavior File="LoadProfile" ProfileName="kto\ZaTual" />
 	</If>
 <!-- Court of Bones -->
 	<If Condition="(HasQuest(32525) ||
@@ -90,7 +90,7 @@ Incomplete:
 					HasQuest(32532) ||
 					HasQuest(32533) ||
 					HasQuest(32731))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-CourtOfBones" />
+		<CustomBehavior File="LoadProfile" ProfileName="kto\CourtOfBones" />
 	</If>
 <!-- Beast Pens -->
 	<If Condition="(HasQuest(32550) ||
@@ -99,7 +99,7 @@ Incomplete:
 					HasQuest(32553) ||
 					HasQuest(32554) ||
 					HasQuest(32567))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-BeastPens" />
+		<CustomBehavior File="LoadProfile" ProfileName="kto\BeastPens" />
 	</If>
 <!-- Thunder Mines -->
 	<If Condition="(HasQuest(32586) ||
@@ -108,7 +108,7 @@ Incomplete:
 					HasQuest(11111) ||
 					HasQuest(11111) ||
 					HasQuest(11111))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ThunderMines" />
+		<CustomBehavior File="LoadProfile" ProfileName="kto\ThunderMines" />
 	</If>
 <!-- Conqueror's Terrace -->
 	<If Condition="(HasQuest(32568) ||
@@ -116,7 +116,7 @@ Incomplete:
 					HasQuest(11111) ||
 					HasQuest(11111) ||
 					HasQuest(11111))" >
-		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ConqTerrace" />
+		<CustomBehavior File="LoadProfile" ProfileName="kto\ConqTerrace" />
 	</If>
 <!-- Turn in Base quests. -->
 	<If Condition="HasQuest(32581) &amp;&amp; IsQuestCompleted(32581)">
