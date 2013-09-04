@@ -71,6 +71,15 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Do Quests -->
+	<If Condition="HasQuest(32541) &amp;&amp; !IsQuestCompleted(32541)" >
+		<CustomBehavior File="Message" Text="Starting Preventing a Future Threat" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32541" LootMobs="True" KillBetweenHotspots="False" PullDistance="5" />
+		<RunTo X="5998.071" Y="6401.809" Z="5.729356" />
+		<CustomBehavior File="CollectThings" MobId="69128" CollectUntil="QuestComplete" QuestId="32541" HuntingGroundRadius="100" NonCompeteDistance="5" PostInteractDelay="1000" >
+			<Hotspot X="5956.03" Y="6407.93" Z="7.34" />
+			<Hotspot X="5920.20" Y="6445.44" Z="20.20" />
+		</CustomBehavior>
+	</If>
 	<If Condition="HasQuest(32538) &amp;&amp; !IsQuestCompleted(32538)" >
 		<CustomBehavior File="Message" Text="Changing UserSettings: Pull distance to 1." LogColor="Red"  />
 		<CustomBehavior File="UserSettings" PullDistance="1" UseMount="True" KillBetweenHotspots="False" />
@@ -110,7 +119,14 @@ Incomplete:
 		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Harbingers" QuestId="32540" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	<If Condition="((HasQuest(32542)) &amp;&amp; (IsQuestCompleted(32542)))" > 
+		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />
+		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Surgical Strike" QuestId="32542" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>	
+	<If Condition="HasQuest(32541) &amp;&amp; IsQuestCompleted(32541)" >
+		<TurnIn QuestName="Preventing a Future Threat" QuestId="32541" TurnInName="Ako" TurnInId="69673" />
 	</If>
 	<If Condition="((HasQuest(32539)) &amp;&amp; (IsQuestCompleted(32539)))" > 
 		<CustomBehavior File="FlyTo" X="6319.853" Y="5909.711" Z="12.41802" />

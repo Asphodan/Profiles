@@ -69,25 +69,13 @@ Incomplete:
 					HasQuest(32536) ||
 					HasQuest(32606) ||
 					HasQuest(32545) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
 					HasQuest(32546))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-Ihgaluk" />
 	</If>
 <!-- ZaTual -->
 	<If Condition="(HasQuest(32733) ||
 					HasQuest(32538) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
-					HasQuest(11111) ||
+					HasQuest(32541) ||
 					HasQuest(11111))" >
 		<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive-ZaTual" />
 	</If>
