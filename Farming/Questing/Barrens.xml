@@ -1,7 +1,7 @@
 <HBProfile>
 
-	<Name>Battlefield: Barrens ($Rev$)</Name>
-	<MinLevel>89</MinLevel>
+	<Name>Battlefield: Barrens</Name>
+	<MinLevel>90</MinLevel>
 	<MaxLevel>100</MaxLevel>
 
 	<MinDurability>0.2</MinDurability>
@@ -46,8 +46,6 @@
 
 	<CustomBehavior File="Message" Text="Battlefield: Barrens - Item Farming" LogColor="Green" />
 	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="25" />
-	
-	<CustomBehavior File="Message" Text="This profile is made to grind for, and turn in the WEEKLY quest. Quest not required, will grind to 150 either way." LogColor="CornflowerBlue" />
 
 <!-- Kor'kron Oil -->
 	<If Condition="GetItemCount(97544) &lt; 165" >
