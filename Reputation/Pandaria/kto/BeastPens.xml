@@ -125,6 +125,6 @@ Incomplete:
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
 <!-- Next Profle -->
-<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
+<CustomBehavior File="LoadProfile" ProfileName="..KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>

@@ -131,6 +131,6 @@ Incomplete:
 		<CustomBehavior File="ForcedDismount" />
 		<TurnIn QuestName="Harbingers" QuestId="32560" TurnInName="Daelin" TurnInId="67998" />
 	</If>
-<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
+<CustomBehavior File="LoadProfile" ProfileName="..KirinTorOffensive" />
 </QuestOrder>
 </HBProfile>

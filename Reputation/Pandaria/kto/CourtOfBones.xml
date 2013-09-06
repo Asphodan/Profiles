@@ -207,6 +207,6 @@ Incomplete:
 			SpellId="1752"
 			X="6379.002" Y="6202.226" Z="45.94131" /> 
 	</If> -->
-<CustomBehavior File="LoadProfile" ProfileName="KirinTorOffensive" />
+<CustomBehavior File="LoadProfile" ProfileName="..KirinTorOffensive" />
 </QuestOrder> 
 </HBProfile>
