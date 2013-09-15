@@ -49,6 +49,6 @@
 			<Hotspot X="-276.3883" Y="-5170.92" Z="17.14139" />
 		</CustomBehavior>
 	</If>
-	<CustomBehavior File="FlyTo" X="-650.8051" Y="-4879.842" Z="2.05565" />
+	<MoveTo X="-650.8051" Y="-4879.842" Z="2.05565" />
 	</QuestOrder>
 </HBProfile>
