@@ -35,11 +35,11 @@
 		
 	</Vendors>
 	<QuestOrder>
-	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="25" />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseMount="False" PullDistance="25" />
 
 
 	<If Condition="GetItemCount(86569) &lt; 1" >
-		<CustomBehavior File="FlyTo" X="-380.3192" Y="-5147.709" Z="6.433185" />
+		<MoveTo X="-380.3192" Y="-5147.709" Z="6.433185" />
 		<CustomBehavior File="CollectThings" ObjectId="222686" ObjectId2="11" CollectItemId="86569" CollectItemCount="1" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
 			<Hotspot X="-380.3192" Y="-5147.709" Z="6.433185" />
 			<Hotspot X="-368.235" Y="-5214.807" Z="10.26647" />
