@@ -641,10 +641,7 @@
 		<CustomBehavior File="UserSettings" QuestId="31698" LootMobs="True" PullDistance="30" />
 		<Objective Nav="Fly" QuestName="Thinning the Pack" QuestId="31698" Type="KillMob" MobId="63537" KillCount="8" />
 	</If>
-
-<!-- Sprite Fright -->
-	<If Condition="HasQuest(31699) &amp;&amp; !IsQuestCompleted(31699)" >
-		<CustomBehavior File="Message" Text="Starting Sprite Fright" LogColor="Green" />
+	<If Condition="HasQuest(31699) &amp;&amp; !IsQuestCompleted(31699)" ><!-- Sprite Fright -->
 		<CustomBehavior File="UserSettings" QuestId="31699" LootMobs="True" PullDistance="30" />
 		<Objective Nav="Fly" QuestName="Sprite Fright" QuestId="31699" Type="KillMob" MobId="65635" KillCount="7" />
 	</If>
@@ -1232,28 +1229,5 @@
 	<While Condition="(GetItemCount(89112) &gt; 10)" >
 		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
 	</While>
-	
-	<CustomBehavior File="ForcedDismount" />
-	<If Condition="Me.Class == WoWClass.Shaman" >
-		<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="556" NonCompeteDistance="0" />
-	<ElseIf Condition="HasItem(60498)" >
-		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" />
-	</ElseIf>
-	<ElseIf Condition="HasItem(93672)" >
-		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" />
-	</ElseIf>
-	<ElseIf Condition="HasItem(54452)" >
-		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" />
-	</ElseIf>
-	<ElseIf Condition="HasItem(64488)" >
-		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" />
-	</ElseIf>
-	<ElseIf Condition="HasItem(6948)" >
-		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
-	</ElseIf>
-	</If>
-	
-	<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Cloud Serpent Dailies" />
-
-</QuestOrder>
+	</QuestOrder>
 </HBProfile>
