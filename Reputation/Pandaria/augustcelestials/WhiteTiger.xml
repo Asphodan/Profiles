@@ -194,10 +194,11 @@
 	<If Condition="HasQuest(30885) &amp;&amp; !IsQuestCompleted(30885)" >
 		<CustomBehavior File="Message" Text="Starting Round 3: Master Boom Boom" LogColor="Green" />
 		<CustomBehavior File="UserSettings" QuestId="30885" LootMobs="True" PullDistance="25" />
-		<CustomBehavior File="FlyTo" X="3664.081" Y="630.01" Z="636.52" />
+		<CustomBehavior File="FlyTo" X="3658.279" Y="624.055" Z="635.8873" />
+		<CustomBehavior File="FlyTo" X="3668.951" Y="643.8277" Z="637.4011" />
 		<CustomBehavior File="ForcedDismount" />
 		<While Condition="!IsQuestCompleted(30885)" >
-			<CustomBehavior File="InteractWith" QuestId="30885" MobId="61013" InteractByGossipOptions="1" WaitForNpcs="False" X="3677.51" Y="664.5" Z="636.75" />
+			<CustomBehavior File="InteractWith" QuestId="30885" MobId="61013" InteractByGossipOptions="1" WaitForNpcs="False" />
 		</While>
 	</If>
 

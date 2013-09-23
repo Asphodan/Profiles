@@ -1,0 +1,57 @@
+<HBProfile>
+	<Name>Green Fire</Name>
+
+	<MinLevel>90</MinLevel>
+	<MaxLevel>999</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>	
+	
+    <SellGrey>True</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.307" Y="5515.421" Z="1.280238" />
+		<Vendor Name="Supplier Bao" Entry="70318" Type="Repair" X="6888.963" Y="5530.123" Z="0.8541261" />
+	</Vendors>
+	
+	<Mailboxes>
+		<Mailbox X="6151" Y="5045.714" Z="36.89314" />
+	</Mailboxes>	
+	
+	<QuestOrder>
+		<CustomBehavior File="UserSettings" LootMobs="True" UseMount="False" PullDistance="25" />
+		<If Condition="GetItemCount(92426) &lt; 1" >
+			<CustomBehavior File="CollectThings" ObjectId="222686" ObjectId2="11" CollectItemId="92426" CollectItemCount="1" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
+				<Hotspot X="6474.715" Y="6200.014" Z="36.27258" />
+				<Hotspot X="6466.713" Y="6160.679" Z="36.93689" />
+				<Hotspot X="6470.572" Y="6120.238" Z="36.27129" />
+				<Hotspot X="6509.975" Y="6111.297" Z="36.27129" />
+				<Hotspot X="6550.701" Y="6113.26" Z="36.27129" />
+				<Hotspot X="6590.991" Y="6115.202" Z="32.87048" />
+				<Hotspot X="6616.69" Y="6146.98" Z="32.46929" />
+				<Hotspot X="6618.861" Y="6187.19" Z="32.46903" />
+				<Hotspot X="6580.588" Y="6201.176" Z="35.82448" />
+				<Hotspot X="6560.51" Y="6166.581" Z="36.27204" />
+				<Hotspot X="6561.189" Y="6126.015" Z="36.27204" />
+				<Hotspot X="6558.401" Y="6166.433" Z="36.27204" />
+				<Hotspot X="6546.53" Y="6204.886" Z="36.34132" />
+				<Hotspot X="6506.231" Y="6202.785" Z="36.27188" />
+				<Hotspot X="6471.59" Y="6224.453" Z="36.27962" />
+				<Hotspot X="6440.473" Y="6200.855" Z="46.30584" />
+			</CustomBehavior>
+		</If>
+	</QuestOrder>
+</HBProfile>

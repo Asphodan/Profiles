@@ -60,7 +60,7 @@
 	<If Condition="HasQuest(31376) || HasQuest(30063) || HasQuest(30066) || HasQuest(30064) ||
 			HasQuest(30068) || HasQuest(30065) || HasQuest(30006) || HasQuest(31377) ||
 			HasQuest(30067)" >
-		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Jade Serpent Dailies [Brodie]" />
+		<CustomBehavior File="LoadProfile" ProfileName="augustcelestials\JadeSerpent" />
 	</If>
 
 <!-- Temple of the White Tiger -->
@@ -69,7 +69,7 @@
 			HasQuest(30879) || HasQuest(30880) || HasQuest(30881) ||
 			HasQuest(30882) || HasQuest(30883) || HasQuest(30885) ||
 			HasQuest(30907) || HasQuest(30902)" >
-		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] White Tiger Dailies [Brodie]" />
+		<CustomBehavior File="LoadProfile" ProfileName="augustcelestials\WhiteTiger" />
 	</If>
 
 <CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of August Celestials Dailies" />

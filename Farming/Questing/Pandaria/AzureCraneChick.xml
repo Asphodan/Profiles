@@ -1,0 +1,56 @@
+<HBProfile>
+	<Name>Item: Azure Crane Chick</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+		
+	</AvoidMobs>
+
+	<Blackspots>
+		
+	</Blackspots>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		
+	</Vendors>
+	<QuestOrder>
+	<CustomBehavior File="UserSettings" LootMobs="True" UseMount="False" PullDistance="25" />
+
+	<If Condition="GetItemCount(104157) &lt; 5" >
+		<MoveTo X="-1092.274" Y="-5012.858" Z="3.039182" />
+		<CustomBehavior File="CollectThings" ObjectId="222685" ObjectId2="11" CollectItemId="104157" CollectItemCount="5" UseMount="False" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
+			<Hotspot X="-1092.274" Y="-5012.858" Z="3.039182" />
+			<Hotspot X="-1083.681" Y="-4940.52" Z="2.787937" />
+			<Hotspot X="-1050.586" Y="-4879.207" Z="2.42103" />
+			<Hotspot X="-804.9036" Y="-4799.058" Z="4.824111" />
+			<Hotspot X="-601.4359" Y="-4804.164" Z="5.834008" />
+			<Hotspot X="-398.8793" Y="-4811.876" Z="2.110772" />
+			<Hotspot X="-387.7644" Y="-4982.262" Z="5.601159" />
+			<Hotspot X="-434.9943" Y="-5039.119" Z="6.609401" />
+			<Hotspot X="-478.3177" Y="-5110.725" Z="4.031429" />
+		</CustomBehavior>
+	</If>
+	<MoveTo X="-650.8051" Y="-4879.842" Z="2.05565" />
+	</QuestOrder>
+</HBProfile>
