@@ -25,18 +25,23 @@
 	</Mailboxes>
 	
 	<Blackspots>
+		<Blackspot X="2790.942" Y="-503.1375" Z="241.7948" Radius="12.36548" Height="13.24406" /> <!-- Orc Ship in Jade Forest -->
 	</Blackspots>
 	
 	<QuestOrder>
 		<While Condition="true">
-			<While Condition="Me.ZoneId == 5785" >
-				<CustomBehavior File="FlyTo" X="2768.544" Y="-2217.189" Z="176.7425" />
+				<CustomBehavior File="FlyTo" X="2768.544" Y="-2217.189" Z="176.7425" /> <!-- Jade Forest -->
 				<CustomBehavior File="WaitTimer" WaitTime="300000" />
-			</While>
-			<While Condition="Me.ZoneId == 6134" >
-				<CustomBehavior File="FlyTo" X="-2226.785" Y="1122.29" Z="4.180466" />
+				
+				<CustomBehavior File="FlyTo" X="-2226.785" Y="1122.29" Z="4.180466" /> <!-- Krasarang -->
 				<CustomBehavior File="WaitTimer" WaitTime="300000" />
-			</While>
+				
+
+				<CustomBehavior File="FlyTo" X="1279.07" Y="4979.126" Z="120.1586" /> <!-- Townlong Steppes -->
+				<CustomBehavior File="WaitTimer" WaitTime="300000" />
+				
+				<CustomBehavior File="FlyTo" X="2792.167" Y="142.0556" Z="448.4016" /> <!-- Kunlai -->
+				<CustomBehavior File="WaitTimer" WaitTime="300000" />
 		</While>
 	</QuestOrder>
 </HBProfile>
