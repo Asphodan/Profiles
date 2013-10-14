@@ -653,26 +653,19 @@
 				<CustomBehavior File="UserSettings" PullDistance="2" />
  	
 			<If Condition="(Me.Level &gt;= 86)" >
-	<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="5" Text="You are too high for this Combat UseItemOn quest, please manually do it!" />
+			<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="5" Text="You are too high for this Combat UseItemOn quest, please manually do it!" />
 			</If>
 		
 				<!-- petpassive -->
-			 <While Condition="((HasQuest(25323)) &amp;&amp; (!IsQuestCompleted(25323)))" >
-				<CustomBehavior File="CombatUseItemOn" MobId="38896" ItemId="53107" UseOnce="True" WaitTime="5000" MobHpPercentLeft="100" MaxRange="18" X="5271.366" Y="-2826.779" Z="1526.809" />
-				<CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for agro to clear {TimeRemaining}" />
-				
-				<CustomBehavior File="CombatUseItemOn" MobId="38896" ItemId="53107" UseOnce="True" WaitTime="5000" MobHpPercentLeft="100" MaxRange="18" X="5271.366" Y="-2826.779" Z="1526.809" />
-				<CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for agro to clear {TimeRemaining}" />
-				
-				<CustomBehavior File="FlyTo" QuestId="25323" DestName="Objective" X="5353.267" Y="-2962.379" Z="1544.673" />
-				<CustomBehavior File="ForcedDismount" QuestId="25323" />
-				
-				<CustomBehavior File="CombatUseItemOn" MobId="38896" ItemId="53107" UseOnce="True" WaitTime="5000" MaxRange="18" MobHpPercentLeft="100" X="5353.267" Y="-2962.379" Z="1544.673" />
-				<CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for agro to clear {TimeRemaining}" />
-				
-				<CustomBehavior File="CombatUseItemOn" MobId="38896" ItemId="53107" UseOnce="True" WaitTime="5000" MaxRange="18" MobHpPercentLeft="100" X="5353.267" Y="-2962.379" Z="1544.673" />
-				<CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for agro to clear {TimeRemaining}" />
-			 </While>
+			<While Condition="HasQuest(25323) &amp;&amp; !IsQuestCompleted(25323)">
+				<CustomBehavior File="CombatUseItemOnV2" QuestId="32446" ItemId="53107" UseWhenMobHasHealthPercent="100" MobId="38896" MaxRangeToUseItem="15" UseItemStrategy="UseItemOncePerTarget" RecallPetAtMobPercentHealth="50" >
+					<HuntingGrounds WaypointVisitStrategy="Random" >
+						<Hotspot X="5394.81" Y="-2977.172" Z="1549.756" />
+						<Hotspot X="5440.076" Y="-2825.341" Z="1516.575" />
+						<Hotspot X="5363.137" Y="-2808.082" Z="1518.725" />
+					</HuntingGrounds>
+				</CustomBehavior>
+			</While>
 				<!-- petassist -->
 				<CustomBehavior File="FlyTo" DestName="Turnin Quest" X="5190.782" Y="-2954.331" Z="1560.822" />
 				<CustomBehavior File="UserSettings" PullDistance="25" />
