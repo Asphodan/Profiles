@@ -1,0 +1,85 @@
+<HBProfile>
+	<Name>Food: Valley Stir Fry</Name>
+
+	<MinLevel>90</MinLevel>
+	<MaxLevel>999</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>	
+	
+    <SellGrey>True</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.307" Y="5515.421" Z="1.280238" />
+		<Vendor Name="Supplier Bao" Entry="70318" Type="Repair" X="6888.963" Y="5530.123" Z="0.8541261" />
+	</Vendors>
+	
+	<Mailboxes>
+		<Mailbox X="6151" Y="5045.714" Z="36.89314" />
+	</Mailboxes>	
+	
+	<QuestOrder>
+		<CustomBehavior File="UserSettings" LootMobs="True" UseMount="True" PullDistance="25" />
+			<If Condition="GetItemCount(74864) &lt; 20" > <!-- Check for amount of Reef Octopus -->
+				<CustomBehavior File="FlyTo" X="-1441.441" Y="-264.8094" Z="-0.1957358" /> 
+				<CustomBehavior File="MrFishIt" X="-1441.441" Y="-264.8094" Z="-0.1957358" CollectItemCount="20" CollectItemId="74864"/>
+			</If>
+			<If Condition="GetItemCount(74839) &lt; 20" > <!-- Check for amount of Windfowl Breast -->
+				<CustomBehavior File="FlyTo" X="4.215805" Y="325.3379" Z="146.1992" />
+				<CustomBehavior File="CollectThings" MobId1="57299" MobId2="58741" MobId3="58766" CollectItemId="74839" CollectItemCount="20" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
+					<Hotspot X="4.215805" Y="325.3379" Z="146.1992" />
+					<Hotspot X="130.1856" Y="309.0031" Z="144.3579" />
+					<Hotspot X="250.657" Y="393.1138" Z="146.999" />
+					<Hotspot X="335.6871" Y="437.2392" Z="146.3503" />
+					<Hotspot X="382.4983" Y="592.745" Z="147.3932" />
+					<Hotspot X="222.7975" Y="580.1414" Z="145.3817" />
+					<Hotspot X="121.1077" Y="513.5026" Z="145.9014" />
+				</CustomBehavior>
+			</If>
+			<If Condition="!Me.HasAura(7353)" >
+				<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="818" />
+			</If>
+			<If Condition="HasSpell(104381)" > <!-- Cast one of the many Cooking skills you might have -->
+				<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="104381" />
+				<ElseIf Condition="HasSpell(88053)" >
+					<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="88053" />
+				</ElseIf>
+				<ElseIf Condition="HasSpell(51296)" >
+					<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="51296" />
+				</ElseIf>
+				<ElseIf Condition="HasSpell(33359)" >
+					<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="33359" />
+				</ElseIf>
+				<ElseIf Condition="HasSpell(18260)" >
+					<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="18260" />
+				</ElseIf>
+				<ElseIf Condition="HasSpell(3413)" >
+					<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="3413" />
+				</ElseIf>
+				<ElseIf Condition="HasSpell(3102)" >
+					<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="3102" />
+				</ElseIf>
+				<ElseIf Condition="HasSpell(2550)" >
+					<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="2550" />
+				</ElseIf>
+			</If>
+<!--		<While Condition="GetItemCount(74647) &lt; 20" >  Check for amount of Valley Stir Fry 
+			<CustomBehavior File="PerformTradeskillOn" TradeSkillId="185" TradeSkillItemId="74647" CastOnItemId="74864" NumOfTimes="1" />
+		</While>-->
+	</QuestOrder>
+</HBProfile>
+
+
