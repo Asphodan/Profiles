@@ -973,25 +973,22 @@
 <PickUp QuestName="The Road to Kun-Lai" QuestId="31254" GiverName="Messenger Grummle" GiverId="63778" />
 -->
 </While>
-<If Condition="HasQuest(31254) &amp;&amp; !IsQuestCompleted(31254)" >
-  <While Condition="!IsObjectiveComplete(1, 31254)" >
-    <CustomBehavior File="InteractWith" NonCompeteDistance="0" MobId="62738" X="481.8767" Y="-70.25" Z="178.145" />
-  </While>
-  <RunTo X="783.1003" Y="-202.6169" Z="402.1769" />
-</If>
-<PickUp QuestName="Robbing Robbers of Robbers" QuestId="31286" GiverName="Len the Whisperer" GiverId="63484" X="903.3386" Y="-147.3142" Z="430.8914" />
-<PickUp QuestName="Educating Saurok" QuestId="31287" GiverName="Len the Whisperer" GiverId="63484" X="903.3386" Y="-147.3142" Z="430.8914" />
-<Objective QuestName="Educating Saurok" QuestId="31287" Type="KillMob" MobId="63494" KillCount="1" />
-<Objective QuestName="Robbing Robbers of Robbers" QuestId="31286" Type="CollectItem" ItemId="85981" CollectCount="7" />
-<TurnIn QuestName="Robbing Robbers of Robbers" QuestId="31286" TurnInName="Len the Whisperer" TurnInId="63484" X="903.3386" Y="-147.3142" Z="430.8914" />
-<TurnIn QuestName="Educating Saurok" QuestId="31287" TurnInName="Len the Whisperer" TurnInId="63484" X="903.3386" Y="-147.3142" Z="430.8914" />
-<PickUp QuestName="The Spring Drifter" QuestId="31285" GiverName="Brewmaster Boof" GiverId="63367" X="1166.58" Y="-118.6823" Z="475.635" />
-<If Condition="HasQuest(31254) &amp;&amp; !IsQuestCompleted(31254)" >
-  <While Condition="!IsObjectiveComplete(2, 31254)" >
-    <CustomBehavior File="InteractWith" NonCompeteDistance="0" MobId="63367" X="1166.58" Y="-118.6823" Z="475.635" />
-  </While>
-  <RunTo X="783.1003" Y="-202.6169" Z="402.1769" />
-</If>
+	<If Condition="HasQuest(31254) &amp;&amp; !IsQuestCompleted(31254)" >
+		<While Condition="!IsObjectiveComplete(1, 31254)" >
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" MobId="62738" X="481.8767" Y="-70.25" Z="178.145" />
+		</While>
+		<RunTo X="783.1003" Y="-202.6169" Z="402.1769" />
+	</If>
+	<PickUp QuestName="Robbing Robbers of Robbers" QuestId="31286" GiverName="Len the Whisperer" GiverId="63484" X="903.3386" Y="-147.3142" Z="430.8914" />
+	<Objective QuestName="Robbing Robbers of Robbers" QuestId="31286" Type="CollectItem" ItemId="85981" CollectCount="7" />
+	<TurnIn QuestName="Robbing Robbers of Robbers" QuestId="31286" TurnInName="Len the Whisperer" TurnInId="63484" X="903.3386" Y="-147.3142" Z="430.8914" />
+	<PickUp QuestName="The Spring Drifter" QuestId="31285" GiverName="Brewmaster Boof" GiverId="63367" X="1166.58" Y="-118.6823" Z="475.635" />
+	<If Condition="HasQuest(31254) &amp;&amp; !IsQuestCompleted(31254)" >
+		  <While Condition="!IsObjectiveComplete(2, 31254)" >
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" MobId="63367" X="1166.58" Y="-118.6823" Z="475.635" />
+		</While>
+		<RunTo X="783.1003" Y="-202.6169" Z="402.1769" />
+	</If>
 <If Condition="HasQuest(31285) &amp;&amp; !IsQuestCompleted(31285)" >
 	<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="31285" MobId="63517" X="1174.031" Y="-120.6076" Z="475.3261" />
   <CustomBehavior File="WaitTimer" WaitTime="83000" />
