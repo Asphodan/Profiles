@@ -1,0 +1,68 @@
+<HBProfile>
+	<Name>Hallow's End - Kalimdor</Name>
+	<MinLevel>85</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.1</MinDurability>
+
+
+	<Blackspots>
+	</Blackspots>
+	<AvoidMobs>
+	</AvoidMobs>
+       
+       
+	<QuestOrder> <!--
+		<RunTo X="9857.789" Y="938.8784" Z="1308.136" />
+			<CustomBehavior File="InteractWith" MobId="190034" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="9857.789" Y="938.8784" Z="1308.136" />		
+		<CustomBehavior File="FlyTo" DestName="Darnassus Inn" X="10124.15" Y="2245.833" Z="1327.572" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190038" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="10124.15" Y="2245.833" Z="1327.572" /> 
+		<CustomBehavior File="FlyTo" DestName="Lor'danel - Darkshore" X="7386.569" Y="-238.4317" Z="6.938485" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="208115" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="7386.569" Y="-238.4317" Z="6.938485" /> 
+		<CustomBehavior File="FlyTo" DestName="Whisperwind Grove - Felwood" X="6082.909" Y="-886.6302" Z="411.8077" />
+		<CustomBehavior File="ForcedDismount" />                               
+			<CustomBehavior File="InteractWith" MobId="208158" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="6082.909" Y="-886.6302" Z="411.8077" />
+		<CustomBehavior File="FlyTo" DestName="Talonbranch Glade - Felwood" X="6204.329" Y="-1884.555" Z="565.9095" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="208159" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="6204.329" Y="-1884.555" Z="565.9095" /> -->
+		<CustomBehavior File="FlyTo" DestName="Everlook - Winterspring" X="6710.327" Y="-4670.572" Z="721.1443" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190106" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="6710.327" Y="-4670.572" Z="721.1443" />
+		<!--<CustomBehavior File="FlyTo" DestName="Astranaar - Ashenvale" X="2740.37" Y="-400.1674" Z="108.7351" />
+		<CustomBehavior File="ForcedDismount" />
+			<RunTo X="2757.646" Y="-419.3284" Z="111.4808" />
+			<RunTo X="2772.554" Y="-425.3295" Z="116.5747" />
+			<CustomBehavior File="InteractWith" MobId="190035" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="2724.969" Y="-392.0531" Z="107.0952" /> -->
+
+	</QuestOrder>
+</HBProfile>
