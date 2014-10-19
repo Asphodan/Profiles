@@ -46,7 +46,7 @@
 			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
 			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
 			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
-			<RunTo X="6204.329" Y="-1884.555" Z="565.9095" /> -->
+			<RunTo X="6204.329" Y="-1884.555" Z="565.9095" /> 
 		<CustomBehavior File="FlyTo" DestName="Everlook - Winterspring" X="6710.327" Y="-4670.572" Z="721.1443" />
 		<CustomBehavior File="ForcedDismount" />
 			<CustomBehavior File="InteractWith" MobId="190106" ObjectType="Gameobject" />
@@ -54,7 +54,7 @@
 			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
 			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
 			<RunTo X="6710.327" Y="-4670.572" Z="721.1443" />
-		<!--<CustomBehavior File="FlyTo" DestName="Astranaar - Ashenvale" X="2740.37" Y="-400.1674" Z="108.7351" />
+		<CustomBehavior File="FlyTo" DestName="Astranaar - Ashenvale" X="2740.37" Y="-400.1674" Z="108.7351" />
 		<CustomBehavior File="ForcedDismount" />
 			<RunTo X="2757.646" Y="-419.3284" Z="111.4808" />
 			<RunTo X="2772.554" Y="-425.3295" Z="116.5747" />
@@ -62,7 +62,59 @@
 			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
 			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
 			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
-			<RunTo X="2724.969" Y="-392.0531" Z="107.0952" /> -->
-
+			<RunTo X="2724.969" Y="-392.0531" Z="107.0952" /> 
+		<CustomBehavior File="FlyTo" DestName="Above Nordrassil" X="5534.784" Y="-3624.575" Z="1567.056" />
+		<RunTo X="5520.768" Y="-3605.094" Z="1570.052" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="208162" ObjectType="Gameobject" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="5534.532" Y="-3627.303" Z="1566.804" /> 
+		<CustomBehavior File="FlyTo" DestName="Shrine of Aviana - Hyjal" X="4951.414" Y="-2680.28" Z="1427.278" />
+		<CustomBehavior File="ForcedDismount" />
+		<RunTo X="4907.564" Y="-2740.228" Z="1437.613" />
+			<CustomBehavior File="InteractWith" MobId="208164" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="4951.414" Y="-2680.28" Z="1427.278" />
+		<CustomBehavior File="FlyTo" DestName="Grove of Aessina - Hyjal" X="5137.826" Y="-1726.157" Z="1335.965" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="208163" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="5137.826" Y="-1726.157" Z="1335.965" />
+		<CustomBehavior File="FlyTo" DestName="Tharl'darah Overlook - Stonetalon Mountains" X="2159.809" Y="1560.099" Z="341.6538" />
+		<CustomBehavior File="ForcedDismount" />
+		<RunTo X="2114.242" Y="1569.186" Z="343.3721" />
+			<CustomBehavior File="InteractWith" MobId="208175" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="2159.809" Y="1560.099" Z="341.6538" />  -->
+		<CustomBehavior File="FlyTo" DestName="Farwatcher's Glen - Stonetalon Mountains" X="1001.955" Y="2011.443" Z="126.261" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="208176" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="1001.955" Y="2011.443" Z="126.261" />
+		<CustomBehavior File="FlyTo" DestName="Windshear Hold - Stonetalon Mountains" X="1225.065" Y="432.9108" Z="77.62712" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="208174" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="1225.065" Y="432.9108" Z="77.62712" />
+		<CustomBehavior File="FlyTo" DestName="Northwatch Expedition Base Camp - Stonetalon Mountains" X="267.543" Y="-290.1751" Z="92.69437" />
+		<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="208173" ObjectType="Gameobject" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for bot {TimeRemaining}" />
+			<RunTo X="267.543" Y="-290.1751" Z="92.69437" />
 	</QuestOrder>
 </HBProfile>
