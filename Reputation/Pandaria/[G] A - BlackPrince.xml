@@ -1,7 +1,7 @@
 <HBProfile>
-	<Name>Ratchet Reputation</Name>
+	<Name>Bronze Whelp</Name>
 
-	<MinLevel>50</MinLevel>
+	<MinLevel>90</MinLevel>
 	<MaxLevel>999</MaxLevel>
 	
 	<MinDurability>0.2</MinDurability>
@@ -22,17 +22,17 @@
 	<Mailboxes>
 	</Mailboxes>
 	
+	<CustomBehavior File="UserSettings" PullDistance="5" />
 	
 	<GrindArea>
-		<Factions>230</Factions>
+		<Factions>14,16</Factions>
 		<MaxDistance>30</MaxDistance>
 		<Hotspots>
-			<Hotspot X="-1608.636" Y="-4233.838" Z="4.90729" />
-			<Hotspot X="-1649.254" Y="-4179.203" Z="2.805457" />
-			<Hotspot X="-1686.659" Y="-4243.079" Z="6.128453" />
-			<Hotspot X="-1630.933" Y="-4298.619" Z="14.54671" />
-			<Hotspot X="-1573.26" Y="-4269.783" Z="6.013775" />
-			<Hotspot X="-1677.013" Y="-4359.703" Z="4.367105" />
+			<Hotspot X="-643.4625" Y="-708.4919" Z="30.4334" />
+			<Hotspot X="-684.5397" Y="-729.9495" Z="13.19406" />
+			<Hotspot X="-746.0401" Y="-699.2762" Z="7.117442" />
+			<Hotspot X="-727.5766" Y="-616.9655" Z="24.24725" />
+			<Hotspot X="-644.8749" Y="-642.3978" Z="43.96427" />
 		</Hotspots>
 	</GrindArea>
    
