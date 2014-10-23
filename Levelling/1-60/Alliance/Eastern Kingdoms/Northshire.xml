@@ -87,9 +87,9 @@
 			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 		</While>
-		<If Condition="HasQuest(28806) &amp;&amp; !IsQuestCompleted(28806)">
+		<While Condition="HasQuest(28806) &amp;&amp; !IsQuestCompleted(28806)">
 			<CustomBehavior File="InteractWith" QuestId="28806" ObjectType="Npc" MobId="50047" NumOfTimes="4" CollectionDistance="200" X="-8765.53" Y="-126.1441" Z="83.60645" />
-		</If>
+		</While>
 		<If Condition="HasQuest(28813) &amp;&amp; !IsQuestCompleted(28813)">
 			<CustomBehavior File="InteractWith" QuestId="28813" ObjectType="Npc" MobId="50047" NumOfTimes="4" CollectionDistance="200" X="-8765.53" Y="-126.1441" Z="83.60645" />
 		</If>
@@ -109,11 +109,11 @@
 		<If Condition="((HasQuest(28817)) &amp;&amp; (IsQuestCompleted(28817)))" >
 			<TurnIn QuestName="Rear is Clear" QuestId="28817" TurnInName="Marshal McBrdide" TurnInId="197" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		</If>
-		<While Condition="HasQuestAvailable(9296)" > <!-- Milly's Vineyard -->
+<!--		<While Condition="HasQuestAvailable(9296)" > <!-- Milly's Vineyard --> <!-- It Broke --> <!--
 			<CustomBehavior File="InteractWith"  MobId="9296" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
-		</While>
+		</While> -->
 		<If Condition="((HasQuest(26391)) &amp;&amp; (!IsQuestCompleted(26391)))" >
 			<While Condition="((HasQuest(26391)) &amp;&amp; (!IsQuestCompleted(26391)))" >
 			<RunTo DestName="Vineyard" QuestId="26391" X="-9060.157" Y="-283.2247" Z="75.07942" />

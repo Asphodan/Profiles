@@ -43,10 +43,9 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-
-	<If Condition="((HasQuest(54)) &amp;&amp; (IsQuestCompleted(54)))" >
-		<TurnIn QuestName="Report to Goldshire" QuestId="54" TurnInName="Marshal McBrdide" TurnInId="240" X="-9465.52" Y="74.01" Z="56.60" />
-	</If>
+	<While Condition="((HasQuest(54)) &amp;&amp; (IsQuestCompleted(54)))" >
+		<TurnIn QuestName="Report to Goldshire" QuestId="54" TurnInName="Marshal Dughan" TurnInId="240" X="-9465.521" Y="74.00694" Z="56.59536" />
+	</While>
 	<While Condition="HasQuestAvailable(240)" >
 		<CustomBehavior File="InteractWith"  MobId="240" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
@@ -87,9 +86,10 @@
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
 		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
 	</While>
-	<If Condition="((HasQuest(26395)) &amp;&amp; (IsQuestCompleted(26395)))" >
+	<While Condition="((HasQuest(26395)) &amp;&amp; (IsQuestCompleted(26395)))" >
+		<UseItem ItemId="65733" QuestName="Dungar Longdrink" QuestId="26395"  />
 		<TurnIn QuestId="26395" QuestName="Dungar Longdrink" TurnInName="Dungarr Longdrink" TurnInId="352" X="-8835.292" Y="490.3976" Z="109.6168" />
-	</If>
+	</While>
 	<While Condition="HasQuestAvailable(352)" >
 		<CustomBehavior File="InteractWith"  MobId="352" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-8913.069" Y="-137.4063" Z="80.81811" />
 		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
