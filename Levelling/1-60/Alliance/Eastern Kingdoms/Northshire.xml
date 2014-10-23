@@ -72,7 +72,8 @@
 			<RunTo X="-8959.201" Y="-148.761" Z="81.5061" />
 			<While Condition="(HasQuest(26917)) &amp;&amp; (!IsQuestCompleted(26917))">
 				<CustomBehavior File="InteractWith" QuestId="26917" MobId="44548" WaitTime="1000" X="-8969.78" Y="-146.455" Z="81.50681" />
-				<CustomBehavior File="RunMacro" Macro="/cast Steady Shot" NumOfTimes="1" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/target Training Dummy" NumOfTimes="2" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/cast Steady Shot" NumOfTimes="2" WaitTime="1000" />
 			</While>
 		</If>
 		<If Condition="((HasQuest(26917)) &amp;&amp; (IsQuestCompleted(26917)))" >
