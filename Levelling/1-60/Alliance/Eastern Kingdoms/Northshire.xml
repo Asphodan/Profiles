@@ -90,11 +90,17 @@
 		<If Condition="HasQuest(28806) &amp;&amp; !IsQuestCompleted(28806)">
 			<CustomBehavior File="InteractWith" QuestId="28806" ObjectType="Npc" MobId="50047" NumOfTimes="4" CollectionDistance="200" X="-8765.53" Y="-126.1441" Z="83.60645" />
 		</If>
+		<If Condition="HasQuest(28813) &amp;&amp; !IsQuestCompleted(28813)">
+			<CustomBehavior File="InteractWith" QuestId="28813" ObjectType="Npc" MobId="50047" NumOfTimes="4" CollectionDistance="200" X="-8765.53" Y="-126.1441" Z="83.60645" />
+		</If>
 		<If Condition="HasQuest(28791) &amp;&amp; !IsQuestCompleted(28791)"> 
 			<Objective Type="KillMob" QuestName="They Sent Assassins" QuestId="28791"  MobId="50039" KillCount="8" />
 		</If>
 		<If Condition="((HasQuest(28791)) &amp;&amp; (IsQuestCompleted(28791)))" >
 			<TurnIn QuestName="They Sent Assassins" QuestId="28791" TurnInName="Sergeant Willem" TurnInId="823" X="-8827.837" Y="-158.6233" Z="79.85925" />
+		</If>
+		<If Condition="((HasQuest(28813)) &amp;&amp; (IsQuestCompleted(28813)))" >
+			<TurnIn QuestName="Fear No Evil" QuestId="28806" TurnInName="Brother Paxton" TurnInId="951" X="-8827.837" Y="-158.6233" Z="79.85925" />
 		</If>
 		<If Condition="((HasQuest(28806)) &amp;&amp; (IsQuestCompleted(28806)))" >
 			<TurnIn QuestName="Fear No Evil" QuestId="28806" TurnInName="Brother Paxton" TurnInId="951" X="-8827.837" Y="-158.6233" Z="79.85925" />
