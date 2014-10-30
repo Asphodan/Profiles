@@ -32,6 +32,10 @@
 			<If Condition="Me.Class == WoWClass.Rogue">
 				<SetGrindArea>
 					<GrindArea>
+					<AvoidMobs>
+						<Mob Name="Ironmarch Warsmith" Entry="77653"/>
+						<Mob Name="Ironmarch Earth-Caller" Entry="76672"/>
+					</AvoidMobs>
 						<Factions>14,16</Factions>
 						<Hotspots>
 							<Hotspot X="-11027.5" Y="-3280.693" Z="55.21924" />
