@@ -1,0 +1,39 @@
+<HBProfile>
+	<Name>Ratchet Reputation</Name>
+
+	<MinLevel>50</MinLevel>
+	<MaxLevel>999</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>2</MinFreeBagSlots>
+
+    <SellGrey>True</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Vendors>
+	</Vendors>
+
+	<Mailboxes>
+	</Mailboxes>
+	
+	
+	<GrindArea>
+		<Factions>230</Factions>
+		<MaxDistance>30</MaxDistance>
+		<Hotspots>
+			<Hotspot X="-1608.636" Y="-4233.838" Z="4.90729" />
+			<Hotspot X="-1649.254" Y="-4179.203" Z="2.805457" />
+			<Hotspot X="-1686.659" Y="-4243.079" Z="6.128453" />
+			<Hotspot X="-1630.933" Y="-4298.619" Z="14.54671" />
+			<Hotspot X="-1573.26" Y="-4269.783" Z="6.013775" />
+			<Hotspot X="-1677.013" Y="-4359.703" Z="4.367105" />
+		</Hotspots>
+	</GrindArea>
+   
+</HBProfile>

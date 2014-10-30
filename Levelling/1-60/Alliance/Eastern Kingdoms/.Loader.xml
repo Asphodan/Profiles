@@ -1,0 +1,41 @@
+<HBProfile>
+	<Name>EK Loader</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+	  
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	  
+	<Mailboxes>
+		<Mailbox X="-8908.27" Y="-129.904" Z="80.91549" />
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+	<QuestOrder>
+		<If Condition="(Me.Level &lt;= 5)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Northshire" />
+		</If>
+	</QuestOrder>
+</HBProfile>

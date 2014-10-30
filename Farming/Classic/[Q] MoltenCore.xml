@@ -1,0 +1,52 @@
+<HBProfile>
+	<Name>Molten Core</Name>
+	<MinDurability>0.3</MinDurability>
+	<MinFreeBagSlots>0</MinFreeBagSlots>
+	<MinLevel>54</MinLevel>
+	<MaxLevel>91</MaxLevel>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+   
+	<Vendors>
+		<Vendor Name="Fergus Gravelsmash" Entry="47937" Type="Repair" X="-7093.68" Y="-1268.31" Z="270.485" />
+	</Vendors>
+	<Mailboxes>
+		<Mailbox X="-7112.238" Y="-1199.937" Z="306.9844" />  Iron Summit 
+	</Mailboxes>
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<QuestOrder>
+		<MoveTo X="963.8693" Y="-938.2178" Z="-181.2109" />
+			<CustomBehavior File="InteractWith" MobId="12118" WaitTime="1000" />
+		<MoveTo X="1118.63" Y="-1011.295" Z="-187.2103" />
+			<CustomBehavior File="InteractWith" MobId="11982" WaitTime="1000" /> 
+		<MoveTo X="684.4346" Y="-472.03" Z="-211.096" />
+			<CustomBehavior File="InteractWith" MobId="12057" WaitTime="1000" />
+		<MoveTo X="636.4229" Y="-791.2049" Z="-208.5674" />
+			<If Condition="Me.Class == WoWClass.Druid">
+				<CustomBehavior File="InteractWith" MobId="12056" WaitTime="500" />   
+				<CustomBehavior File="RunMacro" Macro="/cast Moonfire" NumOfTimes="1" WaitTime="1000" />
+				<ElseIf Condition="Me.Class == WoWClass.Warlock">
+				</ElseIf>
+			</If> 
+		<MoveTo X="575.053" Y="-787.5067" Z="-206.8778" />
+			<CustomBehavior File="InteractWith" MobId="12264" WaitTime="1000" />
+		<MoveTo X="782.9594" Y="-990.1287" Z="-206.4335" />
+			<CustomBehavior File="InteractWith" MobId="11988" WaitTime="1000" />
+		<MoveTo X="607.2257" Y="-1195.68" Z="-195.7873" />
+			<CustomBehavior File="InteractWith" MobId="11988" WaitTime="1000" /> 
+	</QuestOrder>
+
+</HBProfile>
+

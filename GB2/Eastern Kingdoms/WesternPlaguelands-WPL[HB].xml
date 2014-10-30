@@ -3,8 +3,8 @@
   <MinDurability>0.4</MinDurability>
   <MinFreeBagSlots>1</MinFreeBagSlots>
   
-  <MinLevel>1</MinLevel>
-  <MaxLevel>86</MaxLevel>
+  <MinLevel>60</MinLevel>
+  <MaxLevel>999</MaxLevel>
   <Factions>99999</Factions>
   
   <MailGrey>False</MailGrey>
