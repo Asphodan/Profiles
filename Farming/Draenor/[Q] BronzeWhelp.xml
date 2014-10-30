@@ -29,23 +29,40 @@
 		<CustomBehavior File="ForcedDismount" />
 		<!-- Start Grind -->
 		<If Condition="GetItemCount(118675) &lt; 5" >
-			<SetGrindArea>
-				<GrindArea>
-					<Factions>14,16</Factions>
-					<Hotspots>
-						<Hotspot X="-10904.29" Y="-3171.824" Z="49.83331" />
-						<Hotspot X="-10673.17" Y="-3201.537" Z="21.16462" />
-						<Hotspot X="-10663.01" Y="-3180.192" Z="22.13813" />
-						<Hotspot X="-10716.36" Y="-3126.918" Z="32.23577" />
-						<Hotspot X="-10816.17" Y="-3058.754" Z="46.84266" />
-						<Hotspot X="-10847.78" Y="-3022.512" Z="48.81277" />
-						<Hotspot X="-10889.7" Y="-3062.817" Z="43.47877" />
-						<Hotspot X="-10946.54" Y="-3090.114" Z="44.54818" />
-						<Hotspot X="-10992.59" Y="-3133.335" Z="40.48926" />
-					</Hotspots>
-				</GrindArea>
-			</SetGrindArea>
-		<GrindTo Condition="(GetItemCount(118675) &gt;= 5)" />
+			<If Condition="Me.Class == WoWClass.Rogue">
+				<SetGrindArea>
+					<GrindArea>
+						<Factions>14,16</Factions>
+						<Hotspots>
+							<Hotspot X="-11027.5" Y="-3280.693" Z="55.21924" />
+							<Hotspot X="-10920.06" Y="-3395.14" Z="81.81849" />
+							<Hotspot X="-10908.11" Y="-3494.662" Z="64.95499" />
+							<Hotspot X="-11087.92" Y="-3481.217" Z="68.096" />
+							<Hotspot X="-11068.14" Y="-3414.285" Z="69.599" />
+						</Hotspots>
+					</GrindArea>
+				</SetGrindArea>
+				<GrindTo Condition="(GetItemCount(118675) &gt;= 5)" />
+				<Else>
+					<SetGrindArea>
+						<GrindArea>
+							<Factions>14,16</Factions>
+							<Hotspots>
+								<Hotspot X="-10904.29" Y="-3171.824" Z="49.83331" />
+								<Hotspot X="-10673.17" Y="-3201.537" Z="21.16462" />
+								<Hotspot X="-10663.01" Y="-3180.192" Z="22.13813" />
+								<Hotspot X="-10716.36" Y="-3126.918" Z="32.23577" />
+								<Hotspot X="-10816.17" Y="-3058.754" Z="46.84266" />
+								<Hotspot X="-10847.78" Y="-3022.512" Z="48.81277" />
+								<Hotspot X="-10889.7" Y="-3062.817" Z="43.47877" />
+								<Hotspot X="-10946.54" Y="-3090.114" Z="44.54818" />
+								<Hotspot X="-10992.59" Y="-3133.335" Z="40.48926" />
+							</Hotspots>
+						</GrindArea>
+					</SetGrindArea>
+					<GrindTo Condition="(GetItemCount(118675) &gt;= 5)" />
+				</Else>
+			</If> 
 		</If> 
 	</QuestOrder>
    
