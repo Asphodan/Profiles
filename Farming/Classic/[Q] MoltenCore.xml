@@ -39,6 +39,9 @@
 				<CustomBehavior File="RunMacro" Macro="/cast Moonfire" NumOfTimes="1" WaitTime="1000" />
 				<ElseIf Condition="Me.Class == WoWClass.Warlock">
 				</ElseIf>
+				<ElseIf Condition="Me.Class == WoWClass.Hunter">
+				<CustomBehavior File="RunMacro" Macro="/cast Concussive Shot" NumOfTimes="1" WaitTime="1000" />
+				</ElseIf>
 			</If> 
 		<MoveTo X="575.053" Y="-787.5067" Z="-206.8778" />
 			<CustomBehavior File="InteractWith" MobId="12264" WaitTime="1000" />
