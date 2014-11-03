@@ -33,7 +33,7 @@
 			<CustomBehavior File="InteractWith" MobId="11982" WaitTime="1000" /> 
 		<MoveTo X="684.4346" Y="-472.03" Z="-211.096" />
 			<CustomBehavior File="InteractWith" MobId="12057" WaitTime="1000" />
-		<MoveTo X="636.4229" Y="-791.2049" Z="-208.5674" />
+		<MoveTo X="636.4229" Y="-791.2049" Z="-208.5674" /> <!-- Barron Geddon -->
 			<If Condition="Me.Class == WoWClass.Druid">
 				<CustomBehavior File="InteractWith" MobId="12056" WaitTime="500" />   
 				<CustomBehavior File="RunMacro" Macro="/cast Moonfire" NumOfTimes="1" WaitTime="1000" />
