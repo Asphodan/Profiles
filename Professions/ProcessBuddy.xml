@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Professionbuddy>
+
+  <If Condition="SecondaryBot.Name != &quot;Combat Bot&quot;" IgnoreCanRun="True">
+    <ChangeBotAction BotName="Combat Bot" />
+  </If>
+
+  <!-- Module -->
+  <Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="0 - Module" Name="1 - Disenchant" Summary="" />
+  <Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="0 - Module" Name="2 - Prospect" Summary="" />
+	<Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="0 - Module" Name="3 - Smelt" Summary="" />
+	<Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="0 - Module" Name="4 - Bolt" Summary="" />
+	<Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="0 - Module" Name="5 - Mill" Summary="" />
+	<Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="0 - Module" Name="6 - Ink" Summary="" />
+
+	<!-- General -->
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="1 - General" Name="0 - Combine Small Ethereal Shard" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="1 - General" Name="0 - Combine Sparkling Shard" Summary="" />
+	<Settings Type="Int32"   DefaultValue="5000" Global="False" Hidden="False" Category="1 - General" Name="0 - Bag Watch Interval" Summary="" />
+
+	<!-- Disenchant -->
+	<Settings Type="Boolean" DefaultValue="true"  Global="False" Hidden="False" Category="2 - Disenchant" Name="1 - Uncommon" Summary="" />
+	<Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="2 - Disenchant" Name="2 - Rare" Summary="" />
+	<Settings Type="Boolean" DefaultValue="false" Global="False" Hidden="False" Category="2 - Disenchant" Name="3 - Epic" Summary="" />
+
+	<!-- Prospect -->
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name=" 20 - Copper Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name=" 50 - Tin Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="125 - Iron Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="175 - Mithril Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="250 - Thorium Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="275 - Fel Iron Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="325 - Adamantite Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="350 - Cobalt Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="400 - Saronite Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="425 - Obsidium Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="450 - Titanium Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="475 - Elementium Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="500 - Pyrite Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="500 - Ghost Iron Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="550 - Kyparite" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="600 - Black Trillium Ore" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="3 - Prospect" Name="600 - White Trillium Ore" Summary="" />
+
+	<!-- Smelt -->
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="  1 - Copper Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name=" 50 - Tin Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name=" 65 - Bronze Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name=" 75 - Silver Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="100 - Iron Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="125 - Steel Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="130 - Gold Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="150 - Mithril Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="190 - Truesilver Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="230 - Thorium Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="230 - Dark Iron Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="275 - Fel Iron Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="325 - Adamantite Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="350 - Eternium Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="350 - Felsteel Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="350 - Cobalt Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="375 - Khorium Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="400 - Saronite Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="425 - Obsidium Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="450 - Titanium Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="475 - Elementium Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="500 - Ghost Iron Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="525 - Pyrite Bar" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="4 - Smelt" Name="600 - Trillium Bar" Summary="" />
+
+	<!-- Bolt -->
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="  1 - Bolt of Linen Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name=" 75 - Bolt of Woolen Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="125 - Bolt of Silk Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="175 - Bolt of Mageweave Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="250 - Bolt of Runecloth Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="300 - Bolt of Netherweave Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="325 - Bolt of Netherweave Imbued Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="350 - Bolt of Frostweave Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="400 - Bolt of Frostweave Imbued Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="425 - Bolt of Embersilk Cloth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="5 - Bolt" Name="500 - Bolt of Windwool Cloth" Summary="" />
+
+	<!-- Mill -->
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="  1 - Silverleaf" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="  1 - Peacebloom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="  1 - Earthroot" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 25 - Mageroyal" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 25 - Briarthorn" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 25 - Swiftthistle" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 25 - Bruiseweed" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 25 - Stranglekelp" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 75 - Wild Steelbloom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 75 - Grave Moss" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 75 - Kingsblood" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name=" 75 - Liferoot" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="125 - Fadeleaf" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="125 - Goldthorn" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="125 - Khadgar's Whisker" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="125 - Dragon's Teeth" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="175 - Firebloom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="175 - Purple Lotus" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="175 - Arthas' Tears" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="175 - Sungrass" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="175 - Blindweed" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="175 - Ghost Mushroom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="175 - Gromsblood" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="225 - Golden Sansam" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="225 - Dreamfoil" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="225 - Mountain Silverag>" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="225 - Sorrowmoss" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="225 - Icecap" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Felweed" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Dreaming Glory" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Ragveil" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Terocone" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Flame Cap" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Ancient Lichen" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Netherbloom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Nightmare Vine" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="275 - Mana Thistle" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Adder's Tongue" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Deadnettle" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Fire Leaf" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Goldclover" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Icethorn" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Lichbloom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Talandra's Rose" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="325 - Tiger Lily" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="425 - Azshara's Veil" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="425 - Cinderbloom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="425 - Heartblossom" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="425 - Stormvine" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="425 - Twilight Jasmine" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="425 - Whiptail" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="500 - Desecrated Herb" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="500 - Fool's Cap" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="500 - Green Tea Leaf" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="500 - Rain Poppy" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="500 - Silkweed" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="6 - Mill" Name="500 - Snow Lily" Summary="" />
+
+	<!-- Ink -->
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="  1 - Ivory Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name=" 35 - Moonglow Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name=" 75 - Midnight Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name=" 85 - Hunter's Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="100 - Lion's Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="125 - Dawnstar Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="150 - Jadefire Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="175 - Royal Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="200 - Celestial Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="225 - Fiery Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="250 - Shimmering Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="275 - Ink of the Sky" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="290 - Ethereal Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="325 - Darkflame Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="350 - Ink of the Sea" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="375 - Snowfall Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="425 - Blackfallow Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="475 - Inferno Ink" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="500 - Ink of Dreams" Summary="" />
+	<Settings Type="Boolean" DefaultValue="true" Global="False" Hidden="False" Category="7 - Ink" Name="500 - Starlight Ink" Summary="" />
+
+	<!-- Helper -->
+	<Declaration Code="string LogA;"/>
+	<Declaration Code="bool Material;" />
+	<Declaration Code="bool BagChange;"/>
+	<Declaration Code="bool Intro;"/>
+	<Declaration Code="uint ItemID;" />
+	<Declaration Code="int LevelMin;"/>
+	<Declaration Code="int ItemID2;"/>
+	<Declaration Code="uint FreeBagSlot;"/>
+
+	<WaitAction Condition="false" Timeout="1500" />
+	<CustomAction Code="Log(Colors.Azure,  &quot;=====================&quot;);" />
+	<CustomAction Code="Log(Colors.Azure,  &quot;=-------------------=&quot;);" />
+	<CustomAction Code="Log(Colors.Magenta,&quot;  ProcessBuddy v1.0  &quot;);" />
+	<CustomAction Code="Log(Colors.Azure,  &quot;=-------------------=&quot;);" />
+	<CustomAction Code="Log(Colors.Azure,  &quot;=====================&quot;);" />
+	<WaitAction Condition="false" Timeout="3000" />
+
+  <While Condition="true" IgnoreCanRun="True">
+  	<CallSubRoutine SubRoutineName="Disenchant" />
+  	<CallSubRoutine SubRoutineName="Prospect" />
+  	<CallSubRoutine SubRoutineName="Smelt" />
+  	<CallSubRoutine SubRoutineName="Bolt" />
+  	<CallSubRoutine SubRoutineName="Mill" />
+  	<CallSubRoutine SubRoutineName="Ink" />
+  	<CallSubRoutine SubRoutineName="BagWatch" />
+  </While>
+
+  <SubRoutine SubRoutineName="Disenchant">
+  	<If Condition="(bool)Settings[&quot;1 - Disenchant&quot;]" IgnoreCanRun="True">
+	  	<If Condition="(bool)Settings[&quot;1 - Uncommon&quot;]" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Disenchanting: &quot;,Colors.Lime,&quot;[Uncomnmon]&quot;);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Disenchant" ItemTarget="All" ItemQuality="Uncommon" ItemId="0" />
+				<CallSubRoutine SubRoutineName="Combine" />
+	  	</If>
+	  	<If Condition="(bool)Settings[&quot;2 - Rare&quot;]" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Disenchanting: &quot;,Colors.DodgerBlue,&quot;[Rare]&quot;);" />
+				<DisenchantAction ActionType="Disenchant" ItemTarget="All" ItemQuality="Rare" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+				<CallSubRoutine SubRoutineName="Combine" />
+	  	</If>
+	  	<If Condition="(bool)Settings[&quot;3 - Epic&quot;]" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Disenchanting: &quot;,Colors.DarkOrchid,&quot;[Epic]&quot;);" />
+				<DisenchantAction ActionType="Disenchant" ItemTarget="All" ItemQuality="Epic" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+				<CallSubRoutine SubRoutineName="Combine" />
+	  	</If>
+  	</If>
+
+  </SubRoutine>
+
+	<SubRoutine SubRoutineName="Prospect">
+  	<If Condition="(bool)Settings[&quot;2 - Prospect&quot;]" IgnoreCanRun="True">
+  		<StackItemsAction />
+			<CustomAction Code="Material = (bool)Settings[&quot; 20 - Copper Ore&quot;];" />
+			<CustomAction Code="ItemID = 2770;" />
+			<CustomAction Code="LevelMin = 50;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Copper Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2770" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 50 - Tin Ore&quot;];" />
+			<CustomAction Code="ItemID = 2771;" />
+			<CustomAction Code="LevelMin = 50;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Tin Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2771" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Iron Ore&quot;];" />
+			<CustomAction Code="ItemID = 2772;" />
+			<CustomAction Code="LevelMin = 125;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Iron Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2772" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Mithril Ore&quot;];" />
+			<CustomAction Code="ItemID = 3858;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Mithril Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3858" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;250 - Thorium Ore&quot;];" />
+			<CustomAction Code="ItemID = 10620;" />
+			<CustomAction Code="LevelMin = 250;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Thorium Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="10620" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Fel Iron Ore&quot;];" />
+			<CustomAction Code="ItemID = 23424;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Fel Iron Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="23424" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Adamantite Ore&quot;];" />
+			<CustomAction Code="ItemID = 23425;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Adamantite Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="23425" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;350 - Cobalt Ore&quot;];" />
+			<CustomAction Code="ItemID = 36909;" />
+			<CustomAction Code="LevelMin = 350;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Cobalt Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36909" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;400 - Saronite Ore&quot;];" />
+			<CustomAction Code="ItemID = 36912;" />
+			<CustomAction Code="LevelMin = 400;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Saronite Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36912" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Obsidium Ore&quot;];" />
+			<CustomAction Code="ItemID = 53038;" />
+			<CustomAction Code="LevelMin = 425;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Obsidium Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="53038" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;450 - Titanium Ore&quot;];" />
+			<CustomAction Code="ItemID = 36910;" />
+			<CustomAction Code="LevelMin = 450;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Titanium Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.Lime, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36910" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;475 - Elementium Ore&quot;];" />
+			<CustomAction Code="ItemID = 52185;" />
+			<CustomAction Code="LevelMin = 475;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Elementium Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52185" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Pyrite Ore&quot;];" />
+			<CustomAction Code="ItemID = 52183;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Pyrite Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.Lime, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52183" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Ghost Iron Ore&quot;];" />
+			<CustomAction Code="ItemID = 72092;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Ghost Iron Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72092" />
+				<CallSubRoutine SubRoutineName="Combine" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;550 - Kyparite&quot;];" />
+			<CustomAction Code="ItemID = 72093;" />
+			<CustomAction Code="LevelMin = 550;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Kyparite]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72093" />
+				<CallSubRoutine SubRoutineName="Combine" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;600 - Black Trillium Ore&quot;];" />
+			<CustomAction Code="ItemID = 72094;" />
+			<CustomAction Code="LevelMin = 600;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Black Trillium Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.Lime, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72094" />
+				<CallSubRoutine SubRoutineName="Combine" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;600 - White Trillium Ore&quot;];" />
+			<CustomAction Code="ItemID = 72103;" />
+			<CustomAction Code="LevelMin = 600;" />
+			<If Condition="Material &amp;&amp; (Int32)Jewelcrafting.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[White Trillium Ore]&quot;;" />
+			 	<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Prospecting: &quot;,Colors.Lime, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Prospect" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72103" />
+				<CallSubRoutine SubRoutineName="Combine" />
+			</If>
+  	</If>
+  </SubRoutine>
+
+  <SubRoutine SubRoutineName="Smelt">
+  	<If Condition="(bool)Settings[&quot;3 - Smelt&quot;]" IgnoreCanRun="True">
+  		<StackItemsAction />
+			<CustomAction Code="Material = (bool)Settings[&quot;  1 - Copper Bar&quot;];" />;" />
+			<CustomAction Code="ItemID2 = 2657;" />
+			<CustomAction Code="LogA = &quot;[Copper Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="2657" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot; 50 - Tin Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 3304;" />
+			<CustomAction Code="LogA = &quot;[Tin Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="3304" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot; 65 - Bronze Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 2659;" />
+			<CustomAction Code="LogA = &quot;[Bronze Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="2659" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot; 75 - Silver Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 2658;" />
+			<CustomAction Code="LogA = &quot;[Silver Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="2658" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;100 - Iron Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 3307;" />
+			<CustomAction Code="LogA = &quot;[Iron Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="3307" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Steel Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 3569;" />
+			<CustomAction Code="LogA = &quot;[Steel Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="3569" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;130 - Gold Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 3308;" />
+			<CustomAction Code="LogA = &quot;[Gold Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="3308" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;150 - Mithril Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 10097;" />
+			<CustomAction Code="LogA = &quot;[Mithril Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="10097" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;190 - Truesilver Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 10098;" />
+			<CustomAction Code="LogA = &quot;[Truesilver Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="10098" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;230 - Thorium Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 16153;" />
+			<CustomAction Code="LogA = &quot;[Thorium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="16153" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;230 - Dark Iron Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 14891;" />
+			<CustomAction Code="LogA = &quot;[Dark Iron Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="14891" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Fel Iron Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 29356;" />
+			<CustomAction Code="LogA = &quot;[Fel Iron Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="29356" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Adamantite Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 29358;" />
+			<CustomAction Code="LogA = &quot;[Adamantite Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="29358" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;350 - Eternium Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 29359;" />
+			<CustomAction Code="LogA = &quot;[Eternium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="29359" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;350 - Felsteel Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 29360;" />
+			<CustomAction Code="LogA = &quot;[Felsteel Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="29360" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;350 - Cobalt Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 49252;" />
+			<CustomAction Code="LogA = &quot;[Cobalt Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="49252" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;375 - Khorium Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 29361;" />
+			<CustomAction Code="LogA = &quot;[Khorium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="29361" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;400 - Saronite Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 49258;" />
+			<CustomAction Code="LogA = &quot;[Saronite Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="49258" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Obsidium Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 84038;" />
+			<CustomAction Code="LogA = &quot;[Obsidium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="84038" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;450 - Titanium Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 55211;" />
+			<CustomAction Code="LogA = &quot;[Titanium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="55211" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;475 - Elementium Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 74530;" />
+			<CustomAction Code="LogA = &quot;[Elementium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="74530" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Ghost Iron Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 102165;" />
+			<CustomAction Code="LogA = &quot;[Ghost Iron Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="102165" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;525 - Pyrite Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 74529;" />
+			<CustomAction Code="LogA = &quot;[Pyrium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="74529" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;600 - Trillium Bar&quot;];" />
+			<CustomAction Code="ItemID2 = 102167;" />
+			<CustomAction Code="LogA = &quot;[Trillium Bar]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="102167" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+  	</If>
+  </SubRoutine>
+
+  <SubRoutine SubRoutineName="Bolt">
+  	<If Condition="(bool)Settings[&quot;4 - Bolt&quot;]" IgnoreCanRun="True">
+			<CustomAction Code="Material = (bool)Settings[&quot;  1 - Bolt of Linen Cloth&quot;];;" />
+			<CustomAction Code="ItemID2 = 2963;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Linen Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="2963" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot; 75 - Bolt of Woolen Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 2964;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Woolen Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="2964" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Bolt of Silk Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 3839;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Silk Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="3839" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Bolt of Mageweave Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 3865;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Mageweave Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="3865" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;250 - Bolt of Runecloth Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 18401;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Runecloth Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="18401" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;300 - Bolt of Netherweave Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 26745;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Netherweave Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="26745" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Bolt of Netherweave Imbued Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 26747;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Netherweave Imbued Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="26747" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;350 - Bolt of Frostweave Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 55899;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Frostweave Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="55899" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;400 - Bolt of Frostweave Imbued Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 55900;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Frostweave Imbued Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="55900" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Bolt of Embersilk Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 74964;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Embersilk Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="74964" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Bolt of Windwool Cloth&quot;];" />
+			<CustomAction Code="ItemID2 = 125551;" />
+			<CustomAction Code="LogA = &quot;[Bolt of Windwool Cloth]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="125551" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+  	</If>
+  </SubRoutine>
+
+  <SubRoutine SubRoutineName="Mill">
+  	<If Condition="(bool)Settings[&quot;5 - Mill&quot;]" IgnoreCanRun="True">
+  		<StackItemsAction />
+			<CustomAction Code="Material = (bool)Settings[&quot;  1 - Silverleaf&quot;];" />
+			<CustomAction Code="ItemID = 2770;" />
+			<CustomAction Code="LevelMin = 1;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Silverleaf]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2770" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;  1 - Peacebloom&quot;];" />
+			<CustomAction Code="ItemID = 2447;" />
+			<CustomAction Code="LevelMin = 1;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Peacebloom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2447" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;  1 - Earthroot&quot;];" />
+			<CustomAction Code="ItemID = 2449;" />
+			<CustomAction Code="LevelMin = 1;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Earthroot]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2449" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 25 - Mageroyal&quot;];" />
+			<CustomAction Code="ItemID = 785;" />
+			<CustomAction Code="LevelMin = 25;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Mageroyal]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="785" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 25 - Briarthorn&quot;];" />
+			<CustomAction Code="ItemID = 2450;" />
+			<CustomAction Code="LevelMin = 25;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Briarthorn]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2450" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 25 - Swiftthistle&quot;];" />
+			<CustomAction Code="ItemID = 2452;" />
+			<CustomAction Code="LevelMin = 25;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Swiftthistle]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2452" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 25 - Bruiseweed&quot;];" />
+			<CustomAction Code="ItemID = 2453;" />
+			<CustomAction Code="LevelMin = 25;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Bruiseweed]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="2453" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 25 - Stranglekelp&quot;];" />
+			<CustomAction Code="ItemID = 3820;" />
+			<CustomAction Code="LevelMin = 25;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Stranglekelp]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3820" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 75 - Wild Steelbloom&quot;];" />
+			<CustomAction Code="ItemID = 3355;" />
+			<CustomAction Code="LevelMin = 75;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Wild Steelbloom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3355" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 75 - Grave Moss&quot;];" />
+			<CustomAction Code="ItemID = 3369;" />
+			<CustomAction Code="LevelMin = 75;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Grave Moss]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3369" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 75 - Kingsblood&quot;];" />
+			<CustomAction Code="ItemID = 3356;" />
+			<CustomAction Code="LevelMin = 75;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Kingsblood]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3356" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot; 75 - Liferoot&quot;];" />
+			<CustomAction Code="ItemID = 3357;" />
+			<CustomAction Code="LevelMin = 75;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Liferoot]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3357" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Fadeleaf&quot;];" />
+			<CustomAction Code="ItemID = 3818;" />
+			<CustomAction Code="LevelMin = 125;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Fadeleaf]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3818" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Goldthorn&quot;];" />
+			<CustomAction Code="ItemID = 3821;" />
+			<CustomAction Code="LevelMin = 125;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Goldthorn]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3821" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Khadgar's Whisker&quot;];" />
+			<CustomAction Code="ItemID = 3358;" />
+			<CustomAction Code="LevelMin = 125;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Khadgar's Whisker]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3358" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Dragon's Teeth&quot;];" />
+			<CustomAction Code="ItemID = 3819;" />
+			<CustomAction Code="LevelMin = 125;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Dragon's Teeth]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="3819" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Firebloom&quot;];" />
+			<CustomAction Code="ItemID = 4625;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Firebloom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="4625" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Purple Lotus&quot;];" />
+			<CustomAction Code="ItemID = 8831;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Purple Lotus]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="8831" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Arthas' Tears&quot;];" />
+			<CustomAction Code="ItemID = 8836;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Arthas' Tears]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="8836" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Sungrass&quot;];" />
+			<CustomAction Code="ItemID = 8838;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Sungrass]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="8838" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Blindweed&quot;];" />
+			<CustomAction Code="ItemID = 8839;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Blindweed]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="8839" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Ghost Mushroom&quot;];" />
+			<CustomAction Code="ItemID = 8845;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Ghost Mushroom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="8845" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Gromsblood&quot;];" />
+			<CustomAction Code="ItemID = 8846;" />
+			<CustomAction Code="LevelMin = 175;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Gromsblood]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="8846" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;225 - Golden Sansam&quot;];" />
+			<CustomAction Code="ItemID = 13464;" />
+			<CustomAction Code="LevelMin = 225;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Golden Sansam]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="13464" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;225 - Dreamfoil&quot;];" />
+			<CustomAction Code="ItemID = 13463;" />
+			<CustomAction Code="LevelMin = 225;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Dreamfoil]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="13463" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;225 - Mountain Silverage&quot;];" />
+			<CustomAction Code="ItemID = 13465;" />
+			<CustomAction Code="LevelMin = 225;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Mountain Silverage]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="13465" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;225 - Sorrowmoss&quot;];" />
+			<CustomAction Code="ItemID = 13466;" />
+			<CustomAction Code="LevelMin = 225;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Sorrowmoss]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="13466" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;225 - Icecap&quot;];" />
+			<CustomAction Code="ItemID = 13467;" />
+			<CustomAction Code="LevelMin = 225;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Icecap]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="13467" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Felweed&quot;];" />
+			<CustomAction Code="ItemID = 22785;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Felweed]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22785" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Dreaming Glory&quot;];" />
+			<CustomAction Code="ItemID = 22786;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Dreaming Glory]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22786" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Ragveil&quot;];" />
+			<CustomAction Code="ItemID = 22787;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Ragveil]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22787" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Terocone&quot;];" />
+			<CustomAction Code="ItemID = 22789;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Terocone]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22789" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Flame Cap&quot;];" />
+			<CustomAction Code="ItemID = 22788;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Flame Cap]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22788" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Ancient Lichen&quot;];" />
+			<CustomAction Code="ItemID = 22790;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Ancient Lichen]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22790" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Netherbloom&quot;];" />
+			<CustomAction Code="ItemID = 22791;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Netherbloom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22791" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Nightmare Vine&quot;];" />
+			<CustomAction Code="ItemID = 22792;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Nightmare Vine]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22792" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Mana Thistle&quot;];" />
+			<CustomAction Code="ItemID = 22793;" />
+			<CustomAction Code="LevelMin = 275;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Mana Thistle]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="22793" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Adder's Tongue&quot;];" />
+			<CustomAction Code="ItemID = 36903;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Adder's Tongue]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36903" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Deadnettle&quot;];" />
+			<CustomAction Code="ItemID = 37921;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Deadnettle]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="37921" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Fire Leaf&quot;];" />
+			<CustomAction Code="ItemID = 39970;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Fire Leaf]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="39970" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Goldclover&quot;];" />
+			<CustomAction Code="ItemID = 36901;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Goldclover]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36901" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Icethorn&quot;];" />
+			<CustomAction Code="ItemID = 36906;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Icethorn]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36906" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Lichbloom&quot;];" />
+			<CustomAction Code="ItemID = 36905;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Lichbloom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36905" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Talandra's Rose&quot;];" />
+			<CustomAction Code="ItemID = 36907;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Talandra's Rose]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36907" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Tiger Lily&quot;];" />
+			<CustomAction Code="ItemID = 36904;" />
+			<CustomAction Code="LevelMin = 325;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Tiger Lily]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="36904" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Azshara's Veil&quot;];" />
+			<CustomAction Code="ItemID = 52985;" />
+			<CustomAction Code="LevelMin = 425;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Azshara's Veil]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52985" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Cinderbloom&quot;];" />
+			<CustomAction Code="ItemID = 52983;" />
+			<CustomAction Code="LevelMin = 425;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Cinderbloom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52983" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Heartblossom&quot;];" />
+			<CustomAction Code="ItemID = 52986;" />
+			<CustomAction Code="LevelMin = 425;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Heartblossom]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52986" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Stormvine&quot;];" />
+			<CustomAction Code="ItemID = 52984;" />
+			<CustomAction Code="LevelMin = 425;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Stormvine]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52984" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Twilight Jasmine&quot;];" />
+			<CustomAction Code="ItemID = 52987;" />
+			<CustomAction Code="LevelMin = 425;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Twilight Jasmine]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52987" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Whiptail&quot;];" />
+			<CustomAction Code="ItemID = 52988;" />
+			<CustomAction Code="LevelMin = 425;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Whiptail]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="52988" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Desecrated Herb&quot;];" />
+			<CustomAction Code="ItemID = 89639;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Desecrated Herb]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="89639" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Fool's Cap&quot;];" />
+			<CustomAction Code="ItemID = 79011;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Fool's Cap]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="79011" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Green Tea Leaf&quot;];" />
+			<CustomAction Code="ItemID = 72234;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Green Tea Leaf]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72234" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Rain Poppy&quot;];" />
+			<CustomAction Code="ItemID = 72237;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Rain Poppy]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72237" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Silkweed&quot;];" />
+			<CustomAction Code="ItemID = 72235;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Silkweed]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="72235" />
+			</If>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Snow Lily&quot;];" />
+			<CustomAction Code="ItemID = 79010;" />
+			<CustomAction Code="LevelMin = 500;" />
+			<If Condition="Material &amp;&amp; (Int32)Inscription.Level &gt;= LevelMin &amp;&amp; InbagCount(ItemID) &gt;= 5 &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="LogA = &quot;[Snow Lily]&quot;;" />
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;Milling: &quot;,Colors.White, LogA);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<DisenchantAction ActionType="Mill" ItemTarget="Specific" ItemQuality="Uncommon" ItemId="79010" />
+			</If>
+  	</If>
+  </SubRoutine>
+
+  <SubRoutine SubRoutineName="Ink">
+  	<If Condition="(bool)Settings[&quot;6 - Ink&quot;]" IgnoreCanRun="True">
+			<CustomAction Code="Material = (bool)Settings[&quot;  1 - Ivory Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 52738;" />
+			<CustomAction Code="LogA = &quot;[Ivory Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="52738" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot; 35 - Moonglow Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 52843;" />
+			<CustomAction Code="LogA = &quot;[Moonglow Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="52843" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot; 75 - Midnight Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 53462;" />
+			<CustomAction Code="LogA = &quot;[Midnight Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="53462" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot; 85 - Hunter's Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57703;" />
+			<CustomAction Code="LogA = &quot;[Hunter's Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57703" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;100 - Lion's Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57704;" />
+			<CustomAction Code="LogA = &quot;[Lion's Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57704" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;125 - Dawnstar Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57706;" />
+			<CustomAction Code="LogA = &quot;[Dawnstar Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57706" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;150 - Jadefire Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57707;" />
+			<CustomAction Code="LogA = &quot;[Jadefire Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57707" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;175 - Royal Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57708;" />
+			<CustomAction Code="LogA = &quot;[Royal Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57708" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;200 - Celestial Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57709;" />
+			<CustomAction Code="LogA = &quot;[Celestial Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57709" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;225 - Fiery Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57710;" />
+			<CustomAction Code="LogA = &quot;[Fiery Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57710" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;250 - Shimmering Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57711;" />
+			<CustomAction Code="LogA = &quot;[Shimmering Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57711" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;275 - Ink of the Sky&quot;];" />
+			<CustomAction Code="ItemID2 = 57712;" />
+			<CustomAction Code="LogA = &quot;[Ink of the Sky]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57712" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;290 - Ethereal Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57713;" />
+			<CustomAction Code="LogA = &quot;[Ethereal Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57713" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;325 - Darkflame Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57714;" />
+			<CustomAction Code="LogA = &quot;[Darkflame Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57714" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;350 - Ink of the Sea&quot;];" />
+			<CustomAction Code="ItemID2 = 57715;" />
+			<CustomAction Code="LogA = &quot;[Ink of the Sea]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57715" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;375 - Snowfall Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 57716;" />
+			<CustomAction Code="LogA = &quot;[Snowfall Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="57716" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;425 - Blackfallow Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 86004;" />
+			<CustomAction Code="LogA = &quot;[Blackfallow Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="86004" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;475 - Inferno Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 86005;" />
+			<CustomAction Code="LogA = &quot;[Inferno Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="86005" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Ink of Dreams&quot;];" />
+			<CustomAction Code="ItemID2 = 111645;" />
+			<CustomAction Code="LogA = &quot;[Ink of Dreams]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.White, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="111645" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+			<CustomAction Code="Material = (bool)Settings[&quot;500 - Starlight Ink&quot;];" />
+			<CustomAction Code="ItemID2 = 111646;" />
+			<CustomAction Code="LogA = &quot;[Starlight Ink]&quot;;" />
+			<While Condition="Material &amp;&amp; CanCraft(ItemID2) &amp;&amp; Me.FreeNormalBagSlots &gt; 3" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.LightSeaGreen,&quot;You are crafting: &quot;,Colors.Lime, LogA);" />
+				<CastSpellAction RepeatType="Specific" Repeat="1" Entry="111646" CastOnItem="False" ItemType="Chest" ItemId="0" />
+				<WaitAction Condition="false" Timeout="500" />
+			</While>
+  	</If>
+  </SubRoutine>
+
+  <SubRoutine SubRoutineName="Combine">
+  	<If Condition="(bool)Settings[&quot;0 - Combine Sparkling Shard&quot;] &amp;&amp; InbagCount(90407) &gt;= 10" IgnoreCanRun="True">
+			<CustomAction Code="Log(Colors.Azure,&quot;Using [Sparkling's Shard]&quot;);" />
+	    <While Condition="InbagCount(90407) &gt;= 10" IgnoreCanRun="True">
+	      <CustomAction Code="Lua.DoString(&quot;UseItemByName(90407)&quot;); " />
+	      <WaitAction Condition="false" Timeout="1000" />
+	    </While>
+  	</If>
+  	<If Condition=" (bool)Settings[&quot;0 - Combine Small Ethereal Shard&quot;]	&amp;&amp; InbagCount(74252) &gt;= 3" IgnoreCanRun="True">
+	    <CustomAction Code="Log(Colors.Azure, &quot;Using [Small Ethereal Shard] &quot;);" />
+	    <While Condition="InbagCount(74252) &gt;= 3" IgnoreCanRun="True">
+	      <CustomAction Code="Lua.DoString(&quot;UseItemByName(74252)&quot;); " />
+	      <WaitAction Condition="false" Timeout="1000" />
+	    </While>
+  	</If>
+  </SubRoutine>
+
+  <SubRoutine SubRoutineName="BagWatch">
+  	<WaitAction Condition="false" Timeout="5000" />
+		<CustomAction Code="BagChange = false;" />
+		<CustomAction Code="FreeBagSlot = Me.FreeNormalBagSlots;" />
+		<CustomAction Code="Log(Colors.Azure, &quot;Putting profile to sleep&quot;);" />
+		<CustomAction Code="Log(Colors.Azure, &quot;Listening for free bag slot change...&quot;);" />
+		<While Condition="!BagChange" IgnoreCanRun="False">
+			<If Condition="FreeBagSlot != Me.FreeNormalBagSlots" IgnoreCanRun="True">
+				<CustomAction Code="Log(Colors.Azure, &quot;...Free bag slot change detected&quot;);" />
+				<WaitAction Condition="false" Timeout="500" />
+				<CustomAction Code="Log(Colors.Azure, &quot;Waking up profile&quot;);" />
+				<WaitAction Condition="false" Timeout="1500" />
+				<CustomAction Code="BagChange = true;" />
+			</If>
+			<WaitAction Condition="false" Timeout="(Int32)Settings[&quot;0 - Bag Watch Interval&quot;]" />
+		</While>
+  </SubRoutine>
+
+</Professionbuddy>
