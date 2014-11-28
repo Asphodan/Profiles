@@ -1,0 +1,113 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Garrison Quests</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+   
+<!-- Quest Behavior -->
+    <Quest Id="34192" Name="Clear Mine">
+        <Objective Type="KillMob" MobId="81396" KillCount="1">
+            <Hotspots>
+                <Hotspot X="1883.058" Y="117.5263" Z="23.41271" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="KillMob" MobId="83628" KillCount="8">
+            <Hotspots>
+                <Hotspot X="1918.2" Y="96.30848" Z="83.61467" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="34192" Name="Clear Garden">
+        <Objective Type="KillMob" MobId="85341" KillCount="8">
+            <Hotspots>
+                <Hotspot X="1823.107" Y="151.3081" Z="76.60433" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+<!-- End of Quest Overrides -->
+<QuestOrder>
+	<!-- Get Quests -->
+	<!-- Sergeant Crowler -->
+	<MoveTo X="1922.026" Y="291.2277" Z="88.96597" />
+	<While Condition="HasQuestAvailable(88223)" >
+		<CustomBehavior File="InteractWith"  MobId="88223" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<!-- Bulliten Board -->
+	<While Condition="HasQuestAvailable(232400)" >
+		<CustomBehavior File="InteractWith"  MobId="232400" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1882.562" Y="257.5453" Z="76.63951" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<!-- Check Mine -->
+	<While Condition="HasQuestAvailable(77730)" >
+		<CustomBehavior File="InteractWith"  MobId="77730" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1906.042" Y="100.0652" Z="83.52532" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	<!-- Check Garden -->
+	<While Condition="HasQuestAvailable(85344)" >
+		<CustomBehavior File="InteractWith"  MobId="85344" NumOfTimes="1" CollectionDistance="200" WaitTime="1000" X="1852.208" Y="149.4119" Z="78.29143" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+<!-- Do Quests -->
+	<If Condition="((HasQuest(37289)) &amp;&amp; (!IsQuestCompleted(37289)))" > <!-- Shadowmoon Invasion -->
+		<CustomBehavior File="InteractWith" MobId="88223" GossipOptions="1" NonCompeteDistance="0" KeepTargetSelected="True" Range="6" X="1922.026" Y="291.2277" Z="88.96597" />
+		<CustomBehavior File="Misc\RunLua" Lua="StaticPopup1Button1:Click()" WaitTime="10000" />
+		<While Condition="!IsQuestCompleted(37289)" >
+			<MoveTo X="1869.22" Y="272.4639" Z="76.6397" />
+			<MoveTo X="1850.614" Y="226.6862" Z="76.33139" />
+			<MoveTo X="1875.34" Y="216.7921" Z="77.17548" />
+			<MoveTo X="1885.065" Y="257.6254" Z="76.63962" />
+		</While>
+	</If><!-- It's Broken 
+	<If Condition="((HasQuest(34192)) &amp;&amp; (!IsQuestCompleted(34192)))" > // Clear Mine 
+		<Objective QuestName="Things Are Not Goren Our Way" QuestId="34192" Type="KillMob" MobId="81396" KillCount="1" />
+		<Objective QuestName="Things Are Not Goren Our Way" QuestId="34192" Type="KillMob" MobId="83628" KillCount="8" />
+	</If>-->
+	<If Condition="((HasQuest(36404)) &amp;&amp; (!IsQuestCompleted(36404)))" > <!-- Clear Garden -->
+		<MoveTo X="1823.107" Y="151.3081" Z="76.60433" />
+		<Objective QuestName="Clearing the Garden" QuestId="36404" Type="KillMob" MobId="85341" KillCount="8" />
+	</If>
+
+<!-- Turn In Quests -->
+	<If Condition="((HasQuest(37289)) &amp;&amp; (IsQuestCompleted(37289)))" >
+		<MoveTo X="1922.026" Y="291.2277" Z="88.96597" />
+		<TurnIn QuestName="Shadowmoon Invasion" QuestId="37289" TurnInName="Sergeant Crowler" TurnInId="88223" />
+	</If>
+	<If Condition="((HasQuest(34192)) &amp;&amp; (IsQuestCompleted(34192)))" >
+		<MoveTo X="1766.956" Y="270.488" Z="76.80829" />
+		<TurnIn QuestName="Things Are Not Goren Our Way" QuestId="34192" TurnInName="Timothy Leens" TurnInId="77730" />
+	</If>
+</QuestOrder> 
+</HBProfile>
