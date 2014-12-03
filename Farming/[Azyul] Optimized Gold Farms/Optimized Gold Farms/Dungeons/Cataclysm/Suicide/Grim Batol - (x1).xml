@@ -1,10 +1,4 @@
 <HBProfile>
-
-///////////////////////////////////////////////////////////////////////
-// Profile Developer: Echo
-// Farm zone: Grim Batol
-///////////////////////////////////////////////////////////////////////
-
 <Name>Grim Batol - Optimized Gold Farms - Suicide (x1) [$Rev: 976 $]</Name>
 
 <MinFreeBagSlots>-1</MinFreeBagSlots>
@@ -14,14 +8,14 @@
 
 <MailGrey>False</MailGrey>
 <MailWhite>True</MailWhite>
-<MailGreen>False</MailGreen>
-<MailBlue>False</MailBlue>
+<MailGreen>true</MailGreen>
+<MailBlue>true</MailBlue>
 <MailPurple>True</MailPurple>
 
 <SellGrey>True</SellGrey>
-<SellWhite>True</SellWhite>
-<SellGreen>True</SellGreen>
-<SellBlue>True</SellBlue>
+<SellWhite>false</SellWhite>
+<SellGreen>false</SellGreen>
+<SellBlue>true</SellBlue>
 <SellPurple>False</SellPurple>
 
 <ProtectedItems>

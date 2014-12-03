@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile>
+<Name>SteamWheedleRep</Name>
+		<MinDurability>0.3</MinDurability>
+		<MinFreeBagSlots>-1</MinFreeBagSlots>
+	
+   	<SellGrey>True</SellGrey>
+   	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+		
+		<MailWhite>True</MailWhite>
+		<MailGreen>False</MailGreen>
+		<MailBlue>False</MailBlue>
+		<MailPurple>False</MailPurple>
+	
+	<AvoidMobs>
+	
+	</AvoidMobs>
+	
+	
+	<ProtectedItems>
+	</ProtectedItems>
+	<AvoidMobs>
+	
+		<Mob Name="Ritual Target" Entry="27327" />
+		<Mob Name="Grauf" Entry="26893" />
+		<Mob Name="Howling Gale" Entry="45572" /> 
+		<Mob Name="Summon Enabler Stalker" Entry="53488" />
+		<Mob Name="Lurking Tempest" Entry="45704"  />
+	
+	</AvoidMobs>	
+	
+	<Blackspots>
+		<Blackspot X="4344.888" Y="6967.299" Z="146.4301" radius="3"/><!-- unreachable mob -->
+		
+		<Blackspot X="3639.299" Y="6665.409" Z="18.03099" radius="5"/>
+		<Blackspot X="3527.469" Y="6673.188" Z="13.98187" radius="5"/>
+		<Blackspot X="3617.445" Y="6759.091" Z="9.123064" />
+		<Blackspot X="3591.859" Y="6696.776" Z="11.87195" />
+		<Blackspot X="3552.485" Y="6733.109" Z="8.034499" />
+		<Blackspot X="3497.449" Y="6793.827" Z="1.736072" />
+		<Blackspot X="3488.737" Y="6849.333" Z="3.968685" />
+		<Blackspot X="3571.508" Y="6787.209" Z="10.32217" />
+		<Blackspot X="3604.783" Y="6843.641" Z="16.87866" />
+		<Blackspot X="3564.687" Y="6915.54" Z="19.24143" />
+		<Blackspot X="3504.488" Y="6942.029" Z="28.29272" />
+	</Blackspots>
+	
+	
+	<Vendors>
+       <Vendor Name="Drix Blackwrench" Entry="32641" Type="Repair" X="4029.018" Y="7133.545" Z="69.18472" />
+	</Vendors>
+	
+	
+ <QuestOrder>
+			<CustomBehavior File="UserSettings" LootMobs="True" PullDistance="50" />				
+
+	
+<!-- Vendor -->			
+	
+	<If Condition="(Me.FreeBagSlots &lt; 10)" >
+			<DisableBehavior Name="Combat" />
+				<CustomBehavior File="Misc\RunLua" Lua="print(&quot;|cFF3399FF Bags are full, running to first hotspot to vendor.&quot;)" />
+					<Runto X="4029.018" Y="7133.545" Z="69.18472" />	
+			<EnableBehavior Name="Combat" />
+		<If Condition="Me.KnowsSpell(61425) || Me.KnowsSpell(61447) || Me.KnowsSpell(122708)" >
+				<CustomBehavior File="WaitTimer" WaitTime="750" />
+				<CustomBehavior File="RunMacro" Macro="/cast Traveler's Tundra Mammoth\n/cast Grand Expedition Yak" />
+				<CustomBehavior File="WaitTimer" WaitTime="2000" />
+				<CustomBehavior File="ForceSetVendor" DoSell="true" DoRepair="true" />
+			<SetVendor>
+				<Vendors>
+					<Vendor Name="Drix Blackwrench" Entry="32641" Type="Repair" />
+					<Vendor Name="Drix Blackwrench" Entry="32641" Type="Repair" X="4029.018" Y="7133.545" Z="69.18472" />
+				</Vendors>
+			</SetVendor>
+				
+				
+				
+		</If>
+	</If>
+
+<!-- Vendor -->
+	
+	<!-- Turn in Quest -->	
+
+	<If Condition="(GetItemCount(118099) &gt;=1500) || (GetItemCount(118100) &gt;=20)" >
+		<CustomBehavior File="RunCode" Code="Logging.Write(System.Windows.Media.Colors.DeepSkyBlue, &quot;Running to turn in quests.&quot;)" />
+			<DisableBehavior Name="Combat" />
+			<RunTo X="3362.329" Y="6454.068" Z="19.28463" />
+				
+	<While Condition="(GetItemCount(118099) &gt;= 20) &amp;&amp; (Me.GetReputationLevelWith(1711) &lt; Styx.WoWUnitReaction.Exalted)" >	
+		<CustomBehavior File="InteractWith" MobId="87393" Range="8" X="3361.826" Y="6449.441" Z="19.31857" />
+        <CustomBehavior File="RunMacro" Macro="/script SelectGossipAvailableQuest(2)" WaitTime="1337" />
+        <CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1337" />
+        <CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1337" />
+	</While>	
+	
+	<While Condition="(GetItemCount(118100) &gt;= 1) &amp;&amp; (Me.GetReputationLevelWith(1711) &lt; Styx.WoWUnitReaction.Exalted)" >	
+		<CustomBehavior File="InteractWith" MobId="87393" Range="8" X="3361.826" Y="6449.441" Z="19.31857" />
+        <CustomBehavior File="RunMacro" Macro="/script SelectGossipAvailableQuest(1)" WaitTime="1337" />
+        <CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1337" />
+        <CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1337" />
+	</While>	
+
+	
+	</If>
+	
+
+	
+<!-- Turn in Quest -->
+<!-- Grind -->	
+	<DisableBehavior Name="Combat" />
+		<CustomBehavior File="RunCode" Code="Logging.Write(System.Windows.Media.Colors.DeepSkyBlue, &quot;Running to first hotspot.&quot;)" />
+		
+			<Runto X="4029.018" Y="7133.545" Z="69.18472" />
+	<EnableBehavior Name="Combat" />
+		<CustomBehavior File="RunMacro" Macro="/sw play" />
+			<Runto X="3969.803" Y="7161.119" Z="72.99873" />
+			<Runto X="4030.73" Y="7176.346" Z="70.82796" />
+			<Runto X="4073.927" Y="7239.977" Z="68.94353" />
+			<Runto X="4032.924" Y="7231.717" Z="69.33789" />
+			<Runto X="4059.228" Y="7298.578" Z="94.79414" />
+			<Runto X="4094.82" Y="7288.779" Z="95.65125" />
+			<Runto X="4122.817" Y="7323.017" Z="95.65253" />
+			<Runto X="4201.733" Y="7279.646" Z="97.3827" />
+			<Runto X="4120.837" Y="7237.149" Z="95.05225" />
+			<Runto X="4151.544" Y="7178.557" Z="96.37453" />
+			<Runto X="4252.216" Y="7170.244" Z="110.8039" />
+			<Runto X="4331.557" Y="7162.393" Z="123.1229" />
+			<Runto X="4316.067" Y="7226.737" Z="108.1947" />
+			<Runto X="4314.464" Y="7286.243" Z="110.0163" />
+			<Runto X="4311.562" Y="7290.749" Z="110.6414" />
+			<Runto X="4358.083" Y="7260.953" Z="109.4295" />
+			<Runto X="4378.517" Y="7238.822" Z="110.5423" />
+			<Runto X="4378.395" Y="7192.43" Z="109.688" />
+			<Runto X="4433.801" Y="7145.799" Z="134.0617" />
+			<Runto X="4448.859" Y="7057.121" Z="133.2456" />
+			<Runto X="4374.467" Y="6931.383" Z="141.7258" />
+			<Runto X="4375.392" Y="6931.825" Z="141.7107" />
+			<Runto X="4315.141" Y="7068.346" Z="133.2458" />
+			<Runto X="4288.953" Y="7086.999" Z="135.6268" />
+			<Runto X="4362.697" Y="7107.501" Z="131.4411" />
+			<Runto X="4339.186" Y="7149.449" Z="123.0811" />
+			<Runto X="4259.924" Y="7172.72" Z="109.8122" />
+			<Runto X="4145.936" Y="7186.531" Z="96.33938" />
+			<Runto X="4035.24" Y="7117.628" Z="69.45003" />
+
+
+	
+<!-- Grind -->
+
+		<CustomBehavior File="LoadProfile" ProfileName="SteamWheedleRep" />
+			
+  </QuestOrder>
+</HBProfile>

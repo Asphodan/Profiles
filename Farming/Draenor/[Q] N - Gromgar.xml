@@ -1,0 +1,38 @@
+<HBProfile>
+	<Name>Grom'gar Farm</Name>
+	<MinLevel>100</MinLevel>
+	<MaxLevel>999</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>true</MailWhite>
+	<MailGreen>true</MailGreen>
+	<MailBlue>true</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>false</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>false</TargetElites>
+	
+	<AvoidMobs>
+		<Mob Name="Deadeye" Entry="85460" /> 
+	</AvoidMobs>
+
+	<QuestOrder>
+		<MoveTo X="4226.072" Y="1760.295" Z="126.1172" />
+			<CustomBehavior File="CollectThings" MobId1="85458" MobId2="85459" MobId3="83987" MobId4="85450" CollectItemId="69925" CollectItemCount="20" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
+				<Hotspot X="4205.533" Y="1633.449" Z="153.7169" />
+				<Hotspot X="4185.883" Y="1699.174" Z="147.6113" />
+				<Hotspot X="4245.989" Y="1673.943" Z="137.8354" />
+				<Hotspot X="4307.37" Y="1680.574" Z="131.9467" />
+				<Hotspot X="4302.048" Y="1745.626" Z="130.0561" />
+				<Hotspot X="4226.072" Y="1760.295" Z="126.1172" />
+			</CustomBehavior>
+	</QuestOrder>
+</HBProfile>
