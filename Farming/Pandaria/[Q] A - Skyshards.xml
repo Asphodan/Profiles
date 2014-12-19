@@ -1,0 +1,47 @@
+<HBProfile>
+	<Name>Item: Bone Farm</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>999</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+		
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="1011.856" Y="1741.348" Z="348.696" Radius="23.65265" />
+		<Blackspot X="1066.611" Y="1772.942" Z="350.4412" Radius="38.27209" />
+		<Blackspot X="1076.369" Y="1787.303" Z="350.2836" Radius="23.97963" />
+		<Blackspot X="1075.414" Y="1790.01" Z="350.8901" Radius="19.27238" />
+		<Blackspot X="1013.766" Y="1740.613" Z="348.5551" Radius="23.58258" />
+	</Blackspots>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		
+	</Vendors>
+	<QuestOrder>
+			<CustomBehavior File="CollectThings" MobId1="58928" MobId2="58927" MobId3="65132" MobId4="65131" CollectItemId="69925" CollectItemCount="20" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
+				<Hotspot X="1321.141" Y="2169.261" Z="362.2597" />
+				<Hotspot X="1183.156" Y="2152.579" Z="328.8466" />
+			</CustomBehavior>
+	</QuestOrder>
+</HBProfile>

@@ -3,8 +3,8 @@
 
 <MinFreeBagSlots>-1</MinFreeBagSlots>
 
-<MinLevel>1</MinLevel>
-<MaxLevel>91</MaxLevel>
+<MinLevel>90</MinLevel>
+<MaxLevel>999</MaxLevel>
 
 <MailGrey>False</MailGrey>
 <MailWhite>True</MailWhite>

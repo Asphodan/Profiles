@@ -1,0 +1,32 @@
+<HBProfile>
+	<Name>Item: Rylak Egg</Name>
+	<MinLevel>95</MinLevel>
+	<MaxLevel>999</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<QuestOrder>
+	<CustomBehavior File="UserSettings" LootMobs="True" UseMount="False" PullDistance="25" />
+
+	
+	<CustomBehavior File="CollectThings" MobId1="88643" CollectItemId="69925" CollectItemCount="20" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
+		<Hotspot X="571.0424" Y="957.219" Z="95.25185" />
+		<Hotspot X="577.8345" Y="1024.054" Z="73.04954" />
+	</CustomBehavior>
+	</QuestOrder>
+</HBProfile>

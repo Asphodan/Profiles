@@ -1,0 +1,58 @@
+<!-- Notes
+Incomplete:
+-->
+<HBProfile>
+<Name>Garrison Quests</Name>
+<MinLevel>90</MinLevel>
+<MaxLevel>101</MaxLevel>
+  
+<MinDurability>0.1</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>True</MailGreen>
+<MailBlue>True</MailBlue>
+<MailPurple>False</MailPurple>
+  
+<SellGrey>True</SellGrey>
+<SellWhite>False</SellWhite>
+<SellGreen>False</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+  
+<TargetElites>True</TargetElites>
+
+<Vendors>
+</Vendors>
+  
+<AvoidMobs>
+</AvoidMobs>
+   
+<Blackspots>
+</Blackspots>
+   
+	\\Quest Behaviors
+	\\End of Behaviors
+<QuestOrder>
+	\\ Get Quests
+
+    \\ Do Quests
+	<If Condition="((HasQuest(36986)) &amp;&amp; (!IsQuestCompleted(36986)))" > \\ Clefthoof : Gez 			 <!-- /script VehicleExit();-->
+		<While Condition="!IsQuestCompleted(36986)" >
+			<MoveTo X="2256.346" Y="3944.008" Z="186.6602" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(36986)" WaitTime="2000" />
+			<Objective QuestName="Clefthoof Training: Gezz'ran" QuestId="36986" Type="KillMob" MobId="87139" KillCount="1" />
+		</While>
+	</If>
+	\\Turn In Quests <!--
+	<If Condition="((HasQuest(37289)) &amp;&amp; (IsQuestCompleted(37289)))" >
+		<MoveTo X="1922.026" Y="291.2277" Z="88.96597" />
+		<TurnIn QuestName="Shadowmoon Invasion" QuestId="37289" TurnInName="Sergeant Crowler" TurnInId="88223" />
+	</If>
+	<If Condition="((HasQuest(34192)) &amp;&amp; (IsQuestCompleted(34192)))" >
+		<MoveTo X="1766.956" Y="270.488" Z="76.80829" />
+		<TurnIn QuestName="Things Are Not Goren Our Way" QuestId="34192" TurnInName="Timothy Leens" TurnInId="77730" />
+	</If> -->
+</QuestOrder> 
+</HBProfile>
