@@ -1,0 +1,34 @@
+<HBProfile>
+	<Name>Arakoa Reputation</Name>
+
+	<MinLevel>100</MinLevel>
+	<MaxLevel>999</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>2</MinFreeBagSlots>
+
+    <SellGrey>True</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Vendors>
+	</Vendors>
+
+	<Mailboxes>
+	</Mailboxes>
+	
+	
+	<GrindArea>
+		<Factions>2775</Factions>
+		<MaxDistance>30</MaxDistance>
+		<Hotspots>
+			<Hotspot X="-185.18" Y="276.6348" Z="-0.2306685" />
+		</Hotspots>
+	</GrindArea>
+   
+</HBProfile>

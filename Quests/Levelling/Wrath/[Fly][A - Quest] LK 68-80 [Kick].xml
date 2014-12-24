@@ -1,4 +1,5 @@
-<HBProfile>
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <!-- Developed by Kickazz006 -->
     <Name>[Fly][A - Quest] 68-80 [Kick] ($Rev$)</Name>
 
@@ -7057,11 +7058,11 @@
                            CollectCount="1" />
 
                 <CustomBehavior File="FlyTo" DestName="use book" X="2196.565" Y="-5370.9" Z="251.7722" />
-                <CustomBehavior File="ForcedDismount" /><!--
+                <CustomBehavior File="ForcedDismount" />
                 <While Condition="!HasItem(33781)">
                     <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(&quot;item:33778&quot;)" />
                     <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Using book {TimeRemaining}" />
-                </While>-->
+                </While>
             </If>
             <If Condition="HasQuest(11346) &amp;&amp; IsQuestCompleted(11346)">
                 <CustomBehavior File="FlyTo" DestName="Turnin Quest" X="2426.724" Y="-5155.877" Z="277.506" />
@@ -8839,12 +8840,10 @@
                                 GoalText="Waiting for quest to complete {TimeRemaining}" />
             </While>
             <If Condition="HasQuest(12272) &amp;&amp; !IsQuestCompleted(12272)">
-                <Objective QuestName="The Bleeding Ore" QuestId="12272" Type="CollectItem" ItemId="37359"
-                           CollectCount="10" />
+                <Objective QuestName="The Bleeding Ore" QuestId="12272" Type="CollectItem" ItemId="37359" CollectCount="10" />
             </If>
             <If Condition="HasQuest(12269) &amp;&amp; !IsQuestCompleted(12269)">
-                <Objective QuestName="Not In Our Mine" QuestId="12269" Type="CollectItem" ItemId="37411"
-                           CollectCount="10" />
+                <Objective QuestName="Not In Our Mine" QuestId="12269" Type="CollectItem" ItemId="37411" CollectCount="10" />
                 <MoveTo X="3897.55" Y="-915.5826" Z="115.8214" />
             </If>
             <If Condition="HasQuest(12269) &amp;&amp; IsQuestCompleted(12269)">
@@ -8874,10 +8873,8 @@
             <If Condition="HasQuest(12272) &amp;&amp; IsQuestCompleted(12272)">
                 <CustomBehavior File="FlyTo" DestName="Turnin Quest" X="3696.904" Y="-736.4998" Z="213.123" />
                 <CustomBehavior File="ForcedDismount" />
-                <TurnIn QuestName="The Bleeding Ore" QuestId="12272" TurnInName="Siege Engineer Quarterflash"
-                        TurnInId="27159" />
-                <PickUp QuestName="Understanding the Scourge War Machine" QuestId="12281"
-                        GiverName="Siege Engineer Quarterflash" GiverId="27159" />
+                <TurnIn QuestName="The Bleeding Ore" QuestId="12272" TurnInName="Siege Engineer Quarterflash" TurnInId="27159" />
+                <PickUp QuestName="Understanding the Scourge War Machine" QuestId="12281" GiverName="Siege Engineer Quarterflash" GiverId="27159" />
             </If>
             <If Condition="!HasQuest(12281) &amp;&amp; !IsQuestCompleted(12281)">
                 <CustomBehavior File="FlyTo" DestName="Pickup Quest" X="3696.904" Y="-736.4998" Z="213.123" />
