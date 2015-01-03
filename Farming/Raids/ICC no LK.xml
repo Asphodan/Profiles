@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile>
+  <Name>Farm IC Citadel</Name>
+  <MinFreeBagSlots>-1</MinFreeBagSlots>
+  <MinLevel>90</MinLevel>
+  <MaxLevel>99999</MaxLevel>
+  <MinFreeBagSlots>-1</MinFreeBagSlots>
+  <MailGrey>False</MailGrey>
+  <MailWhite>False</MailWhite>
+  <MailGreen>True</MailGreen>
+  <MailBlue>True</MailBlue>
+  <MailPurple>True</MailPurple>
+  <SellGrey>True</SellGrey>
+  <SellWhite>True</SellWhite>
+  <SellGreen>False</SellGreen>
+  <SellBlue>true</SellBlue>
+  <SellPurple>False</SellPurple>
+  <ProtectedItems></ProtectedItems>
+
+
+  <AvoidMobs>
+	<Mob Name="Risen Archmage" Entry="37868"></Mob> 
+	</AvoidMobs>
+
+
+ <QuestOrder>           
+	  
+      
+       <While Condition="Me.MapId == 870">
+       
+      <If Condition=" Me.ZoneId == 6553">  
+         <CustomBehavior File="Message" Text="Going to Portal for Dalaran" LogColor="Lime"></CustomBehavior>
+         <RunTo X="820.8804" Y="206.8769" Z="519.9215"></RunTo>
+     </If>
+   
+   <If Condition=" Me.ZoneId == 6142">  
+         <CustomBehavior File="Message" Text="Going to Portal for Dalaran" LogColor="Lime"></CustomBehavior>
+          <RunTo X="820.8804" Y="206.8769" Z="519.9215"></RunTo>
+          <CustomBehavior File="InteractWith" MobId="215121" ObjectType="Gameobject" Range="3"></CustomBehavior>
+           <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for zone {TimeRemaining}"></CustomBehavior>
+          
+   </If>
+        
+        <If Condition="Me.MapId == 870">
+          <CustomBehavior File="Message" Text="Going to Shrine" LogColor="Lime"></CustomBehavior>
+          <CustomBehavior File="FlyTo" X="897.4983" Y="324.131" Z="506.0946"></CustomBehavior>
+          <CustomBehavior File="Message" Text="Welcome to Shrine" LogColor="Lime"></CustomBehavior>   
+              </If>
+      
+       </While>
+       
+   <If Condition="Me.MapId == 571">
+      
+          <CustomBehavior File="Message" Text="Going to Instance" LogColor="Lime"></CustomBehavior>
+          
+            <CustomBehavior File="FlyTo" X="5860.903" Y="2105.046" Z="635.945"></CustomBehavior>
+              <CustomBehavior File="RunMacro" Macro="/script SetRaidDifficultyID(1)"></CustomBehavior>
+            <RunTo X="5784.183" Y="2068.655" Z="636.0651"></RunTo>
+            <CustomBehavior File="MyCTM" X="5777.718" Y="2064.305" Z="636.0651"></CustomBehavior>
+            <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for zone {TimeRemaining}"></CustomBehavior>                            
+                
+  </If>                  
+    
+                Instanz
+    
+      <While Condition="Me.MapId == 631">  
+           <If Condition="Me.ZoneId == 4812">
+             <RunTo X="-32.2724" Y="2211.49" Z="29.05402"></RunTo>
+             <RunTo X="-137.7675" Y="2211.49" Z="35.23355"></RunTo>
+             <RunTo X="-174.1255" Y="2179.007" Z="37.98525"></RunTo>
+             <RunTo X="-174.7281" Y="2244.682" Z="37.98576"></RunTo>
+             <RunTo X="-220.8795" Y="2246.156" Z="37.98524"></RunTo>
+             <RunTo X="-221.2919" Y="2178.02" Z="37.98525"></RunTo>
+             <RunTo X="-250.305" Y="2211.537" Z="42.56446"></RunTo>
+             <RunTo X="-292.036" Y="2187.449" Z="43.93106"></RunTo>
+             <RunTo X="-302.727" Y="2216.695" Z="42.00526"></RunTo>
+             <RunTo X="-346.9876" Y="2211.287" Z="42.4896"></RunTo>
+             <RunTo X="-362.7399" Y="2210.735" Z="42.22361"></RunTo>
+      
+            // Pull Marrogar
+            
+        <While Condition="Object(36612, o => o.ToUnit().IsAlive) != null ">
+					<CustomBehavior File="WaitTimer" WaitTime="50000"></CustomBehavior>  
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="36612" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </While> 
+        
+         <If Condition="Object(36612, o => o.ToUnit().IsDead) != null ">
+         <CustomBehavior File="Message" Text="Marrowgar down. GZ!" LogColor="Lime"></CustomBehavior>
+         <CustomBehavior File="InteractWith" MobId="36612" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>   
+          </If>
+         
+         going on
+         
+        <RunTo X="-388.825" Y="2269.468" Z="41.9413"></RunTo>
+        <RunTo X="-470.3385" Y="2271.444" Z="56.88081"></RunTo>
+        <RunTo X="-541.5763" Y="2212.387" Z="56.26315"></RunTo>
+        <RunTo X="-589.4671" Y="2225.407" Z="49.47659"></RunTo>   
+        <RunTo X="-611.5352" Y="2177.631" Z="50.4476"></RunTo>
+        <RunTo X="-613.0648" Y="2245.412" Z="50.42885"></RunTo>  
+        <RunTo X="-607.943" Y="2211.39" Z="49.47676"></RunTo> 
+        
+        
+        pull second boss Deathwhisper
+        
+        <While Condition="Object(36855, o => o.ToUnit().IsAlive) != null ">
+					<CustomBehavior File="WaitTimer" WaitTime="50000"></CustomBehavior>  
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="36855" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </While> 
+        
+        <If Condition="Object(36855, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Lady Deathwhisper down. GZ!" LogColor="Lime"></CustomBehavior> 
+           <CustomBehavior File="InteractWith" MobId="36855" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>  
+       </If>
+          
+        <RunTo X="-507.9734" Y="2212.731" Z="62.82456"></RunTo>   
+        <CustomBehavior File="InteractWith" MobId="202245" NumOfTimes="1" GossipOptions="2" Range="2"></CustomBehavior> 
+        
+          going on
+        
+ <RunTo X="-586.4608" Y="2213.015" Z="199.9696"></RunTo>
+       
+       
+        <If Condition="Object(37034, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37034" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </If> 
+        
+       <If Condition="Object(37029, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37029" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </If>
+        
+         <If Condition="Object(37028, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37028" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </If>  
+        
+          <If Condition="Object(37032, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37032" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+          <If Condition="Object(37030, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37030" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+        <If Condition="Object(37146, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37146" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+         <If Condition="Object(37033, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37033" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+         <If Condition="Object(37031, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37031" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+         <If Condition="Object(37035, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37035" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+         <If Condition="Object(37149, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37149" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+        <RunTo X="-553.915" Y="2269.869" Z="199.9696"></RunTo>
+        
+          <If Condition="Object(37034, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37034" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </If> 
+        
+       <If Condition="Object(37029, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37029" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </If>
+        
+         <If Condition="Object(37028, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37028" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </If>  
+        
+          <If Condition="Object(37032, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37032" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+          <If Condition="Object(37030, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37030" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+        <If Condition="Object(37146, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37146" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+         <If Condition="Object(37033, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37033" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+         <If Condition="Object(37031, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37031" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+         <If Condition="Object(37035, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37035" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+         <If Condition="Object(37149, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37149" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>            
+        </If>
+        
+        <RunTo X="-448.4649" Y="2341.365" Z="191.2479"></RunTo>
+          <CustomBehavior File="WaitTimer" WaitTime="10000"></CustomBehavior>
+        
+         going on ship 
+         
+        
+        <CustomBehavior File="MyCTM" X="-438.061" Y="2450.593" Z="190.4034"></CustomBehavior>
+        <CustomBehavior File="MyCTM" X="-475.234" Y="2457.150" Z="190.3700"></CustomBehavior>
+        <CustomBehavior File="ForcedDismount"></CustomBehavior>
+        <CustomBehavior File="MyCTM" X="-472.6046" Y="2467.077" Z="190.6049"></CustomBehavior>
+        <CustomBehavior File="InteractWith" MobId="36948" ObjectType="NPC" Range="5" InteractByGossipOptions="1"></CustomBehavior>   
+        <CustomBehavior File="InteractWith" MobId="36838" NumOfTimes="1" Range="4" IgnoreLoSToTarget="True" InteractBlacklistTimeInSeconds="400"></CustomBehavior>
+        
+        fire on the fucking ship   
+        
+              <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" NumOfTimes="12"></CustomBehavior> 
+              <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton2" NumOfTimes="1"></CustomBehavior>
+              <CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" NumOfTimes="5"></CustomBehavior> 
+              <CustomBehavior File="Message" Text="I hope the Ship is down. GZ!" LogColor="Lime"></CustomBehavior> 
+              <CustomBehavior File="WaitTimer" WaitTime="35000"></CustomBehavior>
+              
+              <CustomBehavior File="MyCTM" X="-590.8782" Y="2236.601" Z="538.7578"></CustomBehavior>
+              <CustomBehavior File="ForcedDismount"></CustomBehavior>
+              <CustomBehavior File="InteractWith" MobId="201873" ObjectType="GameObject" Range="5"></CustomBehavior> 
+              <CustomBehavior File="MyCTM" X="-590.7354" Y="2212.039" Z="538.9462"></CustomBehavior>
+              <CustomBehavior File="MyCTM" X="-560.1972" Y="2210.971" Z="539.2866"></CustomBehavior>
+              
+              Saurfang
+                            
+              <RunTo X="-554.9382" Y="2211.127" Z="539.2888"></RunTo>
+              <CustomBehavior File="InteractWith" MobId="37200" ObjectType="NPC" Range="5" InteractByGossipOptions="1,1"></CustomBehavior>
+              <RunTo X="-504.4501" Y="2211.932" Z="539.2855"></RunTo> 
+              
+              <CustomBehavior File="WaitTimer" WaitTime="80000"></CustomBehavior> 
+              
+              <While Condition="Object(37813, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37813" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+        </While> 
+        
+        <If Condition="Object(37813, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Saurfang down. GZ!" LogColor="Lime"></CustomBehavior>
+           <CustomBehavior File="WaitTimer" WaitTime="5000"></CustomBehavior>  
+            
+         </If>               
+           <RunTo X="-493.1721" Y="2173.901" Z="539.2857"></RunTo> 
+           <CustomBehavior File="InteractWith" MobId="202239" ObjectType="GameObject" Range="5"></CustomBehavior>
+           
+          <CustomBehavior File="ForceSetVendor" DoSell="True"></CustomBehavior>
+          <RunTo X="-509.632" Y="2212.682" Z="539.2867"></RunTo>
+          <CustomBehavior File="MyCTM" X="-465.3031" Y="2210.642" Z="541.114"></CustomBehavior>
+          <CustomBehavior File="WaitTimer" WaitTime="10000"></CustomBehavior> 
+          <RunTo X="4132.803" Y="2769.025" Z="350.963"></RunTo>
+          <RunTo X="4254.499" Y="2775.757" Z="349.2345"></RunTo>
+          <RunTo X="4304.714" Y="2858.323" Z="344.1666"></RunTo>
+          <RunTo X="4358.712" Y="2980.289" Z="360.5112"></RunTo>
+          <RunTo X="4342.531" Y="3023.892" Z="360.5181"></RunTo>
+          <RunTo X="4287.867" Y="3029.915" Z="360.5201"></RunTo>
+          <RunTo X="4266.762" Y="3108.574" Z="360.3861"></RunTo>
+     
+          pull fifth boss Festergut
+          
+          <While Condition="Object(36626, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="36626" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+          </While> 
+        
+        <If Condition="Object(36626, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Festergut down. GZ!" LogColor="Lime"></CustomBehavior> 
+           <CustomBehavior File="InteractWith" MobId="36626" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>  
+       </If>
+       
+            ventile  1
+       
+           <RunTo X="4280.313" Y="3093.747" Z="360.3865"></RunTo>
+           <CustomBehavior File="InteractWith" MobId="201616" ObjectType="GameObject" Range="5"></CustomBehavior>
+           
+           <RunTo X="4451.674" Y="3027.346" Z="360.5185"></RunTo>
+           <RunTo X="4445.106" Y="3100.817" Z="360.3863"></RunTo>
+           
+           pull sixth boss Rotface
+          
+          <While Condition="Object(36627, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="36627" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+          </While> 
+        
+        <If Condition="Object(36627, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Rotface down. GZ!" LogColor="Lime"></CustomBehavior> 
+           <CustomBehavior File="InteractWith" MobId="36627" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>  
+       </If>
+         
+                  
+         ventile  2
+       
+           <RunTo X="4434.156" Y="3094.288" Z="360.3865"></RunTo>
+           <CustomBehavior File="InteractWith" MobId="201615" ObjectType="GameObject" Range="5"></CustomBehavior>
+          
+          <RunTo X="4359.666" Y="3031.454" Z="360.5208"></RunTo>
+          
+         
+          
+           <RunTo X="4352.783" Y="3132.166" Z="381.6659"></RunTo>
+               <CustomBehavior File="WaitTimer" WaitTime="10000"></CustomBehavior>  
+              event 
+              
+         <While Condition="Object(37782, o => o.ToUnit().IsAlive) != null ">
+                
+			    	<If Condition="Me.Class == WoWClass.DeathKnight">
+             	<CustomBehavior File="InteractWith" InteractByCastingSpellId="50842" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+				      <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+		  	    </If> 
+        
+            <If Condition="Me.Class == WoWClass.Monk">
+             	<CustomBehavior File="InteractWith" InteractByCastingSpellId="101546" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+			      	<CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+		        </If>
+       
+            <If Condition="Me.Class == WoWClass.Mage">
+        			<CustomBehavior File="InteractWith" InteractByCastingSpellId="10" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+			       	<CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+			      </If> 
+       
+             <If Condition="Me.Class == WoWClass.Druid">
+                <CustomBehavior File="InteractWith" InteractByCastingSpellId="48505" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+			         	<CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+		        	</If>
+       
+             <If Condition="Me.Class == WoWClass.Paladin">
+               	<CustomBehavior File="InteractWith" InteractByCastingSpellId="26573" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+			         	<CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+		      	</If>
+       
+             <If Condition="Me.Class == WoWClass.Warrior">
+              	<CustomBehavior File="InteractWith" InteractByCastingSpellId="6343" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+				        <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+		          </If>
+      
+            <If Condition="Me.Class == WoWClass.Hunter">
+          			<CustomBehavior File="InteractWith" InteractByCastingSpellId="2643" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+				        <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+		        	</If>
+       
+        <If Condition="Me.Class == WoWClass.Warlock">
+           				<CustomBehavior File="InteractWith" InteractByCastingSpellId="5740" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+                 <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+			
+       </If>
+        <If Condition="Me.Class == WoWClass.Shaman">
+        
+		        		<CustomBehavior File="InteractWith" InteractByCastingSpellId="421" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+			        	<CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+			      </If>
+             <If Condition="Me.Class == WoWClass.Rogue">
+        
+			           	<CustomBehavior File="InteractWith" InteractByCastingSpellId="51723" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+				          <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+			           </If>
+      
+       <If Condition="Me.Class == WoWClass.Priest">
+        
+			            	<CustomBehavior File="InteractWith" InteractByCastingSpellId="48045" WaitForNpcs="false" MobState="Alive" MobId1="37782" ObjectType="Npc" Range="1"></CustomBehavior>
+			            	<CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>
+		
+      </If>
+      </While> 
+      
+            Professor
+            
+            <RunTo X="4355.818" Y="3208.313" Z="389.3994"></RunTo>
+             
+            <While Condition="Object(36678, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="36678" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+          </While> 
+        
+        <If Condition="Object(36678, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Professor down. GZ!" LogColor="Lime"></CustomBehavior> 
+           <CustomBehavior File="InteractWith" MobId="36678" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>
+           <CustomBehavior File="MyCTM" X="4355.818" Y="3208.313" Z="389.3994"></CustomBehavior>  
+       </If>  
+         
+         <RunTo X="4361.661" Y="2880.272" Z="351.0995"></RunTo>
+         <RunTo X="4470.085" Y="2769.655" Z="350.963"></RunTo>
+         <RunTo X="4521.345" Y="2765.909" Z="350.963"></RunTo>
+         <RunTo X="4611.606" Y="2780.401" Z="361.1401"></RunTo>
+         <RunTo X="4632.735" Y="2750.224" Z="361.1442"></RunTo>
+         <RunTo X="4652.431" Y="2766.685" Z="361.1633"></RunTo> 
+         <RunTo X="4648.066" Y="2769.379" Z="361.1826"></RunTo>
+         <CustomBehavior File="WaitTimer" WaitTime="30000"></CustomBehavior>
+         
+         Prince
+        
+         <While Condition="Object(37970, o => o.ToUnit().IsAlive) != null ">
+           <CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37970" ObjectType="Npc" Range="1"></CustomBehavior>                           
+				 </While> 
+        
+        <If Condition="Object(37970, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Councile  down. GZ!" LogColor="Lime"></CustomBehavior> 
+           <CustomBehavior File="InteractWith" MobId="37970" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>
+            
+       </If>
+       
+              <RunTo X="4655.808" Y="2829.825" Z="361.174"></RunTo>
+            <RunTo X="4573.762" Y="2851.949" Z="384.6842"></RunTo>
+            <RunTo X="4595.164" Y="2769.409" Z="400.1372"></RunTo>
+            
+      Blood Queen      
+      
+      <While Condition="Object(37955, o => o.ToUnit().IsAlive) != null ">
+     <CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37955" ObjectType="Npc" Range="1"></CustomBehavior>                          
+		  </While> 
+        
+        <If Condition="Object(37955, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Queen down. GZ!" LogColor="Lime"></CustomBehavior> 
+           <CustomBehavior File="InteractWith" MobId="37955" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>
+            
+       </If>  
+      
+      <RunTo X="4514.903" Y="2767.826" Z="351.1013"></RunTo>
+      <RunTo X="4358.389" Y="2659.91" Z="351.0999"></RunTo>
+      <RunTo X="4357.794" Y="2640.125" Z="351.0999"></RunTo>
+      <RunTo X="4357.184" Y="2491.501" Z="358.4402"></RunTo>
+      <RunTo X="4341.18" Y="2493.712" Z="358.4393"></RunTo>
+      <CustomBehavior File="WaitTimer" WaitTime="30000"></CustomBehavior> 
+      
+      avoid anoying healboss
+      
+              <RunTo X="4296.648" Y="2483.618" Z="365.7652"></RunTo>
+              <RunTo X="4272.996" Y="2455.189" Z="364.8694"></RunTo>
+              <RunTo X="4244.903" Y="2431.567" Z="364.8694"></RunTo>
+              <RunTo X="4213.987" Y="2440.849" Z="364.8694"></RunTo>
+              <RunTo X="4206.043" Y="2452.283" Z="364.8694"></RunTo>
+              <RunTo X="4184.73" Y="2453.845" Z="364.5403"></RunTo>
+              <RunTo X="4109.69" Y="2482.714" Z="365.787"></RunTo>
+              <RunTo X="4065.586" Y="2483.594" Z="365.787"></RunTo> 
+              
+           	<CustomBehavior File="Message" Text="Waiting for Elevator - don't interact!" LogColor="Orange"></CustomBehavior>
+				
+						<CustomBehavior File="UseTransport" TransportId="202234" WaitAtX="4063.354" WaitAtY="2485.414" WaitAtZ="365.7863" TransportStartX="4051.854" TransportStartY="2484.489" TransportStartZ="365.4602" StandOnX="4055.397" StandOnY="2484.245" StandOnZ="365.7853" TransportEndX="4051.854" TransportEndY="2484.489" TransportEndZ="210.7086" GetOffX="4073.608" GetOffY="2484.396" GetOffZ="211.0329"></CustomBehavior>
+        <RunTo X="4185.777" Y="2486.188" Z="211.0324"></RunTo> 
+         <CustomBehavior File="WaitTimer" WaitTime="20000"></CustomBehavior> 
+         
+         <RunTo X="4207.202" Y="2483.42" Z="211.0325"></RunTo>
+         <RunTo X="4188.137" Y="2460.592" Z="211.0325"></RunTo>
+         <RunTo X="4158.283" Y="2482.353" Z="211.0325"></RunTo>
+         <RunTo X="4176.447" Y="2506.54" Z="211.0325"></RunTo>
+         <RunTo X="4303.342" Y="2484.839" Z="211.0349"></RunTo>
+         
+        <RunTo X="4369.574" Y="2519.736" Z="203.3853"></RunTo>
+          <RunTo X="4369.372" Y="2453.436" Z="203.3833"></RunTo>
+                  
+         <While Condition="Object(37534, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37534" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+          </While> <While Condition="Object(37533, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="37533" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+          </While> 
+          
+          <CustomBehavior File="WaitTimer" WaitTime="10000"></CustomBehavior>
+           
+          Sindragosa
+          
+           <While Condition="Object(36853, o => o.ToUnit().IsAlive) != null ">
+			    	<CustomBehavior File="InteractWith" WaitForNpcs="false" MobState="Alive" MobId="36853" ObjectType="Npc" Range="1"></CustomBehavior>
+				    <CustomBehavior File="WaitTimer" WaitTime="1000"></CustomBehavior>  
+          </While>
+          
+          <If Condition="Object(36853, o => o.ToUnit().IsDead) != null ">
+           <CustomBehavior File="Message" Text="Sindragosa down. GZ!" LogColor="Lime"></CustomBehavior> 
+           <CustomBehavior File="InteractWith" MobId="36853" WaitForNpcs="true" MobState="Dead" InteractByLooting="true" Range="1"></CustomBehavior>
+          </If>   
+           <RunTo X="4355.247" Y="2563.05" Z="220.4625"></RunTo>   
+           <CustomBehavior File="InteractWith" MobId="202246" NumOfTimes="1" GossipOptions="1" Range="4"></CustomBehavior> 
+        
+           <RunTo X="60.65912" Y="2212.364" Z="30.11567"></RunTo>
+           
+           <CustomBehavior File="Message" Text="GZ You Cleared all till LK!" LogColor="Lime"></CustomBehavior>
+           
+                     <CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Heart ? If yes Continue otherwise stop LK 25 HC coming SOON"></CustomBehavior>
+                
+<If Condition="HasItem(6948)">
+          <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1000"></CustomBehavior>
+	  <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Hearthing to current Hearth location. {TimeRemaining}"></CustomBehavior>
+</If>
+				
+<If Condition="HasItem(64488)">
+	  <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1000"></CustomBehavior>
+	  <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Hearthing to current Hearth location. {TimeRemaining}"></CustomBehavior>
+</If>                              
+                                                                                               
+            
+              
+            
+      
+          
+        </If>   
+      </While>
+   
+ </QuestOrder>
+</HBProfile>

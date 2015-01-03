@@ -36,15 +36,16 @@
 </Blackspots>
 
 <QuestOrder>
-<If Condition="(Me.MapId == 670)" >
-	<CustomBehavior File="RunCode" Code="Logging.Write(System.Windows.Media.Colors.DeepSkyBlue, &quot;[Azyul]: Bot started inside of instance. Moving out.&quot;);" />
-	<RunTo X="-624.7546" Y="-185.558" Z="272.062" />
-	<CustomBehavior File="MyCTM" X="-627.3558" Y="-175.5583" Z="272.1352" />
-				<CustomBehavior File="WaitTimer" WaitTime="5500" />
-			<While Condition="!(StyxWoW.IsInWorld)" >
-				<CustomBehavior File="WaitTimer" WaitTime="1000" />
-			</While>
-</If>
+<While Condition="True">
+	<If Condition="(Me.MapId == 670)" >
+		<CustomBehavior File="RunCode" Code="Logging.Write(System.Windows.Media.Colors.DeepSkyBlue, &quot;[Azyul]: Bot started inside of instance. Moving out.&quot;);" />
+		<RunTo X="-624.7546" Y="-185.558" Z="272.062" />
+		<CustomBehavior File="MyCTM" X="-627.3558" Y="-175.5583" Z="272.1352" />
+		<CustomBehavior File="WaitTimer" WaitTime="5500" />
+		<While Condition="!(StyxWoW.IsInWorld)" >
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		</While>
+	</If>
 
 		<While Condition="!(Me.MapId == 0)" >
 			<If Condition="Me.IsAlliance" >
@@ -605,5 +606,6 @@
 			</If>
 		</While>
 	</While>
+</While>
 </QuestOrder>
 </HBProfile>
