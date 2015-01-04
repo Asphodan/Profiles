@@ -1,20 +1,20 @@
-﻿<HBProfile>
+<HBProfile>
 <Name>Grim Batol - Optimized Gold Farms - Medium Pulls [$Rev: 1081 $]</Name>
 
 <MinFreeBagSlots>-1</MinFreeBagSlots>
 
 <MinLevel>90</MinLevel>
-<MaxLevel>999</MaxLevel>
+<MaxLevel>9999</MaxLevel>
 
 <MailGrey>False</MailGrey>
 <MailWhite>True</MailWhite>
-<MailGreen>True</MailGreen>
-<MailBlue>True</MailBlue>
+<MailGreen>true</MailGreen>
+<MailBlue>False</MailBlue>
 <MailPurple>True</MailPurple>
 
 <SellGrey>True</SellGrey>
 <SellWhite>True</SellWhite>
-<SellGreen>True</SellGreen>
+<SellGreen>false</SellGreen>
 <SellBlue>True</SellBlue>
 <SellPurple>False</SellPurple>
 
@@ -36,16 +36,114 @@
 </Blackspots>
 
 <QuestOrder>
-<While Condition="True">
-	<If Condition="(Me.MapId == 670)" >
-		<CustomBehavior File="RunCode" Code="Logging.Write(System.Windows.Media.Colors.DeepSkyBlue, &quot;[Azyul]: Bot started inside of instance. Moving out.&quot;);" />
-		<RunTo X="-624.7546" Y="-185.558" Z="272.062" />
-		<CustomBehavior File="MyCTM" X="-627.3558" Y="-175.5583" Z="272.1352" />
-		<CustomBehavior File="WaitTimer" WaitTime="5500" />
-		<While Condition="!(StyxWoW.IsInWorld)" >
-			<CustomBehavior File="WaitTimer" WaitTime="1000" />
-		</While>
-	</If>
+
+		<CustomBehavior File="Misc\RunLua" Lua="
+			SLASH_DEADLYBOSSMODS1 = '/stats';
+			SLASH_DBMRANGE1 = '/stats2';
+
+			ShowWarningsInChat = GetTime();
+			ShowFakedRaidWarnings = GetTime();
+
+			WarningIconLeft = 0
+
+			WarningIconRight = GetTime();
+			WarningIconChat = GetTime();
+
+			ShowLoadMessage = GetMoney();
+			ShowPizzaMessage = GetMoney();
+			ShowEngageMessage = GetMoney();
+			ShowKillMessage = GetMoney();
+			ShowWipeMessage = math.floor(ShowPizzaMessage-ShowLoadMessage);
+			ShowRecoveryMessage = GetMoney();
+			AutoRespond = GetMoney();
+			WhisperStats = math.floor(AutoRespond-ShowRecoveryMessage);
+
+			function calculate()
+				local itemSellPrice = 0
+				local itemID = 0
+				local itemBagCount = 1
+				local itemStackCount = 1
+
+				total_value_of_bags = 0
+
+				for i = 0, NUM_BAG_SLOTS do
+					bagslots = GetContainerNumSlots(i)
+						for bagslotscounter = 1, bagslots do
+						itemID = GetContainerItemID(i, bagslotscounter)
+
+							if (itemID == nil)  or (itemSellPrice == nill) then
+							else
+							itemSellPrice = select(11, GetItemInfo(itemID))
+							if (itemSellPrice == nil) then
+							itemSellPrice = 0
+							end
+							itemBagCount = select(2, GetContainerItemInfo(i, bagslotscounter))
+							total_value_of_bags = total_value_of_bags + (itemSellPrice * itemBagCount)
+							end
+						end
+				end
+				HideBossEmoteFrame = GetCoinTextureString(total_value_of_bags);
+
+				SpamBlockBossWhispers = GetMoney();
+
+				ShowFakedRaidWarnings = GetTime();
+				
+				ShowMinimapButton = (ShowFakedRaidWarnings - ShowWarningsInChat);
+
+				BlockVersionUpdateNotice = (ShowFakedRaidWarnings - WarningIconRight);
+
+
+
+				ShowSpecialWarnings = string.format(&quot;%02.f&quot;, math.floor(ShowMinimapButton/3600));
+				ShowFlashFrame = string.format(&quot;%02.f&quot;, math.floor(ShowMinimapButton/60 - (ShowSpecialWarnings*60)));
+				ShowAdvSWSounds = string.format(&quot;%02.f&quot;, math.floor(ShowMinimapButton - ShowSpecialWarnings*3600 - ShowFlashFrame *60));
+
+				AlwaysShowHealthFrame = string.format(&quot;%02.f&quot;, math.floor(WarningIconLeft/3600));
+				ShowBigBrotherOnCombatStart = string.format(&quot;%02.f&quot;, math.floor(WarningIconLeft/60 - (AlwaysShowHealthFrame*60)));
+				AutologBosses = string.format(&quot;%02.f&quot;, math.floor(WarningIconLeft - AlwaysShowHealthFrame*3600 - ShowBigBrotherOnCombatStart *60));
+
+				AdvancedAutologBosses = string.format(&quot;%02.f&quot;, math.floor(BlockVersionUpdateNotice/3600));
+				LogOnlyRaidBosses = string.format(&quot;%02.f&quot;, math.floor(BlockVersionUpdateNotice/60 - (AdvancedAutologBosses*60)));
+				UseMasterVolume = string.format(&quot;%02.f&quot;, math.floor(BlockVersionUpdateNotice - AdvancedAutologBosses*3600 - LogOnlyRaidBosses *60));
+
+
+
+
+				LFDEnhance = math.floor(SpamBlockBossWhispers-ShowEngageMessage)
+				SetPlayerRole = math.floor(SpamBlockBossWhispers-ShowKillMessage)
+				HideWatchFrame = math.floor(SetPlayerRole+total_value_of_bags)
+				EnableModels = math.floor((SetPlayerRole/ShowMinimapButton)/10)
+				RangeFrameFrames = math.floor((HideWatchFrame/ShowMinimapButton)/10)
+
+				RangeFrameUpdates = GetCoinTextureString(math.floor(SetPlayerRole/(ShowMinimapButton/3600)))
+				RangeFramePoint = GetCoinTextureString(math.floor(HideWatchFrame/(ShowMinimapButton/3600)))
+				RangeFrameX = GetCoinTextureString(math.floor(SetPlayerRole/(ShowMinimapButton/60 - (ShowSpecialWarnings*60))))
+				RangeFrameY = GetCoinTextureString(math.floor(HideWatchFrame/(ShowMinimapButton/60 - (ShowSpecialWarnings*60))))
+			end
+
+			function SlashCmdList.DEADLYBOSSMODS()
+				calculate()
+				print(&quot;|cFF0099FF~Total Stats!|r\n|cFF00CCFFTime active:|r &quot;, ShowSpecialWarnings .. &quot;h,&quot;, ShowFlashFrame .. &quot;m,&quot;, ShowAdvSWSounds .. &quot;s \n|cFF00CCFFTotal Gold:|r &quot;, GetCoinTextureString(SetPlayerRole), &quot;\n|cFF00CCFFBag Value:|r &quot;, HideBossEmoteFrame, &quot;\n|cFF00CCFFTotal + Bag:|r &quot;, GetCoinTextureString(HideWatchFrame));
+				print(&quot;|cFF0099FF~Last Dungeon!|r\n|cFF00CCFFTime taken:|r &quot;, AlwaysShowHealthFrame .. &quot;h,&quot;, ShowBigBrotherOnCombatStart .. &quot;m,&quot;, AutologBosses .. &quot;s \n|cFF00CCFFRaw Gold:|r &quot;, GetCoinTextureString(ShowWipeMessage), &quot;\n|cFF00CCFFVendor Gold:|r&quot;, GetCoinTextureString(WhisperStats));
+				print(&quot;|cFF0099FF~Current Dungeon!|r\n|cFF00CCFFTime taken:|r &quot;, AdvancedAutologBosses .. &quot;h,&quot;, LogOnlyRaidBosses .. &quot;m,&quot;, UseMasterVolume .. &quot;s \n|cFF00CCFFGold:|r &quot;, GetCoinTextureString(LFDEnhance));
+				print(&quot;|cFFF79A71Type /stats2 for more stats!|r&quot;)
+			end
+			function SlashCmdList.DBMRANGE()
+				calculate()
+				print(&quot;|cFF0099FF~Estimates!|r\n|cFF00CCFFGPH:|r &quot;, RangeFrameUpdates, &quot; \n|cFF00CCFFGPH (+ Bag Value):|r &quot;, RangeFramePoint, &quot;\n|cFF00CCFFGPM:|r &quot;, RangeFrameX, &quot;\n|cFF00CCFFGPM (+ Bag Value):|r &quot;, RangeFrameY,  &quot;\n|cFF00CCFFFarm Score:|r &quot;, EnableModels,  &quot;\n|cFF00CCFFFarm Score (+Bag Value)|r &quot;, RangeFrameFrames);
+			end
+
+			" />
+
+<If Condition="(Me.MapId == 670)" >
+	<CustomBehavior File="RunCode" Code="Logging.Write(System.Windows.Media.Colors.DeepSkyBlue, &quot;[Azyul]: Bot started inside of instance. Moving out.&quot;);" />
+	<RunTo X="-624.7546" Y="-185.558" Z="272.062" />
+	<CustomBehavior File="MyCTM" X="-627.3558" Y="-175.5583" Z="272.1352" />
+				<CustomBehavior File="WaitTimer" WaitTime="5500" />
+			<While Condition="!(StyxWoW.IsInWorld)" >
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			</While>
+</If>
 
 		<While Condition="!(Me.MapId == 0)" >
 			<If Condition="Me.IsAlliance" >
@@ -452,7 +550,6 @@
 				</CustomBehavior>
 				<CustomBehavior File="InteractWith" MobId="40177" MobState="Alive" CollectionDistance="150" WaitForNpcs="false" /> <!-- Last attempt to kill Throngus. -->
 
-
 				<RunTo X="-625.882" Y="-604.2358" Z="276.5818" />
 				<RunTo X="-664.7763" Y="-606.7249" Z="269.1947" />
 
@@ -634,6 +731,5 @@
 			</If>
 		</While>
 	</While>
-</While>
 </QuestOrder>
 </HBProfile>

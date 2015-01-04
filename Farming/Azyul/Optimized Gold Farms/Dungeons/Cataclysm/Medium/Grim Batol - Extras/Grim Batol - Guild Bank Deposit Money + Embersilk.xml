@@ -1,17 +1,10 @@
 <HBProfile>
-
-///////////////////////////////////////////////////////////////////////
-// Profile Developer: Echo
-// Farm zone: Grim Batol
-// Farm mobs: Universal Profile -- User's Choice
-///////////////////////////////////////////////////////////////////////
-
 <Name>Grim Batol - Optimized Gold Farms - Medium Pulls [$Rev: 1081 $]</Name>
 
 <MinFreeBagSlots>-1</MinFreeBagSlots>
 
-<MinLevel>1</MinLevel>
-<MaxLevel>91</MaxLevel>
+<MinLevel>90</MinLevel>
+<MaxLevel>9999</MaxLevel>
 
 <MailGrey>False</MailGrey>
 <MailWhite>True</MailWhite>
