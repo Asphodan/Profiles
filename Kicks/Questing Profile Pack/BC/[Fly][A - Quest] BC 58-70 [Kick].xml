@@ -24,6 +24,9 @@
 
 	<TargetElites>false</TargetElites>
 
+	<ProtectedItems>
+		<Item Name="Unidentified Plant Parts" Id="24401" />
+	</ProtectedItems>
 
 	<AvoidMobs>
 		<Mob Name="Deathskitter" Id="18647" />
@@ -1427,6 +1430,16 @@
 	</Quest>
 
 	<Quest Id="9986" Name="Styming the Arakkoa">
+		<Objective Type="KillMob" MobId="18539" KillCount="1">
+			<Hotspots>
+				<Hotspot X="-1607.96" Y="4431.225" Z="52.63015" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="18540" KillCount="1">
+			<Hotspots>
+				<Hotspot X="-1845.664" Y="3874.661" Z="6.248379" />
+			</Hotspots>
+		</Objective>
 		<Objective Type="KillMob" MobId="18541" KillCount="1">
 			<Hotspots>
 				<Hotspot X="-2552.052" Y="5462.064" Z="14.4522" />
@@ -2012,6 +2025,13 @@
 			</Hotspots>
 		</Objective>
 	</Quest>    
+	<Quest Id="10318" Name="Dealing with the Overmaster">
+		<Objective Type="KillMob" MobId="20803" KillCount="1">
+			<Hotspots>
+				<Hotspot X="4124.069" Y="3988.341" Z="118.539" />
+			</Hotspots>
+		</Objective>
+	</Quest>	
 	<!-- END: Quest Overrides -->
 
 
@@ -5085,8 +5105,7 @@ X="-1945.773" Y="4687.774" Z="-2.231679" />
 		<TurnIn QuestName="Speak with Private Weeks" QuestId="10038" TurnInName="Private Weeks" TurnInId="18715"
                 X="-2301.673" Y="4898.389" Z="1.144995" />
 		<!-- upon reflow - separate these into objectives -->
-		<If
-            Condition="HasQuest(9986) &amp;&amp; !IsQuestCompleted(9986) || HasQuest(10869) &amp;&amp; !IsQuestCompleted(10869) || HasQuest(10847) &amp;&amp; !IsQuestCompleted(10847)">
+		<If Condition="HasQuest(9986) &amp;&amp; !IsQuestCompleted(9986) || HasQuest(10869) &amp;&amp; !IsQuestCompleted(10869) || HasQuest(10847) &amp;&amp; !IsQuestCompleted(10847)">
 			<If Condition="HasQuest(9986) &amp;&amp; !IsObjectiveComplete(3,9986)">
 				<CustomBehavior File="FlyTo" X="-2486.197" Y="5383.288" Z="41.46399" />
 				<CustomBehavior File="FlyTo" X="-2507.74" Y="5380.578" Z="27.14109" />
@@ -5337,7 +5356,7 @@ X="-1945.773" Y="4687.774" Z="-2.231679" />
                        CollectCount="4" />
 			<CustomBehavior File="InteractWith" MobId="185202" MobId2="185203" MobId3="185204" MobId4="185205"
                             PreInteractMountStrategy="Dismount" NumOfTimes="4" NonCompeteDistance="10"
-                            TerminateWhen="!HasItem(31655)"
+                            TerminateWhen="!HasItem(31655)" WaitTime="1500"
                             X="-2521.825" Y="5444.137" Z="0.0509126" />
 		</While>
 		<UseMount Value="true" />
@@ -6403,7 +6422,7 @@ X="-1945.773" Y="4687.774" Z="-2.231679" />
 				<While Condition="HasQuest(9927) &amp;&amp; !IsQuestCompleted(9927)">
 					<CustomBehavior File="InteractWith" QuestId="9927" MobId="17146" MobId2="17147" MobId3="171483"
                                     MobState="Dead" InteractByUsingItemId="25552"
-                                    PreInteractMountStrategy="Dismount" NumOfTimes="10" WaitTime="5000"
+                                    PreInteractMountStrategy="DismountOrCancelShapeshift" NumOfTimes="10" WaitTime="5000"
                                     CollectionDistance="300" X="-2855.058" Y="6393.893" Z="79.41189" />
 				</While>
 			</If>
@@ -7996,12 +8015,12 @@ X="-1945.773" Y="4687.774" Z="-2.231679" />
 				<MoveTo X="4122.681" Y="2980.695" Z="351.271" />
 			</If>
 			<!-- Not getting In Search of Farahlite - 2 person quest -->
-			<If Condition="HasQuest(10424) &amp;&amp; !IsQuestCompleted(10424)">
+			<While Condition="HasQuest(10424) &amp;&amp; !IsQuestCompleted(10424)">
 				<CustomBehavior File="FlyTo" X="4464.807" Y="2830.35" Z="141.3133" />
 				<CustomBehavior File="ForcedDismount" />
 				<UseItem QuestName="Diagnosis: Critical" QuestId="10424" ItemId="29803" X="4464.807" Y="2830.35"
                          Z="141.3133" />
-			</If>
+			</While>
 			<If Condition="HasQuest(10855) &amp;&amp; !IsQuestCompleted(10855)">
 				<CustomBehavior File="FlyTo" X="4501.383" Y="3367.621" Z="156.7108" />
 				<CustomBehavior File="ForcedDismount" />

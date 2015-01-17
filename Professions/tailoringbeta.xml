@@ -1,0 +1,50 @@
+<Professionbuddy>
+  <ChangeBotAction BotName="Questing" />
+  <Settings Type="boolean" Default="True" Category="Activation" Name="Enabled" Summary="Enable the profile" Hidden="False" Global="False" />
+  <!-- Farming -->
+  <Settings Type="Boolean" Default="False" Category="Farming" Name="Embersilk Cloth" Summary="Tol'Barad Embersilk Cloth Farm" Hidden="False" Global="False" />
+  <Settings Type="Int32" Default="0" Category="Farming" Name="Number of Embersilk Cloth" Summary="Embersilk Cloth Farm Number" Hidden="False" Global="False" />
+  <!-- Shuffle -->
+  <Settings Type="Boolean" Default="False" Category="Shuffle" Name="Embersilk Shuffle" Summary="Embersilk Shuffle" Hidden="False" Global="False" />
+  <!-- Item Handling -->
+  <Settings Type="Boolean" Default="False" Category="Item Handling" Name="Post Bags on AH" Summary="Post Crafted Bags on AH" Hidden="False" Global="False" />
+  <Settings Type="Boolean" Default="False" Category="Item Handling" Name="Buy Hypnotic Dust" Summary="Purchases Hypnotic Dust from AH" Hidden="False" Global="False" />
+  <Settings Type="Boolean" Default="False" Category="Item Handling" Name="Mail Bags" Summary="Mails Bags to Alt Character" Hidden="False" Global="False" />
+
+  <!-- Characters -->
+  <Settings Type="String" Default="Character" Category="Characters" Name="Mail Recipent" Summary="Name of Alt Character" Hidden="False" Global="False" />
+	<While Condition="(bool)Settings[&quot;Enabled&quot;]" IgnoreCanRun="True" >
+		<While Condition="(bool)Settings[&quot;Embersilk Cloth&quot;] &amp;&amp; InbagCount(53010) &lt; (int)Settings[&quot;Number of Embersilk Cloth&quot;]" IgnoreCanRun="True" >
+			<LoadProfileAction ProfileType="Honorbuddy" Path="HBProfiles\Celisuis\Farming\Embersilk.xml" IsLocal="True" /> 
+		</While>
+    <While Condition="(bool)Settings[&quot;Embersilk Shuffle&quot;]" IgnoreCanRun="True" >
+      <If Condition="!Me.IsCasting" IgnoreCanRun="True">
+        <CustomAction Code="Mount.Dismount();" />
+        <CustomAction Code="Lua.DoString(&quot;UseItemByName(6948)&quot;);" />
+        <WaitAction Condition="Me.IsCasting" Timeout="11000" />
+      </If>
+      <If Condition="(bool)Settings[&quot;Buy Hypnotic Dust&quot;]" IgnoreCanRun="True" >
+            <BuyItemFromAhAction ItemListType="Item" ItemID="52555" MaxBuyOut="13g0s0c" Amount="150" BuyAdditively="False" AutoFindAh="True" BidOnItem="False" Location="0, 0, 0" />
+      </If>
+      <While Condition="InbagCount(53010) &gt;= 5" IgnoreCanRun="True" >
+        <CastSpellAction Entry="74964" Repeat="1" RepeatType="Specific" CastOnItem="False" ItemId="0" ItemType="Chest" />
+      </While>
+      <While Condition="InbagCount(52555) &gt;= 15 &amp;&amp; InbagCount(53643) &gt;=  15" IgnoreCanRun="True" >
+          <CastSpellAction Entry="75264" Repeat="1" RepeatType="Specific" CastOnItem="False" ItemId="0" ItemType="Chest" />
+      </While>
+    </While>
+    <If Condition="(bool)Settings[&quot;Post Bags on AH&quot;]" IgnoreCanRun="True" >
+        <SellItemOnAhAction Category="TradeGoods" SubCategoryType="SubCategoryType" SubCategory="None" UseCategory="True" RunTime="_24_Hours" AmountType="Everything" ItemID="54443" MinBuyout="0g10s0c" MaxBuyout="800g0s0c" StackSize="1" IgnoreStackSizeBelow="1" Amount="10" BidPercent="95" UndercutPercent="0.1" AutoFindAh="True" PostIfBelowMinBuyout="True" Location="0, 0, 0" />
+    </If>
+    <If Condition="(bool)Settings[&quot;Mail Bags&quot;" IgnoreCanRun="True" >
+      <If Condition="Me.Name != (string)Settings[&quot;Mail Recipent&quot;] &amp;&amp; !string.IsNullOrEmpty((string)Settings[&quot;Mail Recipent&quot;])" IgnoreCanRun="True" >
+        <CustomAction Code="var1 = CharacterSettings.Instance.MailRecipient;" />
+        <CustomAction Code="CharacterSettings.Instance.MailRecipient = (string)Settings[&quot;Mail Recipent&quot;];" />
+        <MailItemAction Category="TradeGoods" SubCategoryType="SubCategoryType" SubCategory="None" Mail="All"   ItemID="" Amount="0" AutoFindMailBox="True" Location="0, 0, 0" />
+      </If>
+    </If>
+    
+    
+  </While>
+  
+</Professionbuddy>

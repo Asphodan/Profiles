@@ -63,6 +63,9 @@
 		<Blackspot Name="Telredor 3" X="219.77" Y="6030.817" Z="21.87851" Radius="50" />
 	</Blackspots>
 
+	<ProtectedItems>
+		<Item Name="Unidentified Plant Parts" Id="24401" />
+	</ProtectedItems>
 
 	<Mailboxes>
 		<Mailbox Name="Hellfire Peninsula" Nav="Fly" X="172.0354" Y="2624.331" Z="87.13256" />
@@ -1517,7 +1520,7 @@
 	<Quest Id="9987" Name="Styming the Arakkoa">
 		<Objective Type="KillMob" MobId="18539" KillCount="1">
 			<Hotspots>
-				<Hotspot X="-1610.637" Y="4425.914" Z="53.38889"  />
+				<Hotspot X="-1607.96" Y="4431.225" Z="52.63015" />
 			</Hotspots>
 		</Objective>
 		<Objective Type="KillMob" MobId="18540" KillCount="1">
@@ -1700,6 +1703,13 @@
 			</Hotspots>
 		</Objective>
 	</Quest>
+	<Quest Id="10318" Name="Dealing with the Overmaster">
+		<Objective Type="KillMob" MobId="20803" KillCount="1">
+			<Hotspots>
+				<Hotspot X="4124.069" Y="3988.341" Z="118.539" />
+			</Hotspots>
+		</Objective>
+	</Quest>	
 	<!-- END: Quest Overrides -->
 
 
@@ -3090,10 +3100,17 @@
 
 
 			<PickUp QuestName="The Foot of the Citadel" QuestId="10876" GiverName="Nazgrel" GiverId="3230" />
-			<CustomBehavior File="InteractWith" NonCompeteDistance="0"  QuestId="10876" MobId="19264" WaitTime="5000" NumOfTimes="10" ProactiveCombatStrategy="ClearMobsTargetingUs"
-                            InteractByUsingItemId="31702" MobState="Dead" X="-226.4953" Y="3098.184" Z="-61.22203" />
-			<CustomBehavior File="WaitTimer" QuestId="10876" WaitTime="20000"
-                            GoalText="Waiting for the Hand of Kargath {TimeRemaining}" />
+				<If Condition="HasQuest(10876) &amp;&amp; !IsQuestCompleted(10876)" >
+					<If Condition="CanFly()" >
+						<CustomBehavior File="FlyTo" DestName="The Great Fissure"
+										X="-226.4953" Y="3098.184" Z="-61.22203" />
+						<CustomBehavior File="ForcedDismount" />
+					</If>
+					<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="10876" MobId="19264" WaitTime="5000" NumOfTimes="10" PreInteractMountStrategy="DismountOrCancelShapeshift"
+									ProactiveCombatStrategy="ClearMobsTargetingUs" InteractByUsingItemId="31702" MobState="Dead" X="-226.4953" Y="3098.184" Z="-61.22203" />
+					<CustomBehavior File="WaitTimer" QuestId="10876" WaitTime="20000"
+									GoalText="Waiting for the Hand of Kargath {TimeRemaining}" />
+				</If>
 			<TurnIn QuestName="The Foot of the Citadel" QuestId="10876" TurnInName="Nazgrel" TurnInId="3230" />
 
 			<TurnIn QuestName="Arelion's Journal" QuestId="9374" TurnInName="Magistrix Carinda" TurnInId="16793" />
@@ -3141,27 +3158,15 @@
 			<PickUp QuestName="Arelion's Mistress" QuestId="9472" GiverName="Magistrix Carinda" GiverId="16793" />
 
 			<While Condition="HasQuest(9472) &amp;&amp; !IsQuestCompleted(9472)">
-				<While Condition="!HasItem(29112)" >
-					<CustomBehavior File="FlyTo" DestName="Innkeeper Coryth Stoktron"
-                                    X="-216.1101" Y="5498.881" Z="21.79396" />
-					<CustomBehavior File="ForcedDismount" />
-					<CustomBehavior File="InteractWith" QuestId="9472" MobId="18907"
-                                    InteractByBuyingItemId="29112" WaitTime="3000" InteractByGossipOptions="2"
+                		<While Condition="!HasItem(29112)" >
+                    		    <CustomBehavior File="FlyTo" DestName="Innkeeper Coryth Stoktron"
+                                             X="-216.1101" Y="5498.881" Z="21.79396" />
+                                       <CustomBehavior File="ForcedDismount" />
+                                  <CustomBehavior File="InteractWith" QuestId="9472" MobId="18907"
+                                    InteractByBuyingItemId="29112" WaitTime="3000"
                                     CollectionDistance="20" X="-174.478" Y="5529.211" Z="29.40781" />
-					<CustomBehavior File="WaitTimer" WaitTime="2000"/>
-					<CustomBehavior File="InteractWith" QuestId="9472" MobId="18907"
-                                    InteractByBuyingItemId="29112" WaitTime="3000" InteractByGossipOptions="2"
-                                    CollectionDistance="20" X="-174.478" Y="5529.211" Z="29.40781" />
-					<CustomBehavior File="WaitTimer" WaitTime="2000"/>
-					<CustomBehavior File="InteractWith" QuestId="9472" MobId="18907"
-                                    InteractByBuyingItemId="29112" WaitTime="3000" InteractByGossipOptions="2"
-                                    CollectionDistance="20" X="-174.478" Y="5529.211" Z="29.40781" />
-					<CustomBehavior File="WaitTimer" WaitTime="2000"/>
-					<CustomBehavior File="InteractWith" QuestId="9472" MobId="18907"
-                                    InteractByBuyingItemId="29112" WaitTime="3000" InteractByGossipOptions="2"
-                                    CollectionDistance="20" X="-174.478" Y="5529.211" Z="29.40781" />
-					<CustomBehavior File="WaitTimer" WaitTime="2000"/>
-				</While>
+                    		<CustomBehavior File="WaitTimer" WaitTime="2000"/>
+                		</While>
 
 				<If Condition="HasItem(29112)" >
 					<CustomBehavior File="FlyTo" QuestId="9472" DestName="Viera Sunwhisper"
@@ -4894,7 +4899,7 @@
                            ItemId="31655" CollectCount="4" />
 				<CustomBehavior File="InteractWith" MobId="185202" MobId2="185203" MobId3="185204" MobId4="185205"
                                 PreInteractMountStrategy="Dismount" NumOfTimes="4" NonCompeteDistance="10"
-                                TerminateWhen="!HasItem(31655)"
+                                TerminateWhen="!HasItem(31655)" WaitTime="1500"
                                 X="-2521.825" Y="5444.137" Z="0.0509126" />
 			</While>
 			<UseMount Value="true"/>
@@ -5239,9 +5244,10 @@
                        Type="CollectItem" ItemId="25812" CollectCount="12" />
 
 			<If Condition="HasQuest(9987) &amp;&amp; !IsObjectiveComplete(3,9987)">
+				<CustomBehavior File="FlyTo" X="-2486.197" Y="5383.288" Z="41.46399" />
 				<CustomBehavior File="FlyTo" DestName="Urdak" X="-2507.74" Y="5380.578" Z="27.14109" />
 				<CustomBehavior File="ForcedDismount" />
-				<Objective Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987"
+				<Objective QuestName="Stymying the Arakkoa" QuestId="9987"
                            Type="KillMob" KillCount="1" MobName="Urdak" MobId="18541"
                            X="-2507.74" Y="5380.578" Z="27.14109" />
 			</If>
@@ -5259,7 +5265,7 @@
 				<CustomBehavior File="FlyTo" DestName="Ashkaz"
                                 X="-1562.632" Y="4414.421" Z="36.75764" />
 				<CustomBehavior File="ForcedDismount" />
-				<Objective Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987"
+				<Objective QuestName="Stymying the Arakkoa" QuestId="9987"
                            Type="KillMob" MobId="18539" KillCount="1" X="-1610.637" Y="4425.914" Z="53.38889" />
 			</If>
 			<Objective Nav="Fly" QuestName="Arakkoa War Path" QuestId="10868" Type="KillMob"
@@ -5267,9 +5273,8 @@
 			<Objective Nav="Fly" QuestName="Arakkoa War Path" QuestId="10868" Type="KillMob"
                        MobId="18450" KillCount="6" />
 			<If Condition="HasQuest(9987) &amp;&amp; !IsObjectiveComplete(2,9987)" >
-				<CustomBehavior File="FlyTo" DestName="Landing spot by Ayit's House"
-                                X="-1902.127" Y="3930.562" Z="-0.4784756" />
-				<Objective Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987"
+				<CustomBehavior File="FlyTo" DestName="Landing spot by Ayit's House" X="-1902.127" Y="3930.562" Z="-0.4784756" />
+				<Objective QuestName="Stymying the Arakkoa" QuestId="9987"
                            Type="KillMob" MobId="18540" KillCount="1" />
 			</If>
 
@@ -5776,7 +5781,7 @@
 
 
 		<PickUp Nav="Fly" QuestName="Proving Your Strength" QuestId="10479"
-               GiverName="Warden Bullrok" GiverId="18407" />
+               GiverName="Warden Bullrok" GiverId="18407" X="-1356.118" Y="7213.315" Z="33.63412" />
 		<PickUp Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9935"
                GiverName="Garadar Bulletin Board" GiverType="Object" GiverId="182392"
                X="-1356.847" Y="7216.579" Z="33.37433" />
@@ -6413,7 +6418,7 @@
                   Type="CollectItem" ItemId="25554" CollectCount="10" />
 		<While Condition="HasQuest(9927) &amp;&amp; !IsQuestCompleted(9927)" >
 			<CustomBehavior File="InteractWith" QuestId="9927" MobId="17148" MobId2="17146" MobId3="17147"
-                           MobState="Dead" InteractByUsingItemId="25552" NumOfTimes="400"
+                           PreInteractMountStrategy="DismountOrCancelShapeshift" MobState="Dead" InteractByUsingItemId="25552" NumOfTimes="400"
                            CollectionDistance="300" X="-2855.058" Y="6393.893" Z="79.41189" />
 		</While>
 		<If Condition="HasQuest(9927) &amp;&amp; IsQuestCompleted(9927)">
@@ -7753,11 +7758,11 @@
 			<MoveTo X="4122.681" Y="2980.695" Z="351.271" />
 		</If>
 		<!-- Not getting In Search of Farahlite - 2 person quest -->
-		<If Condition="HasQuest(10424) &amp;&amp; IsQuestCompleted(10424)" >
+		<While Condition="HasQuest(10424) &amp;&amp; !IsQuestCompleted(10424)" >
 			<CustomBehavior File="FlyTo" X="4464.807" Y="2830.35" Z="141.3133" />
 			<CustomBehavior File="ForcedDismount" />
 			<UseItem QuestId="10424" ItemId="29803" X="4464.807" Y="2830.35" Z="141.3133" />
-		</If>
+		</While>
 		<If Condition="HasQuest(10855) &amp;&amp; !IsQuestCompleted(10855)" >
 			<CustomBehavior File="FlyTo" X="4501.383" Y="3367.621" Z="156.7108" />
 			<CustomBehavior File="ForcedDismount" />
@@ -7777,14 +7782,14 @@
                       Type="CollectItem" CollectCount="10" ItemId="29798" />
 		</If>
 		<While Condition="HasQuest(10335) &amp;&amp; !IsQuestCompleted(10335)" >
-			<If Condition="!IsObjectiveComplete(1,10335)">
+			<If Condition="!IsObjectiveComplete(2,10335)">
 				<CustomBehavior File="FlyTo" X="4610.597" Y="2439.972" Z="195.448" />
 				<CustomBehavior File="ForcedDismount" />
 				<CustomBehavior File="WaitTimer" WaitTime="3000" />
 				<UseItem QuestId="10335" ItemId="29445" X="4610.597" Y="2439.972" Z="195.448" />
 			</If>
 
-			<If Condition="!IsObjectiveComplete(2,10335)">
+			<If Condition="!IsObjectiveComplete(1,10335)">
 				<CustomBehavior File="FlyTo" X="4690.092" Y="2602.771" Z="209.7254" />
 				<CustomBehavior File="ForcedDismount" />
 				<CustomBehavior File="WaitTimer" WaitTime="3000" />
@@ -7905,7 +7910,7 @@
                QuestId="10317" TurnInId="20393" X="3884.998" Y="4013.071" Z="122.2807" />
 		<PickUp Nav="Fly" QuestName="Dealing with the Overmaster" GiverName="Foreman Sundown"
                QuestId="10318" GiverId="20393" X="3884.998" Y="4013.071" Z="122.2807" />
-		<Objective Nav="Fly" QuestName="Dealing with the Overmaster" QuestId="10318" Type="KillMob"
+		<Objective QuestName="Dealing with the Overmaster" QuestId="10318" Type="KillMob"
                   KillCount="1" MobId="20803" />
 		<If Condition="HasQuest(10318) &amp;&amp; IsQuestCompleted(10318)" >
 			<MoveTo X="3779.77" Y="4014.586" Z="118.2969" />
@@ -7984,7 +7989,7 @@
 				<CustomBehavior File="UserDialog" AllowBotStop="true" SoundCue="Exclamation" SoundCueInterval="5"
                                Text="You are too high for this Combat UseItemOn quest, please manually do it!" />
 			</If>
-			<CustomBehavior File="InteractWith" QuestId="10271" MobId="18877" MobState="Alive"
+			<CustomBehavior File="InteractWith" QuestId="10271" MobId="18877" MobState="Alive" PreInteractMountStrategy="DismountOrCancelShapeshift" 
                            InteractByUsingItemId="69825" NumOfTimes="50" Range="30" IgnoreLoSToTarget="true"
                            X="4023.415" Y="1475.924" Z="-119.7821" >
 				<HuntingGrounds>
@@ -8180,7 +8185,7 @@
             QuestId="10924" TurnInId="22479" />
        -->
 
-		<Checkpoint Level="69" />
+		<Checkpoint Level="70" />
 		<!-- CHECKPOINT BLOCK START: This code needs to be replicated after every checkpoint.
             If you modify something in this block, don't forget to update the copy of this
             block after each checkpoint, and the at the start of the <QuestOrder>, also.
