@@ -6,13 +6,13 @@
 // Farm mobs: Shao-Tien Moguls
 ///////////////////////////////////////////////////////////////////////
 
-<Name>Random Hotspots - Tier 1-3 Timless Isle Chests - No Combat [$Rev: 1053 $]</Name>
+<Name>Random Hotspots - Tier 1-3 Timless Isle Chests - No Combat [$Rev$]</Name>
 
 <MinFreeBagSlots>-1</MinFreeBagSlots>
 <MinDurability>-1</MinDurability>
 
-<MinLevel>90</MinLevel>
-<MaxLevel>101</MaxLevel>
+
+
 
 <MailGrey>False</MailGrey>
 <MailWhite>True</MailWhite>
