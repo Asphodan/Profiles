@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile>
+<Name>Gorian Proving Grounds</Name>
+	<MinDurability>0.3</MinDurability>
+	<MinFreeBagSlots>-1</MinFreeBagSlots>
+	
+   	<SellGrey>True</SellGrey>
+   	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+		
+	<MailWhite>True</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+	
+	<AvoidMobs>
+	
+	</AvoidMobs>
+	
+	
+	<ProtectedItems>
+	</ProtectedItems>
+	<AvoidMobs>
+	</AvoidMobs>	
+	
+	<Blackspots>
+	</Blackspots>
+	
+	
+	<Vendors>
+	</Vendors>
+	
+	
+ <QuestOrder>
+			<CustomBehavior File="UserSettings" LootMobs="True" PullDistance="50" />				
+
+
+	
+<!-- Turn in Quest -->
+<!-- Grind -->
+
+
+	<CustomBehavior File="CollectThings" MobId1="84760" MobId2="88207" MobId3="88906" CollectItemId="69925" CollectItemCount="20" HuntingGroundRadius="200" NonCompeteDistance="1" MobState="Alive" >
+		<Hotspot X="4240.438" Y="6049.152" Z="77.92123" />
+	</CustomBehavior>
+			
+			
+			
+  </QuestOrder>
+</HBProfile>
